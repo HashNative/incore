@@ -15,18 +15,26 @@
      <table  class="table table-striped table-bordered table-hover" id="coursedatatable"> 
      <thead>
      <tr>
-    <th>Course Unit </th>
-    <th>Course Code </th>
-    <th>Action </th>
-   
-
+    <th>Student Id </th>
+    <th>Student Name </th>
+    <th>Status </th>
+    <th>Email Id </th>
+    <th>Address</th>
+    <th>Phone Number</th>
+    <th>Course Id</th>
     </tr>
     </thead>
     <tbody>
-    @foreach ($courses as $course)
+    @foreach ($students as $student)
     <tr>
-        <td>{{ $course->CourseUnit}}</td>
-        <td>{{ $course->CourseCode}}</td>
+        <td>{{ $student->student_id}}</td>
+        <td>{{ $student->student_name}}</td>
+        <td>{{ $student->status}}</td>
+        <td>{{ $student->email_id}}</td>
+        <td>{{ $student->address}}</td>
+        <td>{{ $student->phone_number}}</td>
+        <td>{{ $student->course_id}}</td>
+      
        <td>
             <form action = "{{route('course.destroy',$course ->id)}}" method = "POST" style="display:inline"onsubmit="if(!confirm('Are you sure')){return false;}">
                 <input type = "hidden" name = "_method" value = "delete"> 
