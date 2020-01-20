@@ -11,7 +11,9 @@
     </head>
     <body>
 
-     
+    <a href="{{route('staff.create')}}"class ="btn btn-outline btn-info" tittle="Add">
+                add
+            </a>
 
      <table  class="table table-striped table-bordered table-hover" id="coursedatatable"> 
      <thead>
@@ -43,7 +45,7 @@
             
             </form>
         
-            <a href="{{route('staff.edit',$staff->id)}}"class ="btn btn-success btn-rounded" tittle="edit details">
+            <a href="{{route('staff.edit',$staff->id)}}"class="btn mb-1 btn-outline-warning" tittle="edit details">
                 <i class="fa fa-pencil"> </i>
             </a>
            <a href="{{route('staff.show',$staff->id)}}"class ="btn btn-outline btn-info" tittle="show details">

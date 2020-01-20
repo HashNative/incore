@@ -14,7 +14,7 @@ class InquiryController extends Controller
     public function index()
     {
         $inquiries = Inquiry::All();
-       return view('staff.index',compact('inquiries'));
+       return view('inquiry.index',compact('inquiries'));
        
     }
 
