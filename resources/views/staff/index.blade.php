@@ -36,17 +36,17 @@
 
 
        <td>
-            <form action = "£" method = "POST" style="display:inline"onsubmit="if(!confirm('Are you sure')){return false;}">
+            <form action = "{{route('staff.destroy',$staff->id)}}" method = "POST" style="display:inline"onsubmit="if(!confirm('Are you sure')){return false;}">
                 <input type = "hidden" name = "_method" value = "delete"> 
                 {{csrf_field()}}
                 <button type="submit" class="btn btn-danger btn-rounded"><i class="fa fa-trash"tittle="delete details"></i></button>
             
             </form>
         
-            <a href="£"class ="btn btn-success btn-rounded" tittle="edit details">
+            <a href="{{route('staff.edit',$staff->id)}}"class ="btn btn-success btn-rounded" tittle="edit details">
                 <i class="fa fa-pencil"> </i>
             </a>
-           <a action = "£"class ="btn btn-outline btn-info" tittle="show details">
+           <a href="{{route('staff.show',$staff->id)}}"class ="btn btn-outline btn-info" tittle="show details">
                 <i class="fa fa-eye"></i>
             </a>
        </td>

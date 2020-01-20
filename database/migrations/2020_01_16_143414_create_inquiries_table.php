@@ -14,7 +14,8 @@ class CreateInquiriesTable extends Migration
     public function up()
     {
         Schema::create('inquiries', function (Blueprint $table) {
-            $table->increments('inquiry_id');
+          
+            $table->increments('id');
             $table->String('source');
             $table->String('type');
             $table->String('description');
