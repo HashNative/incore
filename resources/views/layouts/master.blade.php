@@ -258,7 +258,7 @@
                        
                     </li>
                     <li>
-                        <a class="has-arrow" href="#" aria-expanded="false">
+                        <a class="has-arrow" href="{{route('course.index')}}" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Course</span>
                         </a>
                        

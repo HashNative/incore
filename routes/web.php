@@ -15,3 +15,5 @@ Route::get('/', function () {
     return view('home');
 });
 Route::resource('staff','StaffController');
+
+Route::resource('course','CourseController');
