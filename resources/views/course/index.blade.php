@@ -1,11 +1,4 @@
-@extends('Layouts.master')
+@extends('layouts.master')
 @section('content')
-<html >
-<head>
-    
-</head>
-<body>
-   aadhil
-</body>
-</html>
+
 @endsection

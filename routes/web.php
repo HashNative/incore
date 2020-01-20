@@ -14,8 +14,4 @@
 Route::get('/', function () {
     return view('home');
 });
-
 Route::resource('staff','StaffController');
-Route::resource('student','StudentController');
-Route::resource('inquiry','InquiryController');
-Route::resource('course','CourseController');
