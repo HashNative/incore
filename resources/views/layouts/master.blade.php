@@ -9,7 +9,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 </head>
 
@@ -312,11 +312,11 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="plugins/common/common.min.js"></script>
-    <script src="js/custom.min.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/gleek.js"></script>
-    <script src="js/styleSwitcher.js"></script>
+    <script src="{{asset('plugins/common/common.min.js')}}"></script>
+    <script src="{{asset('js/custom.min.js')}}"></script>
+    <script src="{{asset('js/settings.js')}}"></script>
+    <script src="{{asset('js/gleek.js')}}"></script>
+    <script src="{{asset('js/styleSwitcher.js')}}"></script>
 
 </body>
 
