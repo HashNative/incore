@@ -246,7 +246,7 @@
                        
                     </li>
                     <li>
-                        <a class="has-arrow" href="#" aria-expanded="false">
+                        <a class="has-arrow" href="{{route('student.index')}}" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Student</span>
                         </a>
                        
