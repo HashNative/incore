@@ -88,7 +88,7 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
         $student= Student ::find ($id);
-        $student->id =$request ->id;
+        
         $student->student_name =$request ->student_name;
         $student->status =$request ->status;
         $student->email_id =$request ->email_id;
