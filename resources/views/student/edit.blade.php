@@ -12,34 +12,34 @@
 <form action = "{{route('student.update',$student->id)}}" method = "POST">
   <input type = "hidden" name = "_method" value="put">
      {{csrf_field()}}
-<div class ="row">
-    <div class ="col-md-6"> 
+<div >
+    <div > 
         <label for ="student_name">Student Name</label> 
-        <input type ="text" name ="student_name" id ="student_name" value = "{{$student ->student_name}}"class ="form-control">
+        <input type ="text" name ="student_name" id ="student_name" value = "{{$student ->student_name}}">
     </div>
-    <div class ="col-md-6"> 
+    <div > 
         <label for ="status">Status</label> 
-        <input type ="text" name ="status" id ="status" value = "{{$student ->status}}"class ="form-control">
+        <input type ="text" name ="status" id ="status" value = "{{$student ->status}}">
     </div>
-    <div class ="col-md-6"> 
+    <div > 
         <label for ="email_id">Email Id</label> 
-        <input type ="text" name ="email_id" id ="email_id" value = "{{$student ->email_id}}"class ="form-control">
+        <input type ="text" name ="email_id" id ="email_id" value = "{{$student ->email_id}}">
     </div>
-    <div class ="col-md-6"> 
+    <div > 
         <label for ="address">Address</label> 
-        <input type ="text" name ="address" id ="address" value = "{{$student ->address}}"class ="form-control">
+        <input type ="text" name ="address" id ="address" value = "{{$student ->address}}">
     </div>
-    <div class ="col-md-6"> 
+    <div > 
         <label for ="phone_number">Phone Number</label> 
-        <input type ="text" name ="phone_number" id ="phone_number" value = "{{$student ->phone_number}}"class ="form-control">
+        <input type ="text" name ="phone_number" id ="phone_number" value = "{{$student ->phone_number}}">
     </div>
-    <div class ="col-md-6"> 
+    <div > 
         <label for ="course_id">Course Id</label> 
-        <input type ="text" name ="course_id" id ="course_id" value = "{{$student ->course_id}}"class ="form-control">
+        <input type ="text" name ="course_id" id ="course_id" value = "{{$student ->course_id}}">
     </div>
 </div>
 <br>
-  <input type ="submit" class ="btn btn-success btn-rounded" value="Save">
+  <input type ="submit"  value="Save">
 </form>
 </div>
 </body>
