@@ -6,11 +6,11 @@
     </head>
     <body>
 
-    <a href="{{route('student.create')}}" tittle="show details">
+    <a href="{{route('student.create')}}"  class="btn btn-block btn-primary"tittle="show details">
                add
             </a>
 
-     <table   id="coursedatatable"> 
+     <table   class="table table-bordered table-hover dataTable"id="coursedatatable"> 
      <thead>
      <tr>
     
@@ -18,7 +18,7 @@
     <th>Status</th>
     <th>Email Id</th>   
     <th>Address</th> 
-    <th>Email Id</th>  
+    
     <th>Phone Number</th>  
     <th>Course Id</th>     
 
@@ -39,14 +39,14 @@
             <form action = "{{route('student.destroy',$student->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
                 <input type = "hidden" name = "_method" value = "delete"> 
                 {{csrf_field()}}
-                <button type="submit" ><i tittle="delete details"></i></button>
+                <button type="submit"  class="btn btn-block btn-danger btn-xs"><i tittle="delete details"></i></button>
             
             </form>
         
-            <a href="{{route('student.edit',$student->id)}}" tittle="edit details">
+            <a href="{{route('student.edit',$student->id)}}" tittle="edit details" class="btn btn-block btn-success btn-xs">
                 <i > </i>
             </a>
-           <a href="{{route('student.show',$student->id)}}" tittle="show details">
+           <a href="{{route('student.show',$student->id)}}" tittle="show details"class="btn btn-block btn-info btn-xs">
                 <i ></i>
             </a>
        </td>

@@ -57,7 +57,11 @@ class StaffController extends Controller
      */
     public function show($id)
     {
+<<<<<<< HEAD
         $staff= Staff ::find ($id);
+=======
+        $staff= Staff::find($id);
+>>>>>>> fde5f9f3d7e73d3878b587d5ea3ccf1125377399
         return view('staff.show',compact('staff'));
     }
 
@@ -66,11 +70,16 @@ class StaffController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
+      */
     public function edit($id)
     {
+<<<<<<< HEAD
         $staff= Staff ::find ($id);
         return view('staff.show',compact('staff'));
+=======
+        $staff= Staff::find ($id);
+        return view('staff.edit',compact('staff'));
+>>>>>>> fde5f9f3d7e73d3878b587d5ea3ccf1125377399
     }
 
     /**
@@ -82,7 +91,11 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
+<<<<<<< HEAD
         $staff= Staff ::find ($id);
+=======
+        $staff= Staff::find ($id);
+>>>>>>> fde5f9f3d7e73d3878b587d5ea3ccf1125377399
         $staff->staff_id =$request->staff_id;
         $staff->staff_name =$request->staff_name;
         $staff->languages =$request->languages;
