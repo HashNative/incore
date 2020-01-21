@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Inquiry;
 use Illuminate\Http\Request;
 
 class InquiryController extends Controller
@@ -13,7 +13,9 @@ class InquiryController extends Controller
      */
     public function index()
     {
-        //
+        $inquiries = Inquiry::All();
+       return view('inquiry.index',compact('inquiries'));
+       
     }
 
     /**
@@ -23,6 +25,7 @@ class InquiryController extends Controller
      */
     public function create()
     {
+        return view('inquiry.create');
         //
     }
 
@@ -34,6 +37,16 @@ class InquiryController extends Controller
      */
     public function store(Request $request)
     {
+        $inquiry = new  Inquiry;
+        $inquiry->id =$request ->id;
+        $inquiry->source =$request ->source;
+        $inquiry->type =$request ->type;
+        $inquiry->description =$request ->description;
+        $inquiry->staff_id =$request ->staff_id;
+        $inquiry->student_id =$request ->student_id;
+        $inquiry->date_time =$request ->date_time;
+        $inquiry->save();
+        return redirect('/inquiry');
         //
     }
 
@@ -45,6 +58,8 @@ class InquiryController extends Controller
      */
     public function show($id)
     {
+        $inquiry= Inquiry ::find ($id);
+        return view('inquiry.show',compact('inquiry'));
         //
     }
 
@@ -56,6 +71,8 @@ class InquiryController extends Controller
      */
     public function edit($id)
     {
+        $inquiry= Inquiry ::find ($id);
+        return view('inquiry.edit',compact('inquiry'));
         //
     }
 
@@ -68,6 +85,16 @@ class InquiryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $inquiry =Inquiry::find ($id);;
+       
+        $inquiry->source =$request ->source;
+        $inquiry->type =$request ->type;
+        $inquiry->description =$request ->description;
+        $inquiry->staff_id =$request ->staff_id;
+        $inquiry->student_id =$request ->student_id;
+        $inquiry->date_time =$request ->date_time;
+        $inquiry->update();
+        return redirect('/inquiry');
         //
     }
 
@@ -79,6 +106,10 @@ class InquiryController extends Controller
      */
     public function destroy($id)
     {
+        $inquiry =  Inquiry::find($id);
+        $inquiry->delete();
+
+        return redirect('/inquiry');
         //
     }
 }

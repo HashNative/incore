@@ -2,6 +2,7 @@
 @section('content')
 <html>
 <head>
+<<<<<<< HEAD
 <style type="text/css">
         table,tr,td {
             border: 3px solid rgb(19,112,143) ;
@@ -14,6 +15,17 @@
      
 
      <table  class="table table-striped table-bordered table-hover" id="coursedatatable"> 
+=======
+
+    </head>
+    <body>
+
+    <a href="{{route('staff.create')}}" tittle="Add">
+                add
+            </a>
+
+     <table   > 
+>>>>>>> origin/sinthu
      <thead>
      <tr>
     <th>Staff Id </th>
@@ -36,6 +48,7 @@
 
 
        <td>
+<<<<<<< HEAD
             <form action = "{{route('staff.destroy',$staff->id)}}" method = "POST" style="display:inline"onsubmit="if(!confirm('Are you sure')){return false;}">
                 <input type = "hidden" name = "_method" value = "delete"> 
                 {{csrf_field()}}
@@ -48,6 +61,20 @@
             </a>
            <a href="{{route('staff.show',$staff->id)}}"class ="btn btn-outline btn-info" tittle="show details">
                 <i class="fa fa-eye"></i>
+=======
+            <form action = "{{route('staff.destroy',$staff->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
+                <input type = "hidden" name = "_method" value = "delete"> 
+                {{csrf_field()}}
+                <button type="submit" ><i tittle="delete details"></i></button>
+            
+            </form>
+        
+            <a href="{{route('staff.edit',$staff->id)}}" tittle="edit details">
+               edit
+            </a>
+           <a href="{{route('staff.show',$staff->id)}}" tittle="show details">
+            view
+>>>>>>> origin/sinthu
             </a>
        </td>
        

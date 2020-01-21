@@ -14,4 +14,9 @@
 Route::get('/', function () {
     return view('home');
 });
+<<<<<<< HEAD
 Route::resource('staff','StaffController');
+=======
+Route::resource('staff','StaffController');
+Route::resource('inquiry','InquiryController');
+>>>>>>> origin/sinthu
