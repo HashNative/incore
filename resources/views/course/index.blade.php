@@ -6,12 +6,12 @@
     </head>
     <body>
 
-    <a href="{{route('course.create')}}" tittle="show details">
-                add
+    <a href="{{route('course.create')}}" class="btn btn-block btn-primary" tittle="show details">
+                Add Course
             </a>
      
 
-     <table id="coursedatatable"> 
+     <table id="coursedatatable"class="table table-bordered table-hover dataTable"> 
      <thead>
      <tr>
     <th>Course Id </th>
@@ -24,7 +24,7 @@
 
     </tr>
     </thead>
-    <tbody>
+    <body>
     @foreach ($courses as $course)
     <tr>
         <td>{{ $course->course_id}}</td>
@@ -42,15 +42,15 @@
             <form action = "{{route('course.destroy',$course->id)}}" method = "POST" clonsubmit="if(!confirm('Are you sure')){return false;}">
                 <input type = "hidden" name = "_method" value = "delete"> 
                 {{csrf_field()}}
-                <button type="submit"><i class="fa fa-trash"tittle="delete details"></i></button>
+                <button type="submit"><i class="btn btn-block btn-danger btn-xs"tittle="delete details"></i></button>
             
             </form>
         
-            <a href="{{route('course.edit',$course->id)}}" tittle="edit details">
-                <i class="fa fa-pencil"> </i>
+            <a href="{{route('course.edit',$course->id)}}" tittle="edit details"class="btn btn-block btn-danger btn-sm">
+                <i > </i>
             </a>
-           <a href="{{route('course.show',$course->id)}}" tittle="show details">
-                <i class="fa fa-eye"></i>
+           <a href="{{route('course.show',$course->id)}}" tittle="show details"class="btn btn-block btn-success btn-xs">
+                <i ></i>
             </a>
        </td>
        
