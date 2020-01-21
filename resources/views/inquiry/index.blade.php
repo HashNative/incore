@@ -5,10 +5,10 @@
 
     </head>
     <body>
-    <a href="{{route('inquiry.create')}}"class ="btn btn-outline btn-info" tittle="Add">
+    <a href="{{route('inquiry.create')}}" tittle="Add">
                 add
             </a>
-     <table  class="table table-striped table-bordered table-hover" id="coursedatatable"> 
+     <table> 
      <thead>
      <tr>
     <th>Source</th>
@@ -34,18 +34,18 @@
 
 
        <td>
-            <form action = "{{route('inquiry.destroy',$inquiry->id)}}" method = "POST" style="display:inline"onsubmit="if(!confirm('Are you sure')){return false;}">
+            <form action = "{{route('inquiry.destroy',$inquiry->id)}}" method = "POST"onsubmit="if(!confirm('Are you sure')){return false;}">
                 <input type = "hidden" name = "_method" value = "delete"> 
                 {{csrf_field()}}
-                <button type="submit" class="btn btn-danger btn-rounded"><i class="fa fa-trash"tittle="delete details"></i></button>
+                <button type="submit" ><i tittle="delete details"></i></button>
             
             </form>
         
-            <a href="{{route('inquiry.edit',$inquiry->id)}}"class ="btn btn-success btn-rounded" tittle="edit details">
-                <i class="fa fa-pencil"> </i>
+            <a href="{{route('inquiry.edit',$inquiry->id)}}" tittle="edit details">
+                <i > </i>
             </a>
-           <a href="{{route('inquiry.show',$inquiry->id)}}"class ="btn btn-outline btn-info" tittle="show details">
-                <i class="fa fa-eye"></i>
+           <a href="{{route('inquiry.show',$inquiry->id)}}" tittle="show details">
+                <i ></i>
             </a>
        </td>
        
