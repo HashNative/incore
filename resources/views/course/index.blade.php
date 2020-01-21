@@ -2,21 +2,16 @@
 @section('content')
 <html>
 <head>
-<style type="text/css">
-        table,tr,td {
-            border: 3px solid rgb(19,112,143) ;
-        }
-        
-    </style>
+
     </head>
     <body>
 
-    <a href="{{route('course.create')}}"class ="btn btn-outline btn-info" tittle="show details">
+    <a href="{{route('course.create')}}" tittle="show details">
                 add
             </a>
      
 
-     <table  class="table table-striped table-bordered table-hover" id="coursedatatable"> 
+     <table id="coursedatatable"> 
      <thead>
      <tr>
     <th>Course Id </th>
@@ -44,17 +39,17 @@
 
 
        <td>
-            <form action = "{{route('course.destroy',$course->id)}}" method = "POST" style="display:inline"onsubmit="if(!confirm('Are you sure')){return false;}">
+            <form action = "{{route('course.destroy',$course->id)}}" method = "POST" clonsubmit="if(!confirm('Are you sure')){return false;}">
                 <input type = "hidden" name = "_method" value = "delete"> 
                 {{csrf_field()}}
-                <button type="submit" class="btn btn-danger btn-rounded"><i class="fa fa-trash"tittle="delete details"></i></button>
+                <button type="submit"><i class="fa fa-trash"tittle="delete details"></i></button>
             
             </form>
         
-            <a href="{{route('course.edit',$course->id)}}"class ="btn btn-success btn-rounded" tittle="edit details">
+            <a href="{{route('course.edit',$course->id)}}" tittle="edit details">
                 <i class="fa fa-pencil"> </i>
             </a>
-           <a href="{{route('course.show',$course->id)}}"class ="btn btn-outline btn-info" tittle="show details">
+           <a href="{{route('course.show',$course->id)}}" tittle="show details">
                 <i class="fa fa-eye"></i>
             </a>
        </td>

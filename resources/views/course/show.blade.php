@@ -4,33 +4,33 @@
 
  <tr>
  <td>
- <h1 class="pricing-title"  style ="color:red">Course Id </h1>{{$course -> course_id}}
+ <h1 >Course Id </h1>{{$course -> course_id}}
 </td>
 </tr>
 <br>
 <br>
 <tr>
  <td>
- <h1 class="pricing-title"  style ="color:red">Course Name </h1>{{$course -> course_name}}
+ <h1 >Course Name </h1>{{$course -> course_name}}
 </td>
 </tr>
 <tr>
  <td>
- <h1 class="pricing-title"  style ="color:red">Registration Date </h1>{{$course -> registration_date}}
+ <h1 >Registration Date </h1>{{$course -> registration_date}}
 </td>
 </tr>
 <tr>
  <td>
- <h1 class="pricing-title"  style ="color:red">Course Fees</h1>{{$course -> course_fees}}
+ <h1 >Course Fees</h1>{{$course -> course_fees}}
 </td>
 <td>
- <h1 class="pricing-title"  style ="color:red">Description</h1>{{$course -> description}}
+ <h1 >Description</h1>{{$course -> description}}
 </td>
 <td>
- <h1 class="pricing-title"  style ="color:red">Start By </h1>{{$course -> start_by}}
+ <h1 >Start By </h1>{{$course -> start_by}}
 </td>
 <td>
- <h1 class="pricing-title"  style ="color:red">End By</h1>{{$course -> end_by}}
+ <h1 >End By</h1>{{$course -> end_by}}
 </td>
 </tr>
 
