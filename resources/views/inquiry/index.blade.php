@@ -2,17 +2,12 @@
 @section('content')
 <html>
 <head>
-<style type="text/css">
-        table,tr,td {
-            border: 3px solid rgb(19,112,143) ;
-        }
-        
-    </style>
+
     </head>
     <body>
-
-     
-
+    <a href="{{route('inquiry.create')}}"class ="btn btn-outline btn-info" tittle="Add">
+                add
+            </a>
      <table  class="table table-striped table-bordered table-hover" id="coursedatatable"> 
      <thead>
      <tr>

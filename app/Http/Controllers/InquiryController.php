@@ -37,7 +37,7 @@ class InquiryController extends Controller
      */
     public function store(Request $request)
     {
-        $inquiry = new  Staff;
+        $inquiry = new  Inquiry;
         $inquiry->id =$request ->id;
         $inquiry->source =$request ->source;
         $inquiry->type =$request ->type;
@@ -85,8 +85,8 @@ class InquiryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $inquiry = new  Staff;
-        $inquiry->id =$request ->id;
+        $inquiry =Inquiry::find ($id);;
+       
         $inquiry->source =$request ->source;
         $inquiry->type =$request ->type;
         $inquiry->description =$request ->description;
