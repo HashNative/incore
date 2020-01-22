@@ -167,20 +167,22 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="/" class="nav-link ">
+            <a href="/" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <i class="right fas fa-angle-left"></i>
+                
               </p>
             </a>
+            <li class="nav-item has-treeview">
             <a href="{{route('course.index')}}" class="nav-link ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fas fa-graduation-cap"></i>
               <p>
                 Course
-                <i class="right fas fa-angle-left"></i>
+              
               </p>
             </a>
+            </li>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
@@ -192,14 +194,9 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
+          
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard v2</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v2</li>
-            </ol>
+            
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -253,9 +250,9 @@
 <script src="{{asset('plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
 <script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
 
 <!-- PAGE SCRIPTS -->
-<script src="dist/js/pages/dashboard2.js"></script>
+<script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
 </body>
 </html>

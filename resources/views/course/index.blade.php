@@ -6,12 +6,13 @@
     </head>
     <body>
 
-    <a href="{{route('course.create')}}" class="btn btn-block btn-primary" tittle="show details">
+    <a href="{{route('course.create')}}" class="btn  btn-primary" tittle="show details">
+    <i class="fas fa-plus"></i>
                 Add Course
             </a>
      
 
-     <table id="coursedatatable"class="table table-bordered table-hover dataTable"> 
+     <table id="coursedatatable"class="table table-bordered table-striped dataTable"> 
      <thead>
      <tr>
     <th>Course Id </th>
@@ -21,6 +22,7 @@
     <th>Description</th>   
     <th>End by</th>
     <th>Start by</th>
+    <th>Actions</th>
 
     </tr>
     </thead>
@@ -38,21 +40,31 @@
 
 
 
-       <td>
-            <form action = "{{route('course.destroy',$course->id)}}" method = "POST" clonsubmit="if(!confirm('Are you sure')){return false;}">
-                <input type = "hidden" name = "_method" value = "delete"> 
+        <td>
+        <form action = "{{route('course.destroy',$course->id)}}" method = "POST"onsubmit="if(!confirm('Are you sure')){return false;}">
+
+        <input type = "hidden" name = "_method" value="view">
+        <a href="{{route('course.show',$course->id)}}" tittle="show details" class="btn btn-sm" style="color:#0066ff";>
+           <i class="fa fa-eye"></i> </a>
+
+           <input type = "hidden" name = "_method" value="edit">
+           <a href="{{route('course.edit',$course->id)}}" tittle="edit details"class="btn btn-sm"style="color:#009933";>
+            <i class="fa fa-edit"></i></a>
+
+                <input type = "hidden" name = "_method" value="delete"> 
                 {{csrf_field()}}
-                <button type="submit"><i class="btn btn-block btn-danger btn-xs"tittle="delete details"></i></button>
+                <button type="submit" class="btn btn-sm" style="color:#cc0000";>
+                <i title="delete details" class="fa fa-trash"></i></button>
             
             </form>
-        
-            <a href="{{route('course.edit',$course->id)}}" tittle="edit details"class="btn btn-block btn-danger btn-sm">
-                <i > </i>
+           
             </a>
-           <a href="{{route('course.show',$course->id)}}" tittle="show details"class="btn btn-block btn-success btn-xs">
-                <i ></i>
+       
+           
             </a>
-       </td>
+       
+           
+        </td>
        
     </tr>
     @endforeach
