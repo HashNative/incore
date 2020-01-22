@@ -3,7 +3,7 @@
 <div>
 <div >
   
-  <a href ="{{URL::previous()}}"href="#"style ="width:100px">Back</a>
+  <a href ="{{URL::previous()}}" button type="button" class="btn btn-primary">Back</a>
 </div>
 <br>
 

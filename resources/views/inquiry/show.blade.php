@@ -3,12 +3,10 @@
 <html>
 <head>
 </head>
-<body>
-<table>
-
- <tr>
- <td>
- <h1 >Source : </h1>{{ $inquiry->source}}
+<body> 
+<tr>
+ <th >Source : </th>
+ <td>{{ $inquiry->source}}
 </td>
 </tr>
 <br>
@@ -37,6 +35,12 @@
 </td>
 </tr>
 </table>
+
+
+
+
+
+
 </body>
 </html>
 @endsection
