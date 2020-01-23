@@ -176,7 +176,7 @@
             </a>
             
            </li>
-            <li class="nav-item">
+            <li class="nav-item has-treeview">
             <a href="{{route('student.index')}}" class="nav-link">
               <i class="nav-icon fas fa-user-alt"></i>
               <p>
@@ -195,6 +195,7 @@
               </p>
             </a>
             </li>
+            <li class="nav-item has-treeview">
             <a href="{{route('inquiry.index')}}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -202,6 +203,22 @@
                 
               </p>
             </a>
+           </li>
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+         
+
+            <li class="nav-item">
+            <a href="{{route('staff.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-user-plus"></i>
+              <p>
+              Staff
+               
+              </p>
+            </a>
+          </li>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
