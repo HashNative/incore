@@ -1,10 +1,5 @@
 @extends('layouts.master')
 @section('content')
-<html >
-<head>
-    
-</head>
-<body>
 
     <section class="content-header">
       <div class="container-fluid">
@@ -383,7 +378,4 @@
       </div><!-- /.container-fluid -->
     </section>
    
-
-  </body>
-</html>
  @endsection
