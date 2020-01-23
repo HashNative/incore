@@ -12,7 +12,7 @@
             
                 <div class=" d-flex justify-content-center  ">
                 <div class=" col-8  ">
-            <div class="card card-primary">
+            <div class="card card-warning">
               <div class="card-header">
                 <h3 class="card-title">Student Details</h3>
               </div>

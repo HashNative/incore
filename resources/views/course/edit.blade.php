@@ -7,7 +7,7 @@
        <div class="d-flex justify-content-center">
        <div class="col-md-8">
             <!-- general form elements disabled -->
-            <div class="card card-primary">
+            <div class="card card-warning">
               <div class="card-header">
                 <h3 class="card-title">Edit Course</h3>
               </div>
