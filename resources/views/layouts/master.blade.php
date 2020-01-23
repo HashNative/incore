@@ -187,13 +187,7 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <a href="{{route('student.index')}}" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Student
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
+            
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

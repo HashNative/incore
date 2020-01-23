@@ -5,7 +5,7 @@
     
 </head>
 <body><BR>
-
+  <div class="d-flex justify-content-center">
     <div class="col-md-10">
             <!-- general form elements disabled -->
             <div class="card card-primary">
@@ -73,7 +73,7 @@
                     </div>
 
                   </div>
-
+            </div>
 
                  
     
