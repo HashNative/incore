@@ -6,8 +6,8 @@
   <input type = "hidden" name = "_method" value="put">
      {{csrf_field()}}
      <div class="d-flex justify-content-center">
-     <div class ="col-md-8"> 
-     <div class="card card-warning">
+     <div class ="col-md-6"> 
+     <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Edit Staff </h3>
                 
