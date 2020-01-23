@@ -1,12 +1,13 @@
 @extends('layouts.master')
 @section('content')
 <div>
+<a href ="{{URL::previous()}}" button type="button" class="btn btn-primary">Back</a>
+</div>
+<br>
 
 <form action = "{{route('inquiry.update',$inquiry->id)}}" method = "POST">
   <input type = "hidden" name = "_method" value="put">
      {{csrf_field()}}
-    
-
    <div class="col-md-6">
             <!-- general form elements disabled -->
             <div class="card card-warning">
