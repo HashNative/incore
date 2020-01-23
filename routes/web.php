@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
+
+Route::resource('/','HomeController');
 Route::resource('staff','StaffController');
 Route::resource('inquiry','InquiryController');
