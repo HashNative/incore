@@ -171,7 +171,7 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <i class="right fas fa-angle-left"></i>
+                
               </p>
             </a>
             
@@ -185,6 +185,15 @@
               </p>
             </a>
           </li>
+            <li class="nav-item has-treeview">
+            <a href="{{route('course.index')}}" class="nav-link ">
+              <i class="fas fa-graduation-cap"></i>
+              <p>
+                Course
+              
+              </p>
+            </a>
+            </li>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
@@ -193,7 +202,16 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-   
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          
+          <div class="col-sm-6">
+            
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
     <!-- /.content-header -->
 
     <!-- Main content -->
