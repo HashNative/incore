@@ -9,8 +9,8 @@
      {{csrf_field()}}
     <div >
     <div class="d-flex justify-content-center">
-    <div class="col-md-8">
-            <div class="card card-warning">
+    <div class="col-md-6">
+            <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Add Staff </h3>
               </div>
