@@ -5,13 +5,13 @@
     
 </head>
 <body>
-    
+    <br>
     <form role="form" action = "{{route('student.update',$student->id)}}" method = "POST"  >
     <input type = "hidden" name = "_method" value="put">
      {{csrf_field()}}
             
-                <div class="col-md-8 ">
-           
+                <div class=" d-flex justify-content-center  ">
+                <div class=" col-8  ">
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Student Details</h3>
