@@ -34,6 +34,7 @@
 
 
        <td>
+       
             <form action = "{{route('inquiry.destroy',$inquiry->id)}}" method = "POST"onsubmit="if(!confirm('Are you sure')){return false;}">
                 <input type = "hidden" name = "_method" value = "delete"> 
                 {{csrf_field()}}

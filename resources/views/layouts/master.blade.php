@@ -8,13 +8,13 @@
   <title>AdminLTE 3 | Dashboard 2</title>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="{{asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700')}}" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -174,6 +174,18 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            <a href="{{route('staff.index')}}" class="nav-link ">
+              <i class="nav-icon fas fa-user-plus"></i>    <ion-icon name="person-add"></ion-icon>
+              <p>
+                staff
+              </p>
+            </a>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
@@ -186,7 +198,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard v2</h1>
+            <h1 class="m-0 text-dark"></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -228,27 +240,27 @@
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+<script src="{{asset('dist/js/adminlte.js')}}"></script>
 
 <!-- OPTIONAL SCRIPTS -->
 <script src="dist/js/demo.js"></script>
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
-<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="plugins/raphael/raphael.min.js"></script>
-<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<script src="{{asset('plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
+<script src="{{asset('plugins/raphael/raphael.min.js')}}"></script>
+<script src="{{asset('plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
+<script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="{asset('plugins/chart.js/Chart.min.js')}}"></script>
 
 <!-- PAGE SCRIPTS -->
-<script src="dist/js/pages/dashboard2.js"></script>
+<script src="{asset('dist/js/pages/dashboard2.js')}}"></script>
 </body>
 </html>
