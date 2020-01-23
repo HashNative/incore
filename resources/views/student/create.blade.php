@@ -41,13 +41,13 @@
                      
                       <div class="form-group">
                         <label>Email Id</label>
-                        <input type ="text" name ="email_id" id ="email_id" class="form-control" maxlength="8" placeholder="Enter the Email Id">
+                        <input type ="text" name ="email_id" id ="email_id" class="form-control"  placeholder="Enter the Email Id">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Address</label>
-                        <input type ="text" name ="address" id ="address"class="form-control" maxlength="8" placeholder="Enter the address">
+                        <input type ="text" name ="address" id ="address"class="form-control"  placeholder="Enter the address">
                       </div>
                     </div>
 
@@ -56,13 +56,13 @@
 
                     <div class="form-group">
                     <label for ="phone_number">Phone Number</label>
-                            <input type ="text" name ="phone_number"class="form-control" id ="phone_number"  maxlength="8" placeholder="Enter the Phone Number">
+                            <input type ="text" name ="phone_number"class="form-control" id ="phone_number"   placeholder="Enter the Phone Number">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                       <label for ="course_id">Course Id</label>
-                            <input type ="text" name ="course_id" id ="course_id"  class="form-control" maxlength="8" placeholder="Enter the Course Id">
+                            <input type ="text" name ="course_id" id ="course_id"  class="form-control"  placeholder="Enter the Course Id">
                       </div>
                     </div>
                     </div>

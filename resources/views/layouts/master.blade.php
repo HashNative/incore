@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source ans Pro -->
   <link href="{{asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700')}}" rel="stylesheet">
-</head>
+  </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <!-- Navbar -->
@@ -134,7 +134,6 @@
 
       </li>
 
-
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="fas fa-user"></i></a>
@@ -177,8 +176,7 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+         
           <li class="nav-item has-treeview menu-open">
           <a href="/" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -301,20 +299,11 @@
 <script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
+<script src="{{asset('../../plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{asset('../../plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
 
 <!-- PAGE SCRIPTS -->
 <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
-<!-- jQuery -->
-<script src="{{asset('../../plugins/jquery/jquery.min.js')}}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{asset('../../plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- DataTables -->
-<script src="{{asset('../../plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('../../plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset('../../dist/js/adminlte.min.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{asset('../../dist/js/demo.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable();
