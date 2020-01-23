@@ -13,10 +13,10 @@
       
          <!-- <div class="row"><div class="col-sm-8 col-md-6"><div class="dataTables_length" id="example1_length">
               <lable>Show entries <select name="example1_length" aria-controls="example1" class="custom-select custom-select-sm form-control form-control-sm">
-            <option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div></div> -->
+            <option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div></div> 
                   
               <div class="col-sm-5 col-md-3 float-right"><div id="example1_filter" class="dataTables_filter">
-                  <lable><input type="search" class="form-control forms-control-sm"placeholder="search" aria-control="example1"></lable></div></div></div>
+                  <lable><input type="search" class="form-control forms-control-sm"placeholder="search" aria-control="example1"></lable></div></div></div>-->
      
           
      <table id="coursedatatable"class="table table-bordered table-striped dataTable"> 
