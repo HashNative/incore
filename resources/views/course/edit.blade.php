@@ -4,8 +4,8 @@
   <form action = "{{route('course.update',$course->id)}}" method = "POST">
      <input type = "hidden" name = "_method" value="put">
      {{csrf_field()}}
-
-       <div class="col-md-11">
+       <div class="d-flex justify-content-center">
+       <div class="col-md-8">
             <!-- general form elements disabled -->
             <div class="card card-warning">
               <div class="card-header">
@@ -60,11 +60,11 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                          <label for ="description">Description</label>
-                         <textarea name ="description" id ="description"class="form-control"value = "{{$course -> description}}"></textarea>
+                         <input type ="textarea" name ="description" id ="description"class="form-control"value = "{{$course -> description}}"></textarea>
                       </div>
                     </div>
                   </div>
-                  
+               </div>
                     
 
     

@@ -10,8 +10,15 @@
     <i class="fas fa-plus"></i>
                 Add Course
             </a>
+      
+         <!-- <div class="row"><div class="col-sm-8 col-md-6"><div class="dataTables_length" id="example1_length">
+              <lable>Show entries <select name="example1_length" aria-controls="example1" class="custom-select custom-select-sm form-control form-control-sm">
+            <option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div></div> -->
+                  
+              <div class="col-sm-5 col-md-3 float-right"><div id="example1_filter" class="dataTables_filter">
+                  <lable><input type="search" class="form-control forms-control-sm"placeholder="search" aria-control="example1"></lable></div></div></div>
      
-
+          
      <table id="coursedatatable"class="table table-bordered table-striped dataTable"> 
      <thead>
      <tr>
@@ -43,9 +50,6 @@
         <td>
         <form action = "{{route('course.destroy',$course->id)}}" method = "POST"onsubmit="if(!confirm('Are you sure')){return false;}">
 
-        <input type = "hidden" name = "_method" value="view">
-        <a href="{{route('course.show',$course->id)}}" tittle="show details" class="btn btn-sm" style="color:#0066ff";>
-           <i class="fa fa-eye"></i> </a>
 
            <input type = "hidden" name = "_method" value="edit">
            <a href="{{route('course.edit',$course->id)}}" tittle="edit details"class="btn btn-sm"style="color:#009933";>

@@ -6,7 +6,8 @@
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-11">
+          <div class="d-flex justify-content-center">
+          <div class="col-md-8">
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
@@ -60,7 +61,7 @@
     <div class="col-sm-6">
         <div class="form-group"> 
             <label for ="description">Description</label> 
-            <textarea name ="description" id ="description" class="form-control" autofocus placeholder="Enter the Description"></textarea>
+            <textarea name="description" id ="description" class="form-control" autofocus placeholder="Enter the Description"></textarea>
         </div>
         </div>
         </div>
