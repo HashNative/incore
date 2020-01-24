@@ -3,6 +3,7 @@
 
 <a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
     Add Staff
+    
 </a>
 </div>
 <!-- Main content -->
