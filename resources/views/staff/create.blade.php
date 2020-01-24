@@ -59,10 +59,10 @@
         <div class="from-group">
         <label for ="languages">Language</label>
         <select type ="text" name ="languages" id ="languages" class="form-control" >
-        <option>select laguage<option>
-        <option value="english">English<option>
-        <option value="tamil">Tamil<option>
-        <option value="sinhala">Sinhala<option></select>
+        <option>select laguage</option>
+        <option value="english">English</option>
+        <option value="tamil">Tamil</option>
+        <option value="sinhala">Sinhala</option></select>
     </div> 
     </div> 
   

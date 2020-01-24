@@ -53,10 +53,10 @@
    <div class="from-group">
         <label for ="languages">Language</label>
         <select type ="text" name ="languages" id ="languages"value = "{{$staff -> languages}}"class="form-control" >
-        <option>select laguage<option>
-        <option >English<option>
-        <option >Tamil<option>
-        <option >Sinhala<option>
+        <option>select laguage</option>
+        <option >English</option>
+        <option >Tamil</option>
+        <option >Sinhala</option>
         </select>
    </div>
    </div> 
