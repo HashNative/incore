@@ -199,7 +199,7 @@
           
             <li class="nav-item has-treeview">
             <a href="{{route('course.index')}}" class="nav-link ">
-              <i class="fas fa-graduation-cap"></i>
+              <i class="nav-icon fas fa-graduation-cap"></i>
               <p>
                 Course
               
@@ -237,35 +237,12 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          
-          <div class="col-sm-6">
-            
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-     
-      @yield('content')
-     
-    </section>
-    <!-- /.content -->
+  @yield('content')
+  
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
   <footer class="main-footer">
