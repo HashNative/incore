@@ -4,7 +4,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            
+           <a href="{{route('course.create')}}" class="btn  btn-primary" tittle="show details">
+            <i class="fas fa-plus"></i>
+                Add Course
+            </a>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -16,10 +19,7 @@
         </div><div class="0"></div>
       </div><!-- /.container-fluid -->
 </section>
-    <a href="{{route('course.create')}}" class="btn  btn-primary" tittle="show details">
-    <i class="fas fa-plus"></i>
-                Add Course
-            </a>
+    
       
       <!-- Main content -->
  <section class="content">
@@ -27,14 +27,14 @@
         <div class="col-12">
         <div class="card">
             <div class="card-header">
-              <h3 class="card-title">DataTable with default features</h3>
+              <h3 class="card-title">Course Details</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                    <th>Course Id </th>
+                 
                     <th>Course Name </th>
                     <th>Registration date</th>
                     <th>Course fees</th>
@@ -48,7 +48,7 @@
                     <body>
                     @foreach ($courses as $course)
                     <tr>
-                        <td>{{ $course->course_id}}</td>
+                       
                         <td>{{ $course->course_name}}</td>
                         <td>{{ $course->registration_date}}</td>
                         <td>{{ $course->course_fees}}</td>
@@ -64,7 +64,7 @@
 
 
            <input type = "hidden" name = "_method" value="edit">
-           <a href="{{route('course.edit',$course->id)}}" tittle="edit details"class="btn btn-sm"style="color:#009933";>
+           <a href="{{route('course.edit',$course->id)}}" tittle="edit details"class="btn btn-sm"style="color:#ffc107";>
             <i class="fa fa-edit"></i></a>
 
                 <input type = "hidden" name = "_method" value="delete"> 

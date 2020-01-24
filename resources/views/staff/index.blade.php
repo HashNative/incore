@@ -20,6 +20,8 @@
 <a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
     Add Staff
 </a>
+<br>
+<br>
 
 <!-- Main content -->
 <section class="content">
@@ -27,7 +29,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">DataTable with default features</h3>
+                    <h3 class="card-title">Staff</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -36,10 +38,11 @@
                     <thead>
 
 <tr>
-    <th>Staff Id </th>
+<th>Id</th>
     <th>Staff Name </th>
+    <th>email</th>
     <th>Languages</th>
-
+    
     <th>Mobile Number</th>
     <th>Actions</th>
 
@@ -48,24 +51,30 @@
 <tbody>
 @foreach ($staffs as $staff)
 <tr>
-    <td>{{ $staff->staff_id}}</td>
+    <td>{{ $staff->id}}</td>
     <td>{{ $staff->staff_name}}</td>
+    <td>{{ $staff->email}}</td>
+    
     <td>{{ $staff->languages}}</td>
+    
     <td>{{ $staff->mobile_number}}</td>
 
 
                      <td>
                     
                     <form action = "{{route('staff.destroy',$staff->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
+                       
                         <input type = "hidden" name = "_method" value = "delete"> 
                             
                             {{csrf_field()}}
                         
                             
-                        <a href="{{route('staff.edit',$staff->id)}}" tittle="edit details"class=" btn btn-sm fas fa-edit"style="color:#009933";>    
-                        <button type="submit"class="btn btn-sm" ><i tittle="delete details"class= "fa fa-trash"style="color:#cc0000";></i></button>
+                        <a href="{{route('staff.edit',$staff->id)}}" tittle="edit details"class=" btn btn-sm fas fa-edit"style="color:#ffc107";>
+                            
+                        <button type="submit"class="btn btn-sm" ><i tittle="delete details"class= "fa fa-trash"style="color:#cc0000";></i></button></form>
                    
                     </td>
+                    
        
 
 </tr>

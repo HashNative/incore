@@ -38,14 +38,9 @@
                   </div> 
                     </div>
                     <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for ="status">Status</label>
-                        <select class="form-control" name ="status" id ="status" value = "{{$student ->status}}">
-                          <option>Registered</option>
-                          <option>Pending</option>
-                          <option>Declined</option>
-                          
-                        </select>
+                    <div class="form-group">            
+                    <label for ="email_id">Email Id</label> 
+        <input type ="text" name ="email_id" id ="email_id" class="form-control"value = "{{$student ->email_id}}">
                       </div>
                     </div>
                   </div>
@@ -53,29 +48,64 @@
                     <div class="col-sm-6">
                     
                       <div class="form-group">
-                  <label for ="email_id">Email Id</label> 
-        <input type ="text" name ="email_id" id ="email_id" class="form-control"value = "{{$student ->email_id}}">
-                  </div>
-                    </div>
-                    <div class="col-sm-6">
-                    <div class="form-group">
-                  <label for ="address">Address</label> 
-        <input type ="text" name ="address" id ="address" class="form-control" value = "{{$student ->address}}">
-                  </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                    <div class="form-group">
-                  <label for ="phone_number">Phone Number</label> 
+                      <label for ="phone_number">Phone Number</label> 
         <input type ="text" name ="phone_number" id ="phone_number" class="form-control" value = "{{$student ->phone_number}}">
                   </div>
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                    <label for ="register_by">Register By</label> 
+        <input type ="text" name ="register_by" id ="register_by" class="form-control" value = "{{$student ->register_by}}">
+                 
+                  </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                  <label for ="course_name">Course Name</label> 
+        <input type ="text" name ="course_name" id ="course_name" class="form-control" value = "{{$student ->course_name}}">
+                  </div>
 
                     </div>
 
                     <div class="col-sm-6">
                     <div class="form-group">
-                  <label for ="course_id">Course Id</label> 
-        <input type ="text" name ="course_id" id ="course_id" class="form-control" value = "{{$student ->course_id}}">
+                  <label for ="inquiry_by">Inquiry By</label> 
+                         <input type ="text" name ="inquiry_by" id ="inquiry_by" class="form-control" value = "{{$student ->inquiry_by}}">
+                  </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                  <label for ="inquiry_source">Inquiry Source</label> 
+                        <input type ="text" name ="inquiry_source" id ="inquiry_source" class="form-control" value = "{{$student ->inquiry_source}}">
+                  </div>
+
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                        <label for ="transfer">Transfer</label> 
+                          <select type ="text" class="form-control" name ="transfer" id ="transfer" value = "{{$student ->transfer}}">
+                            
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                            
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                  <label for ="source">Source</label> 
+        <input type ="text" name ="source" id ="source" class="form-control" value = "{{$student ->source}}">
+                  </div>
+
+                    </div>
+
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                    <label for ="date">Date</label> 
+                    <input type ="date" name ="date" id ="date" class="form-control" value = "{{$student ->date}}">
                   </div>
                     </div>
                     

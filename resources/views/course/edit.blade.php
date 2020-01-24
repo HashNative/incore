@@ -33,41 +33,34 @@
                 <form role="form">
                   <div class="row">
                     <div class="col-sm-6">
-
-                    <div class="form-group">
-                        <label for ="course_id">Course ID</label> 
-                        <input type ="text" name ="course_id" id ="course_id" class="form-control" value = "{{$course -> course_id}}">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
                       <div class="form-group">
                       <label for ="course_name">Course Name</label>
                       <input type ="text" name ="course_name" id ="course_name"class="form-control"value = "{{$course -> course_name}}"/>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
+                  
                   <div class="col-sm-6">
                    <div class="form-group">
                           <label for ="registration_date">Registraion Date</label>
                           <input type ="date" name ="registration_date" id ="registration_date"class="form-control"value = "{{$course -> registration_date}}">
                       </div>
                     </div>
+                  </div>
+                    <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
                           <label for ="course_fees">Course Fees</label>
                           <input type ="number" name ="course_fees" id ="course_fees"class="form-control"value = "{{$course -> course_fees}}">
                       </div>
                     </div>
-                  </div>
-                  
-                  <div class="row">
                 <div class="col-sm-6">
                  <div class="form-group">
                         <label for ="start_by">Start By</label>
                         <input type ="date" name ="start_by" id ="start_by"class="form-control"value = "{{$course -> start_by}}">
                       </div>
                     </div>
+                    </div>
+                    <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
                           <label for ="end_by">End By</label>
@@ -79,7 +72,6 @@
                          <label for ="description">Description</label>
                          <input type ="textarea" name ="description" id ="description"class="form-control"value = "{{$course -> description}}"></textarea>
                       </div>
-                    </div>
                   </div>
                </div>
                     
