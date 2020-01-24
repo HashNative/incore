@@ -40,6 +40,7 @@
                       <div class="form-group">
                       <label>Phone number</label>
                       <input type="text" name="phone_number" class="form-control" id ="phone_number" placeholder="Enter the Phone number">
+
                     </div>
                    
                     </div>

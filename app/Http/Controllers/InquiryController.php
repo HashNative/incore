@@ -50,7 +50,8 @@ class InquiryController extends Controller
         $inquiry->email =$request ->email;
 
         $inquiry->follow_up =$request ->follow_up;
-        $inquiry->date_time =$request ->date_time;
+        date_default_timezone_set("Asia/Colombo");
+        $inquiry->date_time =date('Y-m-d h:i:s');
         $inquiry->save();
         return redirect('/inquiry');
         //
