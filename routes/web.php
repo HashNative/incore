@@ -11,10 +11,12 @@
 |
 */
 
-
-
 Route::resource('/','HomeController');
 Route::resource('staff','StaffController');
 Route::resource('inquiry','InquiryController');
 Route::resource('course','CourseController');
 Route::resource('student','StudentController');
+Route::get('/login', function () {
+    return view('auth.login');
+   });
+   

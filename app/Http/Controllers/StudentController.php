@@ -41,11 +41,17 @@ class StudentController extends Controller
         $student = new  Student;
         $student->id =$request ->id;
         $student->student_name =$request ->student_name;
-        $student->status =$request ->status;
+      
         $student->email_id =$request ->email_id;
         $student->address =$request ->address;
         $student->phone_number =$request ->phone_number;
-        $student->course_id =$request ->course_id;
+        $student->course_name =$request ->course_name;
+        $student->transfer =$request ->transfer;
+        $student->inquiry_source =$request ->inquiry_source;
+        $student->source =$request ->source;
+        $student->inquiry_by =$request ->inquiry_by;
+        $student->register_by =$request ->register_by;
+                                                                  
         
         $student->save();
         return redirect('/student');
@@ -90,11 +96,16 @@ class StudentController extends Controller
         $student= Student ::find ($id);
         
         $student->student_name =$request ->student_name;
-        $student->status =$request ->status;
+      
         $student->email_id =$request ->email_id;
         $student->address =$request ->address;
         $student->phone_number =$request ->phone_number;
-        $student->course_id =$request ->course_id;
+        $student->course_name =$request ->course_name;
+        $student->transfer =$request ->transfer;
+        $student->inquiry_source =$request ->inquiry_source;
+        $student->source =$request ->source;
+        $student->inquiry_by =$request ->inquiry_by;
+        $student->register_by =$request ->register_by;
         $student->update();
         return redirect('/student');
         //
