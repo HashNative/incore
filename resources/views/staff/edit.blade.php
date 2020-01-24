@@ -40,21 +40,26 @@
     <div  class ="col-md-6">
         <label for ="staff_name">Staff Name</label>
         <input type ="text" name ="staff_name" id ="staff_name"value = "{{$staff -> staff_name}}"class="form-control" >
-        
    </div>
+
+   <div  class ="col-md-6">
+        <label for ="email">email</label>
+        <input type ="text" name ="email" id ="email"value = "{{$staff -> email}}"class="form-control" >
+   </div>
+
+        
+    
    <div  class ="col-md-6">
         <label for ="languages">Language</label>
         <input type ="text" name ="languages" id ="languages"value = "{{$staff -> languages}}"class="form-control" >
    </div>
    <div  class ="col-md-6">
         <label for ="mobile_number">Mobile Number</label>
-        <input type ="number" name ="mobile_number" id ="mobile_number"value = "{{$staff -> mobile_number}}"class="form-control">    
+        <input type ="number" name ="mobile_number" id ="mobile_number"value = "{{$staff -> mobile_number}}"class="form-control">   
+        <br>
+        <a href ="{{URL::previous()}}" class="btn bg-gradient-primary " href="#">Back</a> 
         </div>
-
-
-
-
-   <div  class ="col-md-12">
+   <div  class ="col-md-6">
         <label for ="password">Password</label>
         <input type ="text" name ="password" id ="password"value = "{{$staff -> password}}"class="form-control">
 
@@ -68,7 +73,7 @@
 
 <input type ="submit"  value="Save" class="btn btn-success float-right">     
 
-<a href ="{{URL::previous()}}" class="btn bg-gradient-primary " href="#">Back</a>
+
   
 </form>
 </div>
