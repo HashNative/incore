@@ -43,7 +43,7 @@ class StudentController extends Controller
         $student->student_name =$request ->student_name;
       
         $student->email_id =$request ->email_id;
-        $student->address =$request ->address;
+        $student->date =$request ->date;
         $student->phone_number =$request ->phone_number;
         $student->course_name =$request ->course_name;
         $student->transfer =$request ->transfer;
@@ -98,7 +98,7 @@ class StudentController extends Controller
         $student->student_name =$request ->student_name;
       
         $student->email_id =$request ->email_id;
-        $student->address =$request ->address;
+      
         $student->phone_number =$request ->phone_number;
         $student->course_name =$request ->course_name;
         $student->transfer =$request ->transfer;
@@ -106,6 +106,7 @@ class StudentController extends Controller
         $student->source =$request ->source;
         $student->inquiry_by =$request ->inquiry_by;
         $student->register_by =$request ->register_by;
+        $student->date =$request ->date;
         $student->update();
         return redirect('/student');
         //
