@@ -1,5 +1,21 @@
 @extends('layouts.master')
 @section('content')
+<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active">staff</li>
+              
+            </ol>
+          </div>
+        </div><div class="0"></div>
+      </div><!-- /.container-fluid -->
+</section>
 
 <a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
     Add Staff
