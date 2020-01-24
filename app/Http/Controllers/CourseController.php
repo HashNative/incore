@@ -34,6 +34,19 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
+=======
+        $course = new Course;
+        $course->id =$request ->id;
+        $course->course_name =$request ->course_name;
+        $course->registration_date =$request ->registration_date;
+        $course->course_fees =$request ->course_fees;
+        $course->description =$request ->description;
+        $course->start_by =$request ->start_by;
+        $course->end_by =$request ->end_by;
+        $course->save();
+        return redirect('/course');
+>>>>>>> b5b36d73b4b98d11261378f34a3f5d6c9099e6a9
         //
     }
 
@@ -68,6 +81,18 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
+<<<<<<< HEAD
+=======
+        $course = Course ::find ($id);;
+        $course->course_name =$request ->course_name;
+        $course->registration_date =$request ->registration_date;
+        $course->course_fees =$request ->course_fees;
+        $course->description =$request ->description;
+        $course->end_by =$request ->end_by;
+        $course->start_by =$request ->start_by;
+        $course->update();
+        return redirect('/course');
+>>>>>>> b5b36d73b4b98d11261378f34a3f5d6c9099e6a9
         //
     }
 

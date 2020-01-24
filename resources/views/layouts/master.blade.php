@@ -143,7 +143,7 @@
           <div class="dropdown-divider"></div>
     
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">Log out</a>
+          <a href="/login" class="dropdown-item dropdown-footer">Log out</a>
           </div>
 
       </li>
@@ -254,6 +254,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+        
       @yield('content')
       </div><!--/. container-fluid -->
     </section>

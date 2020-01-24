@@ -40,11 +40,13 @@ class StaffController extends Controller
     public function store(Request $request)
     {
         $staff = new  Staff;
-        $staff->staff_id =$request ->staff_id;
+        $staff->id =$staff ->id;
         $staff->staff_name =$request ->staff_name;
         $staff->languages =$request ->languages;
         $staff->mobile_number =$request ->mobile_number;
         $staff->password =$request ->password;
+        $staff->email =$request ->email;
+
         $staff->save();
         return redirect('/staff');
         //
@@ -84,11 +86,11 @@ class StaffController extends Controller
     public function update(Request $request, $id)
     {
         $staff= Staff ::find ($id);
-        $staff->staff_id =$request->staff_id;
+        
         $staff->staff_name =$request->staff_name;
         $staff->languages =$request->languages;
         $staff->password =$request ->password;
-
+        $staff->email =$request ->email;
         $staff->mobile_number =$request->mobile_number;
         $staff->update();
         return redirect('/staff');
