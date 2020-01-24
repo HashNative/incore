@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Staff;
-
+use FollowUp;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class StaffController extends Controller
+class FollowupController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class StaffController extends Controller
      */
     public function index()
     {
-       $staffs = Staff::All();
-       return view('staff.index',compact('staffs'));
+        $follows = FollowUp::All();
+        return view('inquiry.index',compact('follows'));
         //
     }
 
@@ -27,8 +27,6 @@ class StaffController extends Controller
     public function create()
     {
         
-        return view('staff.create');
-        //
     }
 
     /**
@@ -39,18 +37,18 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        $staff = new  Staff;
-        $staff->id =$staff ->id;
-        $staff->staff_name =$request ->staff_name;
-        $staff->languages =$request ->languages;
-        $staff->mobile_number =$request ->mobile_number;
+        $follow = new  Staff;
+        $follow->id =$request ->id;
+        $follow->inquiry_id =$request ->inquiry_id;
+        $follow->inquiry_by =$request ->inquiry_by;
+        $follow->follow_up =$request ->follow_up;
         
-        $staff->email =$request ->email;
-        $staff->password = bcrypt($request->password);
-        $staff->save();
-        return redirect('/staff');
+        $follow->description =$request ->description;
+        $follow->status  =$request ->status;
+        $follow->date_time  =$request ->date_time;
 
-      
+        $follow->save();
+        return redirect('/inquiry');
 
         //
     }
@@ -63,8 +61,7 @@ class StaffController extends Controller
      */
     public function show($id)
     {
-        $staff= Staff ::find ($id);
-        return view('staff.show',compact('staff'));
+        //
     }
 
     /**
@@ -72,11 +69,10 @@ class StaffController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-      */
+     */
     public function edit($id)
     {
-        $staff= Staff ::find ($id);
-        return view('staff.edit',compact('staff'));
+        //
     }
 
     /**
@@ -90,19 +86,16 @@ class StaffController extends Controller
     {
         $staff= Staff ::find ($id);
         
-        $staff->staff_name =$request->staff_name;
-        $staff->languages =$request->languages;
-        $staff->password =Hash::make($request ->password);
-        $staff->email =$request ->email;
-        $staff->mobile_number =$request->mobile_number;
-        $request->merge(['password' => bcrypt($request->get('password'))]);
-
-        if($request->get('password')) {
-            $staff->password = bcrypt($request->get('password'));
-        }
-
+        $follow->inquiry_id =$request ->inquiry_id;
+        $follow->inquiry_by =$request ->inquiry_by;
+        $follow->follow_up =$request ->follow_up;
+        
+        $follow->description =$request ->description;
+        $follow->status  =$request ->status;
+        $follow->date_time  =$request ->date_time;
         $staff->update();
-        return redirect('/staff');
+        return redirect('/inquiry');
+        //
     }
 
     /**
@@ -113,9 +106,6 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        $staff =  Staff::find($id);
-        $staff->delete();
-
-        return redirect('/staff');
+        //
     }
 }

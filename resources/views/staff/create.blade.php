@@ -55,11 +55,15 @@
         <label for ="mobile_number">Mobile Number</label>
         <input type ="number" name ="mobile_number" id ="mobile_number"   placeholder="Enter the mobile number"class="form-control">
     </div> 
+    <div class ="col-md-6"> 
+        <label for ="email">email</label>
+        <input type ="text" name ="email" id ="email"   placeholder="Enter the mobile number"class="form-control">
+    </div> 
     
  
         <div class ="col-md-12"> 
         <label for ="password">Password</label>
-        <input type ="number" name ="password" id ="password"   placeholder="Enter password"class="form-control">
+        <input type ="text" name ="password" id ="password"   placeholder="Enter password"class="form-control">
     
     <br>
 

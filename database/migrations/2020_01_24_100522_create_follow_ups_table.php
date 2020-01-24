@@ -16,10 +16,11 @@ class CreateFollowUpsTable extends Migration
         Schema::create('follow_ups', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('inquiry_id');
+            $table->integer('inquiry_by');
             $table->String('follow_up');
-            $table->String('name');
             $table->String('description');
-
+            $table->integer('status');
+            $table->dateTime('date_time');
             
             $table->timestamps();
         });

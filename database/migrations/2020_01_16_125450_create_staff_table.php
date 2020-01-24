@@ -18,7 +18,7 @@ class CreateStaffTable extends Migration
            
             $table->String('staff_name',30);
             $table->String('languages',20);
-            $table->String('password',20);
+            $table->String('password');
             $table->String('email');
           
             $table->integer('mobile_number');

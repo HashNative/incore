@@ -1,13 +1,13 @@
 <?php
 
 namespace App;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Auth\Authenticatable;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+class Staff extends Model implements AuthenticatableContract {
 
-class User extends Authenticatable
-{
-    use Notifiable;
+    use Authenticatable;
 
     /**
      * The attributes that are mass assignable.
