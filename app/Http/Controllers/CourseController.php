@@ -39,7 +39,7 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $course = new Course;
-        $course->course_id =$request ->course_id;
+        $course->id =$request ->id;
         $course->course_name =$request ->course_name;
         $course->registration_date =$request ->registration_date;
         $course->course_fees =$request ->course_fees;
@@ -87,7 +87,6 @@ class CourseController extends Controller
     public function update(Request $request, $id)
     {
         $course = Course ::find ($id);;
-        $course->course_id =$request ->course_id;
         $course->course_name =$request ->course_name;
         $course->registration_date =$request ->registration_date;
         $course->course_fees =$request ->course_fees;

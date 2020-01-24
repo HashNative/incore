@@ -1,10 +1,21 @@
 @extends('Layouts.master')
 @section('content')
-<html>
-<head>
-    
-</head>
-<body><BR>
+<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active"><a href="{{route('student.index')}}">student</a></li>
+              <li class="breadcrumb-item">addstudent</li>
+            </ol>
+          </div>
+        </div><div class="0"></div>
+      </div><!-- /.container-fluid -->
+</section>
   <div class="d-flex justify-content-center">
     <div class="col-md-10">
             <!-- general form elements disabled -->

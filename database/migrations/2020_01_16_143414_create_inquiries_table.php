@@ -17,10 +17,15 @@ class CreateInquiriesTable extends Migration
           
             $table->increments('id');
             $table->String('source');
-            $table->String('type');
             $table->String('description');
-            $table->String('staff_id',10);
-            $table->integer('student_id');
+            $table->String('name');
+            $table->integer('course_id');
+            $table->String('status');
+            $table->integer('phone_number');
+            $table->String('title');
+            $table->String('inquiry_by');
+            $table->String('email');
+            $table->String('follow_up');
             $table->dateTime('date_time');
             $table->timestamps();
         });
