@@ -52,15 +52,30 @@
 
                     <div class="form-group">
                     <label for ="student_name">Student Name</label>
-                            <input type ="text" name ="student_name"class="form-control" id ="student_name"   placeholder="Enter the Student Name">
+                            <!-- <input type ="text" name ="student_name"class="form-control" 
+                            id="exampleInputPassword1" placeholder="Enter the Student Name">  -->
+                            
+                            
+                            <input type="text" name="student_name" class="form-control" id="exampleInputStudent_name1" placeholder="Enter the Student Name"aria-describedby="exampleInputstudent_name-error" aria-invalid="true">
                       </div>
                     </div>
                     <div class="col-sm-6">
                     <div class="form-group">
-                        <label for ="email_id">Email Id</label>
-                        <input type ="text" name ="email_id" id ="email_id" class="form-control"  placeholder="Enter the Email Id">
+                        <label for="exampleInputEmail1">Email Id</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email" aria-describedby="exampleInputEmail1-error" aria-invalid="true">
                       </div>
                     </div>
+
+                   
+
+
+
+
+
+
+
+
+
 
                     <div class="col-sm-6">
 
@@ -77,8 +92,8 @@
                     <div class="col-sm-6">
                      
                       <div class="form-group">
-                        <label for ="register_by">Register by</label>
-                        <input type ="text" name ="register_by" id ="register_by" class="form-control"  placeholder="Enter the Email Id">
+                        <label for ="register_by">Registered by</label>
+                        <input type ="text" name ="register_by" id ="register_by" class="form-control"  placeholder="Enter the Register by">
                       </div>
                     </div>
                  
@@ -113,7 +128,7 @@
                   <div class="col-sm-6">
 
                       <div class="form-group">
-                       <label for ="transfer">transfer</label>
+                       <label for ="transfer">Transfer</label>
                             <select type="text" name ="transfer" id ="transfer" class="form-control" class="form-control">
                             <option >Select status </option>
                             <option value = "Yes">Yes</option>
@@ -133,8 +148,9 @@
                   <div class="col-sm-6">
 
                   <div class="form-group">
-                        <label for="date">Date</label>
-                        <input type ="date" name ="date" id ="date" class="form-control"  placeholder="Enter the date">
+                  <span data-automation-id="SEL_ERR">
+                      <label for="date">Date</label>
+                        <input type ="date" name ="date" id ="date" class="form-control"  placeholder="Enter the date"></span>
                       </div>
                     </div>
                     </div>
