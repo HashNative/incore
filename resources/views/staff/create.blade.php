@@ -37,10 +37,7 @@
             
             
             <div class ="row">
-            <div class ="col-md-6"> 
-            <label for ="staff_id">Staff Id</label> 
-            <input type ="text" name ="staff_id" id ="staff_id" autofocus placeholder="Enter the Staff Id"class="form-control">
-        </div>
+            
         <div class ="col-md-6"> 
         <label for ="staff_name">Staff Name</label>
         <input type ="text" name ="staff_name" id ="staff_name"  placeholder="Enter the Staff Name"class="form-control">
@@ -62,10 +59,6 @@
         <br>
         <a href ="{{URL::previous()}}" class="btn bg-gradient-primary " href="#">Back</a>
     </div> 
-    <div class ="col-md-6"> 
-        <label for ="email">email</label>
-        <input type ="text" name ="email" id ="email"   placeholder="Enter the mobile number"class="form-control">
-    </div> 
     
  
         <div class ="col-md-6"> 
@@ -79,10 +72,4 @@
 </div>
     </div>
 @endsection
-
-
-
-
-
-
 

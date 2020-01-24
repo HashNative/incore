@@ -92,15 +92,10 @@ class StaffController extends Controller
         
         $staff->staff_name =$request->staff_name;
         $staff->languages =$request->languages;
-        $staff->password =Hash::make($request ->password);
+       
         $staff->email =$request ->email;
         $staff->mobile_number =$request->mobile_number;
-        $request->merge(['password' => bcrypt($request->get('password'))]);
-
-        if($request->get('password')) {
-            $staff->password = bcrypt($request->get('password'));
-        }
-
+        $staff->password = bcrypt($request->password);
         $staff->update();
         return redirect('/staff');
     }

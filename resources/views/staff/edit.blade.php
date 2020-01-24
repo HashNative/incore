@@ -33,10 +33,7 @@
                 <form role="form">
                   <div class="row">
 <div class ="row">
-    <div class ="col-md-6"> 
-        <label for ="staff_id">Staff Id</label> 
-        <input type ="text" name ="staff_id" id ="staff_id" value = "{{$staff -> staff_id}}"class="form-control">
-    </div>
+    
     <div  class ="col-md-6">
         <label for ="staff_name">Staff Name</label>
         <input type ="text" name ="staff_name" id ="staff_name"value = "{{$staff -> staff_name}}"class="form-control" >
@@ -63,7 +60,7 @@
         <label for ="password">Password</label>
         <input type ="text" name ="password" id ="password"value = "{{$staff -> password}}"class="form-control">
 
-</div>
+
         
 
         
@@ -81,5 +78,3 @@
 
 
  @endsection
-
-
