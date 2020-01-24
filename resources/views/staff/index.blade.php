@@ -1,58 +1,72 @@
 @extends('layouts.master')
 @section('content')
-<html>
-<head>
 
-    </head>
-    <body>
+<a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
+    Add Staff
+</a>
 
-    <a href="{{route('staff.create')}}" tittle="Add">
-                add
-            </a>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">DataTable with default features</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
 
-     <table   > 
-     <thead>
-     <tr>
+                    <thead>
+
+<tr>
     <th>Staff Id </th>
     <th>Staff Name </th>
     <th>Languages</th>
-    
-    <th>Mobile Number</th>   
 
-    </tr>
-    </thead>
-    <tbody>
-    @foreach ($staffs as $staff)
-    <tr>
-        <td>{{ $staff->staff_id}}</td>
-        <td>{{ $staff->staff_name}}</td>
-        <td>{{ $staff->languages}}</td>
-        
-        <td>{{ $staff->mobile_number}}</td>
+    <th>Mobile Number</th>
+    <th>Actions</th>
+
+</tr>
+</thead>
+<tbody>
+@foreach ($staffs as $staff)
+<tr>
+    <td>{{ $staff->staff_id}}</td>
+    <td>{{ $staff->staff_name}}</td>
+    <td>{{ $staff->languages}}</td>
+    <td>{{ $staff->mobile_number}}</td>
 
 
-
-       <td>
-            <form action = "{{route('staff.destroy',$staff->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
-                <input type = "hidden" name = "_method" value = "delete"> 
-                {{csrf_field()}}
-                <button type="submit" ><i tittle="delete details"></i></button>
-            
-            </form>
-        
-            <a href="{{route('staff.edit',$staff->id)}}" tittle="edit details">
-               edit
-            </a>
-           <a href="{{route('staff.show',$staff->id)}}" tittle="show details">
-            view
-            </a>
-       </td>
+                     <td>
+                    
+                    <form action = "{{route('staff.destroy',$staff->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
+                        <input type = "hidden" name = "_method" value = "delete"> 
+                            
+                            {{csrf_field()}}
+                        
+                            
+                        <a href="{{route('staff.edit',$staff->id)}}" tittle="edit details"class=" btn btn-sm fas fa-edit"style="color:#009933";>    
+                        <button type="submit"class="btn btn-sm" ><i tittle="delete details"class= "fa fa-trash"style="color:#cc0000";></i></button>
+                   
+                    </td>
        
-    </tr>
-    @endforeach
-</tbody>
-  
 
-</body>
-</html>
+</tr>
+@endforeach
+</tbody>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+
+
 @endsection

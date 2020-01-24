@@ -44,6 +44,7 @@ class StaffController extends Controller
         $staff->staff_name =$request ->staff_name;
         $staff->languages =$request ->languages;
         $staff->mobile_number =$request ->mobile_number;
+        $staff->password =$request ->password;
         $staff->save();
         return redirect('/staff');
         //
@@ -57,7 +58,7 @@ class StaffController extends Controller
      */
     public function show($id)
     {
-        $staff= Staff::find($id);
+        $staff= Staff ::find ($id);
         return view('staff.show',compact('staff'));
     }
 
@@ -69,7 +70,7 @@ class StaffController extends Controller
       */
     public function edit($id)
     {
-        $staff= Staff::find ($id);
+        $staff= Staff ::find ($id);
         return view('staff.edit',compact('staff'));
     }
 
@@ -82,10 +83,12 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $staff= Staff::find ($id);
+        $staff= Staff ::find ($id);
         $staff->staff_id =$request->staff_id;
         $staff->staff_name =$request->staff_name;
         $staff->languages =$request->languages;
+        $staff->password =$request ->password;
+
         $staff->mobile_number =$request->mobile_number;
         $staff->update();
         return redirect('/staff');

@@ -23,8 +23,6 @@ class CreateStudentsTable extends Migration
             $table->integer('phone_number');
             $table->String('course_id',10);
 
-            $table->date('end_by');
-
             $table->timestamps();
         });
     }

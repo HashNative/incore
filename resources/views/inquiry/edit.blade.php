@@ -9,7 +9,7 @@
 
 <div class=" d-flex justify-content-center  ">
                 <div class=" col-8  ">
-            <div class="card card-primary">
+            <div class="card card-warning">
               <div class="card-header">
                 <h3 class="card-title">Edit</h3>
               </div>
@@ -56,33 +56,11 @@
                     <div class="col-sm-6">
                     <div class="form-group">
                   <label for ="date_time">Date Time</label> 
-        <input type ="datetime-local" name ="date_time" class="form-control" id ="date_time" value = "{{$inquiry->date_time}}">
+                       <input type ="datetime-local" name ="date_time" class="form-control" id ="date_time" value = "{{$inquiry->date_time}}">
                   
                     </div>
                     </div>
-                    
-                    <!-- <div class="form-group">
-                  <label for ="staff_id">Staff ID</label> 
-        <input type ="text" name ="staff_id" class="form-control" id ="staff_id" value = "{{$inquiry->staff_id}}">
-                  </div>
-                    </div>
-                    
-
-                    <div class="col-sm-6">
-                    <div class="form-group">
-                  <label for ="student_id">Student Id</label> 
-        <input type ="text" name ="student_id" class="form-control" id ="student_id" value = "{{$inquiry->student_id}}">
-                  </div>
-
-                    </div>
-
-                    <div class="col-sm-6">
-                    <div class="form-group">
-                  <label for ="date_time">Date Time</label> 
-        <input type ="text" name ="date_time" class="form-control" id ="date_time" value = "{{$inquiry->date_time}}">
-                  </div>
-                    </div>
-                     -->
+                  
               </form>
               
                   </div>

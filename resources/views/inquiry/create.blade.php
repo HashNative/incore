@@ -37,8 +37,8 @@
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                      <label>Description</label>
-                        <input type="text" name ="description" class="form-control" id ="description" placeholder="Enter the description">
+                      <label>Student Id</label>
+                        <input type="text" name ="student_id" class="form-control" id ="student_id" placeholder="Enter the student_id">
                     </div>
                    
                     </div>
@@ -51,8 +51,8 @@
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                      <label>Student Id</label>
-                        <input type="text" name="student_id" class="form-control" id ="student_id"   placeholder="Enter the student id">
+                      <label>Description</label>
+                      <textarea name="description" id ="description" class="form-control" autofocus placeholder="Enter the Description"></textarea>
                     </div>
                    
                     </div>
