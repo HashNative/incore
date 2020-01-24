@@ -4,7 +4,9 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            
+          <a href="{{route('student.create')}}"  class="btn  btn-primary" tittle="show details">
+    <i class="fas fa-user-plus"></i> Student Register 
+   </a>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -16,17 +18,13 @@
         </div><div class="0"></div>
       </div><!-- /.container-fluid -->
 </section>
-
-    <a href="{{route('student.create')}}"  class="btn  btn-primary" tittle="show details">
-    <i class="fas fa-user-plus"></i> Student Register 
-   </a>
-    
+   
    <section class="content">
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">DataTable with default features</h3>
+                    <h3 class="card-title">Student details</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -35,28 +33,44 @@
                     <thead>
      <tr>
     
+     <th>Student Id</th>
     <th>Student Name</th>
-    <th>Status</th>
-    <th>Email Id</th>   
-    <th>Address</th> 
+    <th>Email Id</th>
+      
+    <th>Phone Number</th> 
+    <th>Register By</th> 
+    <th>Course Name</th>
+    <th>Inquiry By</th>   
+    <th>Inquiry Source</th> 
+    <th>Transfer</th>  
+    <th>Source</th>  
+    <th> Date</th>  
     
-    <th>Phone Number</th>  
-    <th>Course Id</th> 
-    <th>Actions</th>  
+    
+    <th>Actions</th> 
+    
      
 
     </tr>
     </thead>
-    <tbody>
+    <body>
     @foreach ($students as $student)
     <tr>
       
+        <td>{{ $student->id}}</td>
         <td>{{ $student->student_name}}</td>
-        <td>{{ $student->status}}</td>
         <td>{{ $student->email_id}}</td>
-        <td>{{ $student->address}}</td>
         <td>{{ $student->phone_number}}</td>
-        <td>{{ $student->course_id}}</td>
+        <td>{{ $student->register_by}}</td>
+        <td>{{ $student->course_name}}</td>
+        <td>{{ $student->inquiry_by}}</td>
+        <td>{{ $student->inquiry_source}}</td>
+        <td>{{ $student->transfer}}</td>
+        <td>{{ $student->source}}</td>
+        <td>{{ $student->date}}</td>
+      
+      
+       
         
            
            <td>
@@ -71,7 +85,7 @@
                 </a>
                 
                
-                <a href="{{route('student.edit',$student->id)}}" tittle="edit details" class="btn btn-sm " style="color:#009933";>
+                <a href="{{route('student.edit',$student->id)}}" tittle="edit details" class="btn btn-sm " style="color:#ffc107";>
                     <i class="fas fa-edit"> </i>
                 </a>
                 
@@ -84,7 +98,7 @@
                 
     </tr>
     
-    </tbody>
+    
    
     @endforeach
              </tbody>

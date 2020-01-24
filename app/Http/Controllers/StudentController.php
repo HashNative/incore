@@ -43,7 +43,7 @@ class StudentController extends Controller
         $student->student_name =$request ->student_name;
         $student->date =$request ->date;
         $student->email_id =$request ->email_id;
-       
+        $student->date =$request ->date;
         $student->phone_number =$request ->phone_number;
         $student->course_name =$request ->course_name;
         $student->transfer =$request ->transfer;
@@ -55,6 +55,8 @@ class StudentController extends Controller
         
         $student->save();
         return redirect('/student');
+
+        
         //
     }
 
@@ -68,7 +70,7 @@ class StudentController extends Controller
     {
         $student= Student ::find ($id);
         return view('student.show',compact('student'));
-        //
+        
     }
 
     /**
@@ -98,7 +100,7 @@ class StudentController extends Controller
         $student->student_name =$request ->student_name;
       
         $student->email_id =$request ->email_id;
-       
+      
         $student->phone_number =$request ->phone_number;
         $student->course_name =$request ->course_name;
         $student->transfer =$request ->transfer;
@@ -107,6 +109,7 @@ class StudentController extends Controller
         $student->date =$request ->date;
         $student->inquiry_by =$request ->inquiry_by;
         $student->register_by =$request ->register_by;
+        $student->date =$request ->date;
         $student->update();
         return redirect('/student');
         //
