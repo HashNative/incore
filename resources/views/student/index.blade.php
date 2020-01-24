@@ -10,7 +10,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">DataTable with default features</h3>
+                    <h3 class="card-title">Student details</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -31,7 +31,7 @@
 
     </tr>
     </thead>
-    <tbody>
+    <body>
     @foreach ($students as $student)
     <tr>
       
@@ -68,7 +68,7 @@
                 
     </tr>
     
-    </tbody>
+    
    
     @endforeach
              </tbody>
