@@ -10,7 +10,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('course.index')}}">course</a></li>
-              <li class="breadcrumb-item">addcoure</li>
+              <li class="breadcrumb-item">addcourse</li>
             </ol>
           </div>
         </div><div class="0"></div>
@@ -33,12 +33,7 @@
          <div class="card-body">
                 <form role="form">
                   <div class="row">
-                    <div class="col-sm-6">
-                     <div class="form-group">
-                      <label for ="course_id">Course ID</label>
-                       <input type="text" class="form-control"name ="course_id" id="course_id" placeholder="Enter the Course ID">
-           </div>
-           </div>
+           
            <div class="col-sm-6">
              <div class="form-group">
                  <label for ="course_name">Course Name</label>
