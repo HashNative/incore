@@ -35,42 +35,63 @@
                 <form role="form">
                   <div class="row">
             
-            
-            <div class ="row">
-            <div class ="col-md-6"> 
+            <div class ="col-md-6">
+            <div class="from-group"> 
             <label for ="staff_id">Staff Id</label> 
             <input type ="text" name ="staff_id" id ="staff_id" autofocus placeholder="Enter the Staff Id"class="form-control">
         </div>
-        <div class ="col-md-6"> 
+        </div>
+        <div class ="col-md-6">
+        <div class="from-group"> 
         <label for ="staff_name">Staff Name</label>
         <input type ="text" name ="staff_name" id ="staff_name"  placeholder="Enter the Staff Name"class="form-control">
     </div> 
+    </div>
 
-    <div class ="col-md-6"> 
+    <div class ="col-md-6">
+    <div class="from-group"> 
         <label for ="email">email</label>
         <input type ="text" name ="email" id ="email" placeholder="Enter the email"class="form-control">
     </div> 
+    </div>
   
         <div class ="col-md-6"> 
+        <div class="from-group">
         <label for ="languages">Language</label>
-        <input type ="text" name ="languages" id ="languages" placeholder="Enter the language"class="form-control">
+        <select type ="text" name ="languages" id ="languages" class="form-control" >
+        <option>select laguage<option>
+        <option value="english">English<option>
+        <option value="tamil">Tamil<option>
+        <option value="sinhala">Sinhala<option></select>
+    </div> 
     </div> 
   
         <div class ="col-md-6"> 
+        <div class="from-group">
         <label for ="mobile_number">Mobile Number</label>
         <input type ="number" name ="mobile_number" id ="mobile_number"   placeholder="Enter the mobile number"class="form-control">
         <br>
-        <a href ="{{URL::previous()}}" class="btn bg-gradient-primary " href="#">Back</a>
+        
+    </div> 
     </div> 
     
  
         <div class ="col-md-6"> 
+        <div class="from-group">
         <label for ="password">Password</label>
-        <input type ="text" name ="password" id ="password"   placeholder="Enter password"class="form-control">
+        <input type ="password" name ="password" id ="password"   placeholder="Enter password"class="form-control">
+        </div>
+        </div>
     
-    <br>
+           
+</from>
+</div>
 
-    <input type ="submit"  value="Create"class="btn btn-success float-right">
+   
+<div class="card-footer">
+<a href ="{{URL::previous()}}" class="btn bg-gradient-primary float-left " href="#">Back</a> 
+<button type ="submit"  value="Save" class="btn btn-success float-right">Save </button>    
+
     
 </div>
     </div>
