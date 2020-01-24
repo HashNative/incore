@@ -40,10 +40,16 @@ class InquiryController extends Controller
         $inquiry = new  Inquiry;
         $inquiry->id =$request ->id;
         $inquiry->source =$request ->source;
-        $inquiry->type =$request ->type;
         $inquiry->description =$request ->description;
-        $inquiry->staff_id =$request ->staff_id;
-        $inquiry->student_id =$request ->student_id;
+        $inquiry->name =$request ->name;
+        $inquiry->course_id =$request ->course_id;
+        $inquiry->status =$request ->status;
+        $inquiry->phone_number =$request ->phone_number;
+        $inquiry->title =$request ->title;
+        $inquiry->inquiry_by =$request ->inquiry_by;
+        $inquiry->email =$request ->email;
+
+        $inquiry->follow_up =$request ->follow_up;
         $inquiry->date_time =$request ->date_time;
         $inquiry->save();
         return redirect('/inquiry');
@@ -88,10 +94,16 @@ class InquiryController extends Controller
         $inquiry =Inquiry::find ($id);;
        
         $inquiry->source =$request ->source;
-        $inquiry->type =$request ->type;
         $inquiry->description =$request ->description;
-        $inquiry->staff_id =$request ->staff_id;
-        $inquiry->student_id =$request ->student_id;
+        $inquiry->name =$request ->name;
+        $inquiry->course_id =$request ->course_id;
+        $inquiry->status =$request ->status;
+        $inquiry->phone_number =$request ->phone_number;
+        $inquiry->title =$request ->title;
+        $inquiry->inquiry_by =$request ->inquiry_by;
+        $inquiry->email =$request ->email;
+
+        $inquiry->follow_up =$request ->follow_up;
         $inquiry->date_time =$request ->date_time;
         $inquiry->update();
         return redirect('/inquiry');
