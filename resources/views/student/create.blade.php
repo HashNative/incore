@@ -32,7 +32,7 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>Student Id</label>
-                        <input type ="text" name ="student_id" id ="student_name" class="form-control"autofocus placeholder="Enter the Student Id">
+                        <input type ="text" name ="student_id" id="exampleInputstudent_id1" class="form-control"autofocus placeholder="Enter the Student Id"aria-describedby="exampleInputstudent_id-error" aria-invalid="true" required>
                       </div>
                     </div>
                     <!-- <div class="col-sm-6">
@@ -53,36 +53,23 @@
 
                     <div class="form-group">
                     <label for ="student_name">Student Name</label>
-                            <!-- <input type ="text" name ="student_name"class="form-control" 
-                            id="exampleInputPassword1" placeholder="Enter the Student Name">  -->
-                            
-                            
-                            <input type="text" name="student_name" class="form-control" id="exampleInputStudent_name1" placeholder="Enter the Student Name"aria-describedby="exampleInputstudent_name-error" aria-invalid="true">
+                          
+                            <input type="text" name="student_name" class="form-control" id="exampleInputStudent_name1" placeholder="Enter the Student Name"aria-describedby="exampleInputstudent_name-error" aria-invalid="true" required>
                       </div>
                     </div>
                     <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email Id</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email" aria-describedby="exampleInputEmail1-error" aria-invalid="true">
+                        <label for="email_id">Email Id</label>
+                        <input type="email" name="email_id" class="form-control" id="exampleInputemail_id1" placeholder="Enter your email" aria-describedby="exampleInputEmail1-error" aria-invalid="true"required>
                       </div>
                     </div>
-
-                   
-
-
-
-
-
-
-
-
 
 
                     <div class="col-sm-6">
 
                     <div class="form-group">
                     <label for ="phone_number">Phone Number</label>
-                            <input type ="text" name ="phone_number"class="form-control" id ="phone_number"   placeholder="Enter the Phone Number">
+                            <input type ="text" name ="phone_number"class="form-control" id="exampleInputphone_number1" placeholder="Enter the Phone Number" aria-describedby="exampleInputphone_number-error" aria-invalid="true" required>
                       </div>
                     </div>
                   </div>
@@ -94,14 +81,14 @@
                      
                       <div class="form-group">
                         <label for ="register_by">Registered by</label>
-                        <input type ="text" name ="register_by" id ="register_by" class="form-control"  placeholder="Enter the Register by">
+                        <input type ="text" name ="register_by" id="exampleInputregister_by1" class="form-control"placeholder="Enter the Register  by"aria-describedby="exampleInputregister_by-error" aria-invalid="true" required>
                       </div>
                     </div>
                  
                     <div class="col-sm-6">
                       <div class="form-group">
                       <label for ="course_name">Course Name</label>
-                            <input type ="text" name ="course_name" id ="course_name"  class="form-control"  placeholder="Enter the Course name">
+                            <input type ="text" name ="course_name" id="exampleInputcourse_name1"  class="form-control"  placeholder="Enter the Course name"aria-describedby="exampleInputcourse_name-error" aria-invalid="true" required>
                       </div>
                     </div>
                   </div>
@@ -112,14 +99,14 @@
                      
                       <div class="form-group">
                         <label for ="inquiry_by">Inquiry by</label>
-                        <input type ="text" name ="inquiry_by" id ="inquiry_by" class="form-control"  placeholder="Enter the Inquriy by">
+                        <input type ="text" name ="inquiry_by" id="exampleInputinquiry_by1" class="form-control"  placeholder="Enter the Inquriy by"aria-describedby="exampleInputinquiry_by-error" aria-invalid="true" required>
                       </div>
                     </div>
                  
                     <div class="col-sm-6">
                       <div class="form-group">
                       <label for ="inquiry_source">Inquiry source</label>
-                            <input type ="text" name ="inquiry_source" id ="inquiry_source"  class="form-control"  placeholder="Enter the Inquiry source">
+                            <input type ="text" name ="inquiry_source" id="exampleInputinquiry_source1" class="form-control"  placeholder="Enter the Inquiry source"aria-describedby="exampleInputinquiry_source-error" aria-invalid="true" required>
                       </div>
                     </div>
                   </div>
@@ -130,9 +117,9 @@
 
                       <div class="form-group">
                        <label for ="transfer">Transfer</label>
-                            <select type="text" name ="transfer" id ="transfer" class="form-control" class="form-control">
-                            <option >Select status </option>
-                            <option value = "Yes">Yes</option>
+                            <select type="text" name ="transfer" id="transfer" class="form-control" class="form-control" class="required">
+                            
+                            <option value = "Yes" selected>Yes</option>
                             <option value = "no">No</option><select>
                       </div>
                     </div>
@@ -140,7 +127,7 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                       <label for ="source">Source</label>
-                            <input type ="text" name ="source" id ="source"  class="form-control"  placeholder="Enter the Source">
+                            <input type ="text" name ="source" id="exampleInputsource1"  class="form-control"  placeholder="Enter the Source"aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                       </div>
                     </div>
                   </div>
@@ -151,7 +138,7 @@
                   <div class="form-group">
                   <span data-automation-id="SEL_ERR">
                       <label for="date">Date</label>
-                        <input type ="date" name ="date" id ="date" class="form-control"  placeholder="Enter the date"></span>
+                        <input type ="date" name ="date" id="exampleInputdate1"  class="form-control"  placeholder="Enter the date"aria-describedby="exampleInputdate-error" aria-invalid="true" required></span>
                       </div>
                     </div>
                     </div>
