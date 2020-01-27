@@ -208,7 +208,7 @@
             </li>
             <li class="nav-item has-treeview">
             <a href="{{route('inquiry.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-question-circle  "></i>
               <p>
                 Inquiry
                 
@@ -295,6 +295,8 @@
       "autoWidth": false,
     });
   });
+
+
 </script>
 </body>
 </html>

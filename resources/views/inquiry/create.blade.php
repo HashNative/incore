@@ -38,44 +38,90 @@
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
+                      <label>Phone number</label>
+                      <input type="text" name="phone_number" class="form-control" id ="phone_number" placeholder="Enter the Phone number">
+
+                    </div>
+                   
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                    <label>Inquiry by</label>
+                        <input type="text" name ="inquiry_by" class="form-control" id ="inquiry_by" placeholder="Enter the inquiry by">
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
                       <label>Source</label>
-                      <input type="text" name="source" class="form-control" id ="source" placeholder="Enter the source">
+                        <input type="text" name ="source" class="form-control" id ="source" placeholder="Enter the source">
                     </div>
                    
                     </div>
                     <div class="col-sm-6">
                     <div class="form-group">
-                    <label>Type</label>
-                        <input type="text" name ="type" class="form-control" id ="type" placeholder="Enter the type">
+                    <label>Course id</label>
+                        <input type="text" name ="course_id" class="form-control" id ="course_id"  placeholder="Enter the course id">
                     </div>
                     </div>
+
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                      <label>Description</label>
-                        <input type="text" name ="description" class="form-control" id ="description" placeholder="Enter the description">
+                      <label>Date Time</label>
+                      <input type="datetime-auto" name="date_time" class="form-control" id ="date_time"   placeholder="Enter the date and time">
                     </div>
                    
                     </div>
                     <div class="col-sm-6">
                     <div class="form-group">
-                    <label>Staff Id</label>
-                        <input type="text" name ="staff_id" class="form-control" id ="staff_id"  placeholder="Enter the staff id">
+                    <label>Title</label>
+                        <input type="text" name ="title" class="form-control" id ="title"  placeholder="Enter the title">
                     </div>
                     </div>
+
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                      <label>Student Id</label>
-                        <input type="text" name="student_id" class="form-control" id ="student_id"   placeholder="Enter the student id">
+                      <label>Name</label>
+                        <input type="text" name ="name" class="form-control" id ="name" placeholder="Enter the name">
                     </div>
                    
                     </div>
                     <div class="col-sm-6">
                     <div class="form-group">
-                    <label>Date Time</label>
-                        <input type="datetime-local" name="date_time" class="form-control" id ="date_time"   placeholder="Enter the date and time">
+                    <label>Email</label>
+                        <input type="text" name ="email" class="form-control" id ="email"  placeholder="Enter the email">
+                    </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                      <label>Status</label>
+                      <select type="text" name ="status" class="form-control" id ="status"placeholder="Enter the status">
+                      <option>Select status</option>
+                        <option>Registered</option>
+                        <option>Pending</option>
+                        <option>Declined</option>
+</select>
+
+
+                    </div>
+                   
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                    <label>Followup id</label>
+                        <input type="text" name="follow_up" class="form-control" id ="follow_up"   placeholder="Enter the followup id">
                   
+                    </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="description" id ="description" class="form-control" autofocus placeholder="Enter the Description"></textarea>
                     </div>
                     </div>
                     
