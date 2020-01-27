@@ -4,12 +4,15 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
+          <a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
+    Add Staff
+</a>
             
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item active">staff</li>
+              <li class="breadcrumb-item active">Staff</li>
               
             </ol>
           </div>
@@ -17,11 +20,8 @@
       </div><!-- /.container-fluid -->
 </section>
 
-<a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
-    Add Staff
-</a>
-<br>
-<br>
+
+
 
 <!-- Main content -->
 <section class="content">
@@ -38,9 +38,9 @@
                     <thead>
 
 <tr>
-<th>Id</th>
+
     <th>Staff Name </th>
-    <th>email</th>
+    <th>Email</th>
     <th>Languages</th>
     
     <th>Mobile Number</th>
@@ -51,7 +51,7 @@
 <tbody>
 @foreach ($staffs as $staff)
 <tr>
-    <td>{{ $staff->id}}</td>
+    
     <td>{{ $staff->staff_name}}</td>
     <td>{{ $staff->email}}</td>
     
