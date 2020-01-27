@@ -278,9 +278,15 @@
 <script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
-<script src="{{asset('../../plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('../../plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
 
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="{{asset('dist/js/pages/dashboard3.js')}}"></script>
+
+<script src="{{asset('plugins/jquery-knob/jquery.knob.min.js')}}"></script>
+<script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script>
 <!-- PAGE SCRIPTS -->
 <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
 <script>

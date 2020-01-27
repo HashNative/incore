@@ -218,7 +218,7 @@
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <div class="col-md-8">
+          <div class="col-md-12">
             <!-- MAP & BOX PANE -->
             <div class="card">
               <div class="card-header">
@@ -266,6 +266,94 @@
               </div>
               <!-- /.card-body -->
             </div>
+            <div class="col-lg-20">
+            <div class="card">
+              <div class="card-header border-0">
+                <div class="d-flex justify-content-between">
+                  <h3 class="card-title">Operator Inquiry Vs Registraion</h3>
+                  </div>
+              </div>
+              <div class="card-body">
+                
+                <!-- /.d-flex -->
+
+                <div class="position-relative mb-4">
+                  <canvas id="sales-chart" height="250"></canvas>
+                </div>
+                  <div class="d-flex flex-row justify-content-end">
+                  <span class="mr-4">
+                    <i class="fas fa-square text-primary"></i> Inquiry
+                  </span>
+                   <span>
+                    <i class="fas fa-square text-gray"></i> Registration
+                  </span>
+                </div>
+              </div>
+            </div>
+            </div>
+            <!-- /.card -->
+            
+          <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  
+                  Source Inquary Vs Registrations
+                </h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-8 col-md-3 text-center">
+                    <input type="text" class="knob" value="80" data-skin="tron" data-thickness="0.2" data-width="90"
+                           data-height="90" data-fgColor="#3c8dbc" data-readonly="true">
+
+                    <div class="knob-label">data-width="90"</div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-6 col-md-3 text-center">
+                    <input type="text" class="knob" value="60" data-skin="tron" data-thickness="0.2" data-width="120"
+                           data-height="120" data-fgColor="#f56954">
+
+                    <div class="knob-label">data-width="120"</div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-6 col-md-3 text-center">
+                    <input type="text" class="knob" value="10" data-skin="tron" data-thickness="0.1" data-width="90"
+                           data-height="90" data-fgColor="#00a65a">
+
+                    <div class="knob-label">data-thickness="0.1"</div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-6 col-md-3 text-center">
+                    <input type="text" class="knob" value="100" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="120" data-height="120"
+                           data-fgColor="#00c0ef">
+
+                    <div class="knob-label">data-angleArc="250"</div>
+                  </div>
+                  <!-- ./col -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+
+      
             <!-- /.card -->
             <div class="row">
               <div class="col-md-6">
@@ -805,4 +893,5 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
+        <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
    @endsection   

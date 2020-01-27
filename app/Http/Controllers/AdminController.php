@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Student;
+use App\Staff;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,8 @@ class AdminController extends Controller
     public function index()
     {
         $students = Student::All();
-        return view('dashboard.index',compact('students'));
+        $staffs = Staff::All();
+        return view('dashboard.index',compact('students','staffs'));
         //
     }
 
