@@ -11,7 +11,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item active">student</li>
+              <li class="breadcrumb-item active">Student</li>
               
             </ol>
           </div>
@@ -35,9 +35,9 @@
     
      <th>Student Id</th>
     <th>Student Name</th>
-    <th>Email Id</th>
+    <th  >Email Id</th>
       
-    <th>Phone Number</th> 
+    <th >Phone Number</th> 
     <th>Register By</th> 
     <th>Course Name</th>
     <th>Inquiry By</th>   
@@ -59,14 +59,14 @@
       
         <td>{{ $student->id}}</td>
         <td>{{ $student->student_name}}</td>
-        <td>{{ $student->email_id}}</td>
+        <td >{{ $student->email_id}}</td>
         <td>{{ $student->phone_number}}</td>
         <td>{{ $student->register_by}}</td>
-        <td>{{ $student->course_name}}</td>
+        <td >{{ $student->course_name}}</td>
         <td>{{ $student->inquiry_by}}</td>
-        <td>{{ $student->inquiry_source}}</td>
-        <td>{{ $student->transfer}}</td>
-        <td>{{ $student->source}}</td>
+        <td >{{ $student->inquiry_source}}</td>
+        <td >{{ $student->transfer}}</td>
+        <td >{{ $student->source}}</td>
         <td>{{ $student->date}}</td>
       
       

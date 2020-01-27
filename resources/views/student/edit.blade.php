@@ -9,8 +9,8 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item active"><a href="{{route('student.index')}}">student</a></li>
-              <li class="breadcrumb-item">edit</li>
+              <li class="breadcrumb-item active"><a href="{{route('student.index')}}">Student</a></li>
+              <li class="breadcrumb-item">Edit</li>
             </ol>
           </div>
         </div><div class="0"></div>
@@ -38,9 +38,7 @@
         <div class="invalid-feedback">
         Please Enter valid username.
       </div>
-        <div class="valid-feedback">
-        Looks good!
-      </div>
+        
                   </div> 
                     </div>
                     <div class="col-sm-6">
@@ -50,9 +48,7 @@
         <div class="invalid-feedback">
         Please Enter valid Email.
       </div>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
+     
                       </div>
                     </div>
                   </div>
@@ -65,9 +61,7 @@
         <div class="invalid-feedback">
         Please Enter valid Phone Number.
       </div>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
+     
                   </div>
                     </div>
                     <div class="col-sm-6">
@@ -77,10 +71,7 @@
         <div class="invalid-feedback">
         Please Enter valid detail.
       </div>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-                 
+         
                   </div>
                     </div>
 
@@ -91,9 +82,7 @@
         <div class="invalid-feedback">
         Please Enter valid Course Name.
       </div>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
+     
                   </div>
 
                     </div>
@@ -105,10 +94,7 @@
                          <div class="invalid-feedback">
                          Please Enter valid detail.
       </div>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-                  </div>
+          </div>
                     </div>
                     
                     <div class="col-sm-6">
@@ -118,9 +104,7 @@
                         <div class="invalid-feedback">
                         Please Enter valid Inquiry Source.
       </div>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
+     
                   </div>
 
                     </div>
@@ -137,9 +121,7 @@
                         <div class="invalid-feedback">
                         Please Enter valid value.
       </div>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
+     
                       </div>
                     </div>
                     <div class="col-sm-6">
@@ -149,10 +131,7 @@
         <div class="invalid-feedback">
         Please Enter valid Source.
       </div>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-                  </div>
+         </div>
 
                     </div>
 
@@ -163,9 +142,7 @@
                     <div class="invalid-feedback">
                     Please Enter valid Date.
       </div>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
+     
                   </div>
                     </div>
                     
