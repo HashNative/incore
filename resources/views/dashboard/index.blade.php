@@ -9,7 +9,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item">dashboard</li>
+              <li class="breadcrumb-item">Dashboard</li>
             </ol>
           </div>
         </div><div class="0"></div>
@@ -19,13 +19,13 @@
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-user-alt"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">CPU Traffic</span>
+                <span class="info-box-text">Student</span>
                 <span class="info-box-number">
-                  10
-                  <small>%</small>
+                 
+                  <small></small>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -35,11 +35,11 @@
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-graduation-cap"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Likes</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-text">Course</span>
+                <span class="info-box-number"></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -52,11 +52,11 @@
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-tachometer-alt"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Sales</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-text">Inquary</span>
+                <span class="info-box-number"></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -65,11 +65,11 @@
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user-plus"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">New Members</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-text">Staff</span>
+                <span class="info-box-number"></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -78,6 +78,125 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
+        <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+
+        <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Inquary</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                     
+                      <th>Operater</th>
+                      <th>Total</th>
+                      <th>Call</th>
+                      <th>Walk In</th>
+                      <th>Web</th>
+                      <th>From Cordinater</th>
+                      <th>From Student</th>
+                      <th>From Branch</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($staffs as $staff)
+                    <tr>
+                          <td>{{ $staff->staff_name}}</td>
+                    </tr>
+                  @endforeach
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            </div>
+            <div class="col-md-6">
+            <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">Pie Chart</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+          </section>
+
+
+          <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+
+        <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Registrations</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                     
+                      <th>Operater</th>
+                      <th>Total</th>
+                      <th>Call</th>
+                      <th>Walk In</th>
+                      <th>Web</th>
+                      <th>From Cordinater</th>
+                      <th>From Student</th>
+                      <th>From Branch</th>
+                    </tr>
+                  </thead>
+                  @foreach ($staffs as $staff)
+                    <tr>
+                          <td>{{ $staff->staff_name}}</td>
+                    </tr>
+                  @endforeach
+              
+                    </tr>
+                  
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            </div>
+            <div class="col-md-6">
+            <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">Pie Chart</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+          </section>
+
+
+ 
 
         <div class="row">
           <div class="col-md-12">

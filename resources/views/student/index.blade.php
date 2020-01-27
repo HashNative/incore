@@ -33,9 +33,9 @@
                     <thead>
      <tr>
     
-     <th>Student Id</th>
+    
     <th>Student Name</th>
-    <th  >Email Id</th>
+    <th  >Email </th>
       
     <th >Phone Number</th> 
     <th>Register By</th> 
@@ -57,7 +57,7 @@
     @foreach ($students as $student)
     <tr>
       
-        <td>{{ $student->id}}</td>
+       
         <td>{{ $student->student_name}}</td>
         <td >{{ $student->email_id}}</td>
         <td>{{ $student->phone_number}}</td>
