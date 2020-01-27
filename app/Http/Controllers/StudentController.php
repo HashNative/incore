@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Student;
 
 class StudentController extends Controller
 {
@@ -14,8 +13,6 @@ class StudentController extends Controller
      */
     public function index()
     {
-         $students = Student::All();
-       return view('student.index',compact('students'));
         //
     }
 
@@ -26,7 +23,6 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student.create');
         //
     }
 
@@ -38,25 +34,6 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $student = new  Student;
-        $student->id =$request ->id;
-        $student->student_name =$request ->student_name;
-        $student->date =$request ->date;
-        $student->email_id =$request ->email_id;
-        $student->date =$request ->date;
-        $student->phone_number =$request ->phone_number;
-        $student->course_name =$request ->course_name;
-        $student->transfer =$request ->transfer;
-        $student->inquiry_source =$request ->inquiry_source;
-        $student->source =$request ->source;
-        $student->inquiry_by =$request ->inquiry_by;
-        $student->register_by =$request ->register_by;
-                                                                  
-        
-        $student->save();
-        return redirect('/student');
-
-        
         //
     }
 
@@ -68,9 +45,7 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        $student= Student ::find ($id);
-        return view('student.show',compact('student'));
-        
+        //
     }
 
     /**
@@ -81,8 +56,6 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $student= Student ::find ($id);
-        return view('student.edit',compact('student'));
         //
     }
 
@@ -95,23 +68,6 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $student= Student ::find ($id);
-        
-        $student->student_name =$request ->student_name;
-      
-        $student->email_id =$request ->email_id;
-      
-        $student->phone_number =$request ->phone_number;
-        $student->course_name =$request ->course_name;
-        $student->transfer =$request ->transfer;
-        $student->inquiry_source =$request ->inquiry_source;
-        $student->source =$request ->source;
-        $student->date =$request ->date;
-        $student->inquiry_by =$request ->inquiry_by;
-        $student->register_by =$request ->register_by;
-        $student->date =$request ->date;
-        $student->update();
-        return redirect('/student');
         //
     }
 
@@ -123,11 +79,6 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        $student =  Student::find($id);
-        $student->delete();
-
-        return redirect('/student');
         //
     }
 }
-
