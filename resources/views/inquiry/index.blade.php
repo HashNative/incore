@@ -4,23 +4,23 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
+          <a href="{{route('inquiry.create')}}"  class="btn  btn-primary" tittle="show details">
+    <i class="fas fa-plus"></i> Add Inquiry
+     </a>
             
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item active">inquiry</li>
+              <li class="breadcrumb-item active">Inquiry</li>
               
             </ol>
           </div>
         </div><div class="0"></div>
       </div><!-- /.container-fluid -->
 </section>
-<a href="{{route('inquiry.create')}}"  class="btn  btn-primary" tittle="show details">
-    <i class="fas fa-plus"></i> Add inquiry
-     </a>
-     <br>
-     <br>
+
+     
  <!-- Main content -->
  <section class="content">
       <div class="row">
@@ -34,17 +34,17 @@
               <table id="example1" class="table table-bordered table-striped">
               <thead>
               <tr>
-              <th>Id</th>
+              
               <th>Source </th>
               <th>Description</th>
               <th>Name</th>
-              <th>Course id</th>
+              <th>Course</th>
               <th>Status</th>
               <th>Phone number</th>
               <th>Title</th>
               <th>Inquiry by</th>
               <th>Email</th>
-              <th>Followup ID</th>
+              <th>Followup</th>
               <th>Date Time</th>
               <th>Actions</th>  
 
@@ -53,7 +53,7 @@
               <tbody>
               @foreach ($inquiries as $inquiry)
               <tr data-toggle="modal" data-target="#modal-{{ $inquiry->id}}" >
-                  <td>{{ $inquiry->id}}</td>
+                  
                   <td>{{ $inquiry->source}}</td>
                   <td>{{ $inquiry->description}}</td>
                   <td>{{ $inquiry->name}}</td>
@@ -82,7 +82,7 @@
                 
                  </tr>
 
-                 <div class="modal fade" id="modal-{{ $inquiry->id}}" style="display: none;" aria-hidden="true">
+      <div class="modal fade" id="modal-{{ $inquiry->id}}" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -92,29 +92,74 @@
               </button>
             </div>
             <div class="modal-body">
-            <div class="form-group">
+                <div class="form-group">
+                <form action = "{{route('follow_up.store')}}" method = "POST" class="needs-validation" novalidate>
+                      <input type = "hidden" name = "_method" value="put">
+                        {{csrf_field()}}
+                      
 
-            <div class="card-body">
-                <form role="form">
+                   
                   <div class="row">
-                  
                     <div class="col-sm-6">
-                    <div class="form-group">
-                  <label for ="type">Status</label> 
-        <input type ="text" name ="status" class="form-control" id ="status" value = "{{ $inquiry->status}}">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for ="inquiry_id">Inquiry Id</label> 
+                         <input type ="text" name="inquiry_id" class="form-control" id ="inquiry_id" value = "{{ $inquiry->id}}" required>
+                      </div>
                     </div>
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for ="inquiry_by">Inquiry by</label> 
+                         <input type ="text" name="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
+                      </div>
                     </div>
-                    <div class="col-sm-12">
-                  <label for ="source">Description</label> 
-                  <textarea name="description" id ="description" class="form-control" id ="description" value = "{{ $inquiry->description}}"></textarea>
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for ="follow_up">follow up</label> 
+                         <input type ="text" name="follow_up" class="form-control" id ="follow_up" value = "{{ $inquiry->follow_up}}" required>
+                      </div>
                     </div>
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for ="description">description</label> 
+                         <input type ="text" name="description" class="form-control" id ="description" value = "{{ $inquiry->description}}" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                  <label for ="status">Status</label> 
+                      <select type ="text" name="status" class="form-control" id ="status" value = "{{ $inquiry->status}}"required>
+                      <option>Select status</option>
+                                      <option>Registered</option>
+                                      <option>Pending</option>
+                                      <option>Declined</option>
+                                      </select>
+                    
+                    </div>
+                   
+                    </div>
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                     <label for ="date_time">Date Time</label> 
+                    <input type ="datetime-auto" name="date_time" class="form-control" id ="date_time" value = "{{ $inquiry->date_time}}"required>
+                
+                    </div>
+                   
+                    </div>
+
+                         </form>
+              
+              </div>
+
+              <div class="card-footer">
+              <button type="submit" value="Save" class="btn bg-gradient-success float-right ">save</button>
               
             </div>
-
-            <div class="card-footer">
-                  <button type="submit" value="Save" class="btn bg-gradient-success float-right ">save</button>
-            
-</div>
             <div class="modal-footer justify-content-between">
               
                     <!-- The timeline -->
