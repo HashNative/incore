@@ -123,12 +123,12 @@
                   <!-- /.col -->
                   <div class="col-md-4">
                     <p class="text-center">
-                      <strong>Goal Completion</strong>
+                      <strong>Inq & Registration for a Date Range</strong>
                     </p>
 
-                    <div class="progress-group">
-                      Add Products to Cart
-                      <span class="float-right"><b>160</b>/200</span>
+                  <div class="progress-group">
+                    CCNA New Syllabus
+                      <span class="float-right"><b>3</b>/43</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-primary" style="width: 80%"></div>
                       </div>
@@ -136,8 +136,8 @@
                     <!-- /.progress-group -->
 
                     <div class="progress-group">
-                      Complete Purchase
-                      <span class="float-right"><b>310</b>/400</span>
+                    CCNA Security
+                      <span class="float-right"><b>01</b>/02</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-danger" style="width: 75%"></div>
                       </div>
@@ -145,8 +145,34 @@
 
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Visit Premium Page</span>
-                      <span class="float-right"><b>480</b>/800</span>
+                      <span class="progress-text">CCNA Collaboration</span>
+                      <span class="float-right"><b>0</b>/1</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-success" style="width: 60%"></div>
+                      </div>
+                    </div>
+
+                     <div class="progress-group">
+                    CCNA New Syllabus
+                      <span class="float-right"><b>3</b>/43</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-primary" style="width: 80%"></div>
+                      </div>
+                    </div>
+                    <!-- /.progress-group -->
+
+                    <div class="progress-group">
+                    CCNA Security
+                      <span class="float-right"><b>01</b>/02</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-danger" style="width: 75%"></div>
+                      </div>
+                    </div>
+
+                    <!-- /.progress-group -->
+                    <div class="progress-group">
+                      <span class="progress-text">CCNA Collaboration</span>
+                      <span class="float-right"><b>0</b>/1</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-success" style="width: 60%"></div>
                       </div>
@@ -154,7 +180,51 @@
 
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      Send Inquiries
+                    CCNP Route
+                      <span class="float-right"><b>250</b>/500</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-warning" style="width: 50%"></div>
+                      </div>
+                    </div>
+
+                     <!-- /.progress-group -->
+   2                  <div class="progress-group">
+                      <span class="progress-text">CCNP Switch</span>
+                      <span class="float-right"><b>0</b>/1</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-success" style="width: 60%"></div>
+                      </div>
+                    </div>
+
+                     <div class="progress-group">
+                     CCNP TShoot
+                      <span class="float-right"><b>3</b>/43</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-primary" style="width: 80%"></div>
+                      </div>
+                    </div>
+                    <!-- /.progress-group -->
+
+                    <div class="progress-group">
+                    CCIE - Routing
+                      <span class="float-right"><b>01</b>/02</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-danger" style="width: 75%"></div>
+                      </div>
+                    </div>
+
+                    <!-- /.progress-group -->
+                    <div class="progress-group">
+                      <span class="progress-text">CCIE - Data center</span>
+                      <span class="float-right"><b>0</b>/1</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-success" style="width: 60%"></div>
+                      </div>
+                    </div>
+
+                    <!-- /.progress-group -->
+                    <div class="progress-group">
+                    CCNP Route
                       <span class="float-right"><b>250</b>/500</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-warning" style="width: 50%"></div>
