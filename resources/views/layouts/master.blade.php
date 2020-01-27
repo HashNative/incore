@@ -223,7 +223,7 @@
 
             <li class="nav-item">
             <a href="{{route('staff.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-user-plus"></i>
+              <i class="nav-icon fas fa-user-friends"></i>   
               <p>
               Staff
                

@@ -79,9 +79,15 @@
         <div class ="col-md-6"> 
         <div class="from-group">
         <label for ="password">Password</label>
-        <input type ="password" name ="password" id ="password"   placeholder="Enter password"class="form-control">
+        <input type ="text" name ="password" id ="password"   placeholder="Enter password "class="form-control" >
+
+        
+        
+        
         </div>
         </div>
+    
+
     
            
 </from>
@@ -91,6 +97,8 @@
 <div class="card-footer">
 <a href ="{{URL::previous()}}" class="btn bg-gradient-primary float-left " href="#">Back</a> 
 <button type ="submit"  value="Save" class="btn btn-success float-right">Save </button>    
+
+
 
     
 </div>
