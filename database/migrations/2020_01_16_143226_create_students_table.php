@@ -19,7 +19,7 @@ class CreateStudentsTable extends Migration
             $table->String('student_name',20);
            
             $table->String('email_id');
-            $table->String('address');
+           
             $table->integer('phone_number');
             $table->String('course_name',10);
             $table->String('transfer',10);
@@ -27,6 +27,7 @@ class CreateStudentsTable extends Migration
             $table->String('source');
             $table->String('inquiry_by');
             $table->String('register_by');
+            $table->date('date');
 
             $table->timestamps();
         });

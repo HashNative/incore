@@ -35,45 +35,84 @@
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
+                  <label for ="phone_number">Phone number</label> 
+        <input type ="text" name="phone_number" class="form-control" id ="phone_number" value = "{{ $inquiry->phone_number}}">
+                    </div>
+                   
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                  <label for ="inquiry_by">Inquiry by</label> 
+        <input type ="text" name ="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}">
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
                   <label for ="source">Source</label> 
-        <input type ="text" name="source" class="form-control" id ="source" value = "{{$inquiry->source}}">
+        <input type ="text" name="source" class="form-control" id ="source" value = "{{ $inquiry->source}}">
                     </div>
                    
                     </div>
                     <div class="col-sm-6">
                     <div class="form-group">
-                  <label for ="type">Type</label> 
-        <input type ="text" name ="type" class="form-control" id ="type" value = "{{$inquiry->type}}">
+                  <label for ="course_id">Course id</label> 
+        <input type ="text" name ="course_id" class="form-control" id ="course_id" value = "{{ $inquiry->course_id}}">
                     </div>
                     </div>
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                  <label for ="student_id">Student Id</label> 
-        <input type ="text" name="student_id" class="form-control" id ="student_id" value = "{{$inquiry->student_id}}">
-                    </div>
-                   
-                    </div>
-                    <div class="col-sm-6">
-                    <div class="form-group">
-                  <label for ="description">Description</label> 
-        <input type ="text" name ="description" class="form-control" id ="description"value = "{{$inquiry->description}}">
-                    </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                  <label for ="staff_id">Staff ID</label> 
-        <input type ="text" name="staff_id" class="form-control" id ="staff_id" value = "{{$inquiry->staff_id}}">
-                    </div>
-                   
-                    </div>
-                    <div class="col-sm-6">
-                    <div class="form-group">
                   <label for ="date_time">Date Time</label> 
-                       <input type ="datetime-local" name ="date_time" class="form-control" id ="date_time" value = "{{$inquiry->date_time}}">
+        <input type ="datetime-auto" name="date_time" class="form-control" id ="date_time" value = "{{ $inquiry->date_time}}">
+                    </div>
+                   
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                  <label for ="text">Title</label> 
+                       <input type ="text" name ="title" class="form-control" id ="title" value = "{{ $inquiry->title}}">
                   
                     </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                  <label for ="name">Name</label> 
+        <input type ="text" name="name" class="form-control" id ="name" value = "{{ $inquiry->name}}">
+                    </div>
+                   
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                  <label for ="email">Email</label> 
+        <input type ="text" name ="email" class="form-control" id ="email" value = "{{ $inquiry->email}}">
+                    </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                  <label for ="status">Status</label> 
+        <input type ="text" name="status" class="form-control" id ="status" value = "{{ $inquiry->status}}">
+                    </div>
+                   
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                  <label for ="follow_up">Followup</label> 
+        <input type ="text" name ="follow_up" class="form-control" id ="follow_up" value = "{{ $inquiry->follow_up}}">
+                    </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                  <label for ="description">Description</label> 
+                  <textarea name="description" id ="description" class="form-control" id ="description" value = "{{ $inquiry->description}}"></textarea>
+                    </div>
+                   
                     </div>
                   
               </form>

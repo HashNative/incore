@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Staff;
-
+use App\Student;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class StaffController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class StaffController extends Controller
      */
     public function index()
     {
-       $staffs = Staff::All();
-       return view('staff.index',compact('staffs'));
+        $students = Student::All();
+        return view('dashboard.index',compact('students'));
         //
     }
 
@@ -26,8 +26,6 @@ class StaffController extends Controller
      */
     public function create()
     {
-        
-        return view('staff.create');
         //
     }
 
@@ -39,19 +37,6 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        $staff = new  Staff;
-        $staff->id =$staff ->id;
-        $staff->staff_name =$request ->staff_name;
-        $staff->languages =$request ->languages;
-        $staff->mobile_number =$request ->mobile_number;
-        
-        $staff->email =$request ->email;
-        $staff->password = bcrypt($request->password);
-        $staff->save();
-        return redirect('/staff');
-
-      
-
         //
     }
 
@@ -63,8 +48,7 @@ class StaffController extends Controller
      */
     public function show($id)
     {
-        $staff= Staff ::find ($id);
-        return view('staff.show',compact('staff'));
+        //
     }
 
     /**
@@ -72,11 +56,10 @@ class StaffController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-      */
+     */
     public function edit($id)
     {
-        $staff= Staff ::find ($id);
-        return view('staff.edit',compact('staff'));
+        //
     }
 
     /**
@@ -88,16 +71,7 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $staff= Staff ::find ($id);
-        
-        $staff->staff_name =$request->staff_name;
-        $staff->languages =$request->languages;
-       
-        $staff->email =$request ->email;
-        $staff->mobile_number =$request->mobile_number;
-        $staff->password = bcrypt($request->password);
-        $staff->update();
-        return redirect('/staff');
+        //
     }
 
     /**
@@ -108,9 +82,6 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        $staff =  Staff::find($id);
-        $staff->delete();
-
-        return redirect('/staff');
+        //
     }
 }

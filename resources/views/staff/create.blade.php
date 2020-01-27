@@ -35,12 +35,7 @@
                 <form role="form">
                   <div class="row">
             
-            <div class ="col-md-6">
-            <div class="from-group"> 
-            <label for ="staff_id">Staff Id</label> 
-            <input type ="text" name ="staff_id" id ="staff_id" autofocus placeholder="Enter the Staff Id"class="form-control">
-        </div>
-        </div>
+        
         <div class ="col-md-6">
         <div class="from-group"> 
         <label for ="staff_name">Staff Name</label>
@@ -70,7 +65,7 @@
         <div class="from-group">
         <label for ="mobile_number">Mobile Number</label>
         <input type ="number" name ="mobile_number" id ="mobile_number"   placeholder="Enter the mobile number"class="form-control">
-        <br>
+        
         
     </div> 
     </div> 
@@ -80,10 +75,6 @@
         <div class="from-group">
         <label for ="password">Password</label>
         <input type ="text" name ="password" id ="password"   placeholder="Enter password "class="form-control" >
-
-        
-        
-        
         </div>
         </div>
     
@@ -102,12 +93,6 @@
 
     
 </div>
-    </div>
+ </div>
 @endsection
-
-
-
-
-
-
 

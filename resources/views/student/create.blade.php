@@ -16,6 +16,7 @@
         </div><div class="0"></div>
       </div><!-- /.container-fluid -->
 </section>
+
   <div class="d-flex justify-content-center">
     <div class="col-md-10">
             <!-- general form elements disabled -->
@@ -30,11 +31,11 @@
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>Student Name</label>
-                        <input type ="text" name ="student_name" id ="student_name" class="form-control"autofocus placeholder="Enter the Student Name">
+                        <label>Student Id</label>
+                        <input type ="text" name ="student_id" id ="student_name" class="form-control"autofocus placeholder="Enter the Student Id">
                       </div>
                     </div>
-                    <div class="col-sm-6">
+                    <!-- <div class="col-sm-6">
                       <div class="form-group">
                       <b>Status<b>
                             <select type="text" name ="status" id ="status" class="form-control" class="form-control">
@@ -46,23 +47,22 @@
                         
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
+                  </div> -->
+
+                  <div class="col-sm-6">
+
+                    <div class="form-group">
+                    <label for ="student_name">Student Name</label>
+                            <input type ="text" name ="student_name"class="form-control" id ="student_name"   placeholder="Enter the Student Name">
+                      </div>
+                    </div>
                     <div class="col-sm-6">
-                     
-                      <div class="form-group">
-                        <label>Email Id</label>
+                    <div class="form-group">
+                        <label for ="email_id">Email Id</label>
                         <input type ="text" name ="email_id" id ="email_id" class="form-control"  placeholder="Enter the Email Id">
                       </div>
                     </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label>Address</label>
-                        <input type ="text" name ="address" id ="address"class="form-control"  placeholder="Enter the address">
-                      </div>
-                    </div>
 
-                   
                     <div class="col-sm-6">
 
                     <div class="form-group">
@@ -70,10 +70,72 @@
                             <input type ="text" name ="phone_number"class="form-control" id ="phone_number"   placeholder="Enter the Phone Number">
                       </div>
                     </div>
+                  </div>
+
+
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                     
+                      <div class="form-group">
+                        <label for ="register_by">Register by</label>
+                        <input type ="text" name ="register_by" id ="register_by" class="form-control"  placeholder="Enter the Email Id">
+                      </div>
+                    </div>
+                 
                     <div class="col-sm-6">
                       <div class="form-group">
-                      <label for ="course_id">Course Id</label>
-                            <input type ="text" name ="course_id" id ="course_id"  class="form-control"  placeholder="Enter the Course Id">
+                      <label for ="course_name">Course Name</label>
+                            <input type ="text" name ="course_name" id ="course_name"  class="form-control"  placeholder="Enter the Course name">
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                     
+                      <div class="form-group">
+                        <label for ="inquiry_by">Inquiry by</label>
+                        <input type ="text" name ="inquiry_by" id ="inquiry_by" class="form-control"  placeholder="Enter the Inquriy by">
+                      </div>
+                    </div>
+                 
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                      <label for ="inquiry_source">Inquiry source</label>
+                            <input type ="text" name ="inquiry_source" id ="inquiry_source"  class="form-control"  placeholder="Enter the Inquiry source">
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row">
+                  <div class="col-sm-6">
+
+                      <div class="form-group">
+                       <label for ="transfer">transfer</label>
+                            <select type="text" name ="transfer" id ="transfer" class="form-control" class="form-control">
+                            <option >Select status </option>
+                            <option value = "Yes">Yes</option>
+                            <option value = "no">No</option><select>
+                      </div>
+                    </div>
+                 
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                      <label for ="source">Source</label>
+                            <input type ="text" name ="source" id ="source"  class="form-control"  placeholder="Enter the Source">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                  <div class="col-sm-6">
+
+                  <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type ="date" name ="date" id ="date" class="form-control"  placeholder="Enter the date">
                       </div>
                     </div>
                     </div>

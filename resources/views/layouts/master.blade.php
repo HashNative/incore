@@ -178,7 +178,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
          
           <li class="nav-item has-treeview menu-open">
-          <a href="/" class="nav-link active">
+          <a href="/dashboard" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -187,7 +187,7 @@
             </a>
             
            </li>
-            <li class="nav-item has-treeview">
+            <li class="nav-item has-treeview ">
             <a href="{{route('student.index')}}" class="nav-link">
               <i class="nav-icon fas fa-user-alt"></i>
               <p>
@@ -199,7 +199,7 @@
           
             <li class="nav-item has-treeview">
             <a href="{{route('course.index')}}" class="nav-link ">
-              <i class="fas fa-graduation-cap"></i>
+              <i class="nav-icon fas fa-graduation-cap"></i>
               <p>
                 Course
               
@@ -208,7 +208,7 @@
             </li>
             <li class="nav-item has-treeview">
             <a href="{{route('inquiry.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-question-circle  "></i>
               <p>
                 Inquiry
                 
@@ -230,6 +230,8 @@
               </p>
             </a>
           </li>
+
+          
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
@@ -237,36 +239,12 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          
-          <div class="col-sm-6">
-            
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        
-      @yield('content')
-      </div><!--/. container-fluid -->
-    </section>
-    <!-- /.content -->
+  @yield('content')
+  
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
   <footer class="main-footer">
@@ -317,6 +295,8 @@
       "autoWidth": false,
     });
   });
+
+
 </script>
 </body>
 </html>
