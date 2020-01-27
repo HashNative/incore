@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,13 +17,17 @@ class CreateStudentsTable extends Migration
            
             $table->increments('id');
             $table->String('student_name',20);
-            $table->String('status');
+           
             $table->String('email_id');
-            $table->String('address');
+           
             $table->integer('phone_number');
-            $table->String('course_id',10);
-
-            $table->date('end_by');
+            $table->String('course_name',10);
+            $table->String('transfer',10);
+            $table->String('inquiry_source');
+            $table->String('source');
+            $table->String('inquiry_by');
+            $table->String('register_by');
+            $table->date('date');
 
             $table->timestamps();
         });

@@ -40,12 +40,18 @@ class StaffController extends Controller
     public function store(Request $request)
     {
         $staff = new  Staff;
-        $staff->staff_id =$request ->staff_id;
+        $staff->id =$staff ->id;
         $staff->staff_name =$request ->staff_name;
         $staff->languages =$request ->languages;
         $staff->mobile_number =$request ->mobile_number;
+        
+        $staff->email =$request ->email;
+        $staff->password = bcrypt($request->password);
         $staff->save();
         return redirect('/staff');
+
+      
+
         //
     }
 
@@ -57,7 +63,7 @@ class StaffController extends Controller
      */
     public function show($id)
     {
-        $staff= Staff::find($id);
+        $staff= Staff ::find ($id);
         return view('staff.show',compact('staff'));
     }
 
@@ -69,7 +75,7 @@ class StaffController extends Controller
       */
     public function edit($id)
     {
-        $staff= Staff::find ($id);
+        $staff= Staff ::find ($id);
         return view('staff.edit',compact('staff'));
     }
 
@@ -82,11 +88,14 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $staff= Staff::find ($id);
-        $staff->staff_id =$request->staff_id;
+        $staff= Staff ::find ($id);
+        
         $staff->staff_name =$request->staff_name;
         $staff->languages =$request->languages;
+       
+        $staff->email =$request ->email;
         $staff->mobile_number =$request->mobile_number;
+        $staff->password = bcrypt($request->password);
         $staff->update();
         return redirect('/staff');
     }

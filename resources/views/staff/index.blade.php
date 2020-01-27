@@ -1,58 +1,97 @@
 @extends('layouts.master')
 @section('content')
-<html>
-<head>
+<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active">staff</li>
+              
+            </ol>
+          </div>
+        </div><div class="0"></div>
+      </div><!-- /.container-fluid -->
+</section>
 
-    </head>
-    <body>
+<a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
+    Add Staff
+</a>
+<br>
+<br>
 
-    <a href="{{route('staff.create')}}" tittle="Add">
-                add
-            </a>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Staff</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
 
-     <table   > 
-     <thead>
-     <tr>
-    <th>Staff Id </th>
+                    <thead>
+
+<tr>
+<th>Id</th>
     <th>Staff Name </th>
+    <th>email</th>
     <th>Languages</th>
     
-    <th>Mobile Number</th>   
+    <th>Mobile Number</th>
+    <th>Actions</th>
 
-    </tr>
-    </thead>
-    <tbody>
-    @foreach ($staffs as $staff)
-    <tr>
-        <td>{{ $staff->staff_id}}</td>
-        <td>{{ $staff->staff_name}}</td>
-        <td>{{ $staff->languages}}</td>
-        
-        <td>{{ $staff->mobile_number}}</td>
+</tr>
+</thead>
+<tbody>
+@foreach ($staffs as $staff)
+<tr>
+    <td>{{ $staff->id}}</td>
+    <td>{{ $staff->staff_name}}</td>
+    <td>{{ $staff->email}}</td>
+    
+    <td>{{ $staff->languages}}</td>
+    
+    <td>{{ $staff->mobile_number}}</td>
 
 
-
-       <td>
-            <form action = "{{route('staff.destroy',$staff->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
-                <input type = "hidden" name = "_method" value = "delete"> 
-                {{csrf_field()}}
-                <button type="submit" ><i tittle="delete details"></i></button>
-            
-            </form>
-        
-            <a href="{{route('staff.edit',$staff->id)}}" tittle="edit details">
-               edit
-            </a>
-           <a href="{{route('staff.show',$staff->id)}}" tittle="show details">
-            view
-            </a>
-       </td>
+                     <td>
+                    
+                    <form action = "{{route('staff.destroy',$staff->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
+                       
+                        <input type = "hidden" name = "_method" value = "delete"> 
+                            
+                            {{csrf_field()}}
+                        
+                            
+                        <a href="{{route('staff.edit',$staff->id)}}" tittle="edit details"class=" btn btn-sm fas fa-edit"style="color:#ffc107";>
+                            
+                        <button type="submit"class="btn btn-sm" ><i tittle="delete details"class= "fa fa-trash"style="color:#cc0000";></i></button></form>
+                   
+                    </td>
+                    
        
-    </tr>
-    @endforeach
-</tbody>
-  
 
-</body>
-</html>
+</tr>
+@endforeach
+</tbody>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+
+
 @endsection
