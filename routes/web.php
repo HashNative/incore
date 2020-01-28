@@ -23,3 +23,4 @@ Route::resource('inquiry','InquiryController');
 Route::resource('course','CourseController');
 Route::resource('student','StudentController');
 Route::resource('/dashboard','AdminController');
+Route::resource('/home1','HomeController');
