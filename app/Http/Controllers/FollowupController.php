@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use FollowUp;
+use App\FollowUp;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

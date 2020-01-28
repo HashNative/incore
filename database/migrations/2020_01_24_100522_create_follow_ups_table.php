@@ -19,7 +19,7 @@ class CreateFollowUpsTable extends Migration
             $table->integer('inquiry_by');
             $table->String('follow_up');
             $table->String('description');
-            $table->integer('status');
+            $table->String('status');
             $table->dateTime('date_time');
             
             $table->timestamps();

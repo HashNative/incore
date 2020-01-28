@@ -74,10 +74,12 @@
                           <input type = "hidden" name = "_method" value = "delete"> 
                           
                           {{csrf_field()}}
+
+                          <a href="{{route('inquiry.edit',$inquiry->id)}}" tittle="edit details"class=" btn btn-sm fa fa-share-square";>
                           <a href="{{route('inquiry.edit',$inquiry->id)}}" tittle="edit details"class=" btn btn-sm fas fa-edit"style="color:#ffc107";>    
                       
                           <button type="submit"class="btn btn-sm" ><i tittle="delete details"class= "fa fa-trash"style="color:#cc0000";></i></button>
-
+                  </form>
                       </td>
                 
                  </tr>
@@ -93,72 +95,66 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                <form action = "{{route('follow_up.store')}}" method = "POST" class="needs-validation" novalidate>
-                      <input type = "hidden" name = "_method" value="put">
-                        {{csrf_field()}}
-                      
-
-                   
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label for ="inquiry_id">Inquiry Id</label> 
-                         <input type ="text" name="inquiry_id" class="form-control" id ="inquiry_id" value = "{{ $inquiry->id}}" required>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label for ="inquiry_by">Inquiry by</label> 
-                         <input type ="text" name="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label for ="follow_up">follow up</label> 
-                         <input type ="text" name="follow_up" class="form-control" id ="follow_up" value = "{{ $inquiry->follow_up}}" required>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label for ="description">description</label> 
-                         <input type ="text" name="description" class="form-control" id ="description" value = "{{ $inquiry->description}}" required>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                  <label for ="status">Status</label> 
-                      <select type ="text" name="status" class="form-control" id ="status" value = "{{ $inquiry->status}}"required>
-                      <option>Select status</option>
-                                      <option>Registered</option>
-                                      <option>Pending</option>
-                                      <option>Declined</option>
-                                      </select>
+                  <form action = "{{route('follow_up.store')}}" method = "POST" class="needs-validation" novalidate>
                     
-                    </div>
-                   
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                     <label for ="date_time">Date Time</label> 
-                    <input type ="datetime-auto" name="date_time" class="form-control" id ="date_time" value = "{{ $inquiry->date_time}}"required>
-                
-                    </div>
-                   
-                    </div>
+                          {{csrf_field()}}
+                        
 
-                         </form>
+                    
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                          <label for ="inquiry_id">Inquiry Id</label> 
+                          <input type ="text" name="inquiry_id" class="form-control" id ="inquiry_id" value = "{{ $inquiry->id}}" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                          <label for ="inquiry_by">Inquiry by</label> 
+                          <input type ="text" name="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                          <label for ="follow_up">follow up</label> 
+                          <input type ="text" name="follow_up" class="form-control" id ="follow_up" value = "{{ $inquiry->follow_up}}" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                          <label for ="description">description</label> 
+                          <input type ="text" name="description" class="form-control" id ="description" value = "{{ $inquiry->description}}" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label for ="status">Status</label> 
+                            <select type ="text" name="status" class="form-control" id ="status" value = "{{ $inquiry->status}}"required>
+                            <option>Select status</option>
+                                            <option>Registered</option>
+                                        <option>Pending</option>
+                                        <option>Declined</option>
+                                        </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                          <label for ="date_time">Date Time</label> 
+                          <input type ="datetime-auto" name="date_time" class="form-control" id ="date_time" value = "{{ $inquiry->date_time}}"required>
+                  
+                         </div>
+                      </div>
               
-              </div>
+                      <button type="submit" value="Save" class="btn bg-gradient-success float-right ">save</button>
 
-              <div class="card-footer">
-              <button type="submit" value="Save" class="btn bg-gradient-success float-right ">save</button>
-              
+                  </form>
+                </div>
             </div>
             <div class="modal-footer justify-content-between">
               
