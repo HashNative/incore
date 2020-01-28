@@ -126,31 +126,15 @@ class TestResponse
     }
 
     /**
-     * Asserts that the response does not contains the given header.
-     *
-     * @param  string  $headerName
-     * @return $this
-     */
-    public function assertHeaderMissing($headerName)
-    {
-        PHPUnit::assertFalse(
-            $this->headers->has($headerName), "Unexpected header [{$headerName}] is present on response."
-        );
-
-        return $this;
-    }
-
-    /**
      * Asserts that the response contains the given cookie and equals the optional value.
      *
      * @param  string  $cookieName
      * @param  mixed  $value
-     * @param  bool  $unserialize
      * @return $this
      */
-    public function assertPlainCookie($cookieName, $value = null, $unserialize = false)
+    public function assertPlainCookie($cookieName, $value = null)
     {
-        $this->assertCookie($cookieName, $value, false, $unserialize);
+        $this->assertCookie($cookieName, $value, false);
 
         return $this;
     }
@@ -161,10 +145,9 @@ class TestResponse
      * @param  string  $cookieName
      * @param  mixed  $value
      * @param  bool  $encrypted
-     * @param  bool  $unserialize
      * @return $this
      */
-    public function assertCookie($cookieName, $value = null, $encrypted = true, $unserialize = false)
+    public function assertCookie($cookieName, $value = null, $encrypted = true)
     {
         PHPUnit::assertNotNull(
             $cookie = $this->getCookie($cookieName),
@@ -178,7 +161,7 @@ class TestResponse
         $cookieValue = $cookie->getValue();
 
         $actual = $encrypted
-            ? app('encrypter')->decrypt($cookieValue, $unserialize) : $cookieValue;
+            ? app('encrypter')->decrypt($cookieValue) : $cookieValue;
 
         PHPUnit::assertEquals(
             $value, $actual,
@@ -471,15 +454,15 @@ class TestResponse
     /**
      * Assert that the response JSON has the expected count of items at the given key.
      *
-     * @param  int  $count
-     * @param  string|null  $key
+     * @param int $count
+     * @param string|null $key
      * @return $this
      */
     public function assertJsonCount(int $count, $key = null)
     {
         if ($key) {
-            PHPUnit::assertCount(
-                $count, data_get($this->json(), $key),
+            PHPUnit::assertCount($count,
+                $this->json()[$key],
                 "Failed to assert that the response count matched the expected {$count}"
             );
 
@@ -497,7 +480,7 @@ class TestResponse
     /**
      * Assert that the response has the given JSON validation errors for the given keys.
      *
-     * @param  string|array  $keys
+     * @param string|array $keys
      * @return $this
      */
     public function assertJsonValidationErrors($keys)

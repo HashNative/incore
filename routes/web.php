@@ -11,21 +11,15 @@
 |
 */
 
-//Route::resource('/','HomeController');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('staff','StaffController');
 Route::resource('inquiry','InquiryController');
 Route::resource('course','CourseController');
 Route::resource('student','StudentController');
-Route::get('/login', function () {
-    return view('auth.login');
-   });
 Route::resource('/dashboard','AdminController');
-   
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

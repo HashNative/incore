@@ -22,7 +22,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     /**
      * The decoded JSON content for the request.
      *
-     * @var \Symfony\Component\HttpFoundation\ParameterBag|null
+     * @var string
      */
     protected $json;
 
@@ -171,8 +171,8 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     {
         $segments = explode('/', $this->decodedPath());
 
-        return array_values(array_filter($segments, function ($value) {
-            return $value !== '';
+        return array_values(array_filter($segments, function ($v) {
+            return $v !== '';
         }));
     }
 
@@ -287,26 +287,22 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
      * Merge new input into the current request's input array.
      *
      * @param  array  $input
-     * @return \Illuminate\Http\Request
+     * @return void
      */
     public function merge(array $input)
     {
         $this->getInputSource()->add($input);
-
-        return $this;
     }
 
     /**
      * Replace the input for the current request.
      *
      * @param  array  $input
-     * @return \Illuminate\Http\Request
+     * @return void
      */
     public function replace(array $input)
     {
         $this->getInputSource()->replace($input);
-
-        return $this;
     }
 
     /**
@@ -314,7 +310,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
      *
      * @param  string  $key
      * @param  mixed   $default
-     * @return \Symfony\Component\HttpFoundation\ParameterBag|mixed
+     * @return mixed
      */
     public function json($key = null, $default = null)
     {
@@ -340,7 +336,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
             return $this->json();
         }
 
-        return in_array($this->getRealMethod(), ['GET', 'HEAD']) ? $this->query : $this->request;
+        return $this->getRealMethod() == 'GET' ? $this->query : $this->request;
     }
 
     /**
@@ -358,12 +354,8 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
         $content = $request->content;
 
         $request = (new static)->duplicate(
-            $request->query->all(),
-            $request->request->all(),
-            $request->attributes->all(),
-            $request->cookies->all(),
-            $request->files->all(),
-            $request->server->all()
+            $request->query->all(), $request->request->all(), $request->attributes->all(),
+            $request->cookies->all(), $request->files->all(), $request->server->all()
         );
 
         $request->content = $content;
@@ -476,15 +468,14 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
         }
 
         return sha1(implode('|', array_merge(
-            $route->methods(),
-            [$route->getDomain(), $route->uri(), $this->ip()]
+            $route->methods(), [$route->getDomain(), $route->uri(), $this->ip()]
         )));
     }
 
     /**
      * Set the JSON payload for the request.
      *
-     * @param  \Symfony\Component\HttpFoundation\ParameterBag  $json
+     * @param  array  $json
      * @return $this
      */
     public function setJson($json)
@@ -563,8 +554,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     public function offsetExists($offset)
     {
         return array_key_exists(
-            $offset,
-            $this->all() + $this->route()->parameters()
+            $offset, $this->all() + $this->route()->parameters()
         );
     }
 
