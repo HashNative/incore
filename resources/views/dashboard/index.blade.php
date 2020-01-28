@@ -20,14 +20,17 @@
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-user-alt"></i></span>
-
+             
               <div class="info-box-content">
                 <span class="info-box-text">Student</span>
+              
                 <span class="info-box-number">
-                 
+                {{ $count1}}
                   <small></small>
-                </span>
+             </span>
+           
               </div>
+             
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -36,11 +39,14 @@
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
               <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-graduation-cap"></i></span>
-
+             
               <div class="info-box-content">
                 <span class="info-box-text">Course</span>
-                <span class="info-box-number"></span>
+               
+                <span class="info-box-number"> {{$count3}}</span>
+             
               </div>
+            
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -53,11 +59,15 @@
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-tachometer-alt"></i></span>
-
+              
               <div class="info-box-content">
+             
                 <span class="info-box-text">Inquary</span>
-                <span class="info-box-number"></span>
+               
+                <span class="info-box-number">{{ $count}}</span>
+               
               </div>
+             
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -66,11 +76,14 @@
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user-plus"></i></span>
-
+            
               <div class="info-box-content">
                 <span class="info-box-text">Staff</span>
-                <span class="info-box-number"></span>
+                
+                <span class="info-box-number">{{ $count2}}</span>
+               
               </div>
+             
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -104,9 +117,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($staffs as $staff)
+                    @foreach ($inquiries as $inquiry)
                     <tr>
-                          <td>{{ $staff->staff_name}}</td>
+                          <td>{{ $inquiry->inquiry_by}}</td>
+                          <td>{{ $inquiry->count }}</td>
+                          
                     </tr>
                   @endforeach
                   </tbody>
@@ -117,20 +132,32 @@
             <!-- /.card -->
             </div>
             <div class="col-md-6">
-            <div class="card card-info">
+            <div class="card card-primary card-outline">
               <div class="card-header">
-                <h3 class="card-title">Pie Chart</h3>
+                <h3 class="card-title">
+                  <i class="far fa-chart-bar"></i>
+                  Performance
+                </h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                   </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                  </button>
                 </div>
               </div>
               <div class="card-body">
-                <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                <div id="donut-chart" style="height: 300px; padding: 0px; position: relative;">
+                   <canvas class="flot-base" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
+                   <canvas class="flot-overlay" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
+                   <span class="pieLabel" id="pieLabel0" style="position: absolute; top: 70px; left: 217.953px;">
+                      <div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Series<br>30%</div></span>
+                      <span class="pieLabel" id="pieLabel1" style="position: absolute; top: 210px; left: 195.953px;">
+                        <div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Series3<br>20%</div></span>
+                          <span class="pieLabel" id="pieLabel2" style="position: absolute; top: 129px; left: 36.9531px;">
+                            <div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Series4<br>50%</div></span></div>
               </div>
-              <!-- /.card-body -->
+              <!-- /.card-body-->
             </div>
           </div>
           </section>

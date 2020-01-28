@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Student;
+use App\Inquiry;
 use App\Staff;
+use App\Course;
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,8 +19,31 @@ class AdminController extends Controller
     public function index()
     {
         $students = Student::All();
+        //$inquiries = Inquiry::All();
         $staffs = Staff::All();
-        return view('dashboard.index',compact('students','staffs'));
+        $courses = Course::All();
+        $inquiries = DB::table('inquiries')
+            ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS count')))
+            ->groupBy('inquiry_by')
+            ->get();
+           
+            
+          
+        
+
+        $inq = $inquiries->pluck('inquiry_by')->all();
+        $count = Inquiry::whereIn('inquiry_by', $inq)->count();
+
+        $stu = $students->pluck('student_name')->all();
+        $count1 = Student::whereIn('student_name', $stu)->count();
+
+        $stf = $staffs->pluck('staff_name')->all();
+        $count2 = Staff::whereIn('staff_name', $stf)->count();
+
+        $cou = $courses->pluck('course_name')->all();
+        $count3 = Course::whereIn('course_name', $cou)->count();
+            
+        return view('dashboard.index',compact('students','inquiries','staffs','count','courses','count1','count2','count3'));
         //
     }
 
