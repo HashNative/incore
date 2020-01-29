@@ -1,4 +1,4 @@
-git <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -314,7 +314,7 @@ git <!DOCTYPE html>
 
 
 </script>
-
+@include('sweetalert::alert')
 </body>
 </html>
 

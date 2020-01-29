@@ -1,14 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "8f2120fa77d42a42b4210cdbe1c114e2",
-=======
-    "content-hash": "8b7a24ee5fd54fe6114597315d4379ff",
->>>>>>> nadee
+    "content-hash": "ab1f0491d50931339f84adf8377730fd",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1241,17 +1237,17 @@
             ],
             "authors": [
                 {
-                    "name": "Ben Ramsey",
-                    "email": "ben@benramsey.com",
-                    "homepage": "https://benramsey.com"
-                },
-                {
                     "name": "Marijn Huizendveld",
                     "email": "marijn.huizendveld@gmail.com"
                 },
                 {
                     "name": "Thibaud Fabre",
                     "email": "thibaud@aztech.io"
+                },
+                {
+                    "name": "Ben Ramsey",
+                    "email": "ben@benramsey.com",
+                    "homepage": "https://benramsey.com"
                 }
             ],
             "description": "Formerly rhumsaa/uuid. A PHP 5.4+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
@@ -3252,12 +3248,7 @@
                 "mock",
                 "xunit"
             ],
-<<<<<<< HEAD
             "time": "2017-08-03T14:08:16+00:00"
-=======
-            "abandoned": true,
-            "time": "2018-08-09T05:50:03+00:00"
->>>>>>> nadee
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
