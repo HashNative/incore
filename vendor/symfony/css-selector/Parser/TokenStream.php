@@ -32,6 +32,11 @@ class TokenStream
     private $tokens = array();
 
     /**
+     * @var bool
+     */
+    private $frozen = false;
+
+    /**
      * @var Token[]
      */
     private $used = array();
@@ -44,7 +49,7 @@ class TokenStream
     /**
      * @var Token|null
      */
-    private $peeked;
+    private $peeked = null;
 
     /**
      * @var bool
@@ -70,6 +75,8 @@ class TokenStream
      */
     public function freeze()
     {
+        $this->frozen = true;
+
         return $this;
     }
 
@@ -142,7 +149,7 @@ class TokenStream
     /**
      * Returns nex identifier or star delimiter token.
      *
-     * @return string|null The identifier token value or null if star found
+     * @return null|string The identifier token value or null if star found
      *
      * @throws SyntaxErrorException If next token is not an identifier or a star delimiter
      */

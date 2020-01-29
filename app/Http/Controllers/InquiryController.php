@@ -16,9 +16,9 @@ class InquiryController extends Controller
     public function index()
     {
         $inquiries = Inquiry::All();
-        if(session('success_message')){
-            Alert::success('Success!',session('success_message'));
-           }
+        // if(session('success_message')){
+        //     Alert::success('Success!',session('success_message'));
+        //    }
        return view('inquiry.index',compact('inquiries'));
        
     }
@@ -58,7 +58,7 @@ class InquiryController extends Controller
         date_default_timezone_set("Asia/Colombo");
         $inquiry->date_time =date('Y-m-d h:i:s');
         $inquiry->save();
-        return redirect('/inquiry') ->withSuccessMessage('Successfuly Added');
+        return redirect('/inquiry');
         //
     }
 
@@ -112,7 +112,7 @@ class InquiryController extends Controller
         $inquiry->follow_up =$request ->follow_up;
         $inquiry->date_time =$request ->date_time;
         $inquiry->update();
-        return redirect('/inquiry') ->withSuccessMessage('Successfuly Updated');
+        return redirect('/inquiry');
         //
     }
 
@@ -127,7 +127,7 @@ class InquiryController extends Controller
         $inquiry =  Inquiry::find($id);
         $inquiry->delete();
 
-        return redirect('/inquiry') ->withSuccessMessage('Successfuly Deleted');
+        return redirect('/inquiry');
         //
     }
 }

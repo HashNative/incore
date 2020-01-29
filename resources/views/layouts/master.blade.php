@@ -314,7 +314,7 @@ git <!DOCTYPE html>
 
 
 </script>
- @include('sweetalert::alert')
+
 </body>
 </html>
 

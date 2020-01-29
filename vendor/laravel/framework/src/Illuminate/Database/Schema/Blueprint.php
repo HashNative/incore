@@ -811,12 +811,11 @@ class Blueprint
      * Create a new time column (with time zone) on the table.
      *
      * @param  string  $column
-     * @param  int  $precision
      * @return \Illuminate\Support\Fluent
      */
-    public function timeTz($column, $precision = 0)
+    public function timeTz($column)
     {
-        return $this->addColumn('timeTz', $column, compact('precision'));
+        return $this->addColumn('timeTz', $column);
     }
 
     /**
@@ -903,17 +902,6 @@ class Blueprint
     public function softDeletesTz($precision = 0)
     {
         return $this->timestampTz('deleted_at', $precision)->nullable();
-    }
-
-    /**
-     * Create a new year column on the table.
-     *
-     * @param  string  $column
-     * @return \Illuminate\Support\Fluent
-     */
-    public function year($column)
-    {
-        return $this->addColumn('year', $column);
     }
 
     /**
