@@ -74,7 +74,6 @@
                           <input type = "hidden" name = "_method" value = "delete"> 
                           
                           {{csrf_field()}}
-
                           <a href="{{route('inquiry.edit',$inquiry->id)}}" tittle="edit details"class=" btn btn-sm fa fa-share-square";>
                           <a href="{{route('inquiry.edit',$inquiry->id)}}" tittle="edit details"class=" btn btn-sm fas fa-edit"style="color:#ffc107";>    
                       
