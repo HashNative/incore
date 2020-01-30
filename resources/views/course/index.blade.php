@@ -38,9 +38,9 @@
                     <th>Course Name </th>
                     <th>Registration date</th>
                     <th>Course fees</th>
-                    <th>Description</th>   
+                    <th>Description</th>
+                    <th>Start by</th>   
                     <th>End by</th>
-                    <th>Start by</th>
                     <th>Actions</th>
 
                     </tr>
@@ -53,8 +53,9 @@
                         <td>{{ $course->registration_date}}</td>
                         <td>{{ $course->course_fees}}</td>
                         <td>{{ $course->description}}</td>
-                        <td>{{ $course->end_by}}</td>
                         <td>{{ $course->start_by}}</td>
+                        <td>{{ $course->end_by}}</td>
+                       
                         
 
 

@@ -267,30 +267,27 @@
               <!-- /.card-body -->
             </div>
             <div class="col-lg-20">
-            <div class="card">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Operator Inquiry Vs Registraion</h3>
-                  </div>
+
+                   <!-- BAR CHART -->
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Bar Chart</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
               </div>
               <div class="card-body">
-                
-                <!-- /.d-flex -->
-
-                <div class="position-relative mb-4">
-                  <canvas id="sales-chart" height="250"></canvas>
-                </div>
-                  <div class="d-flex flex-row justify-content-end">
-                  <span class="mr-4">
-                    <i class="fas fa-square text-primary"></i> Inquiry
-                  </span>
-                   <span>
-                    <i class="fas fa-square text-gray"></i> Registration
-                  </span>
+                <div class="chart">
+                  <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
               </div>
+              <!-- /.card-body -->
             </div>
-            </div>
+            <!-- /.card -->
+          </div>
             <!-- /.card -->
             
           <div class="row">
@@ -893,5 +890,5 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
-        <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
+         
    @endsection   

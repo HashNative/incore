@@ -23,7 +23,7 @@
         <div class="row">
           <!-- left column -->
           <div class="d-flex justify-content-center">
-          <div class="col-md-8">
+          <div class="col-md-6 ">
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">

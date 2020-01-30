@@ -22,7 +22,7 @@
      <input type = "hidden" name = "_method" value="put">
      {{csrf_field()}}
        <div class="d-flex justify-content-center">
-       <div class="col-md-8">
+       <div class="col-md-6">
             <!-- general form elements disabled -->
             <div class="card card-warning">
               <div class="card-header">
