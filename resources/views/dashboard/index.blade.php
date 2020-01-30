@@ -177,15 +177,15 @@
               
               <div class="card-footer">
                 <div class="row">
-                @foreach ($staffs as $staff)
+                @foreach ($inquiries as $inquiry)
                   <div class="col-sm-2 col-2">
                  
                     <div class="description-block border-right">
                    
-                      <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                      <h5 class="description-header">$35,210.43</h5>
+                      <!-- <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span> -->
+                      <h5 class="description-header">{{ $inquiry->count}}</h5>
                      
-                      <span class="description-text">{{ $staff->staff_name}}</span>
+                      <span class="description-text">{{ $inquiry->inquiry_by}}</span>
                      
                     </div>
                    

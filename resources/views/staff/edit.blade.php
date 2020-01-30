@@ -46,7 +46,7 @@
    <div  class ="col-md-6">
    <div class="from-group">
         <label for ="email">Email</label>
-        <input type ="text" name ="email" id ="email"value = "{{$staff -> email}}"class="form-control" required >
+        <input type ="email" name ="email" id ="email"value = "{{$staff -> email}}"class="form-control" required >
         <div class="invalid-feedback">
         Please Enter valid Email.
       </div>
@@ -58,7 +58,8 @@
    <div  class ="col-md-6">
    <div class="from-group">
         <label for ="languages">Language</label>
-        <select type ="text" name ="languages" id ="languages"value = "{{$staff -> languages}}"class="form-control" >
+        <select type ="text" name ="languages" id ="languages"value = "{{$staff -> languages}}"class="form-control " >
+        <option >{{$staff -> languages}}</option>
     
         <option >English</option>
         <option >Tamil</option>
@@ -69,19 +70,20 @@
 
    <div  class ="col-md-6">
    <div class="from-group">
-        <label for ="mobile_number">Mobile Number</label>
-        <input type ="number" name ="mobile_number" id ="mobile_number"value = "{{$staff -> mobile_number}}"class="form-control" required> 
+   <label for ="mobile_number">Mobile Number</label> 
+        <input type ="integer" name="mobile_number" class="form-control" maxlength="10" id ="mobile_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $staff->mobile_number}}" required>
         <div class="invalid-feedback">
-        Please Enter valid Mobile Number.
-      </div>  
+        Please Enter valid phone number.
+      </div>
         
-     
+        
         </div>
         </div> 
+
    <div  class ="col-md-6">
    <div class="from-group">
         <label for ="password">Password</label>
-        <input type ="text" name ="password" id ="password"value = "{{$staff -> password}}"class="form-control" required>
+        <input type ="text" name ="password"  id ="password"value = "{{$staff -> password}}"class="form-control" required>
         <div class="invalid-feedback">
         Please Enter valid Password.
       </div>

@@ -46,15 +46,15 @@
     <div class ="col-md-6">
     <div class="from-group"> 
         <label for ="email">Email</label>
-        <input type ="text" name ="email" id="exampleInputsource1"  id ="email" placeholder="Enter the email"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+        <input type ="email" name ="email" id="exampleInputsource1"  id ="email" placeholder="Enter the email"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
     </div> 
     </div>
   
+
         <div class ="col-md-6"> 
         <div class="from-group">
         <label for ="languages">Language</label>
         <select type ="text" name ="languages" id ="languages" class="form-control" >
-        
         <option value="english" selected >English</option>
         <option value="tamil">Tamil</option>
         <option value="sinhala">Sinhala</option></select>
@@ -64,7 +64,7 @@
         <div class ="col-md-6"> 
         <div class="from-group">
         <label for ="mobile_number">Mobile Number</label>
-        <input type ="text" name ="mobile_number" id="exampleInputsource1"  id ="mobile_number"   placeholder="Enter the mobile number  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+        <input type ="integer" name ="mobile_number"  maxlength="10" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1"  id ="mobile_number"   placeholder="Enter the mobile number  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
         
         
     </div> 

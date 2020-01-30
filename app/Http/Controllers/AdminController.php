@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 use App\Student;
 use App\Staff;
+use App\inquiry;
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
+
 
 
 class AdminController extends Controller
@@ -18,8 +22,14 @@ class AdminController extends Controller
     {
         $students = Student::All();
          $staffs = Staff::All();
-        return view('dashboard.index',compact('students','staffs'));
-        //
+         $inquiries = inquiry::All();
+         $inquiries = DB::table('inquiries')
+         ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS count')))
+         ->groupBy('inquiry_by')
+         ->get();
+
+        return view('dashboard.index',compact('students','staffs','inquiries'));
+     
     }
 
     /**

@@ -17,7 +17,7 @@ class StaffController extends Controller
     {
        $staffs = Staff::All();
        if(session('success_message')){
-        Alert::success('Success!',session('success_message'));
+        Alert::success('',session('success_message'));
        }
        return view('staff.index',compact('staffs'));
         //
@@ -52,7 +52,7 @@ class StaffController extends Controller
         $staff->email =$request ->email;
         $staff->password =$request->password;
         $staff->save();
-        return redirect('/staff') ->withSuccessMessage('Successfuly added');
+        return redirect('/staff') ->withSuccessMessage('Successfuly Added');
 
       
 
@@ -101,7 +101,7 @@ class StaffController extends Controller
         $staff->mobile_number =$request->mobile_number;
         $staff->password =$request->password;
         $staff->update();
-        return redirect('/staff') ->withSuccessMessage('Successfuly updated');
+        return redirect('/staff') ->withSuccessMessage('Successfuly Updated');
     }
 
     /**
@@ -115,6 +115,6 @@ class StaffController extends Controller
         $staff =  Staff::find($id);
         $staff->delete();
 
-        return redirect('/staff') ->withSuccessMessage('Successfuly deleted');
+        return redirect('/staff') ->withSuccessMessage('Successfuly Deleted');
     }
 }
