@@ -113,7 +113,7 @@
                     <p class="text-center">
                       <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
                     </p>
-
+                 
                     <div class="chart">
                       <!-- Sales Chart Canvas -->
                       <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
@@ -125,117 +125,18 @@
                     <p class="text-center">
                       <strong>Inq & Registration for a Date Range</strong>
                     </p>
-
+                    @foreach ($inquiries as $inquiry)
                   <div class="progress-group">
-                    CCNA New Syllabus
-                      <span class="float-right"><b>3</b>/43</span>
+                  {{ $inquiry->course_id}}
+                      <span class="float-right"><b></b>/ {{ $inquiry->count}}</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-primary" style="width: 80%"></div>
                       </div>
                     </div>
+                    @endforeach
                     <!-- /.progress-group -->
-
-                    <div class="progress-group">
-                    CCNA Security
-                      <span class="float-right"><b>01</b>/02</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-danger" style="width: 75%"></div>
-                      </div>
                     </div>
 
-                    <!-- /.progress-group -->
-                    <div class="progress-group">
-                      <span class="progress-text">CCNA Collaboration</span>
-                      <span class="float-right"><b>0</b>/1</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-success" style="width: 60%"></div>
-                      </div>
-                    </div>
-
-                     <div class="progress-group">
-                    CCNA New Syllabus
-                      <span class="float-right"><b>3</b>/43</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-primary" style="width: 80%"></div>
-                      </div>
-                    </div>
-                    <!-- /.progress-group -->
-
-                    <div class="progress-group">
-                    CCNA Security
-                      <span class="float-right"><b>01</b>/02</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-danger" style="width: 75%"></div>
-                      </div>
-                    </div>
-
-                    <!-- /.progress-group -->
-                    <div class="progress-group">
-                      <span class="progress-text">CCNA Collaboration</span>
-                      <span class="float-right"><b>0</b>/1</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-success" style="width: 60%"></div>
-                      </div>
-                    </div>
-
-                    <!-- /.progress-group -->
-                    <div class="progress-group">
-                    CCNP Route
-                      <span class="float-right"><b>250</b>/500</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-warning" style="width: 50%"></div>
-                      </div>
-                    </div>
-
-                     <!-- /.progress-group -->
-   2                  <div class="progress-group">
-                      <span class="progress-text">CCNP Switch</span>
-                      <span class="float-right"><b>0</b>/1</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-success" style="width: 60%"></div>
-                      </div>
-                    </div>
-
-                     <div class="progress-group">
-                     CCNP TShoot
-                      <span class="float-right"><b>3</b>/43</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-primary" style="width: 80%"></div>
-                      </div>
-                    </div>
-                    <!-- /.progress-group -->
-
-                    <div class="progress-group">
-                    CCIE - Routing
-                      <span class="float-right"><b>01</b>/02</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-danger" style="width: 75%"></div>
-                      </div>
-                    </div>
-
-                    <!-- /.progress-group -->
-                    <div class="progress-group">
-                      <span class="progress-text">CCIE - Data center</span>
-                      <span class="float-right"><b>0</b>/1</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-success" style="width: 60%"></div>
-                      </div>
-                    </div>
-
-                    <!-- /.progress-group -->
-                    <div class="progress-group">
-                    CCNP Route
-                      <span class="float-right"><b>250</b>/500</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-warning" style="width: 50%"></div>
-                      </div>
-                    </div>
-                    <!-- /.progress-group -->
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.row -->
-              </div>
               <!-- ./card-body -->
               <div class="card-footer">
                 <div class="row">

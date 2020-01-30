@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Inquiry;
 use App\Student;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
 
 class AdminController extends Controller
 {
@@ -14,8 +16,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $students = Student::All();
-        return view('dashboard.index',compact('students'));
+       $inquiries = DB::table('inquiries')
+       ->select(array('course_id',DB::raw('COUNT(course_id) AS count')))
+       ->groupBy('course_id')
+       ->get();
+       $students= Student::All();
+        return view('dashboard.index',compact('students','inquiries'));
         //
     }
 
