@@ -200,7 +200,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
          
           <li class="nav-item has-treeview menu-open">
-          <a href="/dashboard" class="nav-link active">
+            
+          <a href="{{route('dashboard.index')}}" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -303,7 +304,6 @@
 <script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
 <script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
 
-
 <!-- OPTIONAL SCRIPTS -->
 
 
@@ -311,6 +311,18 @@
 <script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script>
 <!-- PAGE SCRIPTS -->
 <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
+<script src="{{asset('dist/js/pages/dashboard3.js')}}"></script>
+
+<!-- jQuery UI -->
+<script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+
+<!-- FLOT CHARTS -->
+<script src="{{asset('plugins/flot/jquery.flot.js')}}"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="{{asset('plugins/flot-old/jquery.flot.resize.min.js')}}"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="{{asset('plugins/flot-old/jquery.flot.pie.min.js')}}"></script>
+<!-- Page script -->
 <script>
   $(function () {
     $("#example1").DataTable();
@@ -322,15 +334,64 @@
       "info": true,
       "autoWidth": false,
     });
+
+        /*
+     * DONUT CHART
+     * -----------
+     */
+
+    var donutData = [
+      {
+        label: 'Series2',
+        data : 30,
+        color: '#3c8dbc'
+      },
+      {
+        label: 'Series3',
+        data : 20,
+        color: '#0073b7'
+      },
+      {
+        label: 'Series4',
+        data : 50,
+        color: '#00c0ef'
+      }
+    ]
+    $.plot('#donut-chart', donutData, {
+      series: {
+        pie: {
+          show       : true,
+          radius     : 1,
+          innerRadius: 0.5,
+          label      : {
+            show     : true,
+            radius   : 2 / 3,
+            formatter: labelFormatter,
+            threshold: 0.1
+          }
+
+        }
+      },
+      legend: {
+        show: false
+      }
+    })
+    /*
+     * END DONUT CHART
+     */
+
+
+
   });
-
-
+  function labelFormatter(label, series) {
+    return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
+      + label
+      + '<br>'
+      + Math.round(series.percent) + '%</div>'
+  }
 </script>
-<<<<<<< HEAD
-=======
-
->>>>>>> adhil
 @include('sweetalert::alert')
+
 </body>
 </html>
 

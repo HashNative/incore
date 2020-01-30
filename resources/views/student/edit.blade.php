@@ -21,7 +21,7 @@
      {{csrf_field()}}
             
                 <div class=" d-flex justify-content-center  ">
-                <div class=" col-8  ">
+                <div class=" col-6  ">
             <div class="card card-warning">
               <div class="card-header">
                 <h3 class="card-title">Student Details</h3>
@@ -43,8 +43,8 @@
                     </div>
                     <div class="col-sm-6">
                     <div class="form-group">            
-                    <label for ="email_id">Email Id</label> 
-        <input type ="text" name ="email_id" id ="email_id" class="form-control"value = "{{$student ->email_id}}" required>
+                    <label for ="email_id">Email</label> 
+        <input type ="text" name ="email_id" id ="email_id" class="form-control"   value = "{{$student ->email_id}}" required>
         <div class="invalid-feedback">
         Please Enter valid Email.
       </div>
@@ -57,28 +57,43 @@
                     
                       <div class="form-group">
                       <label for ="phone_number">Phone Number</label> 
-        <input type ="text" name ="phone_number" id ="phone_number" class="form-control" value = "{{$student ->phone_number}}"required>
+        <input type ="integer" name ="phone_number" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}"class="form-control" value = "{{$student ->phone_number}}"required>
         <div class="invalid-feedback">
         Please Enter valid Phone Number.
       </div>
-     
+    
                   </div>
                     </div>
-                    <div class="col-sm-6">
+                    <!-- <div class="col-sm-6">
                     <div class="form-group">
                     <label for ="register_by">Register By</label> 
-        <input type ="text" name ="register_by" id ="register_by" class="form-control" value = "{{$student ->register_by}}"required>
+        
+        <select type ="text" class="form-control" name ="register_by" id ="register_by" value = "{{$student ->register_by}}"required>
+                            <option>{{$student ->register_by}}</option>
+                           @foreach ($staffs as $staff)
+                            <option>{{ $staff->staff_name}}</option>
+                            @endforeach
+                          
+                      </select>
+                         
         <div class="invalid-feedback">
         Please Enter valid detail.
       </div>
          
                   </div>
-                    </div>
-
+                    </div> -->
+                   
                     <div class="col-sm-6">
                     <div class="form-group">
                   <label for ="course_name">Course Name</label> 
-        <input type ="text" name ="course_name" id ="course_name" class="form-control" value = "{{$student ->course_name}}"required>
+                  <select type ="text" class="form-control"  name ="course_name" id ="course_name" value = "{{$student ->course_name}}"required>
+                  <option >{{$student ->course_name}}</option>
+                  @foreach ($courses as $course)
+                            <option >{{ $course->course_name}}</option>
+                            
+                          @endforeach
+                      </select>
+        
         <div class="invalid-feedback">
         Please Enter valid Course Name.
       </div>
@@ -90,7 +105,14 @@
                     <div class="col-sm-6">
                     <div class="form-group">
                   <label for ="inquiry_by">Inquiry By</label> 
-                         <input type ="text" name ="inquiry_by" id ="inquiry_by" class="form-control" value = "{{$student ->inquiry_by}}"required>
+                  <select type ="text" class="form-control"  name ="inquiry_by" id ="inquiry_by"  value = "{{ $staff->staff_name}}"required>
+                  <option >{{ $staff->staff_name}}</option>
+                  @foreach ($staffs as $staff)
+                            <option >{{ $staff->staff_name}}</option>
+                            @endforeach
+                          
+                      </select>
+                         
                          <div class="invalid-feedback">
                          Please Enter valid detail.
       </div>
@@ -100,13 +122,14 @@
                     <div class="col-sm-6">
                     <div class="form-group">
                   <label for ="inquiry_source">Inquiry Source</label> 
-                        <select type ="text" class="form-control" name ="inquiry_source" id ="inquiry_source"
-                         value = "{{$student ->inquiry_source}}"required>
-                            
-                            <option value="#">Call</option>
-                            <option value="#">Walk In</option>
+                  <select type ="text" class="form-control" name ="inquiry_source" id ="inquiry_source" value = "{{$student ->inquiry_source}}"required>
+                  <option  >{{$student ->inquiry_source}}</option>
+                            <option  >Call</option>
+                            <option  >Walk In </option>
+                            <option >Others </option>
                           
                       </select>
+                       
                         <div class="invalid-feedback">
                         Please Enter valid Inquiry Source.
       </div>
@@ -118,10 +141,10 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                         <label for ="transfer">Transfer</label> 
-                          <select type ="text" class="form-control" name ="transfer" id ="transfer" value = "{{$student ->transfer}}"required>
-                            
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
+                          <select type ="text" class="form-control" name ="transfer" id ="transfer"  value = "{{$student ->transfer}}" required>
+                          <option   >{{$student ->transfer}}</option>
+                              <option   >Yes</option>
+                              <option  >No</option>
                             
                         </select>
                         <div class="invalid-feedback">
@@ -133,20 +156,23 @@
                     <div class="col-sm-6">
                     <div class="form-group">
                   <label for ="source">Source</label> 
-        <!-- <input type ="text" name ="source" id ="source" class="form-control" value = "{{$student ->source}}"required> -->
-        <select type ="text" class="form-control" name ="source" id ="source"
-                         value = "{{$student ->source}}"required>
-                            
-                            <option value="#">Call</option>
-                            <option value="#">Walk In</option>
-                            <option value="#">Web</option>
-                            <option value="#">From Codinator</option>
-                            <option value="#">From Student</option>
-                            <option value="#">From Branch</option></select>
-            <div class="invalid-feedback">
-             Please Enter valid Source.
-              </div>
-             </div>
+                  <select type ="text" class="form-control" name ="source" id ="source" value = "{{$student ->source}}"required>
+                  <option >{{$student ->source}}</option>
+                            <option >Call</option>
+                            <option >Walk In</option>
+                            <option >Web</option>
+                            <option >From Student</option>
+                            <option >From Cordinator</option>
+                            <option >From Branch</option>
+                            <option >Offers</option>
+                           
+                          
+                      </select>
+ 
+        <div class="invalid-feedback">
+        Please Enter valid Source.
+      </div>
+         </div>
 
                     </div>
 
@@ -175,6 +201,7 @@
 
 <script>
   (function() {
+    
 'use strict';
 window.addEventListener('load', function() {
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -191,6 +218,11 @@ form.classList.add('was-validated');
 });
 }, false);
 })();
+
+
+
+
+
 </script>
 
 
