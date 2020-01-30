@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Student;
 use App\Inquiry;
+use App\Student;
 use App\Staff;
 use App\Course;
 use DB;

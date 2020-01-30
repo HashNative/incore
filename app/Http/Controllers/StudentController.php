@@ -9,6 +9,7 @@ use App\Staff;
 
 use RealRashid\SweetAlert\Facades\Alert;
 
+
 class StudentController extends Controller
 {
     /**
@@ -32,8 +33,10 @@ if(session('success_message')){
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('student.create')
+    {      
+        $courses= Course::All();
+        $staffs= Staff::All();
+        return view('student.create',compact('student','courses','staffs'))
         ;
         //
     }
@@ -121,7 +124,7 @@ if(session('success_message')){
         $student->source =$request ->source;
         $student->date =$request ->date;
         $student->inquiry_by =$request ->inquiry_by;
-        $student->register_by =$request ->register_by;
+        $student->register_by =$request ->register_by;  //Auth::user
         $student->date =$request ->date;
         $student->update();
         return redirect('/student')->withSuccessMessage('Successfuly Updated');
