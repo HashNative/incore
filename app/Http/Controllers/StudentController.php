@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\Course;
+use App\Staff;
+
 use RealRashid\SweetAlert\Facades\Alert;
 
 class StudentController extends Controller
@@ -14,7 +17,7 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
          $students = Student::All();
 if(session('success_message')){
          Alert::success('Success!',session('success_message'));
@@ -85,8 +88,11 @@ if(session('success_message')){
      */
     public function edit($id)
     {
+        $courses = Course::All();
+        $staffs = Staff::All();
+
         $student= Student ::find ($id);
-        return view('student.edit',compact('student'));
+        return view('student.edit',compact('student','courses','staffs'));
         //
     }
 
@@ -99,6 +105,7 @@ if(session('success_message')){
      */
     public function update(Request $request, $id)
     {
+       
         $student= Student ::find ($id);
         
         $student->student_name =$request ->student_name;
@@ -128,10 +135,13 @@ if(session('success_message')){
     public function destroy($id)
     {
         $student =  Student::find($id);
-        $student->delete();
+       
+        $student->delete() ;
+       
 
         return redirect('/student')->withSuccessMessage('Successfuly Deleted');
         //
+      
     }
 }
 
