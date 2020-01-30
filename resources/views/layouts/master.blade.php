@@ -326,6 +326,10 @@
 
 
 </script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> adhil
 @include('sweetalert::alert')
 </body>
 </html>

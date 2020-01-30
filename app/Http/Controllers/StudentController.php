@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class StudentController extends Controller
 {
@@ -15,6 +16,9 @@ class StudentController extends Controller
     public function index()
     {
          $students = Student::All();
+         if(session('success_message')){
+            Alert::success('Success!',session('success_message'));
+           }
        return view('student.index',compact('students'));
         //
     }
@@ -26,7 +30,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student.create');
+        return view('student.create')
+        ;
         //
     }
 
@@ -54,7 +59,8 @@ class StudentController extends Controller
                                                                   
         
         $student->save();
-        return redirect('/student');
+        return redirect('/student')
+        ->withSuccessMessage('Successfuly added');
 
         
         //
