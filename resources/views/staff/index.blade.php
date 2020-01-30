@@ -4,24 +4,27 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
+          
+          
+          
             
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item active">staff</li>
+              <li class="breadcrumb-item active">Staff</li>
               
             </ol>
           </div>
-        </div><div class="0"></div>
+        </div><div class="0"></div> 
       </div><!-- /.container-fluid -->
-</section>
-
-<a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
+      <a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
     Add Staff
 </a>
-<br>
-<br>
+</section>
+
+
+
 
 <!-- Main content -->
 <section class="content">
@@ -29,18 +32,19 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Staff</h3>
+                    <h3 class="card-title">Staff &nbsp; 
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="example1" class="table table-bordered table-striped">
+                 <table id="example1"  class="table table-bordered table-striped ">
+                 
 
                     <thead>
 
 <tr>
-<th>Id</th>
+
     <th>Staff Name </th>
-    <th>email</th>
+    <th>Email</th>
     <th>Languages</th>
     
     <th>Mobile Number</th>
@@ -51,7 +55,7 @@
 <tbody>
 @foreach ($staffs as $staff)
 <tr>
-    <td>{{ $staff->id}}</td>
+    
     <td>{{ $staff->staff_name}}</td>
     <td>{{ $staff->email}}</td>
     

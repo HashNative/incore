@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Staff;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class StaffController extends Controller
 {
@@ -15,6 +16,9 @@ class StaffController extends Controller
     public function index()
     {
        $staffs = Staff::All();
+       if(session('success_message')){
+        Alert::success('',session('success_message'));
+       }
        return view('staff.index',compact('staffs'));
         //
     }
@@ -46,9 +50,9 @@ class StaffController extends Controller
         $staff->mobile_number =$request ->mobile_number;
         
         $staff->email =$request ->email;
-        $staff->password = bcrypt($request->password);
+        $staff->password =$request->password;
         $staff->save();
-        return redirect('/staff');
+        return redirect('/staff') ->withSuccessMessage('Successfuly Added');
 
       
 
@@ -95,9 +99,9 @@ class StaffController extends Controller
        
         $staff->email =$request ->email;
         $staff->mobile_number =$request->mobile_number;
-        $staff->password = bcrypt($request->password);
+        $staff->password =$request->password;
         $staff->update();
-        return redirect('/staff');
+        return redirect('/staff') ->withSuccessMessage('Successfuly Updated');
     }
 
     /**
@@ -111,6 +115,6 @@ class StaffController extends Controller
         $staff =  Staff::find($id);
         $staff->delete();
 
-        return redirect('/staff');
+        return redirect('/staff') ->withSuccessMessage('Successfuly Deleted');
     }
 }
