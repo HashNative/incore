@@ -4,9 +4,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-          <a href="{{route('inquiry.create')}}"  class="btn  btn-primary" tittle="show details">
-    <i class="fas fa-plus"></i> Add Inquiry
-     </a>
+          
             
           </div>
           <div class="col-sm-6">
@@ -27,7 +25,9 @@
         <div class="col-12">
         <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Inquiry Details</h3>
+              <h3 class="card-title">Inquiry Details &nbsp; <a href="{{route('inquiry.create')}}"  class="btn  btn-primary" tittle="show details">
+    <i class="fas fa-plus"></i> Add Inquiry
+     </a> </h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -104,8 +104,8 @@
                       <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
-                          <label for ="inquiry_id">Inquiry Id</label> 
-                          <input type ="text" name="inquiry_id" class="form-control" id ="inquiry_id" value = "{{ $inquiry->id}}" required>
+                        <label for ="follow_up">Follow up</label> 
+                          <input type ="text" name="follow_up" class="form-control" id ="follow_up" value = "{{ $inquiry->follow_up}}" required>
                         </div>
                       </div>
                       <div class="col-sm-6">
@@ -115,42 +115,17 @@
                           <input type ="text" name="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
                         </div>
                       </div>
-                      <div class="col-sm-6">
+                      
+                      <div class="col-sm-12">
                         <!-- text input -->
                         <div class="form-group">
-                          <label for ="follow_up">follow up</label> 
-                          <input type ="text" name="follow_up" class="form-control" id ="follow_up" value = "{{ $inquiry->follow_up}}" required>
+                          <label for ="description">Description</label>
+                          <textarea name="description" class="form-control" id ="description" value = "{{ $inquiry->description}}" required></textarea>
                         </div>
                       </div>
-                      <div class="col-sm-6">
-                        <!-- text input -->
-                        <div class="form-group">
-                          <label for ="description">description</label> 
-                          <input type ="text" name="description" class="form-control" id ="description" value = "{{ $inquiry->description}}" required>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <!-- text input -->
-                        <div class="form-group">
-                            <label for ="status">Status</label> 
-                            <select type ="text" name="status" class="form-control" id ="status" value = "{{ $inquiry->status}}"required>
-                            <option>Select status</option>
-                                            <option>Registered</option>
-                                        <option>Pending</option>
-                                        <option>Declined</option>
-                                        </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <!-- text input -->
-                        <div class="form-group">
-                          <label for ="date_time">Date Time</label> 
-                          <input type ="datetime-auto" name="date_time" class="form-control" id ="date_time" value = "{{ $inquiry->date_time}}"required>
-                  
-                         </div>
                       </div>
               
-                      <button type="submit" value="Save" class="btn bg-gradient-success float-right ">save</button>
+                      <button type="submit" value="Save" class="btn bg-gradient-success float-right ">Save</button>
 
                   </form>
                 </div>

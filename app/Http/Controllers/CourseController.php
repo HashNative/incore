@@ -25,8 +25,10 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+    
     {
-        return view('course.create');
+        $courses = Course::All();
+        return view('course.create',compact('courses'));
         //
     }
 

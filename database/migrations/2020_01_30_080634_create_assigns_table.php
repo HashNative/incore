@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFollowUpsTable extends Migration
+class CreateAssignsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateFollowUpsTable extends Migration
      */
     public function up()
     {
-        Schema::create('follow_ups', function (Blueprint $table) {
+        Schema::create('assigns', function (Blueprint $table) {
             $table->increments('id');
-           
-            $table->string('inquiry_by');
-            $table->String('follow_up');
-            $table->String('description');
-         
-            $table->dateTime('date_time');
-            
+            $table->String('inquiry_by');
+            $table->String('assignto');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateFollowUpsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('follow_ups');
+        Schema::dropIfExists('assigns');
     }
 }

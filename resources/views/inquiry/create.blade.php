@@ -10,7 +10,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('inquiry.index')}}">Inquiry</a></li>
-              <li class="breadcrumb-item">Addinquiry</li>
+              <li class="breadcrumb-item">Add Inquiry</li>
             </ol>
           </div>
         </div><div class="0"></div>
@@ -26,10 +26,10 @@
      {{csrf_field()}}
 
      <div class=" d-flex justify-content-center  ">
-                <div class=" col-8  ">
+                <div class=" col-6  ">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add new inquiry</h3>
+                <h3 class="card-title">Add New Inquiry</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -39,7 +39,7 @@
                       <!-- text input -->
                       <div class="form-group">
                       <label>Phone number</label>
-                      <input type="text" name="phone_number" id="exampleInputsource1" class="form-control" id ="phone_number" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="[0-9]{1}[0-9]{9}" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
                     </div>
                    
@@ -47,7 +47,13 @@
                     <div class="col-sm-6">
                     <div class="form-group">
                     <label>Inquiry by</label>
-                        <input type="text" name ="inquiry_by" id="exampleInputsource1" class="form-control" id ="inquiry_by" placeholder="Enter the inquiry by" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                        <select type="text" name ="inquiry_by" id="exampleInputsource1" class="form-control" id ="inquiry_by" placeholder="Enter the inquiry by" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+
+                        @foreach ($staffs as $staff)
+                        <option>{{ $staff->staff_name}}</option>
+                        @endforeach
+                        
+                        </select>
                     </div>
                     </div>
                     <div class="col-sm-6">
@@ -68,7 +74,11 @@
                     <div class="col-sm-6">
                     <div class="form-group">
                     <label>Course</label>
-                        <input type="text" name ="course_id" id="exampleInputsource1" class="form-control" id ="course_id"  placeholder="Enter the course" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                        <select type="text" name ="course_id" id="exampleInputsource1" class="form-control" id ="course_id"  placeholder="Enter the course" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                        @foreach ($courses as $course)
+                        <option>{{ $course->course_name}}</option>
+                        @endforeach
+                        </select>
                     </div>
                     </div>
 

@@ -17,6 +17,7 @@ Route::resource('inquiry','InquiryController');
 Route::resource('course','CourseController');
 Route::resource('student','StudentController');
 Route::resource('follow_up','FollowupController');
+Route::get('/myinquiry','InquiryController@myinquiry');
 Route::get('/login', function () {
     return view('auth.login');
    });

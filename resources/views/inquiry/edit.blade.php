@@ -23,7 +23,7 @@
    
 
 <div class=" d-flex justify-content-center  ">
-                <div class=" col-8  ">
+                <div class=" col-6  ">
             <div class="card card-warning">
               <div class="card-header">
                 <h3 class="card-title">Edit Inquiry</h3>
@@ -36,7 +36,7 @@
                       <!-- text input -->
                       <div class="form-group">
                   <label for ="phone_number">Phone number</label> 
-        <input type ="text" name="phone_number" class="form-control" id ="phone_number" value = "{{ $inquiry->phone_number}}" required>
+        <input type ="integer" name="phone_number" class="form-control" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $inquiry->phone_number}}" required>
         <div class="invalid-feedback">
         Please Enter valid phone number.
       </div>
@@ -47,7 +47,12 @@
                     <div class="col-sm-6">
                     <div class="form-group">
                   <label for ="inquiry_by">Inquiry by</label> 
-        <input type ="text" name ="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
+        <select type ="text" name ="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
+        @foreach ($staffs as $staff)
+                        <option>{{ $staff->staff_name}}</option>
+                        @endforeach
+                        
+                        </select>
         <div class="invalid-feedback">
         Please Enter valid Inquiry by.
       </div>
@@ -76,7 +81,11 @@
                     <div class="col-sm-6">
                     <div class="form-group">
                   <label for ="course_id">Course</label> 
-        <input type ="text" name ="course_id" class="form-control" id ="course_id" value = "{{ $inquiry->course_id}}"required>
+        <select type ="text" name ="course_id" class="form-control" id ="course_id" value = "{{ $inquiry->course_id}}"required>
+        @foreach ($courses as $course)
+                        <option>{{ $course->course_name}}</option>
+                        @endforeach
+        </select>
         <div class="invalid-feedback">
         Please Enter valid Course.
       </div>

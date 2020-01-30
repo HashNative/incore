@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\FollowUp;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class FollowupController extends Controller
+use Illuminate\Http\Request;
+
+class AssignController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,6 @@ class FollowupController extends Controller
      */
     public function index()
     {
-        $follows = FollowUp::All();
-        return view('inquiry.index',compact('follows'));
         //
     }
 
@@ -26,7 +23,7 @@ class FollowupController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -37,18 +34,6 @@ class FollowupController extends Controller
      */
     public function store(Request $request)
     {
-        $follow = new  FollowUp;
-        $follow->id =$request ->id;
-       
-        $follow->inquiry_by =$request ->inquiry_by;
-        $follow->follow_up =$request ->follow_up;
-        
-        $follow->description =$request ->description;
-        date_default_timezone_set("Asia/Colombo");
-        $follow->date_time =date('Y-m-d h:i:s');
-        $follow->save();
-        return redirect('/inquiry');
-
         //
     }
 
@@ -83,18 +68,6 @@ class FollowupController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $follow= FollowUp ::find ($id);
-        
-       
-        $follow->inquiry_by =$request ->inquiry_by;
-        $follow->follow_up =$request ->follow_up;
-        
-        $follow->description =$request ->description;
-        
-        date_default_timezone_set("Asia/Colombo");
-        $follow->date_time =date('Y-m-d h:i:s');
-        $follow->update();
-        return redirect('/inquiry');
         //
     }
 

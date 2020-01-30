@@ -1,10 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Course;
 use App\Inquiry;
+use App\Staff;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\FollowUp;
+use Auth;
+use DB;
 
 class InquiryController extends Controller
 {
@@ -23,6 +27,18 @@ class InquiryController extends Controller
        
     }
 
+    public function myinquiry()
+    {
+        
+        $inquiries = DB::table('inquiries')
+           ->where('inquiry_by',Auth::user()->name)
+           ->get();
+     
+       return view('inquiry.index',compact('inquiries'));
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -30,7 +46,9 @@ class InquiryController extends Controller
      */
     public function create()
     {
-        return view('inquiry.create');
+        $courses = Course::All();
+        $staffs = Staff::All();
+        return view('inquiry.create',compact('courses', 'staffs'));
         //
     }
 
@@ -71,6 +89,7 @@ class InquiryController extends Controller
     public function show($id)
     {
         $inquiry= Inquiry ::find ($id);
+
         return view('inquiry.show',compact('inquiry'));
         //
     }
@@ -83,8 +102,10 @@ class InquiryController extends Controller
      */
     public function edit($id)
     {
+        $courses = Course::All();
         $inquiry= Inquiry ::find ($id);
-        return view('inquiry.edit',compact('inquiry'));
+        $staffs = Staff::All();
+        return view('inquiry.edit',compact('inquiry','courses', 'staffs'));
         //
     }
 
