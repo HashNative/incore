@@ -9,11 +9,16 @@
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
   <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
   <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
+
+  <link rel="stylesheet" href="{{asset('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')}}">
   <!-- Google Font: Source ans Pro -->
   <link href="{{asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700')}}" rel="stylesheet">
   </head>
@@ -27,7 +32,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="/myinquiry" class="nav-link">My Inquiries</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -134,7 +139,10 @@
           </div>
 
       </li>
-
+      @guest
+                            
+                           
+     @else
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="fas fa-user"></i></a>
@@ -144,10 +152,19 @@
           <div class="dropdown-divider"></div>
     
           <div class="dropdown-divider"></div>
-          <a href="/login" class="dropdown-item dropdown-footer">Log out</a>
+          <a href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"class="dropdown-item dropdown-footer">
+              Logout
+          </a>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              {{ csrf_field() }}
+          </form>
           </div>
 
       </li>
+      @endguest
       
     </ul>
   </nav>
@@ -157,9 +174,9 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="#" alt="#" class="brand-image img-circle elevation-3"
+      <img src="dist/img/logo.png" alt="#" class="brand-image  elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Incore</span>
+      <span class="brand-text font-weight-light"></span>
     </a>
 
     <!-- Sidebar -->
@@ -167,19 +184,25 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="dist/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
         </div>
+        @guest
+                            
+                           
+       @else
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
+      @endguest
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
          
-          <li class="nav-item has-treeview menu-open">
-          <a href="/dashboard" class="nav-link active">
+          <li class="nav-item has-treeview ">
+            
+          <a href="{{route('dashboard.index')}}" class="nav-link {{Request::is('dashboard') ? 'active' : null }} ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -189,7 +212,7 @@
             
            </li>
             <li class="nav-item has-treeview ">
-            <a href="{{route('student.index')}}" class="nav-link">
+            <a href="{{route('student.index')}}" class="nav-link {{Request::is('student') ? 'active' : null }}">
               <i class="nav-icon fas fa-user-alt"></i>
               <p>
               Student
@@ -199,7 +222,7 @@
             </li>
           
             <li class="nav-item has-treeview">
-            <a href="{{route('course.index')}}" class="nav-link ">
+            <a href="{{route('course.index')}}" class="nav-link {{Request::is('course') ? 'active' : null }}">
               <i class="nav-icon fas fa-graduation-cap"></i>
               <p>
                 Course
@@ -208,7 +231,7 @@
             </a>
             </li>
             <li class="nav-item has-treeview">
-            <a href="{{route('inquiry.index')}}" class="nav-link">
+            <a href="{{route('inquiry.index')}}" class="nav-link {{Request::is('inquiry') ? 'active' : null }}">
               <i class="nav-icon fas fa-question-circle  "></i>
               <p>
                 Inquiry
@@ -223,7 +246,7 @@
          
 
             <li class="nav-item">
-            <a href="{{route('staff.index')}}" class="nav-link">
+            <a href="{{route('staff.index')}}" class="nav-link {{Request::is('staff') ? 'active' : null }}">
               <i class="nav-icon fas fa-user-friends"></i>   
               <p>
               Staff
@@ -279,11 +302,28 @@
 <script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
-<script src="{{asset('../../plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('../../plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
 
+<!-- OPTIONAL SCRIPTS -->
+
+
+
+<script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script>
 <!-- PAGE SCRIPTS -->
 <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
+<script src="{{asset('dist/js/pages/dashboard3.js')}}"></script>
+
+<!-- jQuery UI -->
+<script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+
+<!-- FLOT CHARTS -->
+<script src="{{asset('plugins/flot/jquery.flot.js')}}"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="{{asset('plugins/flot-old/jquery.flot.resize.min.js')}}"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="{{asset('plugins/flot-old/jquery.flot.pie.min.js')}}"></script>
+<!-- Page script -->
 <script>
   $(function () {
     $("#example1").DataTable();
@@ -295,9 +335,61 @@
       "info": true,
       "autoWidth": false,
     });
+
+        /*
+     * DONUT CHART
+     * -----------
+     */
+
+    var donutData = [
+      {
+        label: 'Series2',
+        data : 30,
+        color: '#3c8dbc'
+      },
+      {
+        label: 'Series3',
+        data : 20,
+        color: '#0073b7'
+      },
+      {
+        label: 'Series4',
+        data : 50,
+        color: '#00c0ef'
+      }
+    ]
+    $.plot('#donut-chart', donutData, {
+      series: {
+        pie: {
+          show       : true,
+          radius     : 1,
+          innerRadius: 0.5,
+          label      : {
+            show     : true,
+            radius   : 2 / 3,
+            formatter: labelFormatter,
+            threshold: 0.1
+          }
+
+        }
+      },
+      legend: {
+        show: false
+      }
+    })
+    /*
+     * END DONUT CHART
+     */
+
+
+
   });
-
-
+  function labelFormatter(label, series) {
+    return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
+      + label
+      + '<br>'
+      + Math.round(series.percent) + '%</div>'
+  }
 </script>
 @include('sweetalert::alert')
 </body>

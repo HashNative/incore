@@ -557,7 +557,7 @@ class Worker
      */
     public function memoryExceeded($memoryLimit)
     {
-        return (memory_get_usage(true) / 1024 / 1024) >= $memoryLimit;
+        return (memory_get_usage() / 1024 / 1024) >= $memoryLimit;
     }
 
     /**
@@ -593,16 +593,12 @@ class Worker
     /**
      * Sleep the script for a given number of seconds.
      *
-     * @param  int|float   $seconds
+     * @param  int   $seconds
      * @return void
      */
     public function sleep($seconds)
     {
-        if ($seconds < 1) {
-            usleep($seconds * 1000000);
-        } else {
-            sleep($seconds);
-        }
+        sleep($seconds);
     }
 
     /**

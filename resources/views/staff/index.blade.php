@@ -60,7 +60,7 @@
 @foreach ($staffs as $staff)
 <tr>
     
-    <td>{{ $staff->staff_name}}</td>
+    <td>{{ $staff->name}}</td>
     <td>{{ $staff->email}}</td>
     
     <td>{{ $staff->languages}}</td>

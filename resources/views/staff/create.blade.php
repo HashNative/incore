@@ -21,7 +21,7 @@
   
 </div>
 
-    <form action ="{{route('staff.store')}}" method = "post">
+    <form action ="{{ route('staff.store') }}" method = "post">
      {{csrf_field()}}
     <div >
     <div class="d-flex justify-content-center">
@@ -38,8 +38,8 @@
         
         <div class ="col-md-6">
         <div class="from-group"> 
-        <label for ="staff_name">Staff Name</label>
-        <input type ="text" name ="staff_name" id="exampleInputsource1"  id ="staff_name"  placeholder="Enter the Staff Name"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+        <label for ="name">Staff Name</label>
+        <input type ="text" name ="name" id="exampleInputsource1"  id ="name"  placeholder="Enter the Staff Name"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
     </div> 
     </div>
 

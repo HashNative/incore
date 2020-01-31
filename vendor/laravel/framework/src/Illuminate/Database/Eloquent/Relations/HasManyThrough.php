@@ -125,7 +125,7 @@ class HasManyThrough extends Relation
      */
     public function getQualifiedParentKeyName()
     {
-        return $this->parent->qualifyColumn($this->secondLocalKey);
+        return $this->parent->getTable().'.'.$this->secondLocalKey;
     }
 
     /**
@@ -439,7 +439,7 @@ class HasManyThrough extends Relation
         $this->performJoin($query);
 
         return $query->select($columns)->whereColumn(
-            $this->getQualifiedLocalKeyName(), '=', $this->getQualifiedFirstKeyName()
+            $this->getExistenceCompareKey(), '=', $this->getQualifiedFirstKeyName()
         );
     }
 
@@ -479,6 +479,16 @@ class HasManyThrough extends Relation
     }
 
     /**
+     * Get the key for comparing against the parent key in "has" query.
+     *
+     * @return string
+     */
+    public function getExistenceCompareKey()
+    {
+        return $this->farParent->getQualifiedKeyName();
+    }
+
+    /**
      * Get the qualified foreign key on the related model.
      *
      * @return string
@@ -489,32 +499,22 @@ class HasManyThrough extends Relation
     }
 
     /**
-     * Get the qualified foreign key on the "through" model.
-     *
-     * @return string
-     */
-    public function getQualifiedFirstKeyName()
-    {
-        return $this->throughParent->qualifyColumn($this->firstKey);
-    }
-
-    /**
      * Get the qualified foreign key on the related model.
      *
      * @return string
      */
     public function getQualifiedForeignKeyName()
     {
-        return $this->related->qualifyColumn($this->secondKey);
+        return $this->related->getTable().'.'.$this->secondKey;
     }
 
     /**
-     * Get the qualified local key on the far parent model.
+     * Get the qualified foreign key on the "through" model.
      *
      * @return string
      */
-    public function getQualifiedLocalKeyName()
+    public function getQualifiedFirstKeyName()
     {
-        return $this->farParent->qualifyColumn($this->localKey);
+        return $this->throughParent->getTable().'.'.$this->firstKey;
     }
 }

@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Inquiry;
 use App\Student;
-use App\Staff;
-use App\inquiry;
+use App\User;
+use App\Course;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -21,15 +22,32 @@ class AdminController extends Controller
     public function index()
     {
         $students = Student::All();
-         $staffs = Staff::All();
-         $inquiries = inquiry::All();
-         $inquiries = DB::table('inquiries')
-         ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS count')))
-         ->groupBy('inquiry_by')
-         ->get();
+        //$inquiries = Inquiry::All();
+        $staffs = User::All();
+        $courses = Course::All();
+        $inquiries = DB::table('inquiries')
+            ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS count')))
+            ->groupBy('inquiry_by')
+            ->get();
+           
+            
+          
+        
 
-        return view('dashboard.index',compact('students','staffs','inquiries'));
-     
+        $inq = $inquiries->pluck('inquiry_by')->all();
+        $count = Inquiry::whereIn('inquiry_by', $inq)->count();
+
+        $stu = $students->pluck('student_name')->all();
+        $count1 = Student::whereIn('student_name', $stu)->count();
+
+        $stf = $staffs->pluck('name')->all();
+        $count2 = User::whereIn('name', $stf)->count();
+
+        $cou = $courses->pluck('course_name')->all();
+        $count3 = Course::whereIn('course_name', $cou)->count();
+            
+        return view('dashboard.index',compact('students','inquiries','staffs','count','courses','count1','count2','count3'));
+        //
     }
 
     /**

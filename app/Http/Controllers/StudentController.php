@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\Course;
+use App\User;
+
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class StudentController extends Controller
 {
@@ -13,8 +18,11 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
          $students = Student::All();
+       if(session('success_message')){
+         Alert::success('Success!',session('success_message'));
+        }
        return view('student.index',compact('students'));
         //
     }
@@ -25,8 +33,11 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('student.create');
+    {      
+        $courses= Course::All();
+        $staffs= User::All();
+        return view('student.create',compact('student','courses','staffs'))
+        ;
         //
     }
 
@@ -54,7 +65,8 @@ class StudentController extends Controller
                                                                   
         
         $student->save();
-        return redirect('/student');
+        return redirect('/student')
+        ->withSuccessMessage('Successfuly added');
 
         
         //
@@ -81,8 +93,11 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
+        $courses = Course::All();
+        $staffs = User::All();
+
         $student= Student ::find ($id);
-        return view('student.edit',compact('student'));
+        return view('student.edit',compact('student','courses','staffs'));
         //
     }
 
@@ -95,6 +110,7 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
+       
         $student= Student ::find ($id);
         
         $student->student_name =$request ->student_name;
@@ -107,11 +123,11 @@ class StudentController extends Controller
         $student->inquiry_source =$request ->inquiry_source;
         $student->source =$request ->source;
         $student->date =$request ->date;
-        $student->inquiry_by =$request ->inquiry_by;
-        $student->register_by =$request ->register_by;
+        $student->inquiry_by =$request ->inquiry_by; //Auth::user
+        $student->register_by =$request ->register_by; 
         $student->date =$request ->date;
         $student->update();
-        return redirect('/student');
+        return redirect('/student')->withSuccessMessage('Successfuly Updated');
         //
     }
 
@@ -124,10 +140,13 @@ class StudentController extends Controller
     public function destroy($id)
     {
         $student =  Student::find($id);
-        $student->delete();
+       
+        $student->delete() ;
+       
 
-        return redirect('/student');
+        return redirect('/student')->withSuccessMessage('Successfuly Deleted');
         //
+      
     }
 }
 

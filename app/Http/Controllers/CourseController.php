@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Course;
 
 use Illuminate\Http\Request;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class CourseController extends Controller
 {
     /**
@@ -15,8 +15,13 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::All();
+        if(session('success_message')){
+            Alert::success('Success!',session('success_message'));
+           }
+
         return view('course.index',compact('courses'));
           //
+
     }
 
     /**
@@ -25,8 +30,10 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+    
     {
-        return view('course.create');
+        $courses = Course::All();
+        return view('course.create',compact('courses'));
         //
     }
 
@@ -47,7 +54,7 @@ class CourseController extends Controller
         $course->start_by =$request ->start_by;
         $course->end_by =$request ->end_by;
         $course->save();
-        return redirect('/course');
+        return redirect('/course')->withSuccessMessage('Successfuly Added');
         //
     }
 
@@ -94,7 +101,8 @@ class CourseController extends Controller
         $course->end_by =$request ->end_by;
         $course->start_by =$request ->start_by;
         $course->update();
-        return redirect('/course');
+        return redirect('/course')->withSuccessMessage('Successfuly Updated')
+        ;
         //
     }
 
@@ -109,7 +117,7 @@ class CourseController extends Controller
         $course =  Course::find($id);
         $course->delete();
 
-        return redirect('/course');
+        return redirect('/course')->withSuccessMessage('Successfuly Deleted');
          //
     }
 }

@@ -9,7 +9,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item">dashboard</li>
+              <li class="breadcrumb-item">Dashboard</li>
             </ol>
           </div>
         </div><div class="0"></div>
@@ -19,15 +19,18 @@
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-user-alt"></i></span>
+             
               <div class="info-box-content">
-                <span class="info-box-text">CPU Traffic</span>
+                <span class="info-box-text">Student</span>
+              
                 <span class="info-box-number">
-                  10
-                  <small>%</small>
-                </span>
+                {{ $count1}}
+                  <small></small>
+             </span>
+           
               </div>
+             
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -40,13 +43,15 @@
           
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-graduation-cap"></i></span>
+             
               <div class="info-box-content">
-                <span class="info-box-text">Likes</span>
-                <span class="info-box-number">41,410</span>
-                
+                <span class="info-box-text">Course</span>
+               
+                <span class="info-box-number"> {{$count3}}</span>
+             
               </div>
+            
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -58,12 +63,16 @@
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-tachometer-alt"></i></span>
+              
               <div class="info-box-content">
-                <span class="info-box-text">Sales</span>
-                <span class="info-box-number">760</span>
+             
+                <span class="info-box-text">Inquary</span>
+               
+                <span class="info-box-number">{{ $count}}</span>
+               
               </div>
+             
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -71,12 +80,15 @@
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user-plus"></i></span>
+            
               <div class="info-box-content">
-                <span class="info-box-text">New Members</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-text">Staff</span>
+                
+                <span class="info-box-number">{{ $count2}}</span>
+               
               </div>
+             
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -84,6 +96,139 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
+        <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+
+        <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Inquary</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                     
+                      <th>Operater</th>
+                      <th>Total</th>
+                      <th>Call</th>
+                      <th>Walk In</th>
+                      <th>Web</th>
+                      <th>From Cordinater</th>
+                      <th>From Student</th>
+                      <th>From Branch</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($inquiries as $inquiry)
+                    <tr>
+                          <td>{{ $inquiry->inquiry_by}}</td>
+                          <td>{{ $inquiry->count }}</td>
+                          
+                    </tr>
+                  @endforeach
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            </div>
+            <div class="col-md-6">
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="far fa-chart-bar"></i>
+                  Performance
+                </h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div id="donut-chart" style="height: 300px; padding: 0px; position: relative;">
+                   <canvas class="flot-base" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
+                   <canvas class="flot-overlay" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
+                   <span class="pieLabel" id="pieLabel0" style="position: absolute; top: 70px; left: 217.953px;">
+                      <div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Series<br>30%</div></span>
+                      <span class="pieLabel" id="pieLabel1" style="position: absolute; top: 210px; left: 195.953px;">
+                        <div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Series3<br>20%</div></span>
+                          <span class="pieLabel" id="pieLabel2" style="position: absolute; top: 129px; left: 36.9531px;">
+                            <div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Series4<br>50%</div></span></div>
+              </div>
+              <!-- /.card-body-->
+            </div>
+          </div>
+          </section>
+
+
+          <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+
+        <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Registrations</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                     
+                      <th>Operater</th>
+                      <th>Total</th>
+                      <th>Call</th>
+                      <th>Walk In</th>
+                      <th>Web</th>
+                      <th>From Cordinater</th>
+                      <th>From Student</th>
+                      <th>From Branch</th>
+                    </tr>
+                  </thead>
+                  @foreach ($staffs as $staff)
+                    <tr>
+                          <td>{{ $staff->name}}</td>
+                    </tr>
+                  @endforeach
+              
+                    </tr>
+                  
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            </div>
+            <div class="col-md-6">
+            <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">Pie Chart</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+          </section>
+
+
+ 
 
         <div class="row">
           <div class="col-md-12">
@@ -119,7 +264,7 @@
                     <p class="text-center">
                       <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
                     </p>
-
+                 
                     <div class="chart">
                       <!-- Sales Chart Canvas -->
                       <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
@@ -129,49 +274,11 @@
                   <!-- /.col -->
                   <div class="col-md-4">
                     <p class="text-center">
-                      <strong>Goal Completion</strong>
+                      <strong>Inq & Registration for a Date Range</strong>
                     </p>
-
-                    <div class="progress-group">
-                      Add Products to Cart
-                      <span class="float-right"><b>160</b>/200</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-primary" style="width: 80%"></div>
-                      </div>
-                    </div>
-                    <!-- /.progress-group -->
-
-                    <div class="progress-group">
-                      Complete Purchase
-                      <span class="float-right"><b>310</b>/400</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-danger" style="width: 75%"></div>
-                      </div>
+                   
                     </div>
 
-                    <!-- /.progress-group -->
-                    <div class="progress-group">
-                      <span class="progress-text">Visit Premium Page</span>
-                      <span class="float-right"><b>480</b>/800</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-success" style="width: 60%"></div>
-                      </div>
-                    </div>
-
-                    <!-- /.progress-group -->
-                    <div class="progress-group">
-                      Send Inquiries
-                      <span class="float-right"><b>250</b>/500</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-warning" style="width: 50%"></div>
-                      </div>
-                    </div>
-                    <!-- /.progress-group -->
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.row -->
-              </div>
               <!-- ./card-body -->
             
               
@@ -201,7 +308,7 @@
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <div class="col-md-8">
+          <div class="col-md-12">
             <!-- MAP & BOX PANE -->
             <div class="card">
               <div class="card-header">
@@ -249,6 +356,91 @@
               </div>
               <!-- /.card-body -->
             </div>
+            <div class="col-lg-20">
+
+                   <!-- BAR CHART -->
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Bar Chart</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart">
+                  <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+            <!-- /.card -->
+            
+          <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  
+                  Source Inquary Vs Registrations
+                </h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-8 col-md-3 text-center">
+                    <input type="text" class="knob" value="80" data-skin="tron" data-thickness="0.2" data-width="90"
+                           data-height="90" data-fgColor="#3c8dbc" data-readonly="true">
+
+                    <div class="knob-label">data-width="90"</div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-6 col-md-3 text-center">
+                    <input type="text" class="knob" value="60" data-skin="tron" data-thickness="0.2" data-width="120"
+                           data-height="120" data-fgColor="#f56954">
+
+                    <div class="knob-label">data-width="120"</div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-6 col-md-3 text-center">
+                    <input type="text" class="knob" value="10" data-skin="tron" data-thickness="0.1" data-width="90"
+                           data-height="90" data-fgColor="#00a65a">
+
+                    <div class="knob-label">data-thickness="0.1"</div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-6 col-md-3 text-center">
+                    <input type="text" class="knob" value="100" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="120" data-height="120"
+                           data-fgColor="#00c0ef">
+
+                    <div class="knob-label">data-angleArc="250"</div>
+                  </div>
+                  <!-- ./col -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+
+      
             <!-- /.card -->
             <div class="row">
               <div class="col-md-6">
@@ -788,5 +980,6 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
+         
    @endsection   
  

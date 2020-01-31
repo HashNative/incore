@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use FollowUp;
+use App\FollowUp;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -37,16 +37,15 @@ class FollowupController extends Controller
      */
     public function store(Request $request)
     {
-        $follow = new  Staff;
+        $follow = new  FollowUp;
         $follow->id =$request ->id;
-        $follow->inquiry_id =$request ->inquiry_id;
+       
         $follow->inquiry_by =$request ->inquiry_by;
         $follow->follow_up =$request ->follow_up;
         
         $follow->description =$request ->description;
-        $follow->status  =$request ->status;
-        $follow->date_time  =$request ->date_time;
-
+        date_default_timezone_set("Asia/Colombo");
+        $follow->date_time =date('Y-m-d h:i:s');
         $follow->save();
         return redirect('/inquiry');
 
@@ -84,16 +83,17 @@ class FollowupController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $staff= Staff ::find ($id);
+        $follow= FollowUp ::find ($id);
         
-        $follow->inquiry_id =$request ->inquiry_id;
+       
         $follow->inquiry_by =$request ->inquiry_by;
         $follow->follow_up =$request ->follow_up;
         
         $follow->description =$request ->description;
-        $follow->status  =$request ->status;
-        $follow->date_time  =$request ->date_time;
-        $staff->update();
+        
+        date_default_timezone_set("Asia/Colombo");
+        $follow->date_time =date('Y-m-d h:i:s');
+        $follow->update();
         return redirect('/inquiry');
         //
     }
