@@ -88,7 +88,7 @@
                       <label for ="inquiry_by">Inquiry by</label>
                       <select type ="text" name ="inquiry_by" id="inquiry_by" class="form-control"class="required" >
                     @foreach ($staffs as $staff)
-                      <option >{{$staff->staff_name}}</option>
+                      <option >{{$staff->name}}</option>
                       @endforeach</select>
 
                       </div>
@@ -145,7 +145,14 @@
                             
                       </div>
                     </div>
-                 
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for ="register_by">Register by</label>
+                      <input type ="text" name ="register_by" id="register_by" class="form-control"class="required" value ="{{ Auth::user()->name }}" >
+                   
+                     
+                      </div>
+                      </div>
                    
                   </div>
 

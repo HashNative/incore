@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('staff','StaffController');
+Route::resource('staff','UserController');
 Route::resource('inquiry','InquiryController');
 Route::resource('course','CourseController');
 Route::resource('student','StudentController');
@@ -26,4 +26,4 @@ Route::resource('follow_up','FollowupController');
 Route::get('/myinquiry','InquiryController@myinquiry');
 
 Route::resource('/dashboard','AdminController');
-Route::resource('/home1','HomeController');
+Route::resource('/home1','UserController@index');

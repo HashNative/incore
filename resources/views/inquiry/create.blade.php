@@ -50,7 +50,7 @@
                         <select type="text" name ="inquiry_by" id="exampleInputsource1" class="form-control" id ="inquiry_by" placeholder="Enter the inquiry by" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
                         @foreach ($staffs as $staff)
-                        <option>{{ $staff->staff_name}}</option>
+                        <option>{{ $staff->name}}</option>
                         @endforeach
                         
                         </select>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Inquiry;
 use App\Student;
-use App\Staff;
+use App\User;
 use App\Course;
 use DB;
 use Illuminate\Http\Request;
@@ -23,7 +23,7 @@ class AdminController extends Controller
     {
         $students = Student::All();
         //$inquiries = Inquiry::All();
-        $staffs = Staff::All();
+        $staffs = User::All();
         $courses = Course::All();
         $inquiries = DB::table('inquiries')
             ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS count')))
@@ -40,8 +40,8 @@ class AdminController extends Controller
         $stu = $students->pluck('student_name')->all();
         $count1 = Student::whereIn('student_name', $stu)->count();
 
-        $stf = $staffs->pluck('staff_name')->all();
-        $count2 = Staff::whereIn('staff_name', $stf)->count();
+        $stf = $staffs->pluck('name')->all();
+        $count2 = User::whereIn('name', $stf)->count();
 
         $cou = $courses->pluck('course_name')->all();
         $count3 = Course::whereIn('course_name', $cou)->count();

@@ -35,8 +35,8 @@
     
     <div  class ="col-md-6">
     <div class="from-group">
-        <label for ="staff_name">Staff Name</label>
-        <input type ="text" name ="staff_name" id ="staff_name"value = "{{$staff -> staff_name}}"class="form-control" required >
+        <label for ="name">Staff Name</label>
+        <input type ="text" name ="name" id ="name"value = "{{$staff -> name}}"class="form-control" required >
         <div class="invalid-feedback">
         Please Enter valid Staff Name .
       </div>
@@ -80,14 +80,7 @@
         </div>
         </div> 
 
-   <div  class ="col-md-6">
-   <div class="from-group">
-        <label for ="password">Password</label>
-        <input type ="text" name ="password"  id ="password"value = "{{$staff -> password}}"class="form-control" required>
-        <div class="invalid-feedback">
-        Please Enter valid Password.
-      </div>
-       </div> 
+   
        </div> 
 
         

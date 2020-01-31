@@ -49,7 +49,7 @@
                   <label for ="inquiry_by">Inquiry by</label> 
         <select type ="text" name ="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
         @foreach ($staffs as $staff)
-                        <option>{{ $staff->staff_name}}</option>
+                        <option>{{ $staff->name}}</option>
                         @endforeach
                         
                         </select>

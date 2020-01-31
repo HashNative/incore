@@ -73,6 +73,32 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
+                                <div class="input-group mb-3{{ $errors->has('languages') ? ' has-error' : '' }}">
+                                <input id="languages" type="languages" class="form-control" name="languages" placeholder="language" required>
+                                <div class="input-group-append">
+                                <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div> 
+                                @if ($errors->has('languages'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('languages') }}</strong>
+                                    </span>
+                                @endif
+                                <div class="input-group mb-3{{ $errors->has('mobile_number') ? ' has-error' : '' }}">
+                                <input id="mobile_number" type="mobile_number" class="form-control" name="mobile_number" placeholder="mobile_number" required>
+                                <div class="input-group-append">
+                                <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div> 
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                                 
                     <div class="input-group mb-3">
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password"required>

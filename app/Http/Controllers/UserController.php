@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Staff;
+use App\User;
 
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class StaffController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-       $staffs = Staff::All();
+       $staffs = User::All();
        if(session('success_message')){
         Alert::success('',session('success_message'));
        }
@@ -43,18 +43,19 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        $staff = new  Staff;
-        $staff->id =$staff ->id;
-        $staff->staff_name =$request ->staff_name;
-        $staff->languages =$request ->languages;
-        $staff->mobile_number =$request ->mobile_number;
-        
+        $staff = new  User;
+       
+        $staff->name =$request->name;
+        $staff->languages =$request->languages;
+       
         $staff->email =$request ->email;
-        $staff->password =$request->password;
+        $staff->mobile_number =$request->mobile_number;
+        
+        $staff->password = bcrypt($request->password);
         $staff->save();
-        return redirect('/staff') ->withSuccessMessage('Successfuly Added');
+        return redirect('/staff')
+        ->withSuccessMessage('Successfuly added');
 
-      
 
         //
     }
@@ -67,7 +68,7 @@ class StaffController extends Controller
      */
     public function show($id)
     {
-        $staff= Staff ::find ($id);
+        $staff= User ::find ($id);
         return view('staff.show',compact('staff'));
     }
 
@@ -79,7 +80,7 @@ class StaffController extends Controller
       */
     public function edit($id)
     {
-        $staff= Staff ::find ($id);
+        $staff= User ::find ($id);
         return view('staff.edit',compact('staff'));
     }
 
@@ -92,14 +93,14 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $staff= Staff ::find ($id);
+        $staff= User ::find ($id);
         
-        $staff->staff_name =$request->staff_name;
+        $staff->name =$request->name;
         $staff->languages =$request->languages;
        
         $staff->email =$request ->email;
         $staff->mobile_number =$request->mobile_number;
-        $staff->password =$request->password;
+        $staff->password = bcrypt($password);
         $staff->update();
         return redirect('/staff') ->withSuccessMessage('Successfuly Updated');
     }
@@ -112,7 +113,7 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        $staff =  Staff::find($id);
+        $staff =  User::find($id);
         $staff->delete();
 
         return redirect('/staff') ->withSuccessMessage('Successfuly Deleted');

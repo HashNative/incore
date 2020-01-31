@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Course;
 use App\Inquiry;
-use App\Staff;
+use App\User;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\FollowUp;
@@ -47,7 +47,7 @@ class InquiryController extends Controller
     public function create()
     {
         $courses = Course::All();
-        $staffs = Staff::All();
+        $staffs = User::All();
         return view('inquiry.create',compact('courses', 'staffs'));
         //
     }
@@ -106,7 +106,7 @@ class InquiryController extends Controller
     {
         $courses = Course::All();
         $inquiry= Inquiry ::find ($id);
-        $staffs = Staff::All();
+        $staffs = User::All();
         return view('inquiry.edit',compact('inquiry','courses', 'staffs'));
         //
     }

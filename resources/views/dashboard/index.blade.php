@@ -195,7 +195,7 @@
                   </thead>
                   @foreach ($staffs as $staff)
                     <tr>
-                          <td>{{ $staff->staff_name}}</td>
+                          <td>{{ $staff->name}}</td>
                     </tr>
                   @endforeach
               

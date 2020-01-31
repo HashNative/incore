@@ -200,9 +200,9 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
          
-          <li class="nav-item has-treeview menu-open">
+          <li class="nav-item has-treeview ">
             
-          <a href="{{route('dashboard.index')}}" class="nav-link ">
+          <a href="{{route('dashboard.index')}}" class="nav-link {{Request::is('dashboard') ? 'active' : null }} ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -212,7 +212,7 @@
             
            </li>
             <li class="nav-item has-treeview ">
-            <a href="{{route('student.index')}}" class="nav-link">
+            <a href="{{route('student.index')}}" class="nav-link {{Request::is('student') ? 'active' : null }}">
               <i class="nav-icon fas fa-user-alt"></i>
               <p>
               Student
@@ -222,7 +222,7 @@
             </li>
           
             <li class="nav-item has-treeview">
-            <a href="{{route('course.index')}}" class="nav-link ">
+            <a href="{{route('course.index')}}" class="nav-link {{Request::is('course') ? 'active' : null }}">
               <i class="nav-icon fas fa-graduation-cap"></i>
               <p>
                 Course
@@ -231,7 +231,7 @@
             </a>
             </li>
             <li class="nav-item has-treeview">
-            <a href="{{route('inquiry.index')}}" class="nav-link">
+            <a href="{{route('inquiry.index')}}" class="nav-link {{Request::is('inquiry') ? 'active' : null }}">
               <i class="nav-icon fas fa-question-circle  "></i>
               <p>
                 Inquiry
@@ -246,7 +246,7 @@
          
 
             <li class="nav-item">
-            <a href="{{route('staff.index')}}" class="nav-link">
+            <a href="{{route('staff.index')}}" class="nav-link {{Request::is('staff') ? 'active' : null }}">
               <i class="nav-icon fas fa-user-friends"></i>   
               <p>
               Staff

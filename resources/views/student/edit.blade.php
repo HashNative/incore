@@ -105,10 +105,10 @@
                     <div class="col-sm-6">
                     <div class="form-group">
                   <label for ="inquiry_by">Inquiry By</label> 
-                  <select type ="text" class="form-control"  name ="inquiry_by" id ="inquiry_by"  value = "{{ $staff->staff_name}}"required>
-                  <option >{{ $staff->staff_name}}</option>
+                  <select type ="text" class="form-control"  name ="inquiry_by" id ="inquiry_by"  value = "{{ $staff->name}}"required>
+                  <option >{{ $staff->name}}</option>
                   @foreach ($staffs as $staff)
-                            <option >{{ $staff->staff_name}}</option>
+                            <option >{{ $staff->name}}</option>
                             @endforeach
                           
                       </select>
