@@ -1,9 +1,14 @@
 @extends('layouts.master')
 @section('content')
+
+<div class="toast-body">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</div>
 <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
+          <a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
+              Add Staff
+              </a>
           
           
           
@@ -16,11 +21,10 @@
               
             </ol>
           </div>
-        </div><div class="0"></div> 
+        </div>
+        <div class="0"></div> 
       </div><!-- /.container-fluid -->
-      <a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
-    Add Staff
-</a>
+ 
 </section>
 
 
