@@ -10,12 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware'=>'web'],function(){
+    Auth::routes();
+});
 
+Route::group(['middleware'=>'auth','prefix'=>'management'],function(){
+   
+});
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('staff','UserController');
@@ -26,4 +32,4 @@ Route::resource('follow_up','FollowupController');
 Route::get('/myinquiry','InquiryController@myinquiry');
 
 Route::resource('/dashboard','AdminController');
-Route::resource('/home1','UserController@index');
+Route::resource('/home1','HomeController');
