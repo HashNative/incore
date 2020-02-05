@@ -174,7 +174,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="dist/img/logo.png" alt="#" class="brand-image-xl  elevation-3" width="400px">
+      <img src="{{asset('dist/img/logo.png')}}" alt="#" class="brand-image-xl  elevation-3" width="400px">
       <span class="brand-text font-weight-light"></span>
     </a>
 
@@ -183,7 +183,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-4 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
+          <img src="{{asset('dist/img/avatar5.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         @guest
                             
@@ -211,7 +211,7 @@
             
            </li>
             <li class="nav-item has-treeview ">
-            <a href="{{route('student.index')}}" class="nav-link {{Request::is('student') ? 'active' : null }}">
+            <a href="{{route('student.index')}}" class="nav-link {{Request::is('student','student/create','student/3/edit','student/3') ? 'active' : null }}">
               <i class="nav-icon fas fa-user-alt"></i>
               <p>
               Student
@@ -221,7 +221,7 @@
             </li>
           
             <li class="nav-item has-treeview">
-            <a href="{{route('course.index')}}" class="nav-link {{Request::is('course') ? 'active' : null }}">
+            <a href="{{route('course.index')}}" class="nav-link {{Request::is('course','course/create','course/1/edit') ? 'active' : null }}">
               <i class="nav-icon fas fa-graduation-cap"></i>
               <p>
                 Course
@@ -230,7 +230,7 @@
             </a>
             </li>
             <li class="nav-item has-treeview">
-            <a href="{{route('inquiry.index')}}" class="nav-link {{Request::is('inquiry') ? 'active' : null }}">
+            <a href="{{route('inquiry.index')}}" class="nav-link {{Request::is('inquiry','inquiry/1/edit','inquiry/create') ? 'active' : null }}">
               <i class="nav-icon fas fa-question-circle  "></i>
               <p>
                 Inquiry
@@ -245,7 +245,7 @@
          
 
             <li class="nav-item">
-            <a href="{{route('staff.index')}}" class="nav-link {{Request::is('staff') ? 'active' : null }}">
+            <a href="{{route('staff.index')}}" class="nav-link {{Request::is('staff','staff/create','staff/1/edit') ? 'active' : null }}">
               <i class="nav-icon fas fa-user-friends"></i>   
               <p>
               Staff
