@@ -174,15 +174,14 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="dist/img/logo.png" alt="#" class="brand-image  elevation-3"
-           style="opacity: .8">
+      <img src="dist/img/logo.png" alt="#" class="brand-image-xl  elevation-3" width="400px">
       <span class="brand-text font-weight-light"></span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="user-panel mt-4 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="dist/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
         </div>

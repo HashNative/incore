@@ -11571,7 +11571,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
   margin-left: .8rem;
   margin-right: .5rem;
   margin-top: -3px;
-  max-height: 33px;
+  max-height: 40px;
   width: auto;
 }
 
@@ -11606,7 +11606,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 .brand-link.text-sm .brand-image-xl,
 .text-sm .brand-link .brand-image-xl {
   margin-top: -.225rem;
-  max-height: 38px;
+  max-height: px;
 }
 
 .main-sidebar {
@@ -26539,7 +26539,7 @@ html.maximized-card {
 }
 
 .img-circle {
-  border-radius: 50%;
+  border-radius: 30%;
 }
 
 .img-size-64,
