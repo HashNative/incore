@@ -135,7 +135,7 @@ class InquiryController extends Controller
         $inquiry->email =$request ->email;
 
         $inquiry->follow_up =$request ->follow_up;
-        $inquiry->date_time =$request ->date_time;
+       
         $inquiry->update();
         return redirect('/inquiry')->withSuccessMessage('Successfuly Updated')
         ;

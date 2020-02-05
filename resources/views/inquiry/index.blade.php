@@ -2,12 +2,16 @@
 @section('content')
 <section class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
+        <div class="row md-2">
+          <div class="col-md-6">
+
+          <a href="{{route('inquiry.create')}}"  class="btn  btn-primary" tittle="show details">
+    <i class="fas fa-plus"></i> Add Inquiry
+     </a>
           
             
           </div>
-          <div class="col-sm-6">
+          <div class="col-md-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item active">Inquiry</li>
@@ -22,12 +26,10 @@
  <!-- Main content -->
  <section class="content">
       <div class="row">
-        <div class="col-12">
+        <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Inquiry Details &nbsp; <a href="{{route('inquiry.create')}}"  class="btn  btn-primary" tittle="show details">
-    <i class="fas fa-plus"></i> Add Inquiry
-     </a> </h3>
+              <h3 class="card-title">Inquiry Details  </h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -133,29 +135,29 @@
             <div class="modal-footer justify-content-between">
               
                     <!-- The timeline -->
+                    <div class="col-sm-12">
                     <div class="timeline timeline-inverse">
                     
                       <!-- timeline item -->
                       <div>
-                        <i class="fas fa-envelope bg-primary"></i>
+                        <a href ="{{route('follow_up.show',$inquiry->id)}}"class="fas fa-envelope bg-primary"></a>
 
                         <div class="timeline-item">
                           <span class="time"><i class="far fa-clock"></i> 12:05</span>
 
-                          <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+                          <h3 class="timeline-header"><a href="#">{{ $inquiry->follow_up}}</a>
+                          <br>
+                          {{ $inquiry->inquiry_by}}</h3>
 
                           <div class="timeline-body">
-                            Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                            weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                            jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                            quora plaxo ideeli hulu weebly balihoo...
+                          {{ $inquiry->description}}
                           </div>
                           <div class="timeline-footer">
                             <a href="#" class="btn btn-danger btn-sm">Delete</a>
                           </div>
                         </div>
                       </div>
-                      <!-- END timeline item -->
+                        <!-- END timeline item -->
                      
                     </div>
                   
