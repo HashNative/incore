@@ -35,7 +35,7 @@
               <div class="card-body">
                 <form role="form">
                   <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                       <!-- text input -->
                       <div class="form-group">
                       <label>Phone number</label>
@@ -44,7 +44,7 @@
                     </div>
                    
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                     <div class="form-group">
                     <label>Inquiry by</label>
                         <select type="text" name ="inquiry_by" id="exampleInputsource1" class="form-control" id ="inquiry_by" placeholder="Enter the inquiry by" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
@@ -56,7 +56,7 @@
                         </select>
                     </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                       <!-- text input -->
                       <div class="form-group">
                       <label>Source</label>
@@ -71,7 +71,7 @@
                     </div>
                    
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-8">
                     <div class="form-group">
                     <label>Course</label>
                         <select type="text" name ="course_name" id="exampleInputsource1" class="form-control" id ="course_name"  placeholder="Enter the course" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
@@ -82,8 +82,21 @@
                     </div>
                     </div>
 
+                    <div class="col-sm-4">
+                      <!-- text input -->
+                      <div class="form-group">
+                      <label>Status</label>
+                      <select type="text" name ="status" id="exampleInputsource1" class="form-control" id ="status"placeholder="Enter the status" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                      
+                        <option>Registered</option>
+                        <option>Pending</option>
+                        <option>Declined</option>
+                      </select>
+                    </div>
                    
-                    <div class="col-sm-6">
+                    </div>
+                   
+                    <div class="col-sm-3">
                     <div class="form-group">
                     <label>Title</label>
                         <select type="text" name ="title" id="exampleInputsource1" class="form-control" id ="title"  placeholder="Enter the title" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
@@ -96,7 +109,7 @@
                     </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-9">
                       <!-- text input -->
                       <div class="form-group">
                       <label>Name</label>
@@ -104,37 +117,23 @@
                     </div>
                    
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-9">
                     <div class="form-group">
                     <label>Email</label>
                         <input type="text" name ="email" id="exampleInputsource1" class="form-control" id ="email"  placeholder="Enter the email" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                     </div>
                     </div>
                     
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                      <label>Status</label>
-                      <select type="text" name ="status" id="exampleInputsource1" class="form-control" id ="status"placeholder="Enter the status" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
-                      
-                        <option>Registered</option>
-                        <option>Pending</option>
-                        <option>Declined</option>
-</select>
-
-
-                    </div>
-                   
-                    </div>
-                    <div class="col-sm-6">
+                    
+                    <div class="col-sm-3">
                     <div class="form-group">
                     <label>Followup</label>
-                        <input type="text" name="follow_up" id="exampleInputsource1" class="form-control" id ="follow_up"   placeholder="Enter the followup id" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                        <input type="text" name="follow_up" id="exampleInputsource1" class="form-control" id ="follow_up"   placeholder="Enter the followup" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                   
                     </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                     <div class="form-group">
                     <label>Description</label>
                     <textarea name="description" id ="description" id="exampleInputsource1" class="form-control" autofocus placeholder="Enter the Description" aria-describedby="exampleInputsource-error" aria-invalid="true" required></textarea>

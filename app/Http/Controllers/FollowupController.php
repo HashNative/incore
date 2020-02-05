@@ -60,7 +60,9 @@ class FollowupController extends Controller
      */
     public function show($id)
     {
-        //
+        $follow= FollowUp ::find ($id);
+
+        return view('inquiry.index',compact('follow'));
     }
 
     /**
