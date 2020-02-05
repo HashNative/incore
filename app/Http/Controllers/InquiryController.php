@@ -20,10 +20,8 @@ class InquiryController extends Controller
     public function index()
     {
         $inquiries = Inquiry::All();
-        if(session('success_message')){
-            Alert::success('Success!',session('success_message'));
-           }
-       return view('inquiry.index',compact('inquiries'));
+        $followups = FollowUp::All();
+       return view('inquiry.index',compact('inquiries','followups'));
        
     }
 

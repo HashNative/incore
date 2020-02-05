@@ -117,6 +117,13 @@
                           <input type ="text" name="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
                         </div>
                       </div>
+                      <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                          <label for ="inquiry_id">Inquiry Id</label> 
+                          <input type ="text" name="inquiry_id" class="form-control" id ="inquiry_id" value = "{{ $inquiry->id}}" required>
+                        </div>
+                      </div>
                       
                       <div class="col-sm-12">
                         <!-- text input -->
@@ -137,7 +144,8 @@
                     <!-- The timeline -->
                     <div class="col-sm-12">
                     <div class="timeline timeline-inverse">
-                    
+                    @foreach ($followups as $followup)
+                               @if($inquiry->id == $followup->inquiry_id)
                       <!-- timeline item -->
                       <div>
                         <a href ="{{route('follow_up.show',$inquiry->id)}}"class="fas fa-envelope bg-primary"></a>
@@ -145,12 +153,13 @@
                         <div class="timeline-item">
                           <span class="time"><i class="far fa-clock"></i> 12:05</span>
 
-                          <h3 class="timeline-header"><a href="#">{{ $inquiry->follow_up}}</a>
+                          <h3 class="timeline-header"><a href="#">{{ $followup->follow_up}}</a>
                           <br>
-                          {{ $inquiry->inquiry_by}}</h3>
+
+                         </h3>
 
                           <div class="timeline-body">
-                          {{ $inquiry->description}}
+                          {{ $followup->description}}
                           </div>
                           <div class="timeline-footer">
                             <a href="#" class="btn btn-danger btn-sm">Delete</a>
@@ -158,7 +167,8 @@
                         </div>
                       </div>
                         <!-- END timeline item -->
-                     
+                        @endif
+                     @endforeach
                     </div>
                   
             </div>

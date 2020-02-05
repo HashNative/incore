@@ -10,16 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
 Route::group(['middleware'=>'web'],function(){
     Auth::routes();
-});
-
-Route::group(['middleware'=>'auth','prefix'=>'management'],function(){
-   
 });
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['middleware'=>'auth','prefix'=>'management'],function(){
+    
+});
+
 
 
 

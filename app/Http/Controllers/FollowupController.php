@@ -42,7 +42,7 @@ class FollowupController extends Controller
        
         $follow->inquiry_by =$request ->inquiry_by;
         $follow->follow_up =$request ->follow_up;
-        
+        $follow->inquiry_id =$request ->inquiry_id;
         $follow->description =$request ->description;
         date_default_timezone_set("Asia/Colombo");
         $follow->date_time =date('Y-m-d h:i:s');
@@ -92,7 +92,8 @@ class FollowupController extends Controller
         $follow->follow_up =$request ->follow_up;
         
         $follow->description =$request ->description;
-        
+        $follow->inquiry_id =$request ->inquiry_id;
+
         date_default_timezone_set("Asia/Colombo");
         $follow->date_time =date('Y-m-d h:i:s');
         $follow->update();
