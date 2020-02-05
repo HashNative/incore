@@ -307,11 +307,13 @@ class ComposerStaticInit5d129a818f06a816b341f62794fc9ce6
     );
 
     public static $classMap = array (
+        'App\\Assign' => __DIR__ . '/../..' . '/app/Assign.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Course' => __DIR__ . '/../..' . '/app/Course.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\FollowUp' => __DIR__ . '/../..' . '/app/FollowUp.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
+        'App\\Http\\Controllers\\AssignController' => __DIR__ . '/../..' . '/app/Http/Controllers/AssignController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -321,8 +323,8 @@ class ComposerStaticInit5d129a818f06a816b341f62794fc9ce6
         'App\\Http\\Controllers\\FollowupController' => __DIR__ . '/../..' . '/app/Http/Controllers/FollowupController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\InquiryController' => __DIR__ . '/../..' . '/app/Http/Controllers/InquiryController.php',
-        'App\\Http\\Controllers\\StaffController' => __DIR__ . '/../..' . '/app/Http/Controllers/StaffController.php',
         'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
@@ -335,7 +337,6 @@ class ComposerStaticInit5d129a818f06a816b341f62794fc9ce6
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
-        'App\\Staff' => __DIR__ . '/../..' . '/app/Staff.php',
         'App\\Student' => __DIR__ . '/../..' . '/app/Student.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
