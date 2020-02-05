@@ -4,7 +4,9 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-          
+          <a href="{{route('inquiry.create')}}"  class="btn  btn-primary" tittle="show details">
+    <i class="fas fa-plus"></i> Add Inquiry
+     </a> 
             
           </div>
           <div class="col-sm-6">
@@ -25,9 +27,7 @@
         <div class="col-12">
         <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Inquiry Details &nbsp; <a href="{{route('inquiry.create')}}"  class="btn  btn-primary" tittle="show details">
-    <i class="fas fa-plus"></i> Add Inquiry
-     </a> </h3>
+              <h3 class="card-title">Inquiry Details  </h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

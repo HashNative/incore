@@ -35,6 +35,7 @@ class StudentController extends Controller
     public function create()
     {      
         $courses= Course::All();
+        $student= student::All();
         $staffs= User::All();
         return view('student.create',compact('student','courses','staffs'))
         ;

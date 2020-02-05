@@ -26,4 +26,4 @@ Route::resource('follow_up','FollowupController');
 Route::get('/myinquiry','InquiryController@myinquiry');
 
 Route::resource('/dashboard','AdminController');
-Route::resource('/home1','UserController@index');
+Route::resource('/home1','HomeController');

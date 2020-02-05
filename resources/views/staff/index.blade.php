@@ -5,7 +5,9 @@
         <div class="row mb-2">
           <div class="col-sm-6">
           
-          
+          <a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
+    Add Staff
+</a>
           
             
           </div>
@@ -18,9 +20,7 @@
           </div>
         </div><div class="0"></div> 
       </div><!-- /.container-fluid -->
-      <a href="{{route('staff.create')}}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
-    Add Staff
-</a>
+    
 </section>
 
 

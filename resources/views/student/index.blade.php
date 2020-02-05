@@ -4,7 +4,9 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-         
+          <a href="{{route('student.create')}}"  class="btn btn-primary" tittle="show details">
+    <i class="fas fa-user-plus"></i> Student Register 
+   </a>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -15,14 +17,12 @@
           </div>
         </div><div class="0"></div>
       </div><!-- /.container-fluid -->
-      <a href="{{route('student.create')}}"  class="btn btn-primary" tittle="show details">
-    <i class="fas fa-user-plus"></i> Student Register 
-   </a>
+     
 </section>
 
    <section class="content">
     <div class="row">
-        <div class="col-12">
+        <div class="col-md-12 ">
         
             <div class="card">
 
@@ -79,7 +79,7 @@
         
            
            <td>
-            <form action = "{{route('student.destroy',$student->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return true;}">
+            <form action = "{{route('student.destroy',$student->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
 
             <input type = "hidden" name = "_method" value = "delete"> 
                     {{csrf_field()}} 
