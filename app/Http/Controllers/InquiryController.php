@@ -9,6 +9,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use App\FollowUp;
 use Auth;
 use DB;
+use App\Assign;
 
 class InquiryController extends Controller
 {
@@ -21,7 +22,13 @@ class InquiryController extends Controller
     {
         $inquiries = Inquiry::All();
         $followups = FollowUp::All();
-       return view('inquiry.index',compact('inquiries','followups'));
+        $users = User::All();
+
+        $assigns = Assign::All();
+        if(session('success_message')){
+            Alert::success('Success!',session('success_message'));
+           }
+       return view('inquiry.index',compact('inquiries','followups','assigns','users'));
        
     }
 

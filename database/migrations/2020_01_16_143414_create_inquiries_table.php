@@ -17,7 +17,7 @@ class CreateInquiriesTable extends Migration
           
             $table->increments('id');
             $table->String('source');
-            $table->String('description');
+            $table->longText('description');
             $table->String('name');
             $table->String('course_name');
             $table->String('status');

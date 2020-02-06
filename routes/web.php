@@ -16,9 +16,7 @@
 Route::group(['middleware'=>'web'],function(){
     Auth::routes();
 });
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::group(['middleware'=>'auth','prefix'=>'management'],function(){
     
 });
@@ -26,12 +24,14 @@ Route::group(['middleware'=>'auth','prefix'=>'management'],function(){
 
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/', 'HomeController');
 Route::resource('staff','UserController');
 Route::resource('inquiry','InquiryController');
 Route::resource('course','CourseController');
 Route::resource('student','StudentController');
 Route::resource('follow_up','FollowupController');
+Route::resource('assign','AssignController');
+
 Route::get('/myinquiry','InquiryController@myinquiry');
 
 Route::resource('/dashboard','AdminController');

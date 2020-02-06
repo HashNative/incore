@@ -21,7 +21,7 @@ class CreateFollowUpsTable extends Migration
 
 
             $table->String('follow_up');
-            $table->String('description');
+            $table->longText('description');
          
             $table->dateTime('date_time');
             

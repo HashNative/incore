@@ -99,7 +99,7 @@
         <a href="{{ route('password.request') }}">I forgot my password</a>
       </p>
       <p class="mb-1">
-        <a href="{{ route('staff.create') }}">ghfrthy</a>
+        <a href="{{ route('register') }}">ghfrthy</a>
       </p>
       
     </div>
