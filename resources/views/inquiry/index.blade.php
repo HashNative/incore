@@ -55,7 +55,7 @@
               <tr data-toggle="modal" data-target="#modal-{{ $inquiry->id}}" >
                   
                   <td>{{ $inquiry->source}}</td>
-                  <td>{{ $inquiry->description}}</td>
+                  <td style="word-break:break-all;">{{ $inquiry->description}}</td>
                   <td>{{ $inquiry->name}}</td>
                   <td>{{ $inquiry->course_name}}</td>
                   <td>{{ $inquiry->status}}</td>
@@ -120,7 +120,7 @@
                         <!-- text input -->
                         <div class="form-group">
                           <label for ="description">Description</label>
-                          <textarea name="description" class="form-control" id ="description" value = "{{ $inquiry->description}}" required></textarea>
+                          <textarea name="description" class="form-control" id ="description"style="width: 12px; word-wrap: break-word" value = "{{ $inquiry->description}}" required></textarea>
                         </div>
                       </div>
                       </div>

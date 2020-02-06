@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('content')
 
-<div class="toast-body">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</div>
 <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">

@@ -100,7 +100,6 @@ class UserController extends Controller
        
         $staff->email =$request ->email;
         $staff->mobile_number =$request->mobile_number;
-        $staff->password = bcrypt($password);
         $staff->update();
         return redirect('/staff') ->withSuccessMessage('Successfuly Updated');
     }
