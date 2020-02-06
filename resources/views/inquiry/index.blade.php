@@ -236,7 +236,7 @@
                                                 <div>
                                                  
                                                     <div class="timeline-body">
-                                                    {{ $assign->inquiry_by}} &nbsp;&nbsp;is assigned the next followup for &nbsp;&nbsp;{{$assign->assign_to}}
+                                                    {{ $assign->inquiry_by}} &nbsp;is assigned the next followup for &nbsp;&nbsp;{{$assign->assign_to}}
                                                     </div>
                                                     <div class="timeline-footer">
                                                       <a href="#" class="btn btn-danger btn-sm">Delete</a>
