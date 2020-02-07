@@ -34,12 +34,16 @@ class InquiryController extends Controller
 
     public function myinquiry()
     {
+        $followups = FollowUp::All();
+        $users = User::All();
+
+        $assigns = Assign::All();
         
         $inquiries = DB::table('inquiries')
            ->where('inquiry_by',Auth::user()->name)
            ->get();
      
-       return view('inquiry.index',compact('inquiries'));
+       return view('inquiry.index',compact('inquiries','followups','assigns','users'));
     }
 
 
