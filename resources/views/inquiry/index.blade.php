@@ -82,9 +82,9 @@
                          
                       </form>
                   </td>
-                          <div class="modal fade" id="modal-{{ $inquiry->id}}" style="display: none;" aria-hidden="true">
+                        <div class="modal fade" id="modal-{{ $inquiry->id}}" style="display: none;" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
-                              <div class="modal-content">
+                                <div class="modal-content">
                                 <div class="modal-header">
                                   <h4 class="modal-title">{{ $inquiry->name}}</h4>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -92,86 +92,74 @@
                                   </button>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="form-group">
-                                      <form action = "{{route('follow_up.store')}}" method = "POST" class="needs-validation" novalidate>
-                                        
-                                              {{csrf_field()}}
+                                  <div class="form-group">
+                                    <div class="card-body">
+                                        <div class="tab-content">
+                                          <div class="active tab-pane" id="activity">
+                                            @foreach ($followups as $followup)
+                                              @if($inquiry->id == $followup->inquiry_id)
+                                            <!-- Post -->
+                                            <div class="post clearfix">
+                                              <div class="user-block">
+                                                <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
+                                                <span class="username">
+                                                  <a href="#">Sarah Ross</a>
+                                                  <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                                </span>
+                                                <span class="description">follow up : {{ $followup->follow_up}}</span>
+                                            </div>
+                                              <!-- /.user-block -->
                                             
-
-                                        
-                                        <div class="row">
-                                          <div class="col-sm-4">
-                                            <!-- text input -->
-                                            <div class="form-group">
-                                            <label for ="follow_up">Follow up</label> 
-                                              <input type ="text" name="follow_up" class="form-control" id ="follow_up" value = "{{ $inquiry->follow_up}}" required>
-                                            </div>
-                                          </div>
-                                          <div class="col-sm-4">
-                                            <!-- text input -->
-                                            <div class="form-group">
-                                              <label for ="inquiry_by"></label> 
-                                              <input type ="hidden" name="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
-                                            </div>
-                                          </div>
-                                          <div class="col-sm-4">
-                                            <!-- text input -->
-                                            <div class="form-group">
-                                              <label for ="inquiry_id"></label> 
-                                              <input type ="hidden" name="inquiry_id" class="form-control" id ="inquiry_id" value = "{{ $inquiry->id}}" required>
-                                            </div>
-                                          </div>
-                                          
-                                          <div class="col-sm-12">
-                                            <!-- text input -->
-                                            <div class="form-group">
-                                              <label for ="description">Description</label>
-                                              <textarea name="description" class="form-control" id ="description" value = "{{ $inquiry->description}}" required></textarea>
-                                            </div>
-                                          </div>
-                                          </div>
-                                  
-                                          <button type="submit" value="Save" class="btn bg-gradient-success float-right ">Save</button>
-
-                                      </form>
-                                    </div>
-                                </div>
-                                <div class="modal-footer justify-content-between">
-                                  
-                                        <!-- The timeline -->
-                                        <div class="col-sm-12">
-                                        <div class="timeline timeline-inverse">
-                                        @foreach ($followups as $followup)
-                                                  @if($inquiry->id == $followup->inquiry_id)
-                                          <!-- timeline item -->
-                                          <div>
-                                            
-                                            <div class="timeline-item">
-                                              <span class="time"><i class="far fa-clock"></i> 12:05</span>
-
-                                              <h3 class="timeline-header"><a href="#">{{ $followup->follow_up}}</a>
-                                              <br>
-
-                                            
-                                            </h3>
-
-                                              <div class="timeline-body">
+                                              <p>
                                               {{ $followup->description}}
-                                              </div>
-                                              <div class="timeline-footer">
-                                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                                              </div>
-                                            </div>
+                                              </p>
+                                              @endif
+                                            @endforeach
+                                              <form class="form-horizontal"action = "{{route('follow_up.store')}}" method = "POST" class="needs-validation" novalidate >
+                                              {{csrf_field()}}         
+                                            
+                                                      <div class="input-group input-group-sm mb-0">
+                                                                      <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                          <!-- text input -->
+                                                                          <div class="form-group">
+                                                                          <label for ="follow_up">Follow up</label> 
+                                                                            <input type ="hidden" name="follow_up" class="form-control" id ="follow_up" value = "{{ $inquiry->follow_up}}" required>
+                                                                          </div>
+                                                                      </div>
+                                                                        <div class="col-sm-4">
+                                                                          <!-- text input -->
+                                                                          <div class="form-group">
+                                                                            <label for ="inquiry_by"></label> 
+                                                                            <input type ="hidden" name="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                          <!-- text input -->
+                                                                          <div class="form-group">
+                                                                            <label for ="inquiry_id"></label> 
+                                                                            <input type ="hidden" name="inquiry_id" class="form-control" id ="inquiry_id" value = "{{ $inquiry->id}}" required>
+                                                                          </div>
+                                                                        </div>
+                                                                        
+                                                      </div>
+                                                        <input name="description" class="form-control form-control-sm"  id ="description" value = "{{ $inquiry->description}}"required>
+
+                                                        <div class="input-group-append">
+
+                                                          <button type="submit" class="btn btn-danger">Save</button>
+                                                        </div>
+                                                      
+                                              </form>
+                                          
                                           </div>
-                                            <!-- END timeline item -->
-                                            @endif
-                                        @endforeach
                                         </div>
-                                      
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
                             </div>
-                          </div>
+                        </div>
+                                   
               </tr>
                               <div class="modal fade" id="modal-info" style="display: none;" aria-hidden="true">
                                   <div class="modal-dialog modal-lg">
