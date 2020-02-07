@@ -47,7 +47,7 @@
                     <div class="col-sm-7">
                     <div class="form-group">
                   <label for ="course_name">Course Name</label> 
-                  <select type ="text" class="form-control"  name ="course_name" id ="course_name" value = "{{$student ->course_name}}"required>
+                  <select type ="text" class="form-control"  name ="course_name" id ="course_name" value = "{{$student ->course_name}}"required onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
                   <option >{{$student ->course_name}}</option>
                   @foreach ($courses as $course)
                             <option >{{ $course->course_name}}</option>
@@ -88,10 +88,7 @@
                   </div>
 
                     </div>
-                    
 
-
-                    
 
                     <div class="col-sm-4">
                     <div class="form-group">
@@ -134,8 +131,8 @@
                         <label for ="transfer">Transfer</label> 
                           <select type ="text" class="form-control" name ="transfer" id ="transfer"  value = "{{$student ->transfer}}" required>
                           <option   >{{$student ->transfer}}</option>
-                              <option   >Yes</option>
-                              <option  >No</option>
+                              <option >Yes</option>
+                              <option >No</option>
                             
                         </select>
                         <div class="invalid-feedback">
@@ -147,7 +144,7 @@
                     <div class="col-sm-4">
                     <div class="form-group">
                   <label for ="source">Source</label> 
-                  <select type ="text" class="form-control" name ="source" id ="source" value = "{{$student ->source}}"required>
+                  <select type ="text"  class="form-control" name ="source" id ="source" value = "{{$student ->source}}"required>
                   <option >{{$student ->source}}</option>
                             <option >Call</option>
                             <option >Walk In</option>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
-
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -13,6 +13,18 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+            'languages' => 'required|String',
+            'mobile_number'=>'required'
+        ]);
+    }
+
+
     public function index()
     {
        $staffs = User::All();
@@ -43,6 +55,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+
+       
         $staff = new  User;
        
         $staff->name =$request->name;
@@ -52,6 +66,7 @@ class UserController extends Controller
         $staff->mobile_number =$request->mobile_number;
         
         $staff->password = bcrypt($request->password);
+        
         $staff->save();
         return redirect('/staff')
         ->withSuccessMessage('Successfuly added');

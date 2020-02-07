@@ -47,6 +47,7 @@
     <div class="from-group"> 
         <label for ="email">Email</label>
         <input type ="email" name ="email" id="exampleInputsource1"  id ="email" placeholder="Enter the email"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+    
     </div> 
     </div>
   

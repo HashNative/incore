@@ -74,7 +74,7 @@
                     <div class="col-sm-8">
                     <div class="form-group">
                     <label>Course</label>
-                        <select type="text" name ="course_name" id="exampleInputsource1" class="form-control" id ="course_name"  placeholder="Enter the course" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                        <select type="text" name ="course_name" id="exampleInputsource1" class="form-control" id ="course_name"  placeholder="Enter the course" aria-describedby="exampleInputsource-error" aria-invalid="true" required onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
                         @foreach ($courses as $course)
                         <option>{{ $course->course_name}}</option>
                         @endforeach
