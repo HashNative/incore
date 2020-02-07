@@ -82,7 +82,7 @@
                     <div class="col-sm-8">
                     <div class="form-group">
                   <label for ="course_name">Course</label> 
-        <select type ="text" name ="course_name" class="form-control" id ="course_name" value = "{{ $inquiry->course_name}}"required>
+        <select type ="text" name ="course_name" class="form-control" id ="course_name" value = "{{ $inquiry->course_name}}"required onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
         @foreach ($courses as $course)
                         <option>{{ $course->course_name}}</option>
                         @endforeach

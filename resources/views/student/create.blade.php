@@ -54,7 +54,7 @@
 
                     <div class="form-group">
                      <label for ="course_name">Course Name</label>
-                          <select type ="text" name ="course_name" id="course_name"  class="form-control"class="required" >
+                          <select type ="text" name ="course_name" id="course_name"  class="form-control"class="required"onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;" >
 
                                @foreach ($courses as $course)
                                 <option >{{$course->course_name}}</option>
@@ -124,10 +124,10 @@
                    
                         <div class="col-sm-4">
                       <div class="form-group">
-                      <label for ="source">Source</label>
-                      <select type="text" name ="source" id="source" class="form-control" class="form-control" class="required">
+                      <label  for ="source">Source</label>
+                      <select type="text"  name ="source" id="source" class="form-control" class="form-control" class="required" >
                             
-                            <option selected>Call</option>
+                            <option  selected>Call</option>
                             <option >Walk In</option>
                             <option >Web</option>
                             <option >From Cordinator</option>
