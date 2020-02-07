@@ -9,6 +9,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use App\FollowUp;
 use Auth;
 use DB;
+use App\Assign;
 
 class InquiryController extends Controller
 {
@@ -20,21 +21,29 @@ class InquiryController extends Controller
     public function index()
     {
         $inquiries = Inquiry::All();
+        $followups = FollowUp::All();
+        $users = User::All();
+
+        $assigns = Assign::All();
         if(session('success_message')){
             Alert::success('Success!',session('success_message'));
            }
-       return view('inquiry.index',compact('inquiries'));
+       return view('inquiry.index',compact('inquiries','followups','assigns','users'));
        
     }
 
     public function myinquiry()
     {
+        $followups = FollowUp::All();
+        $users = User::All();
+
+        $assigns = Assign::All();
         
         $inquiries = DB::table('inquiries')
            ->where('inquiry_by',Auth::user()->name)
            ->get();
      
-       return view('inquiry.index',compact('inquiries'));
+       return view('inquiry.index',compact('inquiries','followups','assigns','users'));
     }
 
 

@@ -17,8 +17,11 @@ class CreateFollowUpsTable extends Migration
             $table->increments('id');
            
             $table->string('inquiry_by');
+            $table->Integer('inquiry_id');
+
+
             $table->String('follow_up');
-            $table->String('description');
+            $table->longText('description');
          
             $table->dateTime('date_time');
             

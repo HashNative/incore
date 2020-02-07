@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Assign;
 class AssignController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class AssignController extends Controller
      */
     public function index()
     {
-        //
+       
     }
 
     /**
@@ -34,7 +34,17 @@ class AssignController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $assign = new  Assign;
+        $assign->id =$request ->id;
+       
+        $assign->inquiry_by =$request ->inquiry_by;
+       
+        $assign->inquiry_id =$request ->inquiry_id;
+        $assign->assign_to =$request ->assignto;
+        
+        $assign->schedule_date =$request ->date;
+        $assign->save();
+        return redirect('/inquiry');
     }
 
     /**
