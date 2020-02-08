@@ -148,7 +148,7 @@
                                             
                                             <div class="timeline-item">
                                               <span class="time"><i class="far fa-clock"></i> 12:05</span>
-
+          
                                               <h3 class="timeline-header"><a href="#">{{ $followup->follow_up}}</a>
                                               <br>
 

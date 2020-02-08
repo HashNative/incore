@@ -46,14 +46,9 @@
                     </div>
                     <div class="col-sm-4">
                     <div class="form-group">
-                    <label>Inquiry by</label>
-                        <select type="text" name ="inquiry_by" id="exampleInputsource1" class="form-control" id ="inquiry_by" placeholder="Enter the inquiry by" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                        <label>Inquiry by</label>
+                        <input type="text" name ="inquiry_by" id="exampleInputsource1" class="form-control" id ="inquiry_by"value ="{{ Auth::user()->name }}" placeholder="Enter the inquiry by" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
-                        @foreach ($staffs as $staff)
-                        <option>{{ $staff->name}}</option>
-                        @endforeach
-                        
-                        </select>
                     </div>
                     </div>
                     <div class="col-sm-4">

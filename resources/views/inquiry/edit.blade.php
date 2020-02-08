@@ -64,13 +64,13 @@
                       <div class="form-group">
                   <label for ="source">Source</label> 
         <select type ="text" name="source" class="form-control" id ="source" value = "{{ $inquiry->source}}" required>
-        <option>{{ $inquiry->source}}</option>
-        <option>Call</option>
-                        <option>Walk in</option>
-                        <option>Web</option>
-                        <option>From cordinator</option>
-                        <option>From student</option>
-                        <option>From branch</option>
+                        
+                        <option <?php if(($inquiry->source)=='Call'){ echo 'selected'; } ?>>Call</option>
+                        <option  <?php if(($inquiry->source)=='Walk in'){ echo 'selected'; } ?>>Walk in</option>
+                        <option  <?php if(($inquiry->source)=='Web'){ echo 'selected'; } ?>>Web</option>
+                        <option  <?php if(($inquiry->source)=='From cordinator'){ echo 'selected'; } ?>>From cordinator</option>
+                        <option  <?php if(($inquiry->source)=='From student'){ echo 'selected'; } ?>>From student</option>
+                        <option  <?php if(($inquiry->source)=='From branch'){ echo 'selected'; } ?>>From branch</option>
                         </select>
         <div class="invalid-feedback">
         Please Enter valid Source.
