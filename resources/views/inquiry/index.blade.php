@@ -33,7 +33,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="example1" class="table table-bordered table-striped table-responsive">
               <thead>
               <tr>
               
@@ -162,7 +162,7 @@
                                    
               </tr>
                               <div class="modal fade" id="modal-info" style="display: none;" aria-hidden="true">
-                                  <div class="modal-dialog modal-lg">
+                                  <div class="modal-dialog modal-default">
                                     <div class="modal-content">
                                       <div class="modal-header">
                                         <h4 class="modal-title">Assign To</h4>
