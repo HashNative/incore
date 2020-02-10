@@ -49,7 +49,7 @@
                   <label for ="inquiry_by">Inquiry by</label> 
         <select type ="text" name ="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
         @foreach ($staffs as $staff)
-                        <option>{{ $staff->name}}</option>
+                        <option <?php if(($inquiry->inquiry_by)=='{{$staff->name}}'){ echo 'selected'; } ?>>{{ $staff->name}}</option>
                         @endforeach
                         
                         </select>
@@ -84,7 +84,7 @@
                   <label for ="course_name">Course</label> 
         <select type ="text" name ="course_name" class="form-control" id ="course_name" value = "{{ $inquiry->course_name}}"required onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
         @foreach ($courses as $course)
-                        <option>{{ $course->course_name}}</option>
+                        <option <?php if(($inquiry->course_name)=='{{$course->course_name}}'){ echo 'selected'; } ?>>{{ $course->course_name}}</option>
                         @endforeach
         </select>
         <div class="invalid-feedback">
@@ -100,9 +100,9 @@
                   <label for ="status">Status</label> 
         <select type ="text" name="status" class="form-control" id ="status" value = "{{ $inquiry->status}}"required>
         <option>{{ $inquiry->status}}</option>
-                        <option>Registered</option>
-                        <option>Pending</option>
-                        <option>Declined</option>
+                        <option <?php if(($inquiry->status)=='Registered'){ echo 'selected'; } ?>>Registered</option>
+                        <option <?php if(($inquiry->status)=='Pending'){ echo 'selected'; } ?>>Pending</option>
+                        <option <?php if(($inquiry->status)=='Declined'){ echo 'selected'; } ?>>Declined</option>
                         </select>
         <div class="invalid-feedback">
         Please Enter valid Status.
@@ -128,9 +128,9 @@
                   <label for ="text">Title</label> 
                        <select type ="text" name ="title" class="form-control" id ="title" value = "{{ $inquiry->title}}"required>
                        <option>{{ $inquiry->title}}</option>
-                        <option>Mr</option>
-                        <option>Mrs</option>
-                        <option>Ms</option>
+                        <option <?php if(($inquiry->title)=='Mr'){ echo 'selected'; } ?>>Mr</option>
+                        <option <?php if(($inquiry->title)=='Mrs'){ echo 'selected'; } ?>>Mrs</option>
+                        <option <?php if(($inquiry->title)=='Ms'){ echo 'selected'; } ?>>Ms</option>
                         </select>
                        <div class="invalid-feedback">
         Please Enter valid Title.
