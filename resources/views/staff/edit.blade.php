@@ -33,7 +33,7 @@
                 <form role="form">
                   <div class="row">
     
-    <div  class ="col-md-6">
+    <div  class ="col-md-8">
     <div class="from-group">
         <label for ="name">Staff Name</label>
         <input type ="text" name ="name" id ="name"value = "{{$staff -> name}}"class="form-control" required >
@@ -43,19 +43,7 @@
    </div>
    </div> 
 
-   <div  class ="col-md-6">
-   <div class="from-group">
-        <label for ="email">Email</label>
-        <input type ="email" name ="email" id ="email"value = "{{$staff -> email}}"class="form-control" required >
-        <div class="invalid-feedback">
-        Please Enter valid Email.
-      </div>
-   </div>
-   </div> 
-
-        
-    
-   <div  class ="col-md-6">
+   <div  class ="col-md-4">
    <div class="from-group">
         <label for ="languages">Language</label>
         <select type ="text" name ="languages" id ="languages"value = "{{$staff -> languages}}"class="form-control " >
@@ -67,7 +55,17 @@
    </div>
    </div> 
 
-   <div  class ="col-md-6">
+   <div  class ="col-md-8">
+   <div class="from-group">
+        <label for ="email">Email</label>
+        <input type ="email" name ="email" id ="email"value = "{{$staff -> email}}"class="form-control" required >
+        <div class="invalid-feedback">
+        Please Enter valid Email.
+      </div>
+   </div>
+   </div> 
+
+   <div  class ="col-md-4">
    <div class="from-group">
    <label for ="mobile_number">Mobile Number</label> 
         <input type ="integer" name="mobile_number" class="form-control" maxlength="10" id ="mobile_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $staff->mobile_number}}" required>

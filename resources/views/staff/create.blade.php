@@ -25,7 +25,7 @@
      {{csrf_field()}}
     <div >
     <div class="d-flex justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-5">
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Add Staff </h3>
@@ -36,7 +36,7 @@
                   <div class="row">
             
         
-        <div class ="col-md-6">
+        <div class ="col-md-8">
         <div class="from-group"> 
         <label for ="name">Staff Name</label>
         <input type ="text" name ="name" id="exampleInputsource1"  id ="name"  placeholder="Enter the Staff Name"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
@@ -61,8 +61,15 @@
         <option value="sinhala">Sinhala</option></select>
     </div> 
     </div> 
-  
-        <div class ="col-md-6"> 
+    
+    <div class ="col-md-8">
+    <div class="from-group"> 
+        <label for ="email">Email</label>
+        <input type ="email" name ="email" id="exampleInputsource1"  id ="email" placeholder="Enter the email"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+    </div> 
+    </div>
+
+    <div class ="col-md-4"> 
         <div class="from-group">
         <label for ="mobile_number">Mobile Number</label>
         <input type ="integer" name ="mobile_number"  maxlength="10" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1"  id ="mobile_number"   placeholder="Enter the mobile number  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
@@ -70,7 +77,6 @@
         
     </div> 
     </div> 
-    
  
         <div class ="col-md-6"> 
         <div class="from-group">

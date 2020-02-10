@@ -57,7 +57,7 @@
               <tr>
                   
                   <td>{{ $inquiry->source}}</td>
-                  <td>{{ $inquiry->description}}</td>
+                  <td style="word-break:break-all;">{{ $inquiry->description}}</td>
                   <td>{{ $inquiry->name}}</td>
                   <td>{{ $inquiry->course_name}}</td>
                   <td>{{ $inquiry->status}}</td>
