@@ -36,3 +36,4 @@ Route::get('/myinquiry','InquiryController@myinquiry');
 
 Route::resource('/dashboard','AdminController');
 Route::resource('/home1','HomeController');
+Route::resource('/home','HomeController');
