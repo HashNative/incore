@@ -59,11 +59,10 @@
    <div class="from-group">
         <label for ="languages">Language</label>
         <select type ="text" name ="languages" id ="languages"value = "{{$staff -> languages}}"class="form-control " >
-        <option >{{$staff -> languages}}</option>
-    
-        <option >English</option>
-        <option >Tamil</option>
-        <option >Sinhala</option>
+       
+        <option <?php if(($staff->languages)=='English'){ echo 'selected'; } ?>>English</option>
+        <option <?php if(($staff->languages)=='Tamil'){ echo 'selected'; } ?>>Tamil</option>
+        <option <?php if(($staff->languages)=='Sinhala'){ echo 'selected'; } ?>>Sinhala</option>
         </select>
    </div>
    </div> 

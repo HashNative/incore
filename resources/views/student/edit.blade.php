@@ -48,9 +48,9 @@
                     <div class="form-group">
                   <label for ="course_name">Course Name</label> 
                   <select type ="text" class="form-control"  name ="course_name" id ="course_name" value = "{{$student ->course_name}}"required onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
-                  <option >{{$student ->course_name}}</option>
+                
                   @foreach ($courses as $course)
-                            <option >{{ $course->course_name}}</option>
+                            <option <?php if(($student->course_name)=='{{$course->course_name}}'){ echo 'selected'; } ?>>{{ $course->course_name}}</option>
                             
                           @endforeach
                       </select>
@@ -93,10 +93,10 @@
                     <div class="col-sm-4">
                     <div class="form-group">
                   <label for ="inquiry_by">Inquiry By</label> 
-                  <select type ="text" class="form-control"  name ="inquiry_by" id ="inquiry_by"  value = "{{ $student->name}}"required>
+                  <select type ="text" class="form-control"  name ="inquiry_by" id ="inquiry_by"  value = "{{ $student->inquiry_by}}"required>
                  
                   @foreach ($staffs as $staff)
-                            <option >{{ $staff->name}}</option>
+                            <option <?php if(($student->inquiry_by)=='{{$staff->name}}'){ echo 'selected'; } ?>>{{ $staff->name}}</option>
                             @endforeach
                           
                       </select>
