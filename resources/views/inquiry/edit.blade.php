@@ -4,10 +4,10 @@
 <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="col-md-6">
             
           </div>
-          <div class="col-sm-6">
+          <div class="col-md-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('inquiry.index')}}">Inquiry</a></li>
@@ -32,7 +32,7 @@
               <div class="card-body">
                 <form role="form">
                   <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                       <!-- text input -->
                       <div class="form-group">
                   <label for ="phone_number">Phone number</label> 
@@ -44,7 +44,7 @@
                     </div>
                    
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                     <div class="form-group">
                   <label for ="inquiry_by">Inquiry by</label> 
         <select type ="text" name ="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
@@ -59,11 +59,12 @@
       
                     </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                       <!-- text input -->
                       <div class="form-group">
                   <label for ="source">Source</label> 
         <select type ="text" name="source" class="form-control" id ="source" value = "{{ $inquiry->source}}" required>
+        <option>{{ $inquiry->source}}</option>
         <option>Call</option>
                         <option>Walk in</option>
                         <option>Web</option>
@@ -78,10 +79,10 @@
                     </div>
                    
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-8">
                     <div class="form-group">
-                  <label for ="course_id">Course</label> 
-        <select type ="text" name ="course_id" class="form-control" id ="course_id" value = "{{ $inquiry->course_id}}"required>
+                  <label for ="course_name">Course</label> 
+        <select type ="text" name ="course_name" class="form-control" id ="course_name" value = "{{ $inquiry->course_name}}"required>
         @foreach ($courses as $course)
                         <option>{{ $course->course_name}}</option>
                         @endforeach
@@ -90,25 +91,43 @@
         Please Enter valid Course.
       </div>
         
+      
                     </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                       <!-- text input -->
+                      <div class="form-group">
+                  <label for ="status">Status</label> 
+        <select type ="text" name="status" class="form-control" id ="status" value = "{{ $inquiry->status}}"required>
+        <option>{{ $inquiry->status}}</option>
+                        <option>Registered</option>
+                        <option>Pending</option>
+                        <option>Declined</option>
+                        </select>
+        <div class="invalid-feedback">
+        Please Enter valid Status.
+      </div>
+        
+                    </div>
+                   
+                    </div>
+
+                    <!-- <div class="col-sm-6">
+                      
                       <div class="form-group">
                   <label for ="date_time">Date Time</label> 
         <input type ="datetime-auto" name="date_time" class="form-control" id ="date_time" value = "{{ $inquiry->date_time}}"required>
         <div class="invalid-feedback">
         Please Enter valid Date Time.
       </div>
-        
-                    </div>
-                   
-                    </div>
-                    <div class="col-sm-6">
+        </div>
+                    </div> -->
+
+                    <div class="col-sm-3">
                     <div class="form-group">
                   <label for ="text">Title</label> 
                        <select type ="text" name ="title" class="form-control" id ="title" value = "{{ $inquiry->title}}"required>
-                       
+                       <option>{{ $inquiry->title}}</option>
                         <option>Mr</option>
                         <option>Mrs</option>
                         <option>Ms</option>
@@ -121,7 +140,7 @@
                     </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-9">
                       <!-- text input -->
                       <div class="form-group">
                   <label for ="name">Name</label> 
@@ -133,7 +152,7 @@
                     </div>
                    
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-9">
                     <div class="form-group">
                   <label for ="email">Email</label> 
         <input type ="text" name ="email" class="form-control" id ="email" value = "{{ $inquiry->email}}"required>
@@ -144,24 +163,8 @@
                     </div>
                     </div>
 
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                  <label for ="status">Status</label> 
-        <select type ="text" name="status" class="form-control" id ="status" value = "{{ $inquiry->status}}"required>
-        
-                        <option>Registered</option>
-                        <option>Pending</option>
-                        <option>Declined</option>
-                        </select>
-        <div class="invalid-feedback">
-        Please Enter valid Status.
-      </div>
-        
-                    </div>
                    
-                    </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                     <div class="form-group">
                   <label for ="follow_up">Followup</label> 
         <input type ="text" name ="follow_up" class="form-control" id ="follow_up" value = "{{ $inquiry->follow_up}}"required>
@@ -172,11 +175,11 @@
                     </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
                   <label for ="description">Description</label> 
-                  <textarea name="description" id ="description" class="form-control" id ="description" value = "{{ $inquiry->description}}" required></textarea>
+                  <textarea name="description" id ="description" class="form-control" id ="description"  required> {{ $inquiry->description}} </textarea>
                   <div class="invalid-feedback">
         Please Enter Description.
       </div>

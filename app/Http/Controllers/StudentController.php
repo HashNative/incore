@@ -148,6 +148,6 @@ class StudentController extends Controller
         return redirect('/student')->withSuccessMessage('Successfuly Deleted');
         //
       
-    }
+ }
 }
 
