@@ -33,7 +33,7 @@
                 
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="example1" class="table table-bordered table-striped">
+                    <table id="example1" class="table table-bordered table-striped table-responsive  ">
 
                     <thead>
      <tr>
@@ -79,11 +79,8 @@
         
            
            <td>
-            <form action = "{{route('student.destroy',$student->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
+           <form action = "{{route('student.destroy',$student->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
 
-            <input type = "hidden" name = "_method" value = "delete"> 
-                    {{csrf_field()}} 
-                 
             
                 <a href="{{route('student.show',$student->id)}}" tittle="view details" class="btn btn-sm " style="color:#0066ff";>
                     <i class="fas fa-eye"> </i>
@@ -93,7 +90,10 @@
                 <a href="{{route('student.edit',$student->id)}}" tittle="edit details" class="btn btn-sm " style="color:#ffc107";>
                     <i class="fas fa-edit"> </i>
                 </a>
-               
+                
+                <input type = "hidden" name = "_method" value = "delete"> 
+                {{csrf_field()}} 
+     
                     <button type="submit"  class="btn  btn-sm " style="color:#cc0000";><i tittle="delete details" class="fa fa-trash"></i></button>
                 </form>
                 

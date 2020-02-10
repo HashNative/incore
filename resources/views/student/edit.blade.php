@@ -53,6 +53,7 @@
                             <option <?php if(($student->course_name)=='{{$course->course_name}}'){ echo 'selected'; } ?>>{{ $course->course_name}}</option>
                             
                           @endforeach
+                          
                       </select>
         
                     <div class="invalid-feedback">
@@ -67,7 +68,7 @@
                     
                       <div class="form-group">
                       <label for ="phone_number">Phone Number</label> 
-                    <input type ="integer" name ="phone_number" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}"class="form-control" value = "{{$student ->phone_number}}"required>
+                    <input type ="text" name ="phone_number" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}"class="form-control" value = "{{$student ->phone_number}}"required>
                     <div class="invalid-feedback">
                     Please Enter valid Phone Number.
                   </div>
