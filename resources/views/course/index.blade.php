@@ -52,7 +52,7 @@
                         <td>{{ $course->course_name}}</td>
                         <td>{{ $course->registration_date}}</td>
                         <td>{{ $course->course_fees}}</td>
-                        <td style="width: 12px; word-wrap: break-word" >{{ $course->description}}</td>
+                        <td style="width: 40em; word-break: break-all" >{{ $course->description}}</td>
                         <td>{{ $course->start_by}}</td>
                         <td>{{ $course->end_by}}</td>
                        
