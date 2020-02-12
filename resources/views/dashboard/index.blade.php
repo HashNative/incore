@@ -99,26 +99,21 @@
         <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
 
         <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Inquary</h3>
+                <h3 class="card-title">Inquiry</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-                <table class="table table-sm">
+                <table class="table table-lg">
                   <thead>
                     <tr>
                      
                       <th>Operater</th>
                       <th>Total</th>
-                      <th>Call</th>
-                      <th>Walk In</th>
-                      <th>Web</th>
-                      <th>From Cordinater</th>
-                      <th>From Student</th>
-                      <th>From Branch</th>
+                      
                     </tr>
                   </thead>
                   <tbody>
@@ -127,6 +122,14 @@
                           <td>{{ $inquiry->inquiry_by}}</td>
                           <td>{{ $inquiry->count }}</td>
                           
+                          @foreach ($sources as $source)
+                          @if($inquiry->inquiry_by == $source->inquiry_by )
+                        
+                          <th>{{$source->source}}</th>
+                          <td></td>
+                           <td>{{$source->counta}}</td>
+                           @endif
+                          @endforeach
                     </tr>
                   @endforeach
                   </tbody>
@@ -136,7 +139,7 @@
             </div>
             <!-- /.card -->
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
             <div class="card card-primary card-outline">
               <div class="card-header">
                 <h3 class="card-title">
@@ -171,7 +174,7 @@
           <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
 
         <div class="card">
               <div class="card-header">
@@ -185,30 +188,31 @@
                      
                       <th>Operater</th>
                       <th>Total</th>
-                      <th>Call</th>
-                      <th>Walk In</th>
-                      <th>Web</th>
-                      <th>From Cordinater</th>
-                      <th>From Student</th>
-                      <th>From Branch</th>
+                  
                     </tr>
                   </thead>
-                  @foreach ($staffs as $staff)
+                  @foreach ($inquiries1 as $inquiry)
                     <tr>
-                          <td>{{ $staff->name}}</td>
+                          <td>{{ $inquiry->inquiry_by}}</td>
+                          <td>{{ $inquiry->countc }}</td>
+                          @foreach ($sources1 as $source)
+                          @if($inquiry->inquiry_by == $source->inquiry_by)
+                          <th>{{$source->source}}</th>
+                           <td>{{$source->countb}}</td>
+                           @endif
+                          @endforeach
                     </tr>
                   @endforeach
-              
-                    </tr>
+                    
                   
                   </tbody>
                 </table>
               </div>
-              <!-- /.card-body -->
+              <!-- /.card-body -->`
             </div>
             <!-- /.card -->
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
             <div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title">Pie Chart</h3>
@@ -220,7 +224,7 @@
                 </div>
               </div>
               <div class="card-body">
-                <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                <canvas id="pieChart" style="min-height: 500px; height: 500px; max-height: 500px; max-width: 100%;"></canvas>
               </div>
               <!-- /.card-body -->
             </div>
@@ -285,7 +289,7 @@
               <div class="card-footer">
                 <div class="row">
                 @foreach ($inquiries as $inquiry)
-                  <div class="col-sm-2 col-2">
+                  <div class="col-lg-10 col-10">
                  
                     <div class="description-block border-right">
                    

@@ -39,7 +39,7 @@
      <tr>
     
     
-    <th>Student Name</th>
+    <th >Student Name</th>
     <th  >Email </th>
       
     <th >Phone Number</th> 
@@ -52,7 +52,7 @@
     <th> Date</th>  
     
     
-    <th>Actions</th> 
+    <th width="100px">Actions</th> 
     
      
 
@@ -76,9 +76,8 @@
       
       
        
-        
-           
-           <td>
+    
+           <td width="100px">
            <form action = "{{route('student.destroy',$student->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
 
             

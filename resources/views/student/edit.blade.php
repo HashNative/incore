@@ -112,11 +112,11 @@
                     <div class="form-group">
                   <label for ="inquiry_source">Inquiry Source</label> 
                   <select type ="text" class="form-control" name ="inquiry_source" id ="inquiry_source" value = "{{$student ->inquiry_source}}"required>
-                  <option  >{{$student ->inquiry_source}}</option>
-                            <option  >Call</option>
-                            <option  >Walk In </option>
-                            <option >Others </option>
-                          
+                
+                   
+                        <option <?php if(($student->inquiry_source)=='Call'){ echo 'selected'; } ?>>Call</option>
+                  <option <?php if(($student->inquiry_source)=='Walk In'){ echo 'selected'; } ?>>Walk In</option>
+                    <option <?php if(($student->inquiry_source)=='Others'){ echo 'selected'; } ?>>Others</option>
                       </select>
                        
                         <div class="invalid-feedback">
@@ -131,10 +131,9 @@
                         <div class="form-group">
                         <label for ="transfer">Transfer</label> 
                           <select type ="text" class="form-control" name ="transfer" id ="transfer"  value = "{{$student ->transfer}}" required>
-                          <option   >{{$student ->transfer}}</option>
-                              <option >Yes</option>
-                              <option >No</option>
-                            
+                          <option <?php if(($student->transfer)=='Yes'){ echo 'selected'; } ?>>Yes</option>
+                          <option <?php if(($student->transfer)=='No'){ echo 'selected'; } ?>>No</option>
+                             
                         </select>
                         <div class="invalid-feedback">
                         Please Enter valid value.
@@ -146,15 +145,13 @@
                     <div class="form-group">
                   <label for ="source">Source</label> 
                   <select type ="text"  class="form-control" name ="source" id ="source" value = "{{$student ->source}}"required>
-                  <option >{{$student ->source}}</option>
-                            <option >Call</option>
-                            <option >Walk In</option>
-                            <option >Web</option>
-                            <option >From Student</option>
-                            <option >From Cordinator</option>
-                            <option >From Branch</option>
-                            <option >Offers</option>
-                           
+                  <option <?php if(($student->source)=='Call'){ echo 'selected'; } ?>>Call</option>
+                  <option <?php if(($student->source)=='Walk In'){ echo 'selected'; } ?>>Walk In</option>
+                  <option <?php if(($student->source)=='Web'){ echo 'selected'; } ?>>Web</option>
+                  <option <?php if(($student->source)=='From Student'){ echo 'selected'; } ?>>From Student</option>
+                  <option <?php if(($student->source)=='From Cordinator'){ echo 'selected'; } ?>>From Cordinator</option>
+                  <option <?php if(($student->source)=='From Branch'){ echo 'selected'; } ?>>From Branch</option>
+                  <option <?php if(($student->source)=='Offers'){ echo 'selected'; } ?>>Offers</option>
                           
                       </select>
  
