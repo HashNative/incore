@@ -274,34 +274,33 @@
                   <!-- /.col -->
                   <div class="col-md-4">
                     <p class="text-center">
-                      <strong>Inq & Registration for a Date Range</strong>
+                      <strong>Goal Completion</strong>
                     </p>
-                   
+                    @foreach ($courses as $course)
+                    
+
+                    <div class="progress-group">
+                     {{$course->course_name}}
+                      <span class="float-right">
+                        @foreach ($courses1 as $course1)
+                        @if($course->course_name == $course1->course_name)
+                            <b>{{$course1->countx}}</b>
+                        
+                      /<b>{{$course->count}}</b></span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-primary" style="width: <?php $x =($course1->countx/$course->count)*100; echo($x)?>%"></div>
+                      </div>
                     </div>
+                    <!-- /.progress-group -->
+                    @endif
+                    @endforeach
+                   @endforeach
+                    
 
               <!-- ./card-body -->
             
               
-              <div class="card-footer">
-                <div class="row">
-                @foreach ($inquiries as $inquiry)
-                  <div class="col-sm-2 col-2">
-                 
-                    <div class="description-block border-right">
-                   
-                      <!-- <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span> -->
-                      <h5 class="description-header">{{ $inquiry->count}}</h5>
-                     
-                      <span class="description-text">{{ $inquiry->inquiry_by}}</span>
-                     
-                    </div>
-                   
-                    <!-- /.description-block -->
-                  </div>
-                  @endforeach
-                </div>
-                <!-- /.row -->
-              </div>
+              
               <!-- /.card-footer -->
            
        

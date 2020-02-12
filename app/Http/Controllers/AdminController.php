@@ -24,12 +24,22 @@ class AdminController extends Controller
         $students = Student::All();
         //$inquiries = Inquiry::All();
         $staffs = User::All();
-        $courses = Course::All();
+        
         $inquiries = DB::table('inquiries')
             ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS count')))
             ->groupBy('inquiry_by')
             ->get();
+        $courses = DB::table('inquiries')
+            ->select(array('course_name',DB::raw('COUNT(course_name) AS count')))
+            ->groupBy('course_name')
+            ->get();
+        $courses1 = DB::table('inquiries')
+            ->select(array('status','course_name',DB::raw('COUNT(status) AS countx')))
+            ->where('status','registered')
+            ->groupBy('status','course_name')
+            ->get();
            
+            
             
           
         
@@ -46,7 +56,7 @@ class AdminController extends Controller
         $cou = $courses->pluck('course_name')->all();
         $count3 = Course::whereIn('course_name', $cou)->count();
             
-        return view('dashboard.index',compact('students','inquiries','staffs','count','courses','count1','count2','count3'));
+        return view('dashboard.index',compact('courses1','students','inquiries','staffs','count','courses','count1','count2','count3'));
         //
     }
 
