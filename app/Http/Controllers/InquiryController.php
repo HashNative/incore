@@ -22,6 +22,8 @@ class InquiryController extends Controller
     {
         $inquiries = Inquiry::All();
         $followups = FollowUp::All();
+        $followup = DB::table('follow_ups')
+         ->max('follow_up');
         $users = User::All();
 
         $assigns = Assign::All();
@@ -86,8 +88,18 @@ class InquiryController extends Controller
         date_default_timezone_set("Asia/Colombo");
         $inquiry->date_time =date('Y-m-d h:i:s');
         $inquiry->save();
-        return redirect('/inquiry')->withSuccessMessage('Successfuly Added')
-        ;
+        $LastInsertId = $inquiry->id;
+
+        $follow = new  FollowUp;
+        $follow->id =$request ->id;
+        $follow->inquiry_by =$request ->inquiry_by;
+        $follow->follow_up =$request ->follow_up;
+        $follow->inquiry_id =$LastInsertId;
+        $follow->description =$request ->description;
+        date_default_timezone_set("Asia/Colombo");
+        $follow->date_time =date('Y-m-d h:i:s');
+        $follow->save();
+        return redirect('/inquiry')->withSuccessMessage('Successfuly Added');
         //
     }
 
