@@ -36,7 +36,8 @@
                       <!-- text input -->
                       <div class="form-group">
                   <label for ="phone_number">Phone number</label> 
-        <input type ="integer" name="phone_number" class="form-control" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $inquiry->phone_number}}" required>
+        <input type ="integer" name="phone_number" class="form-control" maxlength="10" id ="phone_number" 
+        pattern="[0-9]{1}[0-9]{9}" value = "{{ $inquiry->phone_number}}" required>
         <div class="invalid-feedback">
         Please Enter valid phone number.
       </div>
@@ -49,7 +50,8 @@
                   <label for ="inquiry_by">Inquiry by</label> 
         <select type ="text" name ="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
         @foreach ($staffs as $staff)
-                        <option <?php if(($inquiry->inquiry_by)=='{{$staff->name}}'){ echo 'selected'; } ?>>{{ $staff->name}}</option>
+                        <option <?php if(($inquiry->inquiry_by)=='{{$staff->name}}'){ echo 'selected'; } ?>>
+                        {{ $staff->name}}</option>
                         @endforeach
                         
                         </select>
@@ -99,8 +101,9 @@
                       <div class="form-group">
                   <label for ="status">Status</label> 
         <select type ="text" name="status" class="form-control" id ="status" value = "{{ $inquiry->status}}"required>
-        <option>{{ $inquiry->status}}</option>
-                        <option <?php if(($inquiry->status)=='Registered'){ echo 'selected'; } ?>>Registered</option>
+       
+                        <option <?php if(($inquiry->status)=='Registered'){ echo 'selected'; } ?>>Registered
+                      </option>
                         <option <?php if(($inquiry->status)=='Pending'){ echo 'selected'; } ?>>Pending</option>
                         <option <?php if(($inquiry->status)=='Declined'){ echo 'selected'; } ?>>Declined</option>
                         </select>
@@ -127,7 +130,7 @@
                     <div class="form-group">
                   <label for ="text">Title</label> 
                        <select type ="text" name ="title" class="form-control" id ="title" value = "{{ $inquiry->title}}"required>
-                       <option>{{ $inquiry->title}}</option>
+                       
                         <option <?php if(($inquiry->title)=='Mr'){ echo 'selected'; } ?>>Mr</option>
                         <option <?php if(($inquiry->title)=='Mrs'){ echo 'selected'; } ?>>Mrs</option>
                         <option <?php if(($inquiry->title)=='Ms'){ echo 'selected'; } ?>>Ms</option>
@@ -183,7 +186,6 @@
                   <div class="invalid-feedback">
         Please Enter Description.
       </div>
-        
                     </div>
                    
                     </div>

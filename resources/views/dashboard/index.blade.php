@@ -278,10 +278,28 @@
                   <!-- /.col -->
                   <div class="col-md-4">
                     <p class="text-center">
-                      <strong>Inq & Registration for a Date Range</strong>
+                      <strong>Goal Completion</strong>
                     </p>
-                   
+                    @foreach ($courses as $course)
+                    
+
+                    <div class="progress-group">
+                     {{$course->course_name}}
+                      <span class="float-right">
+                        @foreach ($courses1 as $course1)
+                        @if($course->course_name == $course1->course_name)
+                            <b>{{$course1->countx}}</b>
+                        
+                      /<b>{{$course->count}}</b></span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-primary" style="width: <?php $x =($course1->countx/$course->count)*100; echo($x)?>%"></div>
+                      </div>
                     </div>
+                    <!-- /.progress-group -->
+                    @endif
+                    @endforeach
+                   @endforeach
+                    
 
               <!-- ./card-body -->
             
