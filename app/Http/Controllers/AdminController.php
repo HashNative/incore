@@ -28,8 +28,24 @@ class AdminController extends Controller
         $inquiries = DB::table('inquiries')
             ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS count')))
             ->groupBy('inquiry_by')
+            ->orderBy('inquiry_by', 'asc')
             ->get();
+        $sources = DB::table('inquiries')
+        ->select(array('source','inquiry_by',DB::raw('COUNT(source) AS counta')))
+        ->groupBy('source','inquiry_by')
+        ->orderBy('source', 'asc')
+        ->get();
            
+        $sources1 = DB::table('students')
+        ->select(array('source','inquiry_by',DB::raw('COUNT(source) AS countb')))
+        ->groupBy('source','inquiry_by')
+        ->orderBy('source', 'asc')
+        ->get();
+        $inquiries1 = DB::table('students')
+        ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS countc')))
+        ->groupBy('inquiry_by')
+        ->orderBy('inquiry_by', 'asc')
+        ->get();
             
           
         
@@ -46,7 +62,7 @@ class AdminController extends Controller
         $cou = $courses->pluck('course_name')->all();
         $count3 = Course::whereIn('course_name', $cou)->count();
             
-        return view('dashboard.index',compact('students','inquiries','staffs','count','courses','count1','count2','count3'));
+        return view('dashboard.index',compact('students','inquiries','inquiries1','staffs','count','courses','count1','count2','count3','sources','sources1'));
         //
     }
 
