@@ -32,54 +32,48 @@
               <div class="card-body">
                 <form role="form">
                   <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                       <div class="form-group">
                       <label for ="course_name">Course Name</label>
                       <input type ="text" name ="course_name" id ="course_name"class="form-control"value = "{{$course -> course_name}}" required>
-        
                       </div>
                     </div>
-                  
-                  <div class="col-sm-6">
+                    
+                    <div class="col-sm-5">
+                      <div class="form-group">
+                          <label for ="course_fees">Course Fees</label>
+                          <input type ="number" name ="course_fees" id ="course_fees"class="form-control"value = "{{$course -> course_fees}}"required>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="col-sm-12
+                    ">
+                      <div class="form-group">
+                         <label for ="description">Description</label>
+                         <textarea name="description" name ="description" id ="description"class="form-control"value = "{{$course -> description}}"required> {{ $course->description}} </textarea>
+                      </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-sm-4">
                    <div class="form-group">
                           <label for ="registration_date">Registraion Date</label>
                           <input type ="date" name ="registration_date" id ="registration_date"class="form-control"value = "{{$course -> registration_date}}"required>
        
                       </div>
                     </div>
-                  </div>
-                    <div class="row">
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                          <label for ="course_fees">Course Fees</label>
-                          <input type ="number" name ="course_fees" id ="course_fees"class="form-control"value = "{{$course -> course_fees}}"required>
-      
-                      </div>
-                    </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                  <div class="form-group">
                         <label for ="start_by">Start By</label>
                         <input type ="date" name ="start_by" id ="start_by"class="form-control"value = "{{$course -> start_by}}"required>
-                       
-       
-                      </div>
                     </div>
                     </div>
-                    <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                       <div class="form-group">
                           <label for ="end_by">End By</label>
                           <input type ="date" name ="end_by" id ="end_by"class="form-control"value = "{{$course -> end_by}}"required>
        
                       </div>
                     </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                         <label for ="description">Description</label>
-                         <input type ="textarea" name ="description" id ="description"class="form-control"value = "{{$course -> description}}"required></textarea>
-        
-                      </div>
-                  </div>
                </div>
                     
 
