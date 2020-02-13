@@ -22,15 +22,18 @@ class InquiryController extends Controller
     {
         $inquiries = Inquiry::All();
         $followups = FollowUp::All();
-        $followup = DB::table('follow_ups')
-         ->max('follow_up');
+       
+         $followups1 = DB::table('follow_ups')
+        ->select(array('follow_up','inquiry_id',DB::raw('MAX(follow_up) AS count')))
+        ->groupBy('follow_up','inquiry_id')
+        ->get();
         $users = User::All();
 
         $assigns = Assign::All();
         if(session('success_message')){
             Alert::success('Success!',session('success_message'));
            }
-       return view('inquiry.index',compact('inquiries','followups','assigns','users'));
+       return view('inquiry.index',compact('inquiries','followups1','followups','assigns','users'));
        
     }
 
@@ -141,7 +144,7 @@ class InquiryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $inquiry =Inquiry::find ($id);;
+        $inquiry =Inquiry::find ($id);
        
         $inquiry->source =$request ->source;
         $inquiry->description =$request ->description;

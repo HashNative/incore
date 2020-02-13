@@ -116,7 +116,7 @@
                                               </p>
                                               @endif
                                               @endforeach
-                                              <form class="form-horizontal"action = "{{route('follow_up.store')}}" method = "POST" class="needs-validation" novalidate >
+                                              <form class="form-horizontal"action = "{{route('follow_up.store',$inquiry->id)}}" method = "POST" class="needs-validation" novalidate >
                                               {{csrf_field()}}         
                                             
                                                       <div class="input-group input-group-sm mb-0">
@@ -124,12 +124,15 @@
                                                                         <div class="col-sm-4">
                                                                           <!-- text input -->
                                                                           <div class="form-group">
-                                                                          
-                                                                            <?php  $inquiry->follow_up = $followup->follow_up + 1 ?>
-                                                                            
+                                                                         
+                                                                          @foreach ($followups1 as $followup1)
+                                                                            @if($inquiry->id == $followup1->inquiry_id)
+                                                                            <?php  $followup1->count = $followup1->count + 1 ?>
+                                                                           
                                                                               <label for ="follow_up">Follow up</label> 
-                                                                                <input type ="text" name="follow_up" class="form-control" id ="follow_up" value = "{{ $inquiry->follow_up}}" required>
-                                                                             
+                                                                                <input type ="hidden" name="follow_up" class="form-control" id ="follow_up" value = "{{ $followup1->count}}" required>
+                                                                                @endif
+                                                                          @endforeach
                                                                           </div>
                                                                       </div>
                                                                         <div class="col-sm-4">

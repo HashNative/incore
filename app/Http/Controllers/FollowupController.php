@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\FollowUp;
+use App\Inquiry;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -37,9 +38,9 @@ class FollowupController extends Controller
      */
     public function store(Request $request)
     {
+       
         $follow = new  FollowUp;
         $follow->id =$request ->id;
-       
         $follow->inquiry_by =$request ->inquiry_by;
         $follow->follow_up =$request ->follow_up;
         $follow->inquiry_id =$request ->inquiry_id;
