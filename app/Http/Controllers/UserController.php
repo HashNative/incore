@@ -5,7 +5,7 @@ use App\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
-
+use DB;
 class UserController extends Controller
 {
     /**
@@ -29,9 +29,14 @@ class UserController extends Controller
     {
        $staffs = User::All();
        if(session('success_message')){
-        Alert::success('',session('success_message'));
+        alert('Done !');
        }
-       return view('staff.index',compact('staffs'));
+       $inquiries = DB::table('inquiries')
+            ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS count')))
+            ->groupBy('inquiry_by')
+            ->orderBy('inquiry_by', 'asc')
+            ->get();
+       return view('staff.index',compact('staffs', 'inquiries'));
         //
     }
 

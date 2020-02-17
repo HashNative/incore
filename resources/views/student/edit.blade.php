@@ -173,20 +173,6 @@
                   </div>
                     </div>
 
-                    <div class="col-sm-3">
-                    <div class="form-group">
-                    <label for ="register_by">Register By</label> 
-        
-                  <input type ="text" class="form-control" name ="register_by" id ="register_by" value = "{{Auth::user()->name }}"required>
-                                      
-                     
-                         
-                    <div class="invalid-feedback">
-                    Please Enter valid detail.
-                  </div>
-         
-                  </div>
-                    </div>
                     
               </form>
               

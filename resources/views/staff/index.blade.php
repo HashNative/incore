@@ -7,10 +7,10 @@
           <div class="col-sm-6">
          
           
-          <a href="{{ route('register') }}" class="btn btn-primary btn-flat  fa-" tittle="Add"> <i class="fas fa-plus"></i>
+          <a href="{{ route('register') }}" class="btn btn-primary" tittle="Add"> <i class="fas fa-plus"></i>
     Add Staff
 </a>
-          
+
             
           </div>
           <div class="col-sm-6">

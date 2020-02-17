@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -256,7 +258,6 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-
   @yield('content')
   
   </div>
@@ -333,37 +334,8 @@
      * DONUT CHART
      * -----------
      */
-     <?php 
 
-
-$arr = array (); 
-
-
-foreach ($inquiries as $inquiry){ 
-  array_push($arr,array( 
-  
-    "label" => $inquiry->inquiry_by, 
-    "data" => $inquiry->count ,
-    "backgroundColor"=> " ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff']"
- 
     
-    
-  ), ); 
-
-} 
-
-
-?>
-
-
-    // var donutData = [
-    //   {
-    //     label: 'Series1',
-    //     data : <?php echo $total_count; ?>,
-    //     color: '#3c8dbc'
-    //   }
-      
-    // ]
     $.plot('#donut-chart', <?php echo json_encode($arr); ?>, {
       series: {
         pie: {

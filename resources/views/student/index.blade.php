@@ -5,7 +5,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
           <a href="{{route('student.create')}}"  class="btn btn-primary" tittle="show details">
-    <i class="fas fa-user-plus"></i> Student Register 
+    <i class="fas fa-user-plus"></i> Register Student
    </a>
           </div>
           <div class="col-sm-6">
@@ -33,7 +33,7 @@
                 
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="example1" class="table table-bordered table-striped table-responsive  ">
+                    <table id="example1" class="table table-bordered table-striped table-responsive" >
 
                     <thead>
      <tr>

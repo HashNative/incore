@@ -6,7 +6,7 @@
           <div class="col-md-6">
 
           <a href="{{route('inquiry.create')}}"  class="btn  btn-primary" tittle="show details">
-    <i class="fas fa-plus"></i> Add Inquiry
+    <i class="fas fa-plus"></i> New Inquiry
      </a>
           
             

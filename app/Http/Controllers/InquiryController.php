@@ -31,8 +31,8 @@ class InquiryController extends Controller
 
         $assigns = Assign::All();
         if(session('success_message')){
-            Alert::success('Success!',session('success_message'));
-           }
+            alert('Done !');
+        }
        return view('inquiry.index',compact('inquiries','followups1','followups','assigns','users'));
        
     }

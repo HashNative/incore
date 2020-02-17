@@ -19,6 +19,7 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $students = Student::All();
@@ -71,7 +72,6 @@ class AdminController extends Controller
 
         $cou = $courses->pluck('course_name')->all();
         $count3 = Course::whereIn('course_name', $cou)->count();
-            
         return view('dashboard.index',compact('courses1','students','inquiries','inquiries1','staffs','count','courses','count1','count2','count3','sources','sources1'));
         //
     }

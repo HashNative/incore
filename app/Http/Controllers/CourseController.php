@@ -16,8 +16,8 @@ class CourseController extends Controller
     {
         $courses = Course::All();
         if(session('success_message')){
-            Alert::success('Success!',session('success_message'));
-           }
+            alert('Done !');
+        }
 
         return view('course.index',compact('courses'));
           //

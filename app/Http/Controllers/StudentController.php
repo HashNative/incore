@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Student;
 use App\Course;
 use App\User;
+use Auth;
 
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -21,8 +22,8 @@ class StudentController extends Controller
     { 
          $students = Student::All();
        if(session('success_message')){
-         Alert::success('Success!',session('success_message'));
-        }
+        alert('Done !');
+    }
        return view('student.index',compact('students'));
         //
     }
@@ -62,12 +63,11 @@ class StudentController extends Controller
         $student->inquiry_source =$request ->inquiry_source;
         $student->source =$request ->source;
         $student->inquiry_by =$request ->inquiry_by;
-        $student->register_by =$request ->register_by;
+        $student->register_by =Auth::user()->name;
                                                                   
         
         $student->save();
-        return redirect('/student')
-        ->withSuccessMessage('Successfuly added');
+        return redirect('/student');
 
         
         //
@@ -125,8 +125,9 @@ class StudentController extends Controller
         $student->source =$request ->source;
         $student->date =$request ->date;
         $student->inquiry_by =$request ->inquiry_by; //Auth::user
-        $student->register_by =$request ->register_by; 
+        $student->register_by =Auth::user()->name;
         $student->date =$request ->date;
+        
         $student->update();
         return redirect('/student')->withSuccessMessage('Successfuly Updated');
         //

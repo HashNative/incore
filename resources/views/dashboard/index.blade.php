@@ -39,10 +39,6 @@
           </div>
           <!-- /.col -->
 
-
-
-
-          
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
               <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-graduation-cap"></i></span>
@@ -59,9 +55,6 @@
             <!-- /.info-box -->
           </div>
           <!-- /.col -->
-
-          <!-- fix for small devices only -->
-          <div class="clearfix hidden-md-up"></div>
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
@@ -1000,6 +993,123 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
-         
+        <?php 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+foreach ($inquiries as $inquiry){ 
+  array_push($arr,array( 
+  
+    "label" => $inquiry->inquiry_by, 
+    "data" => $inquiry->count ,
+    "backgroundColor"=> " ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff']"
+ ) ); 
+
+} 
+
+?>
+   
    @endsection   
  

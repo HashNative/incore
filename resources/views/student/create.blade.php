@@ -81,8 +81,6 @@
                    
                   </div>
 
-
-
                   <div class="row">
                     <div class="col-sm-4">
                      
@@ -146,16 +144,8 @@
                       </div>
                     </div>
 
-                    <div class="col-sm-3">
-                    <div class="form-group">
-                      <label for ="register_by">Register by</label>
-                      <input type ="text" name ="register_by" id="register_by" class="form-control"class="required" value ="{{ Auth::user()->name }}" >
-                   
-                     
-                      </div>
-                      </div>
-
-                  </div>
+</form>
+                   </div>
      
                     <div class="card-footer">
                           <input type ="submit"class=" float-right btn bg-gradient-success " value="register">
