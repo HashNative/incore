@@ -105,9 +105,47 @@
                                                 <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
                                                 <span class="username">
                                                   <a href="#">Sarah Ross</a>
-                                                  <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                                  <form action = "{{route('follow_up.destroy',$followup->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
+                                                    <input type = "hidden" name = "_method" value = "delete"> 
+                                                    
+                                                    {{csrf_field()}}
+                                                    
+                                                    <a data-toggle="modal" data-target="#modal-success-{{ $followup->id}}" tittle="edit details"class=" btn btn-sm fas fa-edit"style="color:#ffc107">  </a>  
+                                                
+                                                    <button type="submit"class="btn btn-sm" ><i tittle="delete details"class= "fa fa-trash"style="color:#cc0000"></i></button>
+                                                  
+                                                </form>
                                                 </span>
                                                 <span class="description">follow up : {{ $followup->follow_up}}</span>
+                                                <div class="modal fade" id="modal-success-{{ $followup->id}}">
+                                                    <div class="modal-dialog">
+                                                      <div class="modal-content bg-success">
+                                                        <div class="modal-header">
+                                                          <h4 class="modal-title">Success Modal</h4>
+                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span></button>
+                                                        </div>
+                                                        <div class="modal-body">sdfw
+                                                       
+                                                                            <label for ="description"></label> 
+                                                                            <input type ="hidden" name="description" class="form-control" id ="description" value = "{{ $followup->description}}" required>
+                                                                          
+                                                                       
+                                                                            
+                                                      </div>
+                                                        
+                                                      
+                                              </form>
+                                                        </div>
+                                                        <div class="modal-footer justify-content-between">
+                                                          
+                                                          <button type="submit" class="btn btn-outline-light">Save changes</button>
+                                                        </div>
+                                                      </div>
+                                                      <!-- /.modal-content -->
+                                                    </div>
+                                                    <!-- /.modal-dialog -->
+                                                  </div>
                                             </div>
                                               <!-- /.user-block -->
                                             
@@ -209,7 +247,7 @@
                                                                   
                                                 <div class="col-sm-5">
                                                   <div class="form-group">
-                                                    <label for="date">Next Followup Date</label>
+                                                    <label for="date"> Next Followup Date</label>
                                                     <input type ="date" name ="date" id="exampleInputdate1"  class="form-control"  placeholder="Enter the date"aria-describedby="exampleInputdate-error" aria-invalid="true" required></span>
                                                       
                                                   </div>
@@ -221,8 +259,8 @@
 
                                         </form>
                                       </div>
-                                  </div>
-                                  <div class="tab-pane" id="timeline">
+
+                                      <div class="tab-pane" id="timeline">
                                     <!-- The timeline -->
                                     <div class="timeline timeline-inverse">
                                       <!-- timeline time label -->
@@ -249,6 +287,8 @@
                                             
                                                 {{ $assign->inquiry_by}} &nbsp;is assigned the next followup for &nbsp;&nbsp;{{$assign->assign_to}}
                                                 </div>
+                                  </div>
+                                  
                                                 <div class="timeline-footer">
                                                  
                                                 </div>

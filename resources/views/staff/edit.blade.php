@@ -10,7 +10,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('staff.index')}}">Staff</a></li>
-              <li class="breadcrumb-item">Edit</li>
+              <li class="breadcrumb-item">Edit Staff</li>
             </ol>
           </div>
         </div><div class="0"></div>
@@ -25,7 +25,7 @@
      <div class ="col-md-6"> 
      <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Edit Staff </h3>
+                <h3 class="card-title"><b>Edit Staff</b> </h3>
                 
               </div>
               <!-- /.card-header -->

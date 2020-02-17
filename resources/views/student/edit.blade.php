@@ -24,7 +24,7 @@
                 <div class=" col-6  ">
             <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Student Details</h3>
+                <h3 class="card-title"><b>Edit Student Details</b></h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

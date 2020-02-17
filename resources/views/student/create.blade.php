@@ -22,7 +22,7 @@
             <!-- general form elements disabled -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Registration Form</h3>
+                <h3 class="card-title"><b>Registration Form</b></h3>
               </div>
               <form role="form" action ="{{route('student.store')}}" method = "post">
                     {{csrf_field()}}
