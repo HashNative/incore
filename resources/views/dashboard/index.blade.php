@@ -1,3 +1,5 @@
+<?php  $total_count=100; ?>
+
 @extends('layouts.master')
 @section('content')
 <section class="content-header">
@@ -156,11 +158,7 @@
                    <canvas class="flot-base" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
                    <canvas class="flot-overlay" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
                    <span class="pieLabel" id="pieLabel0" style="position: absolute; top: 70px; left: 217.953px;">
-                      <div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Series<br>30%</div></span>
-                      <span class="pieLabel" id="pieLabel1" style="position: absolute; top: 210px; left: 195.953px;">
-                        <div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Series3<br>20%</div></span>
-                          <span class="pieLabel" id="pieLabel2" style="position: absolute; top: 129px; left: 36.9531px;">
-                            <div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Series4<br>50%</div></span></div>
+                     
               </div>
               <!-- /.card-body-->
             </div>
