@@ -333,25 +333,38 @@
      * DONUT CHART
      * -----------
      */
+     <?php 
 
-    var donutData = [
-      {
-        label: 'Series2',
-        data : 30,
-        color: '#3c8dbc'
-      },
-      {
-        label: 'Series3',
-        data : 20,
-        color: '#0073b7'
-      },
-      {
-        label: 'Series4',
-        data : 50,
-        color: '#00c0ef'
-      }
-    ]
-    $.plot('#donut-chart', donutData, {
+
+$arr = array (); 
+
+
+foreach ($inquiries as $inquiry){ 
+  array_push($arr,array( 
+  
+    "label" => $inquiry->inquiry_by, 
+    "data" => $inquiry->count ,
+    "backgroundColor"=> " ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff']"
+ 
+    
+    
+  ), ); 
+
+} 
+
+
+?>
+
+
+    // var donutData = [
+    //   {
+    //     label: 'Series1',
+    //     data : <?php echo $total_count; ?>,
+    //     color: '#3c8dbc'
+    //   }
+      
+    // ]
+    $.plot('#donut-chart', <?php echo json_encode($arr); ?>, {
       series: {
         pie: {
           show       : true,
@@ -375,7 +388,7 @@
      */
 
 
-
+     
   });
   function labelFormatter(label, series) {
     return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
@@ -383,6 +396,9 @@
       + '<br>'
       + Math.round(series.percent) + '%</div>'
   }
+
+
+  
 </script>
 @include('sweetalert::alert')
 </body>
