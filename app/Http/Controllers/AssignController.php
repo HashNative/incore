@@ -78,7 +78,12 @@ class AssignController extends Controller
            ->select(array('follow_up','inquiry_id',DB::raw('MAX(follow_up) AS count')))
            ->groupBy('follow_up','inquiry_id')
            ->get();
-       return view('inquiry.index',compact('inquiries','followups','followups1','assigns','users'));
+           $ids = DB::table('inquiries')
+           ->where('follow_up',$id)
+            ->select(array('follow_up'))
+            ->groupBy('follow_up')
+            ->get();
+       return view('inquiry.index',compact('ids','inquiries','followups','followups1','assigns','users'));
         //
         //
     }

@@ -33,12 +33,16 @@ class InquiryController extends Controller
         ->groupBy('follow_up','inquiry_id')
         ->get();
         $users = User::All();
+        $ids = DB::table('inquiries')
+        ->select(array('follow_up'))
+        ->groupBy('follow_up')
+        ->get();
 
         $assigns = Assign::All();
         if(session('success_message')){
             alert('Done !');
         }
-       return view('inquiry.index',compact('inquiries','followups1','followups','assigns','users'));
+       return view('inquiry.index',compact('ids','inquiries','followups1','followups','assigns','users'));
        
     }
 
