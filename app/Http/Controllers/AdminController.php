@@ -46,13 +46,15 @@ class AdminController extends Controller
             ->groupBy('status','course_name')
             ->get();
            
-        $sources1 = DB::table('students')
+        $sources1 = DB::table('inquiries')
         ->select(array('source','inquiry_by',DB::raw('COUNT(source) AS countb')))
+        ->where('status','Registered')
         ->groupBy('source','inquiry_by')
         ->orderBy('source', 'asc')
         ->get();
-        $inquiries1 = DB::table('students')
+        $inquiries1 = DB::table('inquiries')
         ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS countc')))
+        ->where('status','Registered')
         ->groupBy('inquiry_by')
         ->orderBy('inquiry_by', 'asc')
         ->get();
