@@ -65,7 +65,7 @@
                     <div class="col-sm-5">
                     <div class="form-group">
                     <label for ="phone_number">Phone Number</label>
-                            <input type ="integer" name ="phone_number"class="form-control" id="exampleInput0111234567" placeholder="Enter the Phone Number" maxlength="10" pattern="[0-9]{1}[0-9]{9}"  aria-describedby="exampleInputphone_number-error" aria-invalid="true" required>
+                            <input type ="integer" name ="phone_number"class="form-control" pattern="[077][0-9]{9}" id="exampleInput0111234567" placeholder="Enter the Phone Number" maxlength="10" pattern="[0-9]{1}[0-9]{9}"  aria-describedby="exampleInputphone_number-error" aria-invalid="true" required>
                       </div>
                     </div>
 
