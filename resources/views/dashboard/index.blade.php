@@ -1023,7 +1023,7 @@ foreach ($inquiries1 as $inquiry){
  
     
     
-  ), ); 
+  ) ); 
   
 
 } 
