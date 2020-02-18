@@ -97,9 +97,13 @@
           <div class="col-md-12">
 
         <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Inquiry</h3>
+      
+              <div class="card-header"> 
+              
+                <h3 class="card-title">Inquiry</h3> 
+              
               </div>
+             
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <table class="table table-lg">
@@ -166,42 +170,48 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-
-        <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Registrations</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <table class="table table-sm">
-                  <thead>
-                    <tr>
-                     
-                      <th>Operater</th>
-                      <th>Total</th>
+            <div class="card">
+      
+      <div class="card-header"> 
+      
+        <h3 class="card-title">Registrations</h3> 
+      
+      </div>
+     
+      <!-- /.card-header -->
+      <div class="card-body p-0">
+        <table class="table table-lg">
+          <thead>
+            <tr>
+             
+              <th>Operater</th>
+              <th>Total</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+          @foreach ($inquiries1 as $inquiry)
+            <tr>
+                  <td>{{ $inquiry->inquiry_by}}</td>
+                  <td>{{ $inquiry->countc }}</td>
                   
-                    </tr>
-                  </thead>
-                  @foreach ($inquiries1 as $inquiry)
-                    <tr>
-                          <td>{{ $inquiry->inquiry_by}}</td>
-                          <td>{{ $inquiry->countc }}</td>
-                          @foreach ($sources1 as $source)
+                  @foreach ($sources1 as $source)
                           @if($inquiry->inquiry_by == $source->inquiry_by)
-                          <th>{{$source->source}}</th>
-                           <td>{{$source->countb}}</td>
-                           @endif
-                          @endforeach
-                    </tr>
+                
+                  <th>{{$source->source}}</th>
+                  <td></td>
+                   <td>{{$source->countb}}</td>
+                   @endif
                   @endforeach
-                    
-                  
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->`
+            </tr>
+          @endforeach
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+
             </div>
-            <!-- /.card -->
             <div class="col-md-12">
             <div class="card card-primary card-outline">
               <div class="card-header">
@@ -321,6 +331,7 @@
                 </div>
                 <!-- /.row -->
               </div>
+              </div>
               <!-- /.card-footer -->
            
        
@@ -398,57 +409,42 @@
             <!-- /.card -->
           </div>
             <!-- /.card -->
-            
-          <div class="row">
+         
+
+
+
+        <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">
-                  
-                  Source Inquary Vs Registrations
+                  <i class="far fa-chart-bar"></i>
+                  SOURCE | Inquiry 
                 </h3>
 
                 <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                      class="fas fa-minus"></i>
                   </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
                   </button>
                 </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <div class="row">
-                  <div class="col-8 col-md-3 text-center">
-                    <input type="text" class="knob" value="80" data-skin="tron" data-thickness="0.2" data-width="90"
-                           data-height="90" data-fgColor="#3c8dbc" data-readonly="true">
 
-                    <div class="knob-label">data-width="90"</div>
-                  </div>
+                @foreach ($incos as $inco)
+                 
                   <!-- ./col -->
-                  <div class="col-6 col-md-3 text-center">
-                    <input type="text" class="knob" value="60" data-skin="tron" data-thickness="0.2" data-width="120"
-                           data-height="120" data-fgColor="#f56954">
+                  <div class="col-6 col-md-2 text-center">
+                    <input type="text" class="knob" value="{{$inco->count}}" data-skin="tron" data-thickness="0.2" data-width="120"
+                           data-height="120" data-fgColor="#3c8dbc" readonly>
 
-                    <div class="knob-label">data-width="120"</div>
+                    <div class="knob-label"><h4 ><strong>{{$inco->source}}</strong></h4></div>
                   </div>
-                  <!-- ./col -->
-                  <div class="col-6 col-md-3 text-center">
-                    <input type="text" class="knob" value="10" data-skin="tron" data-thickness="0.1" data-width="90"
-                           data-height="90" data-fgColor="#00a65a">
+                  @endforeach
 
-                    <div class="knob-label">data-thickness="0.1"</div>
-                  </div>
-                  <!-- ./col -->
-                  <div class="col-6 col-md-3 text-center">
-                    <input type="text" class="knob" value="100" data-skin="tron" data-thickness="0.2"
-                           data-angleArc="250" data-angleOffset="-125" data-width="120" data-height="120"
-                           data-fgColor="#00c0ef">
-
-                    <div class="knob-label">data-angleArc="250"</div>
-                  </div>
-                  <!-- ./col -->
                 </div>
                 <!-- /.row -->
               </div>
@@ -458,6 +454,11 @@
           </div>
           <!-- /.col -->
         </div>
+        <!-- /.row -->
+
+              
+
+
 
       
             <!-- /.card -->
