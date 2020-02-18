@@ -35,7 +35,7 @@
             
                         <div class="col-md-6{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <label for ="name">Staff Name</label>
-                                <input type ="text" name ="name" id="exampleInputsource1"  id ="name"  placeholder="Enter the Staff Name"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                                <input type ="text" name ="name" id="exampleInputsource1"  id ="name" autocomplete="off" placeholder="Enter the Staff Name"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                             
                         </div>
                                 @if ($errors->has('name'))
@@ -46,7 +46,7 @@
                      
                         <div class="col-md-6{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for ="email">Email</label>
-                            <input type ="email" name ="email" id="exampleInputsource1"  id ="email" placeholder="Enter the email"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                            <input type ="email" name ="email" id="exampleInputsource1"  id ="email" autocomplete="off" placeholder="Enter the email"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                         
                         </div>
                         @if ($errors->has('email'))
@@ -69,12 +69,12 @@
 
                         <div class="col-md-6{{ $errors->has('mobile_number') ? ' has-error' : '' }}">
                                 <label for ="mobile_number">Mobile Number</label>
-                                <input type ="integer" name ="mobile_number"  maxlength="10" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1"  id ="mobile_number"   placeholder="Enter the mobile number  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                                <input type ="integer" name ="mobile_number"  maxlength="10"autocomplete="off" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1"  id ="mobile_number"   placeholder="Enter the mobile number  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                 
                         </div>  
                         <div class="col-md-12{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for ="password">Password</label>
-                            <input type ="text" name ="password" id="exampleInputsource1" id ="password"   placeholder="Enter password  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required >
+                            <input type ="text" name ="password" id="exampleInputsource1" id ="password"   autocomplete="off" placeholder="Enter password  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required >
                             
                         </div> 
                                 @if ($errors->has('password'))

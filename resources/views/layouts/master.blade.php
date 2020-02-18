@@ -36,6 +36,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="/myinquiry" class="nav-link">My Inquiries</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{route('assign.index')}}" class="nav-link">To Do</a>
+      </li>
       
     </ul>
 

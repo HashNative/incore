@@ -98,16 +98,7 @@ class FollowupController extends Controller
     public function update(Request $request, $id)
     {
         $follow= FollowUp ::find ($id);
-        
-       
-        $follow->inquiry_by =$request ->inquiry_by;
-        $follow->follow_up =$request ->follow_up;
-        
         $follow->description =$request ->description;
-        $follow->inquiry_id =$request ->inquiry_id;
-
-        date_default_timezone_set("Asia/Colombo");
-        $follow->date_time =date('Y-m-d h:i:s');
         $follow->update();
         return redirect('/inquiry');
         //
@@ -121,6 +112,11 @@ class FollowupController extends Controller
      */
     public function destroy($id)
     {
+        $inquiry =  FollowUp::find($id);
+        $inquiry->delete();
+
+        return redirect('/inquiry')->withSuccessMessage('Successfuly Deleted')
+        ;
         //
     }
 }

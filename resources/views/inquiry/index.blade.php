@@ -104,16 +104,59 @@
                                               <div class="user-block">
                                                 <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
                                                 <span class="username">
-                                                  <a href="#">Sarah Ross</a>
-                                                  <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                                  <a href="#">{{$followup->inquiry_by}}</a>
+                                                  <div style ="float:right">
+                                            
+                                                  <form action = "{{route('follow_up.destroy',$followup->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
+                                                    <input type = "hidden" name = "_method" value = "delete"> 
+                                                    
+                                                    {{csrf_field()}}
+                                                    
+                                                    <a data-toggle="modal" data-target="#modal-default-{{ $followup->id}}" tittle="edit details"class=" btn btn-sm fas fa-edit"style="color:#ffc107">  </a>  
+                                                
+                                                    <button type="submit"class="btn btn-sm" ><i tittle="delete details"class= "fa fa-trash"style="color:#cc0000"></i></button>
+                                                  
+                                                  </form>
+                                                  </div>
                                                 </span>
                                                 <span class="description">follow up : {{ $followup->follow_up}}</span>
-                                            </div>
-                                              <!-- /.user-block -->
-                                            
-                                              <p>
+                                                <br>
+                                                <p>
                                               {{ $followup->description}}
                                               </p>
+                                                  <div class="modal fade" id="modal-default-{{ $followup->id}}">
+                                                    <div class="modal-dialog">
+                                                      <div class="modal-content bg-default">
+                                                        <div class="modal-header">
+                                                          <h4 class="modal-title">Edit Followup</h4>
+                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                          <form action = "{{route('follow_up.update',$followup->id)}}" method = "POST" class="needs-validation" novalidate>
+                                                            <input type = "hidden" name = "_method" value="put">
+                                                              {{csrf_field()}}
+    
+                                                                <label for ="description"></label> 
+                                                                <input type ="text" name="description" class="form-control" id ="description" value = "{{ $followup->description}}" required>
+                                                                <div class="modal-footer justify-content-between">
+                                                            
+                                                                  <button type="submit" class="btn  btn-outline-success btn-sm">Save changes</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        
+                                                        
+                                                      </div>
+                                                      <!-- /.modal-content -->
+                                                    </div>
+                                                    <!-- /.modal-dialog -->
+                                                  </div>
+                                              </div>
+                                            
+                                              <!-- /.user-block -->
+                                            </div>
+                                              
                                               @endif
                                               @endforeach
                                               <form class="form-horizontal"action = "{{route('follow_up.store',$inquiry->id)}}" method = "POST" class="needs-validation" novalidate >
@@ -129,7 +172,7 @@
                                                                             @if($inquiry->id == $followup1->inquiry_id)
                                                                             <?php  $followup1->count = $followup1->count + 1 ?>
                                                                            
-                                                                              <label for ="follow_up">Follow up</label> 
+                                                                              <label for ="follow_up"></label> 
                                                                                 <input type ="hidden" name="follow_up" class="form-control" id ="follow_up" value = "{{ $followup1->count}}" required>
                                                                                 @endif
                                                                           @endforeach
@@ -151,12 +194,13 @@
                                                                         </div>
                                                                             
                                                       </div>
-                                                        <input name="description" class="form-control form-control-sm"  id ="description" value = "{{ $inquiry->description}}"required>
 
+                                                      <div class="input-group input-group-sm mb-0">
+                                                        <input name="description" class="form-control form-control-sm"  id ="description" required>
                                                         <div class="input-group-append">
-
-                                                          <button type="submit" class="btn btn-danger">Save</button>
+                                                          <button type="submit" class="btn btn-success">Save</button>
                                                         </div>
+                                                      </div>
                                                       
                                               </form>
                                           
@@ -204,7 +248,13 @@
                                                       </select>
                                                   </div>
                                                 </div>
-                                            
+                                                <div class="col-md-6">
+                                                    <label for ="language">Language</label>
+                                                        <select type ="text" name ="language" id ="language" class="form-control" >
+                                                        <option value="english" selected >English</option>
+                                                        <option value="tamil">Tamil</option>
+                                                        <option value="sinhala">Sinhala</option></select>
+                                                </div> 
                                                 
                                                                   
                                                 <div class="col-sm-5">
