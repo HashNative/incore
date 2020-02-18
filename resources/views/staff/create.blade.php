@@ -10,7 +10,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('staff.index')}}">Staff</a></li>
-              <li class="breadcrumb-item">AddStaff</li>
+              <li class="breadcrumb-item">Add Staff</li>
             </ol>
           </div>
         </div><div class="0"></div>
@@ -25,7 +25,7 @@
      {{csrf_field()}}
     <div >
     <div class="d-flex justify-content-center">
-    <div class="col-md-5">
+    <div class="col-sm-12">
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Add Staff </h3>
@@ -36,14 +36,14 @@
                   <div class="row">
             
         
-        <div class ="col-md-8">
-        <div class="from-group"> 
+    <div  class ="col-md-8">
+    <div class="from-group">
         <label for ="name">Staff Name</label>
         <input type ="text" name ="name" id="exampleInputsource1"  id ="name"  placeholder="Enter the Staff Name"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
     </div> 
     </div>
 
-    <div class ="col-md-6">
+    <div  class ="col-md-4">
     <div class="from-group"> 
         <label for ="email">Email</label>
         <input type ="email" name ="email" id="exampleInputsource1"  id ="email" placeholder="Enter the email"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
@@ -52,24 +52,24 @@
     </div>
   
 
-        <div class ="col-md-6"> 
+        <div class ="col-sm-6"> 
         <div class="from-group">
         <label for ="languages">Language</label>
         <select type ="text" name ="languages" id ="languages" class="form-control" >
-        <option value="english" selected >English</option>
-        <option value="tamil">Tamil</option>
-        <option value="sinhala">Sinhala</option></select>
+        <option value="English" selected >English</option>
+        <option value="Tamil">Tamil</option>
+        <option value="Sinhala">Sinhala</option></select>
     </div> 
     </div> 
     
-    <div class ="col-md-8">
+    <div class ="col-sm-8">
     <div class="from-group"> 
         <label for ="email">Email</label>
         <input type ="email" name ="email" id="exampleInputsource1"  id ="email" placeholder="Enter the email"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
     </div> 
     </div>
 
-    <div class ="col-md-4"> 
+    <div class ="col-sm-4"> 
         <div class="from-group">
         <label for ="mobile_number">Mobile Number</label>
         <input type ="integer" name ="mobile_number"pattern="[077][0-9]{9}"  maxlength="10" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1"  id ="mobile_number"   placeholder="Enter the mobile number  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
@@ -78,7 +78,7 @@
     </div> 
     </div> 
  
-        <div class ="col-md-6"> 
+        <div class ="col-sm-6"> 
         <div class="from-group">
         <label for ="password">Password</label>
         <input type ="text" name ="password" id="exampleInputsource1" id ="password"   placeholder="Enter password  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required >

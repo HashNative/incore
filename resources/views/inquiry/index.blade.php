@@ -259,7 +259,7 @@
                                                                   
                                                 <div class="col-sm-5">
                                                   <div class="form-group">
-                                                    <label for="date">Next Followup Date</label>
+                                                    <label for="date"> Next Followup Date</label>
                                                     <input type ="date" name ="date" id="exampleInputdate1"  class="form-control"  placeholder="Enter the date"aria-describedby="exampleInputdate-error" aria-invalid="true" required></span>
                                                       
                                                   </div>
@@ -271,8 +271,8 @@
 
                                         </form>
                                       </div>
-                                  </div>
-                                  <div class="tab-pane" id="timeline">
+
+                                      <div class="tab-pane" id="timeline">
                                     <!-- The timeline -->
                                     <div class="timeline timeline-inverse">
                                       <!-- timeline time label -->
@@ -299,6 +299,8 @@
                                             
                                                 {{ $assign->inquiry_by}} &nbsp;is assigned the next followup for &nbsp;&nbsp;{{$assign->assign_to}}
                                                 </div>
+                                  </div>
+                                  
                                                 <div class="timeline-footer">
                                                  
                                                 </div>

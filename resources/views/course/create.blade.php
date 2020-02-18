@@ -10,7 +10,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('course.index')}}">course</a></li>
-              <li class="breadcrumb-item">Addcourse</li>
+              <li class="breadcrumb-item">Add course</li>
             </ol>
           </div>
         </div><div class="0"></div>
@@ -27,7 +27,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Create Course</h3>
+                <h3 class="card-title"><b>Create Course</b></h3>
               </div>
 
          <div class="card-body">
@@ -37,7 +37,7 @@
            <div class="col-sm-8">
              <div class="form-group">
                  <label for ="course_name">Course Name</label>
-                 <input type ="text" name ="course_name" id ="course_name" class="form-control" maxlength="100" placeholder="Enter the Course Name"id="exampleInputCourse_name1"aria-describedby="exampleInputcourse_name-eror" airia-invalid="true" required>
+                 <input type ="text" name ="course_name" id ="course_name" autocomplete="off" class="form-control" maxlength="100" placeholder="Enter the Course Name"id="exampleInputCourse_name1"aria-describedby="exampleInputcourse_name-eror" airia-invalid="true" required>
     </div> 
     </div>
     <div class="col-sm-4">

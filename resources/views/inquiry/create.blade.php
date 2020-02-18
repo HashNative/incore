@@ -29,7 +29,7 @@
                 <div class=" col-md-8">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add New Inquiry</h3>
+                <h3 class="card-title"><b>Add New Inquiry</b></h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -39,7 +39,7 @@
                       <!-- text input -->
                       <div class="form-group">
                       <label>Phone number</label>
-                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="[0-9]{1}[0-9]{9}" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="[0-9]{1}[0-9]{9}" autocomplete="off" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
                     </div>
                    
@@ -82,6 +82,7 @@
                         <option>From cordinator</option>
                         <option>From student</option>
                         <option>From branch</option>
+                        <option>Others</option>
                         </select>
                     </div>
                    </div>

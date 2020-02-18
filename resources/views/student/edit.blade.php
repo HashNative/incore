@@ -24,7 +24,7 @@
                 <div class=" col-md-8">
             <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Student Details</h3>
+                <h3 class="card-title"><b>Edit Student Details</b></h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -153,7 +153,7 @@
                   <option <?php if(($student->source)=='From Student'){ echo 'selected'; } ?>>From Student</option>
                   <option <?php if(($student->source)=='From Cordinator'){ echo 'selected'; } ?>>From Cordinator</option>
                   <option <?php if(($student->source)=='From Branch'){ echo 'selected'; } ?>>From Branch</option>
-                  <option <?php if(($student->source)=='Offers'){ echo 'selected'; } ?>>Offers</option>
+                  <option <?php if(($student->source)=='Others'){ echo 'selected'; } ?>>Others</option>
                           
                       </select>
  

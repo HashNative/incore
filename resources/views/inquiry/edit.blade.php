@@ -26,7 +26,7 @@
                 <div class=" col-md-8">
             <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Edit Inquiry</h3>
+                <h3 class="card-title"><b>Edit Inquiry</b></h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -85,6 +85,7 @@
                         <option  <?php if(($inquiry->source)=='From cordinator'){ echo 'selected'; } ?>>From cordinator</option>
                         <option  <?php if(($inquiry->source)=='From student'){ echo 'selected'; } ?>>From student</option>
                         <option  <?php if(($inquiry->source)=='From branch'){ echo 'selected'; } ?>>From branch</option>
+                        <option <?php if(($inquiry->source)=='Others'){ echo 'selected'; } ?>>Others</option>
                         </select>
         <div class="invalid-feedback">
         Please Enter valid Source.

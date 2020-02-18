@@ -10,7 +10,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('staff.index')}}">Staff</a></li>
-              <li class="breadcrumb-item">AddStaff</li>
+              <li class="breadcrumb-item">Add Staff</li>
             </ol>
           </div>
         </div><div class="0"></div>
@@ -26,7 +26,7 @@
     <div class="col-md-8">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add Staff </h3>
+                <h3 class="card-title"><b>Add Staff</b> </h3>
               </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -57,9 +57,9 @@
                         <div class="col-md-6{{ $errors->has('languages') ? ' has-error' : '' }}">
                                 <label for ="languages">Language</label>
                                     <select type ="text" name ="languages" id ="languages" class="form-control" >
-                                    <option value="english" selected >English</option>
-                                    <option value="tamil">Tamil</option>
-                                    <option value="sinhala">Sinhala</option></select>
+                                    <option value="English" selected >English</option>
+                                    <option value="Tamil">Tamil</option>
+                                    <option value="Sinhala">Sinhala</option></select>
                         </div> 
                                 @if ($errors->has('languages'))
                                     <span class="help-block"style="color:red">

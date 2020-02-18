@@ -22,7 +22,7 @@
             <!-- general form elements disabled -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Registration Form</h3>
+                <h3 class="card-title"><b>Registration Form</b></h3>
               </div>
               <form role="form" action ="{{route('student.store')}}" method = "post">
                     {{csrf_field()}}
@@ -33,7 +33,7 @@
                       <div class="form-group">
                         <label for ="student_name">Student Name</label>
                           
-                            <input type="text" name="student_name" class="form-control" id="exampleInputStudent_name1" placeholder="Enter the Student Name"aria-describedby="exampleInputstudent_name-error" aria-invalid="true" required>
+                            <input type="text" name="student_name" class="form-control" autocomplete="off" id="exampleInputStudent_name1" placeholder="Enter the Student Name"aria-describedby="exampleInputstudent_name-error" aria-invalid="true" required>
                       </div>
                     </div>
                     <!-- <div class="col-sm-6">
@@ -65,7 +65,7 @@
                     <div class="col-sm-5">
                     <div class="form-group">
                     <label for ="phone_number">Phone Number</label>
-                            <input type ="integer" name ="phone_number"class="form-control" pattern="[077][0-9]{9}" id="exampleInput0111234567" placeholder="Enter the Phone Number" maxlength="10" pattern="[0-9]{1}[0-9]{9}"  aria-describedby="exampleInputphone_number-error" aria-invalid="true" required>
+                            <input type ="integer" name ="phone_number"class="form-control" autocomplete="off" id="exampleInput0111234567" placeholder="Enter the Phone Number" maxlength="10" pattern="[0-9]{1}[0-9]{9}"  aria-describedby="exampleInputphone_number-error" aria-invalid="true" required>
                       </div>
                     </div>
 
@@ -73,7 +73,7 @@
 
                     <div class="form-group">
                     <label for="email_id">Email</label>
-                        <input type="email" name="email_id" class="form-control" id="exampleInputemail_id1" placeholder="Enter your email" aria-describedby="exampleInputEmail1-error" aria-invalid="true"required>
+                        <input type="email" name="email_id" class="form-control" autocomplete="off" id="exampleInputemail_id1" placeholder="Enter your email" aria-describedby="exampleInputEmail1-error" aria-invalid="true"required>
                       </div>
                     </div>
 
