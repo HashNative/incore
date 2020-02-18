@@ -17,6 +17,8 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         $arr=array();
         View::share('arr',$arr);
+        $arr1=array();
+        View::share('arr1',$arr);
     }
 
     /**

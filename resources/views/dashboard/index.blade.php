@@ -202,22 +202,28 @@
               <!-- /.card-body -->`
             </div>
             <!-- /.card -->
-            </div>
             <div class="col-md-12">
-            <div class="card card-info">
+            <div class="card card-primary card-outline">
               <div class="card-header">
-                <h3 class="card-title">Pie Chart</h3>
+                <h3 class="card-title">
+                  <i class="far fa-chart-bar"></i>
+                  Pie Chart
+                </h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                   </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                  </button>
                 </div>
               </div>
               <div class="card-body">
-                <canvas id="pieChart" style="min-height: 500px; height: 500px; max-height: 500px; max-width: 100%;"></canvas>
-              </div>
-              <!-- /.card-body -->
+                <div id="pie-chart" style="height: 300px; padding: 0px; position: relative;">
+                   <canvas class="flot-base" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
+                   <canvas class="flot-overlay" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
+                   <span class="pieLabel" id="pieLabel0" style="position: absolute; top: 70px; left: 217.953px;">
+                     
+              
             </div>
           </div>
           </section>
@@ -993,109 +999,7 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
-        <?php 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php 
 
 
 
@@ -1109,7 +1013,24 @@ foreach ($inquiries as $inquiry){
 
 } 
 
+
+foreach ($inquiries1 as $inquiry){ 
+  array_push($arr1,array( 
+  
+    "label" => $inquiry->inquiry_by, 
+    "data" => $inquiry->countc ,
+    "backgroundColor"=> " ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff']"
+ 
+    
+    
+  ) ); 
+  
+
+} 
+
 ?>
-   
+
+
+
    @endsection   
  

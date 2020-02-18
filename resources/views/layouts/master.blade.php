@@ -361,6 +361,7 @@
     /*
      * END DONUT CHART
      */
+     
 
 
      
@@ -371,7 +372,57 @@
       + '<br>'
       + Math.round(series.percent) + '%</div>'
   }
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+    });
 
+        /*
+     * PIE CHART
+     * -----------
+     */
+
+
+    
+    $.plot('#pie-chart', <?php echo json_encode($arr1); ?>, {
+      series: {
+        pie: {
+          show       : true,
+          radius     : 1,
+          innerRadius: 0.5,
+          label      : {
+            show     : true,
+            radius   : 2 / 3,
+            formatter: labelFormatter,
+            threshold: 0.1
+          }
+
+        }
+      },
+      legend: {
+        show: false
+      }
+    })
+    /*
+     * END CHART
+     */
+     
+
+
+     
+  });
+  function labelFormatter(label, series) {
+    return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
+      + label
+      + '<br>'
+      + Math.round(series.percent) + '%</div>'
+  }
 
   
 </script>
