@@ -73,6 +73,7 @@
                         <option  <?php if(($inquiry->source)=='From cordinator'){ echo 'selected'; } ?>>From cordinator</option>
                         <option  <?php if(($inquiry->source)=='From student'){ echo 'selected'; } ?>>From student</option>
                         <option  <?php if(($inquiry->source)=='From branch'){ echo 'selected'; } ?>>From branch</option>
+                        <option <?php if(($inquiry->source)=='Others'){ echo 'selected'; } ?>>Others</option>
                         </select>
         <div class="invalid-feedback">
         Please Enter valid Source.

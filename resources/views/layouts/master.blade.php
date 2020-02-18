@@ -173,9 +173,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="{{asset('dist/img/logo.png')}}" alt="#" class="brand-image-xl  elevation-3" width="400px">
-      <span class="brand-text font-weight-light"></span>
+    <a href="/dashboard" class="brand-link">
+      <i class="fa fa-info-circle"></i>
+      <span class="brand-text font-weight-bold">incore</span>
     </a>
 
     <!-- Sidebar -->
