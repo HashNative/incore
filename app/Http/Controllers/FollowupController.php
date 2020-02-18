@@ -48,9 +48,20 @@ class FollowupController extends Controller
         date_default_timezone_set("Asia/Colombo");
         $follow->date_time =date('Y-m-d h:i:s');
         $follow->save();
+
+
+        $inquiry =Inquiry::find ($request ->inquiry_id);
+       
+        $inquiry->follow_up =$request->follow_up;
+       
+        $inquiry->update();
+
+
         return redirect('/inquiry');
 
-        //
+
+
+
     }
 
     /**

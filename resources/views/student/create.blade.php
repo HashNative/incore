@@ -18,7 +18,7 @@
 </section>
 
   <div class="d-flex justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-8">
             <!-- general form elements disabled -->
             <div class="card card-primary">
               <div class="card-header">
@@ -82,19 +82,9 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-sm-4">
-                     
-                      <div class="form-group">
-                      <label for ="inquiry_by">Inquiry by</label>
-                      <select type ="text" name ="inquiry_by" id="inquiry_by" class="form-control"class="required" >
-                    @foreach ($staffs as $staff)
-                      <option >{{$staff->name}}</option>
-                      @endforeach</select>
-
-                      </div>
-                    </div>
                  
-                    <div class="col-sm-4">
+                 
+                    <div class="col-sm-3">
                       <div class="form-group">
                       <label for ="inquiry_source">Inquiry source</label>
                       <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
@@ -105,7 +95,7 @@
                       </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                      
                      <div class="form-group">
                      <label for ="transfer">Transfer</label>
@@ -115,12 +105,8 @@
                            <option value = "no">No</option><select>
                      </div>
                    </div>
-                  </div>
 
-
-                  <div class="row">
-                   
-                        <div class="col-sm-4">
+                   <div class="col-sm-3">
                       <div class="form-group">
                       <label  for ="source">Source</label>
                       <select type="text"  name ="source" id="source" class="form-control" class="form-control" class="required" >
@@ -134,8 +120,8 @@
                             <option >Others</option><select>
                       </div>
                     </div>
-
-                    <div class="col-sm-5">
+                  
+                    <div class="col-sm-3">
 
                       <div class="form-group">
                       <label for="date">Date</label>
@@ -143,6 +129,12 @@
                             
                       </div>
                     </div>
+
+                  </div>
+
+
+                    
+
 
 </form>
                    </div>

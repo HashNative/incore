@@ -23,7 +23,7 @@
    
 
 <div class=" d-flex justify-content-center  ">
-                <div class=" col-6  ">
+                <div class=" col-md-8">
             <div class="card card-warning">
               <div class="card-header">
                 <h3 class="card-title">Edit Inquiry</h3>
@@ -45,12 +45,24 @@
                     </div>
                    
                     </div>
+
+                    <div class="col-sm-4">
+                    <div class="form-group">
+                  <label for ="email">Email</label> 
+        <input type ="text" name ="email" class="form-control" id ="email" value = "{{ $inquiry->email}}"required>
+        <div class="invalid-feedback">
+        Please Enter valid Email.
+      </div>
+        
+                    </div>
+                    </div>
+
                     <div class="col-sm-4">
                     <div class="form-group">
                   <label for ="inquiry_by">Inquiry by</label> 
-        <select type ="text" name ="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
+        <select type ="text" name ="inquiry_by" class="form-control" id ="inquiry_by" required>
         @foreach ($staffs as $staff)
-                        <option <?php if(($inquiry->inquiry_by)=='{{$staff->name}}'){ echo 'selected'; } ?>>
+                        <option <?php if(($inquiry->inquiry_by)==$staff->name){ echo 'selected'; } ?> value="{{$staff->name}}">
                         {{ $staff->name}}</option>
                         @endforeach
                         
@@ -81,12 +93,12 @@
                     </div>
                    
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-6">
                     <div class="form-group">
                   <label for ="course_name">Course</label> 
-        <select type ="text" name ="course_name" class="form-control" id ="course_name" value = "{{ $inquiry->course_name}}"required onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
+        <select type ="text" name ="course_name" class="form-control" id ="course_name" required onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
         @foreach ($courses as $course)
-                        <option <?php if(($inquiry->course_name)=='{{$course->course_name}}'){ echo 'selected'; } ?>>{{ $course->course_name}}</option>
+                        <option <?php if(($inquiry->course_name)==$course->course_name){ echo 'selected'; } ?>>{{ $course->course_name}}</option>
                         @endforeach
         </select>
         <div class="invalid-feedback">
@@ -96,15 +108,16 @@
       
                     </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-2">
                       <!-- text input -->
                       <div class="form-group">
                   <label for ="status">Status</label> 
         <select type ="text" name="status" class="form-control" id ="status" value = "{{ $inquiry->status}}"required>
-       
+        
+                      <option <?php if(($inquiry->status)=='Pending'){ echo 'selected'; } ?>>Pending</option>
+
                         <option <?php if(($inquiry->status)=='Registered'){ echo 'selected'; } ?>>Registered
                       </option>
-                        <option <?php if(($inquiry->status)=='Pending'){ echo 'selected'; } ?>>Pending</option>
                         <option <?php if(($inquiry->status)=='Declined'){ echo 'selected'; } ?>>Declined</option>
                         </select>
         <div class="invalid-feedback">
@@ -114,17 +127,6 @@
                     </div>
                    
                     </div>
-
-                    <!-- <div class="col-sm-6">
-                      
-                      <div class="form-group">
-                  <label for ="date_time">Date Time</label> 
-        <input type ="datetime-auto" name="date_time" class="form-control" id ="date_time" value = "{{ $inquiry->date_time}}"required>
-        <div class="invalid-feedback">
-        Please Enter valid Date Time.
-      </div>
-        </div>
-                    </div> -->
 
                     <div class="col-sm-3">
                     <div class="form-group">
@@ -155,28 +157,8 @@
                     </div>
                    
                     </div>
-                    <div class="col-sm-9">
-                    <div class="form-group">
-                  <label for ="email">Email</label> 
-        <input type ="text" name ="email" class="form-control" id ="email" value = "{{ $inquiry->email}}"required>
-        <div class="invalid-feedback">
-        Please Enter valid Email.
-      </div>
-        
-                    </div>
-                    </div>
-
-                   
-                    <div class="col-sm-3">
-                    <div class="form-group">
-                  <label for ="follow_up">Followup</label> 
-        <input type ="text" name ="follow_up" class="form-control" id ="follow_up" value = "{{ $inquiry->follow_up}}"required>
-        <div class="invalid-feedback">
-        Please Enter valid Followup.
-      </div>
-        
-                    </div>
-                    </div>
+                 
+                 
 
                     <div class="col-sm-12">
                       <!-- text input -->

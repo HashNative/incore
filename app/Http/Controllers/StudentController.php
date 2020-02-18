@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Student;
 use App\Course;
 use App\User;
+use App\Inquiry;
 use Auth;
+use DB;
 
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -20,7 +22,11 @@ class StudentController extends Controller
      */
     public function index()
     { 
-         $students = Student::All();
+         $students = DB::table('inquiries')
+        ->select('*')
+        ->where('status','Registered')
+        ->get();
+
        if(session('success_message')){
         alert('Done !');
     }
@@ -51,21 +57,24 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $student = new  Student;
+        $student = new  Inquiry;
         $student->id =$request ->id;
-        $student->student_name =$request ->student_name;
-        $student->date =$request ->date;
-        $student->email_id =$request ->email_id;
-        $student->date =$request ->date;
+        $student->name =$request ->student_name;
+        $student->date_time =$request ->date;
+        $student->email =$request ->email_id;
         $student->phone_number =$request ->phone_number;
         $student->course_name =$request ->course_name;
         $student->transfer =$request ->transfer;
         $student->inquiry_source =$request ->inquiry_source;
         $student->source =$request ->source;
-        $student->inquiry_by =$request ->inquiry_by;
-        $student->register_by =Auth::user()->name;
-                                                                  
-        
+        $student->inquiry_by =Auth::user()->name;
+        $student->description ='';
+        $student->status ='Registered';
+        $student->title ='Mr';
+        $student->follow_up =1;
+        $student->student_id =1;
+        $student->registration_date =$request ->date;
+                                                         
         $student->save();
         return redirect('/student');
 
@@ -97,7 +106,7 @@ class StudentController extends Controller
         $courses = Course::All();
         $staffs = User::All();
 
-        $student= Student ::find ($id);
+        $student= Inquiry ::find ($id);
         return view('student.edit',compact('student','courses','staffs'));
         //
     }
@@ -112,21 +121,19 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
        
-        $student= Student ::find ($id);
+        $student= Inquiry ::find ($id);
         
-        $student->student_name =$request ->student_name;
+        $student->name =$request ->student_name;
       
-        $student->email_id =$request ->email_id;
+        $student->email =$request ->email_id;
       
         $student->phone_number =$request ->phone_number;
         $student->course_name =$request ->course_name;
         $student->transfer =$request ->transfer;
         $student->inquiry_source =$request ->inquiry_source;
         $student->source =$request ->source;
-        $student->date =$request ->date;
+        $student->status =$request ->status;
         $student->inquiry_by =$request ->inquiry_by; //Auth::user
-        $student->register_by =Auth::user()->name;
-        $student->date =$request ->date;
         
         $student->update();
         return redirect('/student')->withSuccessMessage('Successfuly Updated');
@@ -141,7 +148,7 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        $student =  Student::find($id);
+        $student =  Inquiry::find($id);
        
         $student->delete() ;
        

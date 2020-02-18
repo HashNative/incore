@@ -23,7 +23,7 @@
     {{ csrf_field() }}
     <div >
     <div class="d-flex justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-8">
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Add Staff </h3>
@@ -33,7 +33,7 @@
                 <form role="form">
                   <div class="row">
             
-                        <div class="col-md-12{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="col-md-6{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <label for ="name">Staff Name</label>
                                 <input type ="text" name ="name" id="exampleInputsource1"  id ="name"  placeholder="Enter the Staff Name"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                             
@@ -44,7 +44,7 @@
                                     </span>
                                 @endif
                      
-                        <div class="col-md-12{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="col-md-6{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for ="email">Email</label>
                             <input type ="email" name ="email" id="exampleInputsource1"  id ="email" placeholder="Enter the email"class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                         
@@ -54,7 +54,7 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif 
-                        <div class="col-md-12{{ $errors->has('languages') ? ' has-error' : '' }}">
+                        <div class="col-md-6{{ $errors->has('languages') ? ' has-error' : '' }}">
                                 <label for ="languages">Language</label>
                                     <select type ="text" name ="languages" id ="languages" class="form-control" >
                                     <option value="english" selected >English</option>
@@ -67,7 +67,7 @@
                                     </span>
                                 @endif 
 
-                        <div class="col-md-12{{ $errors->has('mobile_number') ? ' has-error' : '' }}">
+                        <div class="col-md-6{{ $errors->has('mobile_number') ? ' has-error' : '' }}">
                                 <label for ="mobile_number">Mobile Number</label>
                                 <input type ="integer" name ="mobile_number"  maxlength="10" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1"  id ="mobile_number"   placeholder="Enter the mobile number  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                 
