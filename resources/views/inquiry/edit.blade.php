@@ -145,8 +145,18 @@
                   
                     </div>
                     </div>
+                    <div class="col-sm-3">
+                    <div class="form-group">
+                  <label for ="follow_up">Followup</label> 
+        <input type ="text" name ="follow_up" class="form-control" id ="follow_up" value = "{{ $inquiry->follow_up}}"required>
+        <div class="invalid-feedback">
+        Please Enter valid Followup.
+      </div>
+        
+                    </div>
+                    </div>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
                   <label for ="name">Name</label> 

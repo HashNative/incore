@@ -62,7 +62,16 @@
                         </select>
                     </div>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-3">
+                    <div class="form-group">
+                    <label>Followup</label>
+                        <input type="text" name="follow_up" id="exampleInputsource1" class="form-control" id ="follow_up"   placeholder="Enter the followup" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                  
+                    </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
                       <label>Name</label>
