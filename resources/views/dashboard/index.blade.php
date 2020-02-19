@@ -99,8 +99,20 @@
         <div class="card">
       
               <div class="card-header"> 
-              
-                <h3 class="card-title">Inquiry</h3> 
+             
+                <h3 class="card-title">Inquiry</h3>  <br>
+                
+                <div  class="float-right">
+                <form action="{{route('admin.search')}}"method = "post">
+                {{csrf_field()}}
+                        <label for="From">From :</label> &nbsp;
+                        <input id="From" name="From"class="form-control-sm" type="date" placeholder="From"> &nbsp;
+                        <label for="to">To :</label> &nbsp;
+                        <input id="to" name="to"class="form-control-sm" type="date" placeholder="To" >&nbsp;
+
+                        <button type="submit "class="btn-info form-control-sm" value="submit" >Search</button>
+                </form>
+           </div>
               
               </div>
              
@@ -117,7 +129,7 @@
                   </thead>
                   <tbody>
                     @foreach ($inquiries as $inquiry)
-                    <tr>
+                    <tr >
                           <td>{{ $inquiry->inquiry_by}}</td>
                           <td>{{ $inquiry->count }}</td>
                           
@@ -174,8 +186,18 @@
       
       <div class="card-header"> 
       
-        <h3 class="card-title">Registrations</h3> 
-      
+        <h3 class="card-title">Registrations</h3> <br>
+       
+                <div  class="float-right">
+                <form action="/">
+<label for="searchFrom">From :</label> &nbsp;
+<input id="searchFrom" class="form-control-sm" type="date" placeholder="From"> &nbsp;
+<label for="searchTo">To :</label> &nbsp;
+<input id="searchTo" class="form-control-sm" type="date" placeholder="To" >
+
+<button type="submit "class="btn-info form-control-sm" value="submit" >Search</button>
+           </div>
+          </form>
       </div>
      
       <!-- /.card-header -->
@@ -191,7 +213,7 @@
           </thead>
           <tbody>
           @foreach ($inquiries1 as $inquiry)
-            <tr>
+            <tr >
                   <td>{{ $inquiry->inquiry_by}}</td>
                   <td>{{ $inquiry->countc }}</td>
                   

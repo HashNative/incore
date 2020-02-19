@@ -33,6 +33,7 @@ Route::resource('follow_up','FollowupController');
 Route::resource('assign','AssignController');
 
 Route::get('/myinquiry','InquiryController@myinquiry');
+Route::resource('admin','AdminController@search');
 
 Route::resource('/dashboard','AdminController');
 Route::resource('/home1','HomeController');
