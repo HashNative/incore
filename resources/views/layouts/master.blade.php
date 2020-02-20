@@ -214,7 +214,7 @@
             
            </li>
             <li class="nav-item has-treeview ">
-            <a href="{{route('student.index')}}" class="nav-link {{Request::is('student','student/create','student/3/edit','student/3') ? 'active' : null }}">
+            <a href="{{route('student.index')}}" class="nav-link {{Request::is('student','student/create','student//edit','student/3') ? 'active' : null }}">
               <i class="nav-icon fas fa-user-alt"></i>
               <p>
               Student
