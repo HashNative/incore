@@ -79,7 +79,6 @@ class AssignController extends Controller
            ->groupBy('follow_up','inquiry_id')
            ->get();
            $ids = DB::table('inquiries')
-           ->where('follow_up',$id)
             ->select(array('follow_up'))
             ->groupBy('follow_up')
             ->get();
