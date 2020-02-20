@@ -359,7 +359,7 @@
             <div class="card-body">
               <div class="d-flex">
                 <p class="d-flex flex-column">
-                  <span>Sales Over Time</span>
+                  
                 </p>
               </div>
               <!-- /.d-flex -->
@@ -1076,7 +1076,20 @@ foreach ($inquiries1 as $inquiry){
 
 } 
 
+foreach ($inquiries1 as $inquiry){ 
+  array_push($arr2, $inquiry->inquiry_by);
+  
+}
+foreach ($inquiries as $inquiry){ 
+  array_push($arr3, $inquiry->count);  
+}
+foreach ($inquiries1 as $inquiry){ 
+  array_push($arr4, $inquiry->countc);  
+}
+
+
 ?>
+
 
 
 
