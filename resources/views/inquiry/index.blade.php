@@ -129,7 +129,7 @@
                                                                             @if($inquiry->id == $followup1->inquiry_id)
                                                                             <?php  $followup1->count = $followup1->count + 1 ?>
                                                                            
-                                                                              <label for ="follow_up">Follow up</label> 
+                                                                              <label for ="follow_up"></label> 
                                                                                 <input type ="hidden" name="follow_up" class="form-control" id ="follow_up" value = "{{ $followup1->count}}" required>
                                                                                 @endif
                                                                           @endforeach
@@ -151,7 +151,7 @@
                                                                         </div>
                                                                             
                                                       </div>
-                                                        <input name="description" class="form-control form-control-sm"  id ="description" value = "{{ $inquiry->description}}"required>
+                                                        <input name="description" class="form-control form-control-sm"  id ="description" required>
 
                                                         <div class="input-group-append">
 
