@@ -270,7 +270,7 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-6">
             <div class="card">
               <div class="card-header">
                 <h5 class="card-title">Monthly Recap Report</h5>
@@ -280,102 +280,77 @@
                     <i class="fas fa-minus"></i>
                   </button>
                   <div class="btn-group">
-                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                      <i class="fas fa-wrench"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" role="menu">
-                      <a href="#" class="dropdown-item">Action</a>
-                      <a href="#" class="dropdown-item">Another action</a>
-                      <a href="#" class="dropdown-item">Something else here</a>
-                      <a class="dropdown-divider"></a>
-                      <a href="#" class="dropdown-item">Separated link</a>
-                    </div>
+                   
                   </div>
                   <button type="button" class="btn btn-tool" data-card-widget="remove">
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
               </div>
-              <!-- /.card-header -->
               <div class="card-body">
                 <div class="row">
-                  <div class="col-md-8">
-                    <p class="text-center">
-                      <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                    </p>
-                 
-                    <div class="chart">
-                      <!-- Sales Chart Canvas -->
-                      <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
-                    </div>
-                    <!-- /.chart-responsive -->
+                  <div class="col-md-12">
+                        <p class="text-center">
+                          <strong>Goal Completion</strong>
+                        </p>
+                        @foreach ($courses as $course)
+                        <div class="progress-group">
+                          {{$course->course_name}}
+                            <span class="float-right">
+                                  @foreach ($courses1 as $course1)
+                                  @if($course->course_name == $course1->course_name)
+                                      <b>{{$course1->countx}}</b>
+                                  
+                                /<b>{{$course->count}}</b>
+                            </span>
+                            <div class="progress progress-sm">
+                              <div class="progress-bar bg-primary" style="width: <?php $x =($course1->countx/$course->count)*100; echo($x)?>%"></div>
+                            </div>
+                        </div>
+                        @endif
+                        @endforeach
+                      @endforeach
                   </div>
-                  <div class="col-md-4">
-                    <p class="text-center">
-                      <strong>Goal Completion</strong>
-                    </p>
-                    @foreach ($courses as $course)
-                    <div class="progress-group">
-                     {{$course->course_name}}
-                      <span class="float-right">
-                        @foreach ($courses1 as $course1)
-                        @if($course->course_name == $course1->course_name)
-                            <b>{{$course1->countx}}</b>
-                        
-                      /<b>{{$course->count}}</b></span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-primary" style="width: <?php $x =($course1->countx/$course->count)*100; echo($x)?>%"></div>
-                      </div>
-                    </div>
-                    @endif
-                    @endforeach
-                   @endforeach
-                  </div>
-                <div>
-              <div>
-            <div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Operator - Inquiry vs Registrations</h3>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="d-flex">
-                  <p class="d-flex flex-column">
-                    <span>Sales Over Time</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-
-                <div class="position-relative mb-4">
-                  <canvas id="sales-chart" height="200"></canvas>
-                </div>
-
-                <div class="d-flex flex-row justify-content-end">
-                  <span class="mr-2">
-                    <i class="fas fa-square text-primary"></i> Inquiries
-                  </span>
-
-                  <span>
-                    <i class="fas fa-square text-gray"></i> Registrations
-                  </span>
                 </div>
               </div>
             </div>
           </div>
+          <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                      <h5 class="card-title">Monthly Recap Report</h5>
+
+                      <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+                    </div>
+                      <div class="position-relative mb-4">
+                        <canvas id="sales-chart" height="200"></canvas>
+                      </div>
+                    <div class="d-flex flex-row justify-content-end">
+                      <span class="mr-2">
+                        <i class="fas fa-square text-primary"></i> Inquiries
+                      </span>
+
+                      <span>
+                        <i class="fas fa-square text-gray"></i> Registrations
+                      </span>
+                
+                    </div>
+                </div>
+            </div>
         </div>
+       
+            
+       
       </div>
     </section>
-
+    
     <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -444,6 +419,18 @@ foreach ($inquiries1 as $inquiry){
 
 } 
 
+foreach ($inquiries1 as $inquiry){ 
+  array_push($arr2, $inquiry->inquiry_by);
+  
+}
+foreach ($inquiries as $inquiry){ 
+  array_push($arr3, $inquiry->count);  
+}
+foreach ($inquiries1 as $inquiry){ 
+  array_push($arr4, $inquiry->countc);  
+}
+
+
 ?>
-@endsection   
+   @endsection   
  

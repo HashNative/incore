@@ -495,39 +495,21 @@ $(function () {
 
   var $salesChart = $('#sales-chart')
 
-//   <?php
-
-// foreach ($inquiries1 as $inquiry){ 
-//   $arr2 = $inquiry->inquiry_by;
-  
-// }
-// foreach ($inquiries as $inquiry){ 
-//   $arr3 = $inquiry->count;
-  
-// }
-// foreach ($inquiries1 as $inquiry){ 
-//   $arr4 = $inquiry->countc;
-  
-// }
-
-
-//   ?>
-
   var salesChart  = new Chart($salesChart, {
     type   : 'bar',
     data   : {
       
-      labels  : [<?php echo json_encode($arr2);?>],
+      labels  : <?php echo json_encode($arr2);?>,
       datasets: [
         {
           backgroundColor: '#007bff',
           borderColor    : '#007bff',
-          data           : [<?php echo json_encode($arr3);?>]
+          data           : <?php echo json_encode($arr3);?>
         },
         {
           backgroundColor: '#ced4da',
           borderColor    : '#ced4da',
-          data           : [<?php echo json_encode($arr4);?>]
+          data           : <?php echo json_encode($arr4);?>
         }
       ]
     },
