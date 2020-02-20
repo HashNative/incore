@@ -189,15 +189,15 @@
         <h3 class="card-title">Registrations</h3> <br>
        
                 <div  class="float-right">
-                <form action="/">
-<label for="searchFrom">From :</label> &nbsp;
-<input id="searchFrom" class="form-control-sm" type="date" placeholder="From"> &nbsp;
-<label for="searchTo">To :</label> &nbsp;
-<input id="searchTo" class="form-control-sm" type="date" placeholder="To" >
+                <form action="{{route('admin.store')}}"method = "post">
+                {{csrf_field()}}
+                        <label for="from">From :</label> &nbsp;
+                        <input id="from" name="from"class="form-control-sm" type="date" placeholder="From"> &nbsp;
+                        <label for="to">To :</label> &nbsp;
+                        <input id="to" name="to"class="form-control-sm" type="date" placeholder="To" >&nbsp;
 
-<button type="submit "class="btn-info form-control-sm" value="submit" >Search</button>
-           </div>
-          </form>
+                        <button type="submit "class="btn-info form-control-sm" value="submit" >Search</button>
+                </form>
       </div>
      
       <!-- /.card-header -->
