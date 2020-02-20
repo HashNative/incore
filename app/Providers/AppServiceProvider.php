@@ -19,6 +19,12 @@ class AppServiceProvider extends ServiceProvider
         View::share('arr',$arr);
         $arr1=array();
         View::share('arr1',$arr);
+        $arr2=array();
+        View::share('arr2',$arr2);
+        $arr3=array();
+        View::share('arr3',$arr3);
+        $arr4=array();
+        View::share('arr4',$arr4);
     }
 
     /**

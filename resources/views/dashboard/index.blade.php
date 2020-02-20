@@ -17,6 +17,7 @@
         </div><div class="0"></div>
       </div><!-- /.container-fluid -->
 </section>
+
         <!-- Info boxes -->
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
@@ -131,7 +132,7 @@
                     @foreach ($inquiries as $inquiry)
                     <tr >
                           <td>{{ $inquiry->inquiry_by}}</td>
-                          <td>{{ $inquiry->count }}</td>
+                          <td>{{ $inquiry->count}}</td>
                           
                           @foreach ($sources as $source)
                           @if($inquiry->inquiry_by == $source->inquiry_by )
@@ -340,7 +341,45 @@
                 
               </div>
               </div>
+              </div>
               <!-- /.card-footer -->
+
+
+              <div class="card-header">
+                
+
+                <!-- Operator inquiry bs registrations -->
+        <div class="col-lg-20">
+          <div class="card">
+            <div class="card-header border-0">
+              <div class="d-flex justify-content-between">
+                <h3 class="card-title">Operator - Inquiry vs Registrations</h3>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex">
+                <p class="d-flex flex-column">
+                  <span>Sales Over Time</span>
+                </p>
+              </div>
+              <!-- /.d-flex -->
+
+              <div class="position-relative mb-4">
+                <canvas id="sales-chart" height="200"></canvas>
+              </div>
+
+              <div class="d-flex flex-row justify-content-end">
+                <span class="mr-2">
+                  <i class="fas fa-square text-primary"></i> Inquiries
+                </span>
+
+                <span>
+                  <i class="fas fa-square text-gray"></i> Registrations
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- /.card -->
            
        
         <!-- Main row -->
