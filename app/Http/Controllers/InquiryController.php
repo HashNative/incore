@@ -33,12 +33,16 @@ class InquiryController extends Controller
         ->groupBy('follow_up','inquiry_id')
         ->get();
         $users = User::All();
+        $ids = DB::table('inquiries')
+        ->select(array('follow_up'))
+        ->groupBy('follow_up')
+        ->get();
 
         $assigns = Assign::All();
         if(session('success_message')){
             alert('Done !');
         }
-       return view('inquiry.index',compact('inquiries','followups1','followups','assigns','users'));
+       return view('inquiry.index',compact('ids','inquiries','followups1','followups','assigns','users'));
        
     }
 
@@ -48,7 +52,10 @@ class InquiryController extends Controller
         $users = User::All();
 
         $assigns = Assign::All();
-        
+        $ids = DB::table('inquiries')
+        ->select(array('follow_up'))
+        ->groupBy('follow_up')
+        ->get();
         $inquiries = DB::table('inquiries')
            ->where('inquiry_by',Auth::user()->name)
            ->get();
@@ -56,7 +63,7 @@ class InquiryController extends Controller
            ->select(array('follow_up','inquiry_id',DB::raw('MAX(follow_up) AS count')))
            ->groupBy('follow_up','inquiry_id')
            ->get();
-       return view('inquiry.index',compact('inquiries','followups','followups1','assigns','users'));
+       return view('inquiry.index',compact('ids','inquiries','followups','followups1','assigns','users'));
     }
 
 

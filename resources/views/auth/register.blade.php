@@ -56,7 +56,7 @@
                                 @endif 
                         <div class="col-md-6{{ $errors->has('languages') ? ' has-error' : '' }}">
                                 <label for ="languages">Language</label>
-                                    <select type ="text" name ="languages" id ="languages" class="form-control" >
+                                    <select type ="text" name="languages[]" id="languages" class="form-control"multiple >
                                     <option value="English" selected >English</option>
                                     <option value="Tamil">Tamil</option>
                                     <option value="Sinhala">Sinhala</option></select>
