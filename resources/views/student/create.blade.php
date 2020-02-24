@@ -87,7 +87,7 @@
                       <div class="form-group">
                       <label for ="inquiry_by">Inquiry by</label>
                       <select type ="text" name ="inquiry_by" id="inquiry_by" class="form-control"class="required" >
-                    @foreach ($staffs as $staff)
+                      @foreach ($staffs as $staff)
                       <option >{{$staff->name}}</option>
                       @endforeach</select>
 

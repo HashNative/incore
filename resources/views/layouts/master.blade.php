@@ -173,10 +173,12 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/dashboard" class="brand-link">
-      <i class="fa fa-info-circle"></i>
+    
+    <a href="/dashboard" class="brand-link"  style="padding-left:20px">
+      <i class="nav-icon fa fa-info-circle" ></i>
       <span class="brand-text font-weight-bold">incore</span>
     </a>
+    
 
     <!-- Sidebar -->
     <div class="sidebar">
