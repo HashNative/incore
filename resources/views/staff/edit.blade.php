@@ -46,7 +46,7 @@
    <div  class ="col-md-4">
    <div class="from-group">
         <label for ="languages">Language</label>
-        <select type ="text" name ="languages" id ="languages"value = "{{$staff -> languages}}"class="form-control " >
+        <select type ="text" name ="languages[]" id ="languages"value = "{{$staff -> languages}}"class="form-control " multiple>
        
         <option <?php if(($staff->languages)=='English'){ echo 'selected'; } ?>>English</option>
         <option <?php if(($staff->languages)=='Tamil'){ echo 'selected'; } ?>>Tamil</option>

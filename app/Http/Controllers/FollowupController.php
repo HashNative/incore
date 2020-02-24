@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\FollowUp;
 use App\Inquiry;
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -112,9 +113,12 @@ class FollowupController extends Controller
      */
     public function destroy($id)
     {
+        
+
         $inquiry =  FollowUp::find($id);
         $inquiry->delete();
 
+       
         return redirect('/inquiry')->withSuccessMessage('Successfuly Deleted')
         ;
         //

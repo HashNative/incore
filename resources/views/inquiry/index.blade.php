@@ -43,15 +43,13 @@
                           </ul>
                              
                         </div>
-                       
-                               
                         <div class="card-body">
                               
                           <div class="tab-content">
                               
                               @foreach($ids as $id)
                                 <div class="tab-pane <?php if($id->follow_up == 1) echo("active")?>" id="activity-{{$id->follow_up}}">
-                                  <table id="example1" class="table table-bordered table-striped table-responsive ">
+                                  <table id="example1" class="table table-bordered table-striped table-responsive">
                                         <thead>
                                         <tr>
                                         
@@ -120,7 +118,7 @@
                                                                       <!-- Post -->
                                                                       <div class="post clearfix">
                                                                         <div class="user-block">
-                                                                          <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
+                                                                          <img class="img-circle img-bordered-sm" src="{{asset('dist/img/user7-128x128.jpg')}}" alt="User Image">
                                                                           <span class="username">
                                                                             <a href="#">{{$followup->inquiry_by}}</a>
                                                                             <div style ="float:right">
@@ -237,89 +235,100 @@
                                                   </div>
                                                             
                                         </tr>
-                                                  <div class="modal fade" id="modal-info-{{ $inquiry->id}}" style="display: none;" aria-hidden="true">
-                                                      <div class="modal-dialog modal-default">
-                                                        <div class="modal-content">
-                                                          <div class="modal-header">
-                                                            <h4 class="modal-title">Assign To</h4>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                              <span aria-hidden="true">×</span>
-                                                            </button>
-                                                          </div>
-                                                          <div class="modal-body">
-                                                              <div class="form-group">
-                                                                <form action = "{{route('assign.store')}}" method = "POST" class="needs-validation">
-                                                                        {{csrf_field()}} 
-                                                                    <label for ="inquiry_by"></label> 
-                                                                    <input type ="hidden" name="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
-                                                                  
-                                                                    <label for ="inquiry_id"></label> 
-                                                                    <input type ="hidden" name="inquiry_id" class="form-control" id ="inquiry_id" value = "{{ $inquiry->id}}"  required>
-                                                                      
-                                                                    <div class="col-sm-4">
-                                                                      <div class="form-group">
-                                                                        <label for ="assignto">Assign To</label> 
-                                                                        <select type ="text" class="form-control"  name ="assignto" id ="assignto"  required>
-                                      
-                                                                                @foreach ($users as $user)
-                                                                                <option >{{ $user->name}}</option>
-                                                                                @endforeach
-                                                                              
-                                                                        </select>
-                                                                      </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <label for ="language">Language</label>
-                                                                            <select type ="text" name ="language" id ="language" class="form-control" >
-                                                                            <option value="english" selected >English</option>
-                                                                            <option value="tamil">Tamil</option>
-                                                                            <option value="sinhala">Sinhala</option></select>
-                                                                    </div>        
-                                                                    <div class="col-sm-5">
-                                                                      <div class="form-group">
-                                                                        <label for="date"> Next Followup Date</label>
-                                                                        <input type ="date" name ="date" id="exampleInputdate1"  class="form-control"  placeholder="Enter the date"aria-describedby="exampleInputdate-error" aria-invalid="true" required></span>
-                                                                          
-                                                                      </div>
-                                                                    </div>
-                                                                    <button type="submit" value="Save" class="btn bg-gradient-success float-right ">Save</button>
-
-                                                                </form>
-                                                                
+                                                      <div class="modal fade" id="modal-info-{{ $inquiry->id}}" style="display: none;" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg">
+                                                          <div class="modal-content">
+                                                              <div class="modal-header">
+                                                                <h4 class="modal-title">Assign To</h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                  <span aria-hidden="true">×</span>
+                                                                </button>
                                                               </div>
-                                                          </div>
+                                                              <div class="modal-body">
+                                                                  <div class="form-group">
+                                                                    <form action = "{{route('assign.store')}}" method = "POST" class="needs-validation">
+                                                                            {{csrf_field()}} 
 
-                                                          <div class="tab-pane" id="timeline">
-                                                              <div class="timeline timeline-inverse">
-                                                                <div class="time-label">
-                                                                  <span class="bg-danger">
-                                                                  next followups
-                                                                  </span>
-                                                                </div>
-                                                                <div>
-                                                                  @foreach ($assigns as $assign)
-                                                                        @if($inquiry->id == $assign->inquiry_id)
-                                                                      <i class="fas fa-envelope bg-primary"></i>
-                                                                      <div class="timeline-item">
-                                                                              <span class="time"> <b>{{$assign->schedule_date}}</b></span>
+                                                                      
 
-                                                                              <h3 class="timeline-header"><b>{{$assign->assign_to}}</b></h3>
-                                                                            
-                                                                              <div class="timeline-body">
+                                                                        <label for ="inquiry_by"></label> 
+                                                                        <input type ="hidden" name="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
+                                                                      
+                                                                        <label for ="inquiry_id"></label> 
+                                                                        <input type ="hidden" name="inquiry_id" class="form-control" id ="inquiry_id" value = "{{ $inquiry->id}}"  required>
+                                                                          
+                                                                        
+
+                                                                        <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                          <div class="form-group">
+                                                                            <label for ="assignto">Assign To</label> 
+                                                                            <select type ="text" class="form-control"  name ="assignto" id ="assignto"  required>
+                                          
+                                                                                    @foreach ($users as $user)
+                                                                                    <option >{{ $user->name}}</option>
+                                                                                    @endforeach
+                                                                                  
+                                                                            </select>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <label for ="language">Language</label>
+                                                                                <select type ="text" name ="language" id ="language" class="form-control" >
+                                                                                <option value="English" selected >English</option>
+                                                                                <option value="Tamil">Tamil</option>
+                                                                                <option value="Sinhala">Sinhala</option></select>
+                                                                        </div>  
+                                                                        <div class="col-sm-4">
+                                                                          <div class="form-group">
+                                                                            <label for="date"> Next Followup Date</label>
+                                                                            <input type ="date" name ="date" id="exampleInputdate1"  class="form-control"  placeholder="Enter the date"aria-describedby="exampleInputdate-error" aria-invalid="true" required></span>
+                                                                              
+                                                                          </div>
+                                                                          <button type="submit" value="Save" class="btn bg-gradient-success float-right ">Save</button>
+                                                                        </div>
+                                                                       
+                                                                      
+                                                                       
+                                                              
+                                                                    </form>
+                                                                  </div>
+                                                                 
+
+                                                              </div>
+                                                                      
+                                                              <div class="tab-pane" id="timeline">
+                                                                  <div class="timeline timeline-inverse">
+                                                                    <div class="time-label">
+                                                                      <span class="bg-danger">
+                                                                      next followups
+                                                                      </span>
+                                                                    </div>
+                                                                    <div>
+                                                                      @foreach ($assigns as $assign)
+                                                                            @if($inquiry->id == $assign->inquiry_id)
+                                                                          <i class="fas fa-envelope bg-primary"></i>
+                                                                          <div class="timeline-item">
+                                                                                  <span class="time"> <b>{{$assign->schedule_date}}</b></span>
+
+                                                                                  <h3 class="timeline-header"><b>{{$assign->assign_to}}</b></h3>
                                                                                 
-                                                                                {{ $assign->inquiry_by}} &nbsp;is assigned the next followup for &nbsp;&nbsp;{{$assign->assign_to}}
-                                                                              </div>
-                                                                      </div>
-                                                                      <br>
-                                                                        @endif
-                                                                    @endforeach
-                                                                </div>
-                                                                
+                                                                                  <div class="timeline-body">
+                                                                                    
+                                                                                    {{ $assign->inquiry_by}} &nbsp;is assigned the next followup for &nbsp;&nbsp;{{$assign->assign_to}}
+                                                                                  </div>
+                                                                          </div>
+                                                                          <br>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </div>
+                                                                    
+                                                                  </div>
                                                               </div>
                                                           </div>
                                                         </div> 
                                                       </div> 
-                                                  </div> 
+                                                  
                                         @endif  
                                         @endforeach
                                       </tbody>
@@ -330,7 +339,6 @@
                               @endforeach
                           </div>
                         </div>
-                        
                   </div>
                 </div>
                 </div>

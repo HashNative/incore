@@ -58,26 +58,26 @@
                     </div>
 
                     <div class="col-sm-4">
-                    <div class="form-group">
-                  <label for ="inquiry_by">Inquiry by</label> 
-        <select type ="text" name ="inquiry_by" class="form-control" id ="inquiry_by" required>
-        @foreach ($staffs as $staff)
-                        <option <?php if(($inquiry->inquiry_by)==$staff->name){ echo 'selected'; } ?> value="{{$staff->name}}">
-                        {{ $staff->name}}</option>
-                        @endforeach
-                        
-                        </select>
-        <div class="invalid-feedback">
-        Please Enter valid Inquiry by.
-      </div>
+                        <div class="form-group">
+                          <label for ="inquiry_by">Inquiry by</label> 
+                          <select type ="text" name ="inquiry_by" class="form-control" id ="inquiry_by" required>
+                            @foreach ($staffs as $staff)
+                            <option <?php if(($inquiry->inquiry_by)==$staff->name){ echo 'selected'; } ?> value="{{$staff->name}}">
+                            {{ $staff->name}}</option>
+                            @endforeach
+                            
+                          </select>
+                          <div class="invalid-feedback">
+                            Please Enter valid Inquiry by.
+                          </div>
       
-                    </div>
+                        </div>
                     </div>
                     <div class="col-sm-4">
                       <!-- text input -->
                       <div class="form-group">
-                  <label for ="source">Source</label> 
-        <select type ="text" name="source" class="form-control" id ="source" value = "{{ $inquiry->source}}" required>
+                      <label for ="source">Source</label> 
+                      <select type ="text" name="source" class="form-control" id ="source" value = "{{ $inquiry->source}}" required>
                         
                         <option <?php if(($inquiry->source)=='Call'){ echo 'selected'; } ?>>Call</option>
                         <option  <?php if(($inquiry->source)=='Walk in'){ echo 'selected'; } ?>>Walk in</option>
@@ -86,11 +86,10 @@
                         <option  <?php if(($inquiry->source)=='From student'){ echo 'selected'; } ?>>From student</option>
                         <option  <?php if(($inquiry->source)=='From branch'){ echo 'selected'; } ?>>From branch</option>
                         <option <?php if(($inquiry->source)=='Others'){ echo 'selected'; } ?>>Others</option>
-                        </select>
-        <div class="invalid-feedback">
-        Please Enter valid Source.
-      </div>
-        
+                      </select>
+                      <div class="invalid-feedback">
+                        Please Enter valid Source.
+                      </div>
                     </div>
                    
                     </div>
