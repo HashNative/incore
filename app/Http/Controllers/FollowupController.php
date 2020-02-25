@@ -113,14 +113,18 @@ class FollowupController extends Controller
      */
     public function destroy($id)
     {
+        $inquiry =  FollowUp::find($id);
         
 
-        $inquiry =  FollowUp::find($id);
+        $inquiry_id = FollowUp::find($id)->inquiry_id;
+        $follow = Inquiry::find($inquiry_id)->follow_up;
         $inquiry->delete();
-
        
+       
+        $follow1= Inquiry ::find ($inquiry_id);
+        $follow1->follow_up =$follow-1;
+        $follow1->update();
         return redirect('/inquiry')->withSuccessMessage('Successfuly Deleted')
         ;
-        //
     }
 }

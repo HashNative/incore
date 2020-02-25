@@ -118,7 +118,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/dashboard" class="brand-link">
+    <a href="{{route('dashboard.index')}}" class="brand-link">
       <i class="fa fa-info-circle"></i>
       <span class="brand-text font-weight-bold">incore</span>
     </a>

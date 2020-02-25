@@ -8,7 +8,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('staff.index')}}">Staff</a></li>
               <li class="breadcrumb-item">Edit Staff</li>
             </ol>
@@ -18,7 +18,7 @@
 </section>
 <div>
 
-<form action = "{{route('staff.update',$staff->id)}}" method = "POST" class="needs-validation" novalidate  >
+<form action = "{{route('staff.update',$staff->id)}}" method = "POST" class="needs-validation" validate  >
   <input type = "hidden" name = "_method" value="put">
      {{csrf_field()}}
      <div class="d-flex justify-content-center">

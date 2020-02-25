@@ -9,7 +9,7 @@
           </div>
           <div class="col-md-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('inquiry.index')}}">Inquiry</a></li>
               <li class="breadcrumb-item">Edit Inquiry</li>
             </ol>
@@ -34,15 +34,15 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <!-- text input -->
-                      <div class="form-group">
-                  <label for ="phone_number">Phone number</label> 
-        <input type ="integer" name="phone_number" class="form-control" maxlength="10" id ="phone_number" 
-        pattern="[0-9]{1}[0-9]{9}" value = "{{ $inquiry->phone_number}}" required>
+                      <div class="from-group">
+   <label for ="phone_number">Mobile Number</label> 
+        <input type ="integer" name="phone_number" class="form-control"pattern="[077][0-9]{9}" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $inquiry->phone_number}}" required>
         <div class="invalid-feedback">
         Please Enter valid phone number.
       </div>
         
-                    </div>
+        
+        </div>
                    
                     </div>
 
