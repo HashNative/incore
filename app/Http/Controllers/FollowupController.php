@@ -115,7 +115,6 @@ class FollowupController extends Controller
     {
         $inquiry =  FollowUp::find($id);
         
-
         $inquiry_id = FollowUp::find($id)->inquiry_id;
         $follow = Inquiry::find($inquiry_id)->follow_up;
         $inquiry->delete();

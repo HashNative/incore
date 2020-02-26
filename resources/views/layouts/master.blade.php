@@ -93,7 +93,7 @@
           <i class="fas fa-user"></i></a>
         
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">Account</span>
+          <span class="dropdown-item dropdown-header">    <a href="{{ route('profile.index') }}">Account</a></span>
           <div class="dropdown-divider"></div>
     
           <div class="dropdown-divider"></div>

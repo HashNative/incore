@@ -179,7 +179,7 @@ class InquiryController extends Controller
      * @return \Illuminate\Http\Response
      */
     
- public function update($id,Request $request)
+ public function update(Request $request,$id)
  {
      $inquiry =Inquiry::find ($id);
    
