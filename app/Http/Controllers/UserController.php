@@ -116,7 +116,7 @@ class UserController extends Controller
         $staff= User ::find ($id);
         
         $staff->name =$request->name;
-        $staff->languages =$request->languages;
+        $staff->languages =implode(',',$request->languages);
        
         $staff->email =$request ->email;
         $staff->mobile_number =$request->mobile_number;

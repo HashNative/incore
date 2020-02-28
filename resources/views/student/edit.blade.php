@@ -8,7 +8,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('student.index')}}">Student</a></li>
               <li class="breadcrumb-item">Edit</li>
             </ol>
@@ -66,16 +66,15 @@
                   <div class="row">
                     <div class="col-sm-5">
                     
-                      <div class="form-group">
-                      <label for ="phone_number">Phone Number</label> 
-                    <input type ="text" name ="phone_number" pattern="[077][0-9]{9}" maxlength="10" id ="phone_number" class="form-control" value = "{{$student ->phone_number}}"required>
-                    <div class="invalid-feedback">
-                    Please Enter valid Phone Number.
-                    
-
-                  </div>
-                
-                  </div>
+                    <div class="from-group">
+   <label for ="phone_number">Mobile Number</label> 
+        <input type ="integer" name="phone_number" class="form-control"pattern="[077][0-9]{9}" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $student->phone_number}}" required>
+        <div class="invalid-feedback">
+        Please Enter valid phone number.
+      </div>
+        
+        
+        </div>
                     </div>
 
                     <div class="col-sm-7">

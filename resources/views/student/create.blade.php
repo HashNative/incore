@@ -8,7 +8,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('student.index')}}">Student</a></li>
               <li class="breadcrumb-item">Add student</li>
             </ol>
@@ -50,12 +50,13 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-5">
-                                          <div class="form-group">
-                                          <label for ="phone_number">Phone Number</label>
-                                            <input type ="integer" name ="phone_number"class="form-control" autocomplete="off" id="exampleInput0111234567" placeholder="Enter the Phone Number" maxlength="10" pattern="[0-9]{1}[0-9]{9}"  aria-describedby="exampleInputphone_number-error" aria-invalid="true" required>
-                                          </div>
-                                    </div>
+                                    <div class="form-group">
+                                      <label>Phone number</label>
+                                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="off" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
+                                    </div>
+                                    </div>
+                                   
                                     <div class="col-sm-7">
                                       <div class="form-group">
                                         <label for="email_id">Email</label>
@@ -126,7 +127,7 @@
                   </div>
                 </div>
               </div>
-    
+              
 @endsection
 
 
