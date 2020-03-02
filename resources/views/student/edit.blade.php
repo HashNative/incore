@@ -61,7 +61,7 @@
                     <div class="col-sm-5">
                     <div class="form-group">
                   <label for ="course_name">Course Name</label> 
-                  <select type ="text" class="form-control"  name ="course_name" id ="course_name" value = "{{$student ->course_name}}"required onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
+                  <select type ="text" class="form-control"  name ="course_name" id ="course_name" value = "{{$student ->course_name}}"required onmousedown="if(this.options.length>5){this.size=5;}"  onchange="showBatches(this.value);" onblur="this.size=0;">
                 
                   @foreach ($courses as $course)
                             <option <?php if(($student->course_name)=='{{$course->course_name}}'){ echo 'selected'; } ?>>{{ $course->course_name}}</option>
@@ -269,6 +269,34 @@ form.classList.add('was-validated');
 
 
 </script>
+<script type="text/javascript">
+  function showBatches(str) {
+
+
+    var select = document.getElementById("batch_name");
+    var length = select.options.length;
+    for (i = length - 1; i >= 0; i--) {
+      select.options[i] = null;
+    }
+
+    <?php
+    foreach ($batches as $batch) {
+
+
+    ?>
+      if (str == '<?php echo $batch->course_name; ?>') {
+
+        var select = document.getElementById("batch_name");
+        select.options[select.options.length] = new Option('<?php echo $batch->batch_name; ?>', '<?php echo $batch->batch_name; ?>');
+      }
+    <?php
+    }
+    ?>
+
+
+  }
+</script>
+
 
 
 </body>

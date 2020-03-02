@@ -62,7 +62,9 @@ class StudentController extends Controller
         $student = new  Inquiry;
         $student->id =$request ->id;
         $student->name =$request ->student_name;
-        $student->date_time =$request ->date;
+        
+        date_default_timezone_set("Asia/Colombo");
+        $student->date_time =date('Y-m-d h:i:s');
         $student->email =$request ->email_id;
         $student->phone_number =$request ->phone_number;
         $student->course_name =$request ->course_name;
@@ -81,7 +83,8 @@ class StudentController extends Controller
         $student->title ='Mr';
         $student->follow_up =1;
         $student->student_id =1;
-        $student->registration_date =$request ->date;
+        date_default_timezone_set("Asia/Colombo");
+        $student->registration_date =date('Y-m-d');
                                                          
         $student->save();
         return redirect('/student');

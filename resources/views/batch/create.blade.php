@@ -69,7 +69,7 @@
     </div>
         <div class="col-sm-6"> <div class="form-group">
                  <label for ="batch_name">Batch Name</label>
-                 <input type ="text" name ="batch_name" id ="batch_name" autocomplete="off" class="form-control" maxlength="100" placeholder="Enter the Batch Name"id="exampleInputBatch_name1"aria-describedby="exampleInputbatch_name-eror" airia-invalid="true" required>
+                 <input type ="text" name ="batch_name" id ="batch_name" autocomplete="batch_name" class="form-control" maxlength="100" placeholder="Enter the Batch Name"id="exampleInputBatch_name1"aria-describedby="exampleInputbatch_name-eror" airia-invalid="true" required>
     </div> 
         </div>
         
