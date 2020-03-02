@@ -20,7 +20,13 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'languages' => 'required|String',
-            'mobile_number'=>'required'
+            'mobile_number'=>'required',
+            'title' => 'required',
+            'gender' => 'required',
+            'dob' => 'required|date',
+            'nic' => 'required|string|max:12',
+            'address' => 'required|string|max:255'
+
         ]);
     }
 
@@ -65,6 +71,12 @@ class UserController extends Controller
         $staff = new  User;
        
         $staff->name =$request->name;
+        $staff->title =$request->title;
+        $staff->gender =$request->gender;
+        $staff->nic =$request->nic;
+        $staff->address =$request->address;
+        $staff->dob =$request->dob;
+
         $staff->languages =$request->languages;
        
         $staff->email =$request ->email;
@@ -116,6 +128,11 @@ class UserController extends Controller
         $staff= User ::find ($id);
         
         $staff->name =$request->name;
+        $staff->title =$request->title;
+        $staff->gender =$request->gender;
+        $staff->nic =$request->nic;
+        $staff->address =$request->address;
+        $staff->dob =$request->dob;
         $staff->languages =implode(',',$request->languages);
        
         $staff->email =$request ->email;
