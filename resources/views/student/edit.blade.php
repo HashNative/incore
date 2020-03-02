@@ -33,18 +33,32 @@
 
 
                   <div class="row">
-                    <div class="col-sm-5">
-                      <!-- text input -->
-                      <div class="form-group">
-                  <label for ="student_name">Student Name</label> 
-        <input type ="text" name ="student_name" class="form-control" id ="student_name" value = "{{$student ->name}}" required>
-        <div class="invalid-feedback">
-        Please Enter valid username.
-      </div>
-        
-                  </div> 
+
+                  <div class="col-sm-2">
+                                    <div class="form-group">
+                                    <label for ="inquiry_source">Title</label>
+                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                          
+                                          <option selected>Mr</option>
+                                          <option >Mrs</option>
+                                        </select>
+
+                                    </div>
+                                    </div>
+
+
+                            <div class="col-sm-5">
+                              <!-- text input -->
+                            <div class="form-group">
+                            <label for ="student_name">Student Name</label> 
+                          <input type ="text" name ="student_name" class="form-control" id ="student_name" value = "{{$student ->name}}" required>
+                          <div class="invalid-feedback">
+                          Please Enter valid username.
+                        </div>
+                          
+                                    </div> 
                     </div>
-                    <div class="col-sm-7">
+                    <div class="col-sm-5">
                     <div class="form-group">
                   <label for ="course_name">Course Name</label> 
                   <select type ="text" class="form-control"  name ="course_name" id ="course_name" value = "{{$student ->course_name}}"required onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
@@ -67,15 +81,14 @@
                     <div class="col-sm-5">
                     
                     <div class="from-group">
-   <label for ="phone_number">Mobile Number</label> 
-        <input type ="integer" name="phone_number" class="form-control"pattern="[077][0-9]{9}" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $student->phone_number}}" required>
-        <div class="invalid-feedback">
-        Please Enter valid phone number.
-      </div>
-        
-        
-        </div>
+                        <label for ="phone_number">Mobile Number</label> 
+                        <input type ="integer" name="phone_number" class="form-control"pattern="[077][0-9]{9}" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $student->phone_number}}" required>
+                        <div class="invalid-feedback">
+                        Please Enter valid phone number.
+                      </div>
+          
                     </div>
+                  </div>
 
                     <div class="col-sm-7">
                     <div class="form-group">            
@@ -84,29 +97,60 @@
                     <div class="invalid-feedback">
                     Please Enter valid Email.
                   </div>
-                   
-                    
-                
-                  </div>
-
-                    </div>
-
-
-                    <div class="col-sm-3">
-                    <div class="form-group">
-                  <label for ="inquiry_by">Inquiry By</label> 
-                  <select type ="text" class="form-control"  name ="inquiry_by" id ="inquiry_by"  value = "{{ $student->inquiry_by}}"required>
-                 
-                  @foreach ($staffs as $staff)
-                            <option <?php if(($student->inquiry_by)=='{{$staff->name}}'){ echo 'selected'; } ?>>{{ $staff->name}}</option>
-                            @endforeach
-                          
-                      </select>
-                         
-                         <div class="invalid-feedback">
-                         Please Enter valid detail.
                 </div>
-               </div>
+                </div>
+</div>
+                
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                    <label for ="inquiry_source">Gender</label>
+                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                          
+                                          <option selected>Male</option>
+                                          <option >Female</option>
+                                        </select>
+
+                                    </div>
+                                    </div>
+                                   
+                                    <div class="col-sm-4">
+                                      <div class="form-group">
+                                      <label>NIC</label>
+                                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="off" placeholder="Enter the NIC number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                    <div class="form-group">
+                                    <label for ="inquiry_source">Batch Name</label>
+                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                          
+                                          <option selected></option>
+                                          <option ></option>
+                                        </select>
+
+                                    </div>
+                                    </div>
+                              </div>
+
+
+                              <div class="row">
+                          <div class="col-sm-3">
+                          <div class="form-group">
+                        <label for ="inquiry_by">Inquiry By</label> 
+                        <select type ="text" class="form-control"  name ="inquiry_by" id ="inquiry_by"  value = "{{ $student->inquiry_by}}"required>
+                      
+                        @foreach ($staffs as $staff)
+                                  <option <?php if(($student->inquiry_by)=='{{$staff->name}}'){ echo 'selected'; } ?>>{{ $staff->name}}</option>
+                                  @endforeach    
+                            </select>
+                              
+                              <div class="invalid-feedback">
+                              Please Enter valid detail.
+                              </div>
+                    </div>
               </div>
                     
                     <div class="col-sm-3">
@@ -162,6 +206,7 @@
                     </div>
 
                     </div>
+                    
 
                     <div class="col-sm-3">
                       <!-- text input -->

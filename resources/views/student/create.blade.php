@@ -30,7 +30,7 @@
                                 <div class="row">
 
 
-                                <div class="col-sm-3">
+                                <div class="col-sm-2">
                                     <div class="form-group">
                                     <label for ="inquiry_source">Title</label>
                                         <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
@@ -51,7 +51,7 @@
                                       </div>
                                     </div>
                                   
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-5">
                                         <div class="form-group">
                                             <label for ="course_name">Course Name</label>
                                             <select type ="text" name ="course_name" id="course_name"  class="form-control"class="required"onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;" >
