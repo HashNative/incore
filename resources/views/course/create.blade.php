@@ -36,7 +36,7 @@
                     <div class="col-sm-6">
                     <div class="form-group">
                         <label for ="course_name">Course Name</label>
-                        <input type ="text" name ="course_name" id ="course_name" autocomplete="off" class="form-control" maxlength="100" placeholder="Enter the Course Name"id="exampleInputCourse_name1"aria-describedby="exampleInputcourse_name-eror" airia-invalid="true" required>
+                        <input type ="text" name ="course_name" id ="course_name" autocomplete="course_name" class="form-control" maxlength="100" placeholder="Enter the Course Name"id="exampleInputCourse_name1"aria-describedby="exampleInputcourse_name-eror" airia-invalid="true" required>
                       </div> 
                     </div>
    
@@ -45,16 +45,16 @@
                     <div class="col-sm-6">
                     <div class="form-group"> 
                         <label for ="course_fees">Course Fees</label> 
-                        <input type ="number" name ="course_fees" id ="course_fees"class="form-control" autofocus placeholder="Enter the Course Fees"id="exampleInputCourse_fees1"aria-describedby="exampleInputcourse_fees-eror" airia-invalid="true" required>
+                        <input type ="number" name ="course_fees" id ="course_fees"class="form-control" autocomplete="course_fees" autofocus placeholder="Enter the Course Fees"id="exampleInputCourse_fees1"aria-describedby="exampleInputcourse_fees-eror" airia-invalid="true" required>
                     </div>
                     </div>
-                  </div>
+                  </div>:
         
          <div class="row">
         <div class="col-sm-12">
         <div class="form-group"> 
             <label for ="description">Description</label> 
-            <textarea name="description" id ="description" class="form-control" autofocus placeholder="Enter the Description"id="exampleInputDescription1"aria-describedby="exampleInputdescription-eror" airia-invalid="true" required></textarea>
+            <textarea name="description" id ="description" class="form-control"  autocomplete="description" autofocus placeholder="Enter the Description"id="exampleInputDescription1"aria-describedby="exampleInputdescription-eror" airia-invalid="true" required></textarea>
         </div>
         </div>
         </div>
