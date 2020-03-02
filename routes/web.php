@@ -27,14 +27,19 @@ Route::group(['middleware'=>'auth','prefix'=>'management'],function(){
 Route::resource('/', 'HomeController')->middleware('AuthenticateMiddleware');
 Route::resource('staff','UserController')->middleware('AuthenticateMiddleware');
 Route::resource('inquiry','InquiryController')->middleware('AuthenticateMiddleware');
+Route::resource('profile','ProfileController')->middleware('AuthenticateMiddleware');
+Route::resource('batch','BatchController')->middleware('AuthenticateMiddleware');
+
 Route::resource('course','CourseController')->middleware('AuthenticateMiddleware');
 Route::resource('student','StudentController')->middleware('AuthenticateMiddleware');
 Route::resource('follow_up','FollowupController')->middleware('AuthenticateMiddleware');
 Route::resource('assign','AssignController')->middleware('AuthenticateMiddleware');
 
-Route::get('/myinquiry','InquiryController@myinquiry')->middleware('AuthenticateMiddleware');
+
+
 Route::resource('admin','AdminController')->middleware('AuthenticateMiddleware');
 
 Route::resource('/dashboard','AdminController')->middleware('AuthenticateMiddleware');
 Route::resource('/home1','HomeController')->middleware('AuthenticateMiddleware');
 Route::resource('/home','HomeController')->middleware('AuthenticateMiddleware');
+Route::get('inquiry/myinquiry', [ 'as' => 'myinquiry', 'uses' => 'InquiryController@myinquiry']);

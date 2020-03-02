@@ -8,7 +8,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('staff.index')}}">Staff</a></li>
               <li class="breadcrumb-item">Edit Staff</li>
             </ol>
@@ -18,7 +18,7 @@
 </section>
 <div>
 
-<form action = "{{route('staff.update',$staff->id)}}" method = "POST" class="needs-validation" novalidate  >
+<form action = "{{route('staff.update',$staff->id)}}" method = "POST" class="needs-validation" validate  >
   <input type = "hidden" name = "_method" value="put">
      {{csrf_field()}}
      <div class="d-flex justify-content-center">
@@ -46,7 +46,7 @@
    <div  class ="col-md-4">
    <div class="from-group">
         <label for ="languages">Language</label>
-        <select type ="text" name ="languages" id ="languages"value = "{{$staff -> languages}}"class="form-control " >
+        <select type ="text" name ="languages[]" id ="languages"value = "{{$staff -> languages}}"class="form-control " multiple>
        
         <option <?php if(($staff->languages)=='English'){ echo 'selected'; } ?>>English</option>
         <option <?php if(($staff->languages)=='Tamil'){ echo 'selected'; } ?>>Tamil</option>

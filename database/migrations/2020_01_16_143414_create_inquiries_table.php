@@ -23,6 +23,9 @@ class CreateInquiriesTable extends Migration
             $table->String('status');
             $table->integer('phone_number');
             $table->String('title');
+            $table->String('nic');
+            $table->String('gender');
+            $table->String('batch_name');
             $table->String('inquiry_by');
             $table->String('email');
             $table->String('follow_up');

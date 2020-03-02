@@ -20,7 +20,7 @@ class CreateStudentsTable extends Migration
            
             $table->String('email_id');
            
-            $table->integer('phone_number');
+            $table->text('phone_number');
             $table->String('course_name');
             $table->String('transfer',10);
             $table->String('inquiry_source');

@@ -8,7 +8,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('staff.index')}}">Staff</a></li>
               <li class="breadcrumb-item">Add Staff</li>
             </ol>
@@ -72,7 +72,7 @@
     <div class ="col-sm-4"> 
         <div class="from-group">
         <label for ="mobile_number">Mobile Number</label>
-        <input type ="integer" name ="mobile_number"pattern="[077][0-9]{9}"  maxlength="10" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1"  id ="mobile_number"   placeholder="Enter the mobile number  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+        <input type ="integer" name ="mobile_number"pattern="[077][0-9]{9}"  maxlength="10"id="exampleInputsource1"  id ="mobile_number"   placeholder="Enter the mobile number  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
         
         
     </div> 

@@ -100,6 +100,9 @@ class InquiryController extends Controller
         $inquiry->date_time =date('Y-m-d h:i:s');
 
         $inquiry->status =$request ->status;
+        $inquiry->nic ='';
+        $inquiry->batch_name ='';
+        $inquiry->gender ='';
         $inquiry->phone_number =$request ->phone_number;
         $inquiry->title =$request ->title;
         $inquiry->inquiry_by =Auth::user()->name;
@@ -135,10 +138,25 @@ class InquiryController extends Controller
      */
     public function show($id)
     {
-        $inquiry= Inquiry ::find ($id);
+        $followups = FollowUp::All();
+        $users = User::All();
 
-        return view('inquiry.show',compact('inquiry'));
-        //
+        $assigns = Assign::All();
+        $ids = DB::table('inquiries')
+        ->select(array('follow_up'))
+        ->where('inquiry_by',Auth::user()->name)
+        ->where('status','!=','Registered')
+        ->groupBy('follow_up')
+        ->get();
+        $inquiries = DB::table('inquiries')
+           ->where('inquiry_by',Auth::user()->name)
+           ->where('status','!=','Registered')
+           ->get();
+           $followups1 = DB::table('follow_ups')
+           ->select(array('follow_up','inquiry_id',DB::raw('MAX(follow_up) AS count')))
+           ->groupBy('follow_up','inquiry_id')
+           ->get();
+       return view('inquiry.index',compact('ids','inquiries','followups','followups1','assigns','users'));
     }
 
     /**
@@ -163,27 +181,27 @@ class InquiryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $inquiry =Inquiry::find ($id);
-       
-        $inquiry->source =$request ->source;
-        $inquiry->description =$request ->description;
-        $inquiry->name =$request ->name;
-        $inquiry->course_name =$request ->course_name;
+    
+ public function update(Request $request,$id)
+ {
+     $inquiry =Inquiry::find ($id);
+   
+     $inquiry->source =$request ->source;
+     $inquiry->description =$request ->description;
+     $inquiry->name =$request ->name;
+     $inquiry->course_name =$request ->course_name;
 
-       
-        $inquiry->status =$request ->status;
-        $inquiry->phone_number =$request ->phone_number;
-        $inquiry->title =$request ->title;
-        $inquiry->inquiry_by =$request ->inquiry_by;
-        $inquiry->email =$request ->email;
-       
-        $inquiry->update();
-        return redirect('/inquiry')->withSuccessMessage('Successfuly Updated')
-        ;
-        //
-    }
+    
+     $inquiry->status =$request ->status;
+     $inquiry->phone_number =$request ->phone_number;
+     $inquiry->title =$request ->title;
+     $inquiry->inquiry_by =$request ->inquiry_by;
+     $inquiry->email =$request ->email;
+   
+     $inquiry->update();
+     return redirect('/inquiry')->withSuccessMessage('Successfuly Updated');
+     //
+ }
 
     /**
      * Remove the specified resource from storage.

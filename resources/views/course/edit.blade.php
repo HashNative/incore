@@ -9,7 +9,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('course.index')}}">course</a></li>
               <li class="breadcrumb-item">Edit</li>
             </ol>
@@ -40,30 +40,10 @@
                       </div>
                     </div>
                   
-                  <div class="col-sm-4">
-                   <div class="form-group">
-                          <label for ="registration_date">Registraion Date</label>
-                          <input type ="date" name ="registration_date" id ="registration_date"class="form-control"value = "{{$course -> registration_date}}"required>
-       
-                      </div>
-                    </div>
+                  
                   </div>
-                    <div class="row">
-                    <div class="col-sm-3">
-                 <div class="form-group">
-                        <label for ="start_by">Start By</label>
-                        <input type ="date" name ="start_by" id ="start_by"class="form-control"value = "{{$course -> start_by}}"required>
-                       
-       
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                          <label for ="end_by">End By</label>
-                          <input type ="date" name ="end_by" id ="end_by"class="form-control"value = "{{$course -> end_by}}"required>
-       
-                      </div>
-                    </div>
+                    
+                    
                     <div class="col-sm-6">
                       <div class="form-group">
                           <label for ="course_fees">Course Fees</label>
