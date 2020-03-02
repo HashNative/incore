@@ -181,6 +181,15 @@
             </a>
             </li>
             <li class="nav-item has-treeview">
+            <a href="{{route('batch.index')}}" class="nav-link {{Request::is('batch','batch/create','batch/1/edit') ? 'active' : null }}">
+              <i class="nav-icon fas fa-graduation-cap"></i>
+              <p>
+                Batch
+              
+              </p>
+            </a>
+            </li>
+            <li class="nav-item has-treeview">
             <a href="{{route('inquiry.index')}}" class="nav-link {{Request::is('inquiry','inquiry/1/edit','inquiry/create') ? 'active' : null }}">
               <i class="nav-icon fas fa-question-circle  "></i>
               <p>
