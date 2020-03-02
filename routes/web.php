@@ -27,6 +27,9 @@ Route::group(['middleware'=>'auth','prefix'=>'management'],function(){
 Route::resource('/', 'HomeController')->middleware('AuthenticateMiddleware');
 Route::resource('staff','UserController')->middleware('AuthenticateMiddleware');
 Route::resource('inquiry','InquiryController')->middleware('AuthenticateMiddleware');
+Route::resource('profile','ProfileController')->middleware('AuthenticateMiddleware');
+Route::resource('batch','BatchController')->middleware('AuthenticateMiddleware');
+
 Route::resource('course','CourseController')->middleware('AuthenticateMiddleware');
 Route::resource('student','StudentController')->middleware('AuthenticateMiddleware');
 Route::resource('follow_up','FollowupController')->middleware('AuthenticateMiddleware');

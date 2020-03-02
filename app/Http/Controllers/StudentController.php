@@ -65,6 +65,12 @@ class StudentController extends Controller
         $student->phone_number =$request ->phone_number;
         $student->course_name =$request ->course_name;
         $student->transfer =$request ->transfer;
+        $student->batch_name =$request ->batch_name;
+
+        $student->gender =$request ->gender;
+
+        $student->nic =$request ->nic;
+
         $student->inquiry_source =$request ->inquiry_source;
         $student->source =$request ->source;
         $student->inquiry_by =Auth::user()->name;
@@ -126,6 +132,12 @@ class StudentController extends Controller
         $student->name =$request ->student_name;
       
         $student->email =$request ->email_id;
+        $student->batch_name =$request ->batch_name;
+
+        $student->gender =$request ->gender;
+
+        $student->nic =$request ->nic;
+
       
         $student->phone_number =$request ->phone_number;
         $student->course_name =$request ->course_name;
