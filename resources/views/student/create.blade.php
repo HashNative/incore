@@ -33,7 +33,7 @@
                                       <div class="form-group">
                                         <label for ="student_name">Student Name</label>
                                           
-                                            <input type="text" name="student_name" class="form-control" autocomplete="off" id="exampleInputStudent_name1" placeholder="Enter the Student Name"aria-describedby="exampleInputstudent_name-error" aria-invalid="true" required>
+                                            <input type="text" name="student_name" class="form-control" autocomplete="student_name" id="exampleInputStudent_name1" placeholder="Enter the Student Name"aria-describedby="exampleInputstudent_name-error" aria-invalid="true" required>
                                       </div>
                                     </div>
                                   
@@ -52,7 +52,7 @@
                                     <div class="col-sm-5">
                                     <div class="form-group">
                                       <label>Phone number</label>
-                                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="off" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="phone_number" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
                                     </div>
                                     </div>
@@ -60,13 +60,13 @@
                                     <div class="col-sm-7">
                                       <div class="form-group">
                                         <label for="email_id">Email</label>
-                                        <input type="email" name="email_id" class="form-control" autocomplete="off" id="exampleInputemail_id1" placeholder="Enter your email" aria-describedby="exampleInputEmail1-error" aria-invalid="true"required>
+                                        <input type="email" name="email_id" class="form-control" autocomplete="email_id" id="exampleInputemail_id1" placeholder="Enter your email" aria-describedby="exampleInputEmail1-error" aria-invalid="true"required>
                                       </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                  <div class="col-sm-3">
+                                  <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for ="inquiry_source">Inquiry source</label>
                                         <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
@@ -78,7 +78,7 @@
                                     </div>
                                   </div>
 
-                                  <div class="col-sm-3">
+                                  <div class="col-sm-4">
                                         <div class="form-group">
                                           <label for ="transfer">Transfer</label>
                                           <select type="text" name ="transfer" id="transfer" class="form-control" class="form-control" class="required">
@@ -89,7 +89,7 @@
                                         </div>
                                   </div>
 
-                                  <div class="col-sm-3">
+                                  <div class="col-sm-4">
                                     <div class="form-group">
                                       <label  for ="source">Source</label>
                                       <select type="text"  name ="source" id="source" class="form-control" class="form-control" class="required" >
@@ -105,15 +105,7 @@
                                     </div>
                                   </div>
                                 
-                                  <div class="col-sm-3">
-
-                                    <div class="form-group">
-                                      <label for="date">Date</label>
-                                      <input type ="date" name ="date" id="exampleInputdate1"  class="form-control"  placeholder="Enter the date"aria-describedby="exampleInputdate-error" aria-invalid="true" required></span>
-                                          
-                                    </div>
-                                  </div>
-
+                               
                                 </div>
                               </div>
                               <div class="card-footer">
