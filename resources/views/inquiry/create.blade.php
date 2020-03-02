@@ -35,6 +35,27 @@
               <div class="card-body">
                 <form role="form">
                   <div class="row">
+
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                    <label>Title</label>
+                        <select type="text" name ="title" id="exampleInputsource1" class="form-control" id ="title"  placeholder="Enter the title" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                        
+                        <option>Mr</option>
+                        <option>Mrs</option>
+                        <option>Ms</option>
+                        <option>Dr</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="col-sm-9">
+                      <!-- text input -->
+                      <div class="form-group">
+                      <label>Full Name</label>
+                        <input type="text" name ="name" id="exampleInputsource1" class="form-control" id ="name" placeholder="Enter the name" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                    </div>
+                   
+                    </div>
                     <div class="col-sm-4">
                       <!-- text input -->
                       <div class="form-group">
@@ -50,26 +71,7 @@
                         <input type="text" name ="email" id="exampleInputsource1" class="form-control" id ="email"  placeholder="Enter the email" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                     </div>
                     </div>
-                    <div class="col-sm-3">
-                    <div class="form-group">
-                    <label>Title</label>
-                        <select type="text" name ="title" id="exampleInputsource1" class="form-control" id ="title"  placeholder="Enter the title" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
-                        
-                        <option>Mr</option>
-                        <option>Mrs</option>
-                        <option>Ms</option>
-                        <option>Dr</option>
-                        </select>
-                    </div>
-                    </div>
-                    <div class="col-sm-9">
-                      <!-- text input -->
-                      <div class="form-group">
-                      <label>Name</label>
-                        <input type="text" name ="name" id="exampleInputsource1" class="form-control" id ="name" placeholder="Enter the name" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
-                    </div>
-                   
-                    </div>
+                    
 
                     <div class="col-sm-3">
                       <!-- text input -->
