@@ -28,6 +28,20 @@
                               {{csrf_field()}}
                               <div class="card-body">
                                 <div class="row">
+
+
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                    <label for ="inquiry_source">Title</label>
+                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                          
+                                          <option selected>Mr</option>
+                                          <option >Mrs</option>
+                                        </select>
+
+                                    </div>
+                                    </div>
+
                                     <div class="col-sm-5">
                                       <!-- text input -->
                                       <div class="form-group">
@@ -37,7 +51,7 @@
                                       </div>
                                     </div>
                                   
-                                    <div class="col-sm-7">
+                                    <div class="col-sm-5">
                                         <div class="form-group">
                                             <label for ="course_name">Course Name</label>
                                             <select type ="text" name ="course_name" id="course_name"  class="form-control"class="required"onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;" >
@@ -46,7 +60,6 @@
                                               <option >{{$course->course_name}}</option>
                                               @endforeach
                                             </select>
-
                                         </div>
                                     </div>
                                     <div class="col-sm-5">
@@ -64,6 +77,42 @@
                                       </div>
                                     </div>
                                 </div>
+                                 
+                                <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                    <label for ="inquiry_source">Gender</label>
+                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                          
+                                          <option selected>Male</option>
+                                          <option >Female</option>
+                                        </select>
+
+                                    </div>
+                                    </div>
+                                   
+                                    <div class="col-sm-4">
+                                      <div class="form-group">
+                                      <label>NIC</label>
+                                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="off" placeholder="Enter the NIC number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                    <div class="form-group">
+                                    <label for ="inquiry_source">Batch Name</label>
+                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                          
+                                          <option selected></option>
+                                          <option ></option>
+                                        </select>
+
+                                    </div>
+                                    </div>
+                                </div>
+
+                               
+ 
 
                                 <div class="row">
                                   <div class="col-sm-3">

@@ -296,7 +296,7 @@
                         @foreach ($courses as $course)
                         <div class="progress-group">
                           {{$course->course_name}}
-                            <span class="float-right">
+                            <span class="float-right ">
                                   @foreach ($courses1 as $course1)
                                   @if($course->course_name == $course1->course_name)
                                       <b>{{$course1->countx}}</b>

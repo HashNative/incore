@@ -122,6 +122,7 @@
       <i class="fa fa-info-circle"></i>
       <span class="brand-text font-weight-bold">incore</span>
     </a>
+    
 
     <!-- Sidebar -->
     <div class="sidebar">
