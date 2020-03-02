@@ -35,22 +35,8 @@
               <div class="card-body">
                 <form role="form">
                   <div class="row">
-                    <div class="col-sm-4">
-                      <!-- text input -->
-                      <div class="form-group">
-                      <label>Phone number</label>
-                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="phone_number" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
-                    </div>
-                   
-                    </div>
-                    <div class="col-sm-8">
-                    <div class="form-group">
-                    <label>Email</label>
-                        <input type="text" name ="email" id="exampleInputsource1" class="form-control" id ="email" autocomplete="email" placeholder="Enter the email" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
-                    </div>
-                    </div>
-                    <div class="col-sm-3">
+                  <div class="col-sm-3">
                     <div class="form-group">
                     <label>Title</label>
                         <select type="text" name ="title" id="exampleInputsource1" class="form-control" id ="title"  placeholder="Enter the title" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
@@ -65,11 +51,27 @@
                     <div class="col-sm-9">
                       <!-- text input -->
                       <div class="form-group">
-                      <label>Name</label>
-                        <input type="text" name ="name" id="exampleInputsource1"autocomplete="name" class="form-control" id ="name" placeholder="Enter the name" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                      <label>Full Name</label>
+                        <input type="text" name ="name" id="exampleInputsource1" class="form-control" id ="name" placeholder="Enter the name" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                     </div>
                    
                     </div>
+                    <div class="col-sm-4">
+                      <!-- text input -->
+                      <div class="form-group">
+                      <label>Phone number</label>
+                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="off" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+
+                    </div>
+                   
+                    </div>
+                    <div class="col-sm-8">
+                    <div class="form-group">
+                    <label>Email</label>
+                        <input type="text" name ="email" id="exampleInputsource1" class="form-control" id ="email"  placeholder="Enter the email" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                    </div>
+                    </div>
+                    
 
                     <div class="col-sm-3">
                       <!-- text input -->
