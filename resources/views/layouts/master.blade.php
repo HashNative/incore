@@ -122,6 +122,7 @@
       <i class="fa fa-info-circle"></i>
       <span class="brand-text font-weight-bold">incore</span>
     </a>
+    
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -263,7 +264,7 @@
 
 
 
-<script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script>
+<!-- <script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script> -->
 <!-- PAGE SCRIPTS -->
 <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
 <script src="{{asset('dist/js/pages/dashboard3.js')}}"></script>

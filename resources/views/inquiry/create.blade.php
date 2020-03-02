@@ -118,7 +118,7 @@
                     <div class="col-sm-12">
                     <div class="form-group">
                     <label>Description</label>
-                    <textarea name="description" id ="description" id="exampleInputsource1" class="form-control" autofocus placeholder="Enter the Description" aria-describedby="exampleInputsource-error" aria-invalid="true" required></textarea>
+                    <textarea name="description" id ="description" autocomplete="description" id="exampleInputsource1" class="form-control" autofocus placeholder="Enter the Description" aria-describedby="exampleInputsource-error" aria-invalid="true" required></textarea>
                     </div>
                     </div>
                     

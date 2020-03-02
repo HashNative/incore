@@ -296,7 +296,7 @@
                         @foreach ($courses as $course)
                         <div class="progress-group">
                           {{$course->course_name}}
-                            <span class="float-right">
+                            <span class="float-right ">
                                   @foreach ($courses1 as $course1)
                                   @if($course->course_name == $course1->course_name)
                                       <b>{{$course1->countx}}</b>
@@ -376,7 +376,7 @@
                 @foreach ($incos as $inco)
                  
                   <!-- ./col -->
-                  <div class="col-6 col-md-2 text-center">
+                  <div class="col-12 col-md-3 text-center">
                     <input type="text" class="knob" value="{{$inco->count}}" data-skin="tron" data-thickness="0.2" data-width="120"
                            data-height="120" data-fgColor="#3c8dbc" readonly>
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Student;
 use App\Course;
 use App\User;
+use App\Batch;
 use App\Inquiry;
 use Auth;
 use DB;
@@ -44,7 +45,8 @@ class StudentController extends Controller
         $courses= Course::All();
         $student= student::All();
         $staffs= User::All();
-        return view('student.create',compact('student','courses','staffs'))
+        $batches= Batch::All();
+        return view('student.create',compact('student','courses','staffs','batches'))
         ;
         //
     }
@@ -60,7 +62,9 @@ class StudentController extends Controller
         $student = new  Inquiry;
         $student->id =$request ->id;
         $student->name =$request ->student_name;
-        $student->date_time =$request ->date;
+        
+        date_default_timezone_set("Asia/Colombo");
+        $student->date_time =date('Y-m-d h:i:s');
         $student->email =$request ->email_id;
         $student->phone_number =$request ->phone_number;
         $student->course_name =$request ->course_name;
@@ -79,7 +83,8 @@ class StudentController extends Controller
         $student->title ='Mr';
         $student->follow_up =1;
         $student->student_id =1;
-        $student->registration_date =$request ->date;
+        date_default_timezone_set("Asia/Colombo");
+        $student->registration_date =date('Y-m-d');
                                                          
         $student->save();
         return redirect('/student');
@@ -111,9 +116,9 @@ class StudentController extends Controller
     {
         $courses = Course::All();
         $staffs = User::All();
-
+        $batches= Batch::All();
         $student= Inquiry ::find ($id);
-        return view('student.edit',compact('student','courses','staffs'));
+        return view('student.edit',compact('student','courses','staffs','batches'));
         //
     }
 
