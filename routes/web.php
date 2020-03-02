@@ -32,9 +32,11 @@ Route::resource('student','StudentController')->middleware('AuthenticateMiddlewa
 Route::resource('follow_up','FollowupController')->middleware('AuthenticateMiddleware');
 Route::resource('assign','AssignController')->middleware('AuthenticateMiddleware');
 
-Route::get('/myinquiry','InquiryController@myinquiry')->middleware('AuthenticateMiddleware');
+
+
 Route::resource('admin','AdminController')->middleware('AuthenticateMiddleware');
 
 Route::resource('/dashboard','AdminController')->middleware('AuthenticateMiddleware');
 Route::resource('/home1','HomeController')->middleware('AuthenticateMiddleware');
 Route::resource('/home','HomeController')->middleware('AuthenticateMiddleware');
+Route::get('inquiry/myinquiry', [ 'as' => 'myinquiry', 'uses' => 'InquiryController@myinquiry']);

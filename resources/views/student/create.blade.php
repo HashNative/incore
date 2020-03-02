@@ -8,7 +8,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
               <li class="breadcrumb-item active"><a href="{{route('student.index')}}">Student</a></li>
               <li class="breadcrumb-item">Add student</li>
             </ol>
@@ -28,6 +28,20 @@
                               {{csrf_field()}}
                               <div class="card-body">
                                 <div class="row">
+
+
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                    <label for ="inquiry_source">Title</label>
+                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                          
+                                          <option selected>Mr</option>
+                                          <option >Mrs</option>
+                                        </select>
+
+                                    </div>
+                                    </div>
+
                                     <div class="col-sm-5">
                                       <!-- text input -->
                                       <div class="form-group">
@@ -37,7 +51,7 @@
                                       </div>
                                     </div>
                                   
-                                    <div class="col-sm-7">
+                                    <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for ="course_name">Course Name</label>
                                             <select type ="text" name ="course_name" id="course_name"  class="form-control"class="required"onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;" >
@@ -46,16 +60,16 @@
                                               <option >{{$course->course_name}}</option>
                                               @endforeach
                                             </select>
-
                                         </div>
                                     </div>
                                     <div class="col-sm-5">
-                                          <div class="form-group">
-                                          <label for ="phone_number">Phone Number</label>
-                                            <input type ="integer" name ="phone_number"class="form-control" autocomplete="off" id="exampleInput0111234567" placeholder="Enter the Phone Number" maxlength="10" pattern="[0-9]{1}[0-9]{9}"  aria-describedby="exampleInputphone_number-error" aria-invalid="true" required>
-                                          </div>
-                                    </div>
+                                    <div class="form-group">
+                                      <label>Phone number</label>
+                                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="off" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
+                                    </div>
+                                    </div>
+                                   
                                     <div class="col-sm-7">
                                       <div class="form-group">
                                         <label for="email_id">Email</label>
@@ -63,6 +77,42 @@
                                       </div>
                                     </div>
                                 </div>
+                                 
+                                <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                    <label for ="inquiry_source">Gender</label>
+                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                          
+                                          <option selected>Male</option>
+                                          <option >Female</option>
+                                        </select>
+
+                                    </div>
+                                    </div>
+                                   
+                                    <div class="col-sm-4">
+                                      <div class="form-group">
+                                      <label>NIC</label>
+                                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="off" placeholder="Enter the NIC number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                    <div class="form-group">
+                                    <label for ="inquiry_source">Batch Name</label>
+                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                          
+                                          <option selected></option>
+                                          <option ></option>
+                                        </select>
+
+                                    </div>
+                                    </div>
+                                </div>
+
+                               
+ 
 
                                 <div class="row">
                                   <div class="col-sm-3">
@@ -126,7 +176,7 @@
                   </div>
                 </div>
               </div>
-    
+              
 @endsection
 
 

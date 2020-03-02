@@ -15,7 +15,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
               <li class="breadcrumb-item active">Staff</li>
               
             </ol>
@@ -39,56 +39,58 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                 <table id="example1"  class="table table-bordered table-striped table-fixed ">
+                <table id="example1"  class="table table-bordered table-striped table-fixed ">
                  
 
                     <thead>
 
-<tr>
+                            <tr>
 
-    <th>Staff Name </th>
-    <th>Email</th>
-    <th>Languages</th>
-    
-    <th>Mobile Number</th>
-    <th>Actions</th>
+                                <th>Staff Name </th>
+                                <th>Email</th>
+                                <th>Languages</th>
+                                
+                                <th>Mobile Number</th>
+                                <th>Actions</th>
 
-</tr>
-</thead>
-<tbody>
-@foreach ($staffs as $staff)
-<tr>
-    
-    <td>{{ $staff->name}}</td>
-    <td>{{ $staff->email}}</td>
-    
-    <td>{{ $staff->languages}}</td>
-    
-    <td>{{ $staff->mobile_number}}</td>
+                            </tr>
+                    </thead>
+                            <tbody>
+                                @foreach ($staffs as $staff)
+                                <tr>
+                                    
+                                    <td>{{ $staff->name}}</td>
+                                    <td>{{ $staff->email}}</td>
+                                    
+                                    <td>{{ $staff->languages}}</td>
+                                    
+                                    <td>{{ $staff->mobile_number}}</td>
 
 
-                     <td>
+                                    <td>
+                                                    
+                                                    <form action = "{{route('staff.destroy',$staff->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
+                                                    
+                                                        <input type = "hidden" name = "_method" value = "delete"> 
+                                                            
+                                                            {{csrf_field()}}
+                                                        
+                                                            
+                                                        <a href="{{route('staff.edit',$staff->id)}}" tittle="edit details"class=" btn btn-sm fas fa-edit"style="color:#ffc107";>
+                                                            
+                                                        <button type="submit"class="btn btn-sm" ><i tittle="delete details"class= "fa fa-trash"style="color:#cc0000";></i></button>
+                                                    </form>
+                                                
+                                    </td>
+                                                    
+                                    
+
+                                </tr>
+                                @endforeach
+                            </tbody>
+
                     
-                    <form action = "{{route('staff.destroy',$staff->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
-                       
-                        <input type = "hidden" name = "_method" value = "delete"> 
-                            
-                            {{csrf_field()}}
-                        
-                            
-                        <a href="{{route('staff.edit',$staff->id)}}" tittle="edit details"class=" btn btn-sm fas fa-edit"style="color:#ffc107";>
-                            
-                        <button type="submit"class="btn btn-sm" ><i tittle="delete details"class= "fa fa-trash"style="color:#cc0000";></i></button></form>
-                   
-                    </td>
-                    
-       
-
-</tr>
-@endforeach
-</tbody>
-
-                    </table>
+                </table>
                 </div>
                 <!-- /.card-body -->
             </div>

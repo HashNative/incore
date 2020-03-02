@@ -71,7 +71,12 @@
                                 <label for ="mobile_number">Mobile Number</label>
                                 <input type ="integer" name ="mobile_number"  maxlength="10"autocomplete="off" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1"  id ="mobile_number"   placeholder="Enter the mobile number  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                 
-                        </div>  
+                        </div> 
+                        @if ($errors->has('mobile_number'))
+                                    <span class="help-block"style="color:red">
+                                        <strong>{{ $errors->first('mobile_number') }}</strong>
+                                    </span>
+                                @endif  
                         <div class="col-md-12{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for ="password">Password</label>
                             <input type ="text" name ="password" id="exampleInputsource1" id ="password"   autocomplete="off" placeholder="Enter password  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required >
