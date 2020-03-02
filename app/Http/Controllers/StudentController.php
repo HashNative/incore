@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Student;
 use App\Course;
 use App\User;
+use App\Batch;
 use App\Inquiry;
 use Auth;
 use DB;
@@ -44,7 +45,8 @@ class StudentController extends Controller
         $courses= Course::All();
         $student= student::All();
         $staffs= User::All();
-        return view('student.create',compact('student','courses','staffs'))
+        $batches= Batch::All();
+        return view('student.create',compact('student','courses','staffs','batches'))
         ;
         //
     }
@@ -111,9 +113,9 @@ class StudentController extends Controller
     {
         $courses = Course::All();
         $staffs = User::All();
-
+        $batches= Batch::All();
         $student= Inquiry ::find ($id);
-        return view('student.edit',compact('student','courses','staffs'));
+        return view('student.edit',compact('student','courses','staffs','batches'));
         //
     }
 

@@ -36,8 +36,8 @@
 
                   <div class="col-sm-2">
                                     <div class="form-group">
-                                    <label for ="inquiry_source">Title</label>
-                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                    <label for ="title">Title</label>
+                                        <select type="text" name ="title" id="title" class="form-control" class="form-control" class="required">
                                           
                                           <option selected>Mr</option>
                                           <option >Mrs</option>
@@ -105,8 +105,8 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                    <label for ="inquiry_source">Gender</label>
-                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                    <label for ="gender">Gender</label>
+                                        <select type="text" name ="gender" id="gender" class="form-control" class="form-control" class="required">
                                           
                                           <option selected>Male</option>
                                           <option >Female</option>
@@ -118,17 +118,19 @@
                                     <div class="col-sm-4">
                                       <div class="form-group">
                                       <label>NIC</label>
-                                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="off" placeholder="Enter the NIC number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                                      <input type="text" name="nic" maxlength="10" id="exampleInputsource1" class="form-control" id ="nic" value = "{{$student ->nic}}"  autocomplete="off" placeholder="Enter the NIC number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                                       </div>
                                     </div>
 
                                     <div class="col-sm-4">
                                     <div class="form-group">
-                                    <label for ="inquiry_source">Batch Name</label>
-                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                    <label for ="batch_name">Batch Name</label>
+                                        <select type="text" name ="batch_name" id="batch_name" class="form-control" class="form-control" class="required">
                                           
-                                          <option selected></option>
-                                          <option ></option>
+                                        @foreach ($batches as $batch)
+                            <option <?php if(($student->batch_name)=='{{$batch->batch_name}}'){ echo 'selected'; } ?>>{{ $batch->batch_name}}</option>
+                            
+                          @endforeach
                                         </select>
 
                                     </div>
