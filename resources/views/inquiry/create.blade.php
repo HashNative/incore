@@ -26,7 +26,7 @@
      {{csrf_field()}}
 
      <div class=" d-flex justify-content-center  ">
-                <div class=" col-6  ">
+                <div class=" col-md-8">
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title"><b>Add New Inquiry</b></h3>
@@ -44,14 +44,34 @@
                     </div>
                    
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-8">
                     <div class="form-group">
-                        <label>Inquiry by</label>
-                        <input type="text" name ="inquiry_by" id="exampleInputsource1" class="form-control" id ="inquiry_by"value ="{{ Auth::user()->name }}" placeholder="Enter the inquiry by" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                    <label>Email</label>
+                        <input type="text" name ="email" id="exampleInputsource1" class="form-control" id ="email"  placeholder="Enter the email" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                    </div>
+                    </div>
+                    <div class="col-sm-3">
+                    <div class="form-group">
+                    <label>Title</label>
+                        <select type="text" name ="title" id="exampleInputsource1" class="form-control" id ="title"  placeholder="Enter the title" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                        
+                        <option>Mr</option>
+                        <option>Mrs</option>
+                        <option>Ms</option>
+                        <option>Dr</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="col-sm-9">
+                      <!-- text input -->
+                      <div class="form-group">
+                      <label>Name</label>
+                        <input type="text" name ="name" id="exampleInputsource1" class="form-control" id ="name" placeholder="Enter the name" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                    </div>
+                   
+                    </div>
 
-                    </div>
-                    </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                       <!-- text input -->
                       <div class="form-group">
                       <label>Source</label>
@@ -65,69 +85,33 @@
                         <option>Others</option>
                         </select>
                     </div>
+                   </div>
+                    <div class="col-sm-3">
+                      <!-- text input -->
+                      <div class="form-group">
+                      <label>Status</label>
+                      <select type="text" name ="status" id="exampleInputsource1" class="form-control" id ="status"placeholder="Enter the status" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                       
+                        <option>Pending</option>
+                        <option>Registered</option>
+                        <option>Declined</option>
+                      </select>
+                    </div>
                    
                     </div>
-                    <div class="col-sm-8">
+
+                    <div class="col-sm-6">
                     <div class="form-group">
-                    <label>Course</label>
+                    <label>Course  <<a href="{{route('course.create')}}">Add new</a>></label>
                         <select type="text" name ="course_name" id="exampleInputsource1" class="form-control" id ="course_name"  placeholder="Enter the course" aria-describedby="exampleInputsource-error" aria-invalid="true" required onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
                         @foreach ($courses as $course)
                         <option>{{ $course->course_name}}</option>
                         @endforeach
                         </select>
                     </div>
+                    
                     </div>
 
-                    <div class="col-sm-4">
-                      <!-- text input -->
-                      <div class="form-group">
-                      <label>Status</label>
-                      <select type="text" name ="status" id="exampleInputsource1" class="form-control" id ="status"placeholder="Enter the status" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
-                      
-                        <option>Registered</option>
-                        <option>Pending</option>
-                        <option>Declined</option>
-                      </select>
-                    </div>
-                   
-                    </div>
-                   
-                    <div class="col-sm-3">
-                    <div class="form-group">
-                    <label>Title</label>
-                        <select type="text" name ="title" id="exampleInputsource1" class="form-control" id ="title"  placeholder="Enter the title" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
-                        
-                        <option>Mr</option>
-                        <option>Mrs</option>
-                        <option>Ms</option>
-                        <option>Dr</option>
-                        </select>
-                    </div>
-                    </div>
-
-                    <div class="col-sm-9">
-                      <!-- text input -->
-                      <div class="form-group">
-                      <label>Name</label>
-                        <input type="text" name ="name" id="exampleInputsource1" class="form-control" id ="name" autocomplete="off" placeholder="Enter the name" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
-                    </div>
-                   
-                    </div>
-                    <div class="col-sm-9">
-                    <div class="form-group">
-                    <label>Email</label>
-                        <input type="text" name ="email" id="exampleInputsource1" class="form-control" id ="email"  placeholder="Enter the email" aria-describedby="exampleInputsource-error" autocomplete="off" aria-invalid="true" required>
-                    </div>
-                    </div>
-                    
-                    
-                    <div class="col-sm-3">
-                    <div class="form-group">
-                    <label>Followup</label>
-                        <input type="text" name="follow_up" id="exampleInputsource1" class="form-control" id ="follow_up"   placeholder="Enter the followup" aria-describedby="exampleInputsource-error"autocomplete="off"  aria-invalid="true" required>
-                  
-                    </div>
-                    </div>
 
                     <div class="col-sm-12">
                     <div class="form-group">

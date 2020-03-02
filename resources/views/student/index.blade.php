@@ -63,8 +63,8 @@
     <tr>
       
        
-        <td>{{ $student->student_name}}</td>
-        <td >{{ $student->email_id}}</td>
+        <td>{{ $student->name}}</td>
+        <td >{{ $student->email}}</td>
         <td>{{ $student->phone_number}}</td>
       
         <td >{{ $student->course_name}}</td>
@@ -72,7 +72,7 @@
         <td >{{ $student->inquiry_source}}</td>
         <td >{{ $student->transfer}}</td>
         <td >{{ $student->source}}</td>
-        <td>{{ $student->date}}</td>
+        <td>{{ $student->registration_date}}</td>
       
       
        

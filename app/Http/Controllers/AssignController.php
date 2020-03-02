@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Assign;
+use DB;
+use Auth;
+use App\FollowUp;
+use App\User;
 class AssignController extends Controller
 {
     /**
@@ -11,8 +15,14 @@ class AssignController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
+        $assigns = DB::table('assigns')
+            ->select('*')
+            ->where('assign_to',Auth::user()->name)
+            ->get();
+        return view('assign.index',compact('assigns'));
        
     }
 
@@ -23,7 +33,7 @@ class AssignController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -43,8 +53,9 @@ class AssignController extends Controller
         $assign->assign_to =$request ->assignto;
         
         $assign->schedule_date =$request ->date;
+        $assign->language =$request ->language;
         $assign->save();
-        return redirect('/inquiry');
+        return redirect('/assign');
     }
 
     /**
@@ -55,6 +66,24 @@ class AssignController extends Controller
      */
     public function show($id)
     {
+        $followups = FollowUp::All();
+        $users = User::All();
+
+        $assigns = Assign::All();
+        
+        $inquiries = DB::table('inquiries')
+           ->where('id',$id)
+           ->get();
+           $followups1 = DB::table('follow_ups')
+           ->select(array('follow_up','inquiry_id',DB::raw('MAX(follow_up) AS count')))
+           ->groupBy('follow_up','inquiry_id')
+           ->get();
+           $ids = DB::table('inquiries')
+            ->select(array('follow_up'))
+            ->groupBy('follow_up')
+            ->get();
+       return view('inquiry.index',compact('ids','inquiries','followups','followups1','assigns','users'));
+        //
         //
     }
 
@@ -78,6 +107,18 @@ class AssignController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $assign =  Assign::find($id);
+        $assign->id =$request ->id;
+       
+        $assign->inquiry_by =$request ->inquiry_by;
+       
+        $assign->inquiry_id =$request ->inquiry_id;
+        $assign->assign_to =$request ->assignto;
+        
+        $assign->schedule_date =$request ->date;
+        $assign->language =$request ->language;
+        $assign->update();
+        return redirect('/assign');
         //
     }
 
@@ -89,6 +130,10 @@ class AssignController extends Controller
      */
     public function destroy($id)
     {
+        $assign =  Assign::find($id);
+        $assign->delete();
+
+        return redirect('/assign')->withSuccessMessage('Successfuly Deleted');
         //
     }
 }

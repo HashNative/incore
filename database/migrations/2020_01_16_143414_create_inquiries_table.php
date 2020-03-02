@@ -27,6 +27,10 @@ class CreateInquiriesTable extends Migration
             $table->String('email');
             $table->String('follow_up');
             $table->dateTime('date_time');
+            $table->String('student_id');
+            $table->String('inquiry_source');
+            $table->String('transfer');
+            $table->Date('registration_date');
             $table->timestamps();
         });
     }

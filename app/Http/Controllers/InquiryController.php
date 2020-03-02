@@ -20,7 +20,12 @@ class InquiryController extends Controller
      */
     public function index()
     {
-        $inquiries = Inquiry::All();
+
+        $inquiries = DB::table('inquiries')
+        ->select('*')
+        ->where('status', '!=','Registered')
+        ->get();
+
         $followups = FollowUp::All();
        
          $followups1 = DB::table('follow_ups')
@@ -28,12 +33,16 @@ class InquiryController extends Controller
         ->groupBy('follow_up','inquiry_id')
         ->get();
         $users = User::All();
+        $ids = DB::table('inquiries')
+        ->select(array('follow_up'))
+        ->groupBy('follow_up')
+        ->get();
 
         $assigns = Assign::All();
         if(session('success_message')){
             alert('Done !');
         }
-       return view('inquiry.index',compact('inquiries','followups1','followups','assigns','users'));
+       return view('inquiry.index',compact('ids','inquiries','followups1','followups','assigns','users'));
        
     }
 
@@ -43,12 +52,18 @@ class InquiryController extends Controller
         $users = User::All();
 
         $assigns = Assign::All();
-        
+        $ids = DB::table('inquiries')
+        ->select(array('follow_up'))
+        ->groupBy('follow_up')
+        ->get();
         $inquiries = DB::table('inquiries')
            ->where('inquiry_by',Auth::user()->name)
            ->get();
-     
-       return view('inquiry.index',compact('inquiries','followups','assigns','users'));
+           $followups1 = DB::table('follow_ups')
+           ->select(array('follow_up','inquiry_id',DB::raw('MAX(follow_up) AS count')))
+           ->groupBy('follow_up','inquiry_id')
+           ->get();
+       return view('inquiry.index',compact('ids','inquiries','followups','followups1','assigns','users'));
     }
 
 
@@ -81,22 +96,28 @@ class InquiryController extends Controller
         $inquiry->name =$request ->name;
         $inquiry->course_name =$request ->course_name;
      
+        date_default_timezone_set("Asia/Colombo");
+        $inquiry->date_time =date('Y-m-d h:i:s');
+
         $inquiry->status =$request ->status;
         $inquiry->phone_number =$request ->phone_number;
         $inquiry->title =$request ->title;
-        $inquiry->inquiry_by =$request ->inquiry_by;
+        $inquiry->inquiry_by =Auth::user()->name;
         $inquiry->email =$request ->email;
+        $inquiry->student_id ='';
+        $inquiry->inquiry_source =$request ->source;
+        $inquiry->transfer ='Yes';
+        $inquiry->registration_date =date('Y-m-d');
 
-        $inquiry->follow_up =$request ->follow_up;
-        date_default_timezone_set("Asia/Colombo");
-        $inquiry->date_time =date('Y-m-d h:i:s');
+        $inquiry->follow_up =1;
+        
         $inquiry->save();
         $LastInsertId = $inquiry->id;
 
         $follow = new  FollowUp;
         $follow->id =$request ->id;
-        $follow->inquiry_by =$request ->inquiry_by;
-        $follow->follow_up =$request ->follow_up;
+        $follow->inquiry_by =Auth::user()->name;
+        $follow->follow_up =1;
         $follow->inquiry_id =$LastInsertId;
         $follow->description =$request ->description;
         date_default_timezone_set("Asia/Colombo");
@@ -157,8 +178,6 @@ class InquiryController extends Controller
         $inquiry->title =$request ->title;
         $inquiry->inquiry_by =$request ->inquiry_by;
         $inquiry->email =$request ->email;
-
-        $inquiry->follow_up =$request ->follow_up;
        
         $inquiry->update();
         return redirect('/inquiry')->withSuccessMessage('Successfuly Updated')

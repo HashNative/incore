@@ -139,6 +139,7 @@ const Layout = (($) => {
       $(window).resize(() => {
         this.fixLayoutHeight()
       })
+      
 
       if (!$('body').hasClass(ClassName.LOGIN_PAGE) && !$('body').hasClass(ClassName.REGISTER_PAGE)) {
         $('body, html').css('height', 'auto')
@@ -146,10 +147,12 @@ const Layout = (($) => {
         let box_height = $(Selector.LOGIN_BOX + ', ' + Selector.REGISTER_BOX).height()
 
         $('body').css('min-height', box_height);
+        
       }
 
       $('body.hold-transition').removeClass('hold-transition')
     }
+    
 
     _max(numbers) {
       // Calculate the maximum number in a list

@@ -68,7 +68,7 @@
    <div  class ="col-md-4">
    <div class="from-group">
    <label for ="mobile_number">Mobile Number</label> 
-        <input type ="integer" name="mobile_number" class="form-control" maxlength="10" id ="mobile_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $staff->mobile_number}}" required>
+        <input type ="integer" name="mobile_number" class="form-control"pattern="[077][0-9]{9}" maxlength="10" id ="mobile_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $staff->mobile_number}}" required>
         <div class="invalid-feedback">
         Please Enter valid phone number.
       </div>

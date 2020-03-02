@@ -17,6 +17,8 @@ class CreateAssignsTable extends Migration
             $table->increments('id');
             $table->String('inquiry_by');
             $table->String('assign_to');
+            $table->String('language');
+
             $table->Date('schedule_date');
             $table->Integer('inquiry_id');
             $table->timestamps();

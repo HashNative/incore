@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <section class="content-header">
-      <div class="container-fluid">
+<div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
             
@@ -21,7 +21,7 @@
      {{csrf_field()}}
             
                 <div class=" d-flex justify-content-center  ">
-                <div class=" col-6  ">
+                <div class=" col-md-8">
             <div class="card card-warning">
               <div class="card-header">
                 <h3 class="card-title"><b>Edit Student Details</b></h3>
@@ -37,7 +37,7 @@
                       <!-- text input -->
                       <div class="form-group">
                   <label for ="student_name">Student Name</label> 
-        <input type ="text" name ="student_name" class="form-control" id ="student_name" value = "{{$student ->student_name}}" required>
+        <input type ="text" name ="student_name" class="form-control" id ="student_name" value = "{{$student ->name}}" required>
         <div class="invalid-feedback">
         Please Enter valid username.
       </div>
@@ -68,9 +68,11 @@
                     
                       <div class="form-group">
                       <label for ="phone_number">Phone Number</label> 
-                    <input type ="text" name ="phone_number" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}"class="form-control" value = "{{$student ->phone_number}}"required>
+                    <input type ="text" name ="phone_number" pattern="[077][0-9]{9}" maxlength="10" id ="phone_number" class="form-control" value = "{{$student ->phone_number}}"required>
                     <div class="invalid-feedback">
                     Please Enter valid Phone Number.
+                    
+
                   </div>
                 
                   </div>
@@ -79,7 +81,7 @@
                     <div class="col-sm-7">
                     <div class="form-group">            
                     <label for ="email_id">Email</label> 
-                    <input type ="text" name ="email_id" id ="email_id" class="form-control"   value = "{{$student ->email_id}}" required>
+                    <input type ="text" name ="email_id" id ="email_id" class="form-control"   value = "{{$student ->email}}" required>
                     <div class="invalid-feedback">
                     Please Enter valid Email.
                   </div>
@@ -91,7 +93,7 @@
                     </div>
 
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                     <div class="form-group">
                   <label for ="inquiry_by">Inquiry By</label> 
                   <select type ="text" class="form-control"  name ="inquiry_by" id ="inquiry_by"  value = "{{ $student->inquiry_by}}"required>
@@ -108,7 +110,7 @@
                </div>
               </div>
                     
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                     <div class="form-group">
                   <label for ="inquiry_source">Inquiry Source</label> 
                   <select type ="text" class="form-control" name ="inquiry_source" id ="inquiry_source" value = "{{$student ->inquiry_source}}"required>
@@ -127,7 +129,7 @@
 
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <div class="form-group">
                         <label for ="transfer">Transfer</label> 
                           <select type ="text" class="form-control" name ="transfer" id ="transfer"  value = "{{$student ->transfer}}" required>
@@ -141,7 +143,7 @@
      
                       </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                     <div class="form-group">
                   <label for ="source">Source</label> 
                   <select type ="text"  class="form-control" name ="source" id ="source" value = "{{$student ->source}}"required>
@@ -162,17 +164,27 @@
 
                     </div>
 
-                    <div class="col-sm-5">
-                    <div class="form-group">
-                    <label for ="date">Date</label> 
-                    <input type ="date" name ="date" id ="date" class="form-control" value = "{{$student ->date}}"required>
-                    <div class="invalid-feedback">
-                    Please Enter valid Date.
-                </div>
-              
-                  </div>
-                    </div>
+                    <div class="col-sm-3">
+                      <!-- text input -->
+                      <div class="form-group">
+                  <label for ="status">Status</label> 
+        <select type ="text" name="status" class="form-control" id ="status" value = "{{ $student->status}}"required>
+        
+                      <option <?php if(($student->status)=='Pending'){ echo 'selected'; } ?>>Pending</option>
 
+                        <option <?php if(($student->status)=='Registered'){ echo 'selected'; } ?>>Registered
+                      </option>
+                        <option <?php if(($student->status)=='Declined'){ echo 'selected'; } ?>>Declined</option>
+                        </select>
+        <div class="invalid-feedback">
+        Please Enter valid Status.
+      </div>
+        
+                    </div>
+                   
+                    </div>
+                  </div>
+                  
                     
               </form>
               

@@ -40,25 +40,34 @@ class AdminController extends Controller
             ->select(array('course_name',DB::raw('COUNT(course_name) AS count')))
             ->groupBy('course_name')
             ->get();
+
+       
         $courses1 = DB::table('inquiries')
-            ->select(array('status','course_name',DB::raw('COUNT(status) AS countx')))
-            ->where('status','registered')
-            ->groupBy('status','course_name')
-            ->get();
+        ->select(array('status','course_name',DB::raw('COUNT(status) AS countx')))
+        ->where('status','registered')
+        ->groupBy('status','course_name')
+        ->get();
            
-        $sources1 = DB::table('students')
+       
+        $incos = DB::table('inquiries')
+        ->select(array('source',DB::raw('COUNT(source) AS count')))
+        ->groupBy('source')
+        ->orderBy('source', 'asc')
+        ->get();
+       
+        $sources1 = DB::table('inquiries')
         ->select(array('source','inquiry_by',DB::raw('COUNT(source) AS countb')))
+        ->where('status','Registered')
         ->groupBy('source','inquiry_by')
         ->orderBy('source', 'asc')
         ->get();
-        $inquiries1 = DB::table('students')
+        $inquiries1 = DB::table('inquiries')
         ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS countc')))
+        ->where('status','Registered')
         ->groupBy('inquiry_by')
         ->orderBy('inquiry_by', 'asc')
         ->get();
             
-            
-          
         
 
         $inq = $inquiries->pluck('inquiry_by')->all();
@@ -72,10 +81,10 @@ class AdminController extends Controller
 
         $cou = $courses->pluck('course_name')->all();
         $count3 = Course::whereIn('course_name', $cou)->count();
-        return view('dashboard.index',compact('courses1','students','inquiries','inquiries1','staffs','count','courses','count1','count2','count3','sources','sources1'));
+        return view('dashboard.index',compact('courses1','incos','students','inquiries','inquiries1','staffs','count','courses','count1','count2','count3','sources','sources1'));
         //
     }
-
+  
     /**
      * Show the form for creating a new resource.
      *
@@ -94,6 +103,73 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
+        
+        $to = $request->to;
+        $from = $request->from;
+       
+        $students = Student::All();
+        //$inquiries = Inquiry::All();
+        $staffs = User::All();
+        
+        $inquiries = DB::table('inquiries')
+            ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS count')))
+            ->whereBetween('date_time', [$from, $to])
+            ->groupBy('inquiry_by')
+            ->orderBy('inquiry_by', 'asc')
+            ->get();
+        $sources = DB::table('inquiries')
+        ->select(array('source','inquiry_by',DB::raw('COUNT(source) AS counta')))
+        ->whereBetween('date_time', [$from, $to])
+        ->groupBy('source','inquiry_by')
+        ->orderBy('source', 'asc')
+        ->get();
+        $courses = DB::table('inquiries')
+            ->select(array('course_name',DB::raw('COUNT(course_name) AS count')))
+            ->groupBy('course_name')
+            ->get();
+
+       
+        $courses1 = DB::table('inquiries')
+        ->select(array('status','course_name',DB::raw('COUNT(status) AS countx')))
+        ->where('status','registered')
+        ->groupBy('status','course_name')
+        ->get();
+           
+        $incos = DB::table('inquiries')
+        ->select(array('source',DB::raw('COUNT(source) AS count')))
+        ->groupBy('source')
+        ->orderBy('source', 'asc')
+        ->get();
+       
+        $sources1 = DB::table('inquiries')
+        ->select(array('source','inquiry_by',DB::raw('COUNT(source) AS countb')))
+        ->where('status','Registered')
+        ->whereBetween('date_time', [$from, $to])
+        ->groupBy('source','inquiry_by')
+        ->orderBy('source', 'asc')
+        ->get();
+        $inquiries1 = DB::table('inquiries')
+        ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS countc')))
+        ->where('status','Registered')
+        ->whereBetween('date_time', [$from, $to])
+        ->groupBy('inquiry_by')
+        ->orderBy('inquiry_by', 'asc')
+        ->get();
+            
+        
+
+        $inq = $inquiries->pluck('inquiry_by')->all();
+        $count = Inquiry::whereIn('inquiry_by', $inq)->count();
+
+        $stu = $students->pluck('student_name')->all();
+        $count1 = Student::whereIn('student_name', $stu)->count();
+
+        $stf = $staffs->pluck('name')->all();
+        $count2 = User::whereIn('name', $stf)->count();
+
+        $cou = $courses->pluck('course_name')->all();
+        $count3 = Course::whereIn('course_name', $cou)->count();
+        return view('dashboard.index',compact('courses1','incos','students','inquiries','inquiries1','staffs','count','courses','count1','count2','count3','sources','sources1'));
         //
     }
 

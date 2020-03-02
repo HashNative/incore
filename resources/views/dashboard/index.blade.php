@@ -17,7 +17,9 @@
         </div><div class="0"></div>
       </div><!-- /.container-fluid -->
 </section>
-        <!-- Info boxes -->
+
+    <section>
+      <div class="container-fluid">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
@@ -62,7 +64,7 @@
               
               <div class="info-box-content">
              
-                <span class="info-box-text">Inquary</span>
+                <span class="info-box-text">Inquiry</span>
                
                 <span class="info-box-number">{{ $count}}</span>
                
@@ -90,143 +92,185 @@
           </div>
           <!-- /.col -->
         </div>
-        <!-- /.row -->
-        <section class="content">
+      </div>
+    </section>
+    <section class="content">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+          
+                  <div class="card-header">
+                    <h3 class="card-title">Inquiry</h3>  <br>
+                    <div  class="float-right">
+                        <form action="{{route('admin.store')}}"method = "post">
+                                {{csrf_field()}}
+                                <label for="from">From :</label> &nbsp;
+                                <input id="from" name="from"class="form-control-sm" type="date" placeholder="From"> &nbsp;
+                                <label for="to">To :</label> &nbsp;
+                                <input id="to" name="to"class="form-control-sm" type="date" placeholder="To" >&nbsp;
 
-        <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Inquiry</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <table class="table table-lg">
-                  <thead>
-                    <tr>
-                     
-                      <th>Operater</th>
-                      <th>Total</th>
-                      
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @foreach ($inquiries as $inquiry)
-                    <tr>
-                          <td>{{ $inquiry->inquiry_by}}</td>
-                          <td>{{ $inquiry->count }}</td>
-                          
-                          @foreach ($sources as $source)
-                          @if($inquiry->inquiry_by == $source->inquiry_by )
+                                <button type="submit "class="btn-info form-control-sm" value="submit" >Search</button>
+                        </form>
+                    </div>
+                  </div>
+                
+                  <!-- /.card-header -->
+                  <div class="card-body p-0">
+                    <table class="table table-lg">
+                      <thead>
+                        <tr>
                         
-                          <th>{{$source->source}}</th>
-                          <td></td>
-                           <td>{{$source->counta}}</td>
-                           @endif
-                          @endforeach
-                    </tr>
-                  @endforeach
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
+                          <th>Operator</th>
+                          <th>Total</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach ($inquiries as $inquiry)
+                        <tr >
+                              <td>{{ $inquiry->inquiry_by}}</td>
+                              <td>{{ $inquiry->count}}</td>
+                              
+                              @foreach ($sources as $source)
+                              @if($inquiry->inquiry_by == $source->inquiry_by )
+                            
+                              <th>{{$source->source}}</th>
+                              <td></td>
+                              <td>{{$source->counta}}</td>
+                              @endif
+                              @endforeach
+                        </tr>
+                      @endforeach
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
             </div>
-            <!-- /.card -->
-            </div>
-            <div class="col-md-12">
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h3 class="card-title">
-                  <i class="far fa-chart-bar"></i>
-                  Performance
-                </h3>
+            
+          </div>
+      </div>
+    </section>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                  </button>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+              <div class="card card-primary card-outline">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    <i class="far fa-chart-bar"></i>
+                    PERFORMANCE | Inquiry 
+                  </h3>
+
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div id="donut-chart" style="height: 300px; padding: 0px; position: relative;">
+                    <canvas class="flot-base" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
+                    <canvas class="flot-overlay" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
+                    <span class="pieLabel" id="pieLabel0" style="position: absolute; top: 70px; left: 217.953px;">
+                      
                 </div>
               </div>
-              <div class="card-body">
-                <div id="donut-chart" style="height: 300px; padding: 0px; position: relative;">
-                   <canvas class="flot-base" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
-                   <canvas class="flot-overlay" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
-                   <span class="pieLabel" id="pieLabel0" style="position: absolute; top: 70px; left: 217.953px;">
-                     
-              </div>
-              <!-- /.card-body-->
             </div>
-          </div>
-          </section>
+        </div>
+        
+            <div class="col-md-6">
+              <div class="card card-primary card-outline">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    <i class="far fa-chart-bar"></i>
+                    PERFORMANCE | Registration 
+                  </h3>
+
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div id="pie-chart" style="height: 300px; padding: 0px; position: relative;">
+                    <canvas class="flot-base" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
+                    <canvas class="flot-overlay" width="320" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 320px; height: 300px;"></canvas>
+                    <span class="pieLabel" id="pieLabel0" style="position: absolute; top: 70px; left: 217.953px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+     
+    </section>
 
 
-          <section class="content">
+    <section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                 <h3 class="card-title">Registrations</h3> <br>
+                 <div  class="float-right">
+                    <form action="{{route('admin.store')}}"method = "post">
+                        {{csrf_field()}}
+                            <label for="from">From :</label> &nbsp;
+                            <input id="from" name="from"class="form-control-sm" type="date" placeholder="From"> &nbsp;
+                            <label for="to">To :</label> &nbsp;
+                            <input id="to" name="to"class="form-control-sm" type="date" placeholder="To" >&nbsp;
 
-        <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Registrations</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <table class="table table-sm">
-                  <thead>
-                    <tr>
-                     
-                      <th>Operater</th>
-                      <th>Total</th>
-                  
-                    </tr>
-                  </thead>
-                  @foreach ($inquiries1 as $inquiry)
-                    <tr>
-                          <td>{{ $inquiry->inquiry_by}}</td>
-                          <td>{{ $inquiry->countc }}</td>
-                          @foreach ($sources1 as $source)
-                          @if($inquiry->inquiry_by == $source->inquiry_by)
-                          <th>{{$source->source}}</th>
-                           <td>{{$source->countb}}</td>
-                           @endif
-                          @endforeach
-                    </tr>
-                  @endforeach
-                    
-                  
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->`
-            </div>
-            <!-- /.card -->
-            </div>
-            <div class="col-md-12">
-            <div class="card card-info">
-              <div class="card-header">
-                <h3 class="card-title">Pie Chart</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                            <button type="submit "class="btn-info form-control-sm" value="submit" >Search</button>
+                    </form>
                 </div>
-              </div>
-              <div class="card-body">
-                <canvas id="pieChart" style="min-height: 500px; height: 500px; max-height: 500px; max-width: 100%;"></canvas>
-              </div>
-              <!-- /.card-body -->
-            </div>
+                </div>
+                
+                <div class="card-body p-0">
+                  <table class="table table-lg">
+                    <thead>
+                      <tr>
+                      
+                        <th>Operator</th>
+                        <th>Total</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($inquiries1 as $inquiry)
+                      <tr >
+                            <td>{{ $inquiry->inquiry_by}}</td>
+                            <td>{{ $inquiry->countc }}</td>
+                            
+                            @foreach ($sources1 as $source)
+                                    @if($inquiry->inquiry_by == $source->inquiry_by)
+                          
+                            <th>{{$source->source}}</th>
+                            <td></td>
+                            <td>{{$source->countb}}</td>
+                            @endif
+                            @endforeach
+                      </tr>
+                    @endforeach
+                    </tbody>
+                  </table>
+                </div>
+           </div>
           </div>
-          </section>
-
-
- 
-
+          
+        </div>
+      </div>
+    </section>
+    
+    <section class="content">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-6">
             <div class="card">
               <div class="card-header">
                 <h5 class="card-title">Monthly Recap Report</h5>
@@ -236,616 +280,91 @@
                     <i class="fas fa-minus"></i>
                   </button>
                   <div class="btn-group">
-                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                      <i class="fas fa-wrench"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" role="menu">
-                      <a href="#" class="dropdown-item">Action</a>
-                      <a href="#" class="dropdown-item">Another action</a>
-                      <a href="#" class="dropdown-item">Something else here</a>
-                      <a class="dropdown-divider"></a>
-                      <a href="#" class="dropdown-item">Separated link</a>
-                    </div>
+                   
                   </div>
                   <button type="button" class="btn btn-tool" data-card-widget="remove">
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
               </div>
-              <!-- /.card-header -->
               <div class="card-body">
                 <div class="row">
-                  <div class="col-md-8">
-                    <p class="text-center">
-                      <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                    </p>
-                 
-                    <div class="chart">
-                      <!-- Sales Chart Canvas -->
-                      <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
-                    </div>
-                    <!-- /.chart-responsive -->
+                  <div class="col-md-12">
+                        <p class="text-center">
+                          <strong>Goal Completion</strong>
+                        </p>
+                        @foreach ($courses as $course)
+                        <div class="progress-group">
+                          {{$course->course_name}}
+                            <span class="float-right ">
+                                  @foreach ($courses1 as $course1)
+                                  @if($course->course_name == $course1->course_name)
+                                      <b>{{$course1->countx}}</b>
+                                  
+                                /<b>{{$course->count}}</b>
+                            </span>
+                            <div class="progress progress-sm">
+                              <div class="progress-bar bg-primary" style="width: <?php $x =($course1->countx/$course->count)*100; echo($x)?>%"></div>
+                            </div>
+                        </div>
+                        @endif
+                        @endforeach
+                      @endforeach
                   </div>
-                  <!-- /.col -->
-                  <div class="col-md-4">
-                    <p class="text-center">
-                      <strong>Goal Completion</strong>
-                    </p>
-                    @foreach ($courses as $course)
-                    
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                      <h5 class="card-title">Monthly Recap Report</h5>
 
-                    <div class="progress-group">
-                     {{$course->course_name}}
-                      <span class="float-right">
-                        @foreach ($courses1 as $course1)
-                        @if($course->course_name == $course1->course_name)
-                            <b>{{$course1->countx}}</b>
-                        
-                      /<b>{{$course->count}}</b></span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-primary" style="width: <?php $x =($course1->countx/$course->count)*100; echo($x)?>%"></div>
+                      <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                          <i class="fas fa-times"></i>
+                        </button>
                       </div>
                     </div>
-                    <!-- /.progress-group -->
-                    @endif
-                    @endforeach
-                   @endforeach
-                    
+                      <div class="position-relative mb-4">
+                        <canvas id="sales-chart" height="200"></canvas>
+                      </div>
+                    <div class="d-flex flex-row justify-content-end">
+                      <span class="mr-2">
+                        <i class="fas fa-square text-primary"></i> Inquiries
+                      </span>
 
-              <!-- ./card-body -->
-            
-              
-              <div class="card-footer">
-                <div class="row">
-                @foreach ($inquiries as $inquiry)
-                  <div class="col-lg-10 col-10">
-                 
-                    <div class="description-block border-right">
-                   
-                      <!-- <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span> -->
-                      <h5 class="description-header">{{ $inquiry->count}}</h5>
-                     
-                      <span class="description-text">{{ $inquiry->inquiry_by}}</span>
-                     
+                      <span>
+                        <i class="fas fa-square text-gray"></i> Registrations
+                      </span>
+                
                     </div>
-                   
-                    <!-- /.description-block -->
-                  </div>
-                  @endforeach
                 </div>
-                <!-- /.row -->
-              </div>
-              <!-- /.card-footer -->
-           
+            </div>
+        </div>
        
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <div class="col-md-12">
-            <!-- MAP & BOX PANE -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">US-Visitors Report</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="d-md-flex">
-                  <div class="p-1 flex-fill" style="overflow: hidden">
-                    <!-- Map will be created here -->
-                    <div id="world-map-markers" style="height: 325px; overflow: hidden">
-                      <div class="map"></div>
-                    </div>
-                  </div>
-                  <div class="card-pane-right bg-success pt-2 pb-2 pl-4 pr-4">
-                    <div class="description-block mb-4">
-                      <div class="sparkbar pad" data-color="#fff">90,70,90,70,75,80,70</div>
-                      <h5 class="description-header">8390</h5>
-                      <span class="description-text">Visits</span>
-                    </div>
-                    <!-- /.description-block -->
-                    <div class="description-block mb-4">
-                      <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
-                      <h5 class="description-header">30%</h5>
-                      <span class="description-text">Referrals</span>
-                    </div>
-                    <!-- /.description-block -->
-                    <div class="description-block">
-                      <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
-                      <h5 class="description-header">70%</h5>
-                      <span class="description-text">Organic</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div><!-- /.card-pane-right -->
-                </div><!-- /.d-md-flex -->
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <div class="col-lg-20">
-
-                   <!-- BAR CHART -->
-            <div class="card card-success">
-              <div class="card-header">
-                <h3 class="card-title">Bar Chart</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="chart">
-                  <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                </div>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-            <!-- /.card -->
             
-          <div class="row">
+       
+      </div>
+    </section>
+    
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">
-                  
-                  Source Inquary Vs Registrations
+                  <i class="far fa-chart-bar"></i>
+                  SOURCE | Inquiry 
                 </h3>
 
                 <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-8 col-md-3 text-center">
-                    <input type="text" class="knob" value="80" data-skin="tron" data-thickness="0.2" data-width="90"
-                           data-height="90" data-fgColor="#3c8dbc" data-readonly="true">
-
-                    <div class="knob-label">data-width="90"</div>
-                  </div>
-                  <!-- ./col -->
-                  <div class="col-6 col-md-3 text-center">
-                    <input type="text" class="knob" value="60" data-skin="tron" data-thickness="0.2" data-width="120"
-                           data-height="120" data-fgColor="#f56954">
-
-                    <div class="knob-label">data-width="120"</div>
-                  </div>
-                  <!-- ./col -->
-                  <div class="col-6 col-md-3 text-center">
-                    <input type="text" class="knob" value="10" data-skin="tron" data-thickness="0.1" data-width="90"
-                           data-height="90" data-fgColor="#00a65a">
-
-                    <div class="knob-label">data-thickness="0.1"</div>
-                  </div>
-                  <!-- ./col -->
-                  <div class="col-6 col-md-3 text-center">
-                    <input type="text" class="knob" value="100" data-skin="tron" data-thickness="0.2"
-                           data-angleArc="250" data-angleOffset="-125" data-width="120" data-height="120"
-                           data-fgColor="#00c0ef">
-
-                    <div class="knob-label">data-angleArc="250"</div>
-                  </div>
-                  <!-- ./col -->
-                </div>
-                <!-- /.row -->
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-
-      
-            <!-- /.card -->
-            <div class="row">
-              <div class="col-md-6">
-                <!-- DIRECT CHAT -->
-                <div class="card direct-chat direct-chat-warning">
-                  <div class="card-header">
-                    <h3 class="card-title">Direct Chat</h3>
-
-                    <div class="card-tools">
-                      <span data-toggle="tooltip" title="3 New Messages" class="badge badge-warning">3</span>
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool" data-toggle="tooltip" title="Contacts"
-                              data-widget="chat-pane-toggle">
-                        <i class="fas fa-comments"></i></button>
-                      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <!-- Conversations are loaded here -->
-                    <div class="direct-chat-messages">
-                      <!-- Message. Default to the left -->
-                      <div class="direct-chat-msg">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-left">Alexander Pierce</span>
-                          <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          Is this template really for free? That's unbelievable!
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                      <!-- Message to the right -->
-                      <div class="direct-chat-msg right">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-right">Sarah Bullock</span>
-                          <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          You better believe it!
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                      <!-- Message. Default to the left -->
-                      <div class="direct-chat-msg">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-left">Alexander Pierce</span>
-                          <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          Working with AdminLTE on a great new app! Wanna join?
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                      <!-- Message to the right -->
-                      <div class="direct-chat-msg right">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-right">Sarah Bullock</span>
-                          <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          I would love to.
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                    </div>
-                    <!--/.direct-chat-messages-->
-
-                    <!-- Contacts are loaded here -->
-                    <div class="direct-chat-contacts">
-                      <ul class="contacts-list">
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="dist/img/user1-128x128.jpg">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Count Dracula
-                                <small class="contacts-list-date float-right">2/28/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">How have you been? I was...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="dist/img/user7-128x128.jpg">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Sarah Doe
-                                <small class="contacts-list-date float-right">2/23/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">I will be waiting for...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="dist/img/user3-128x128.jpg">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Nadia Jolie
-                                <small class="contacts-list-date float-right">2/20/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">I'll call you back at...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="dist/img/user5-128x128.jpg">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Nora S. Vans
-                                <small class="contacts-list-date float-right">2/10/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">Where is your new...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="dist/img/user6-128x128.jpg">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                John K.
-                                <small class="contacts-list-date float-right">1/27/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">Can I take a look at...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="dist/img/user8-128x128.jpg">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Kenneth M.
-                                <small class="contacts-list-date float-right">1/4/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">Never mind I found...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                      </ul>
-                      <!-- /.contacts-list -->
-                    </div>
-                    <!-- /.direct-chat-pane -->
-                  </div>
-                  <!-- /.card-body -->
-                  <div class="card-footer">
-                    <form action="#" method="post">
-                      <div class="input-group">
-                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                        <span class="input-group-append">
-                          <button type="button" class="btn btn-warning">Send</button>
-                        </span>
-                      </div>
-                    </form>
-                  </div>
-                  <!-- /.card-footer-->
-                </div>
-                <!--/.direct-chat -->
-              </div>
-              <!-- /.col -->
-
-              <div class="col-md-6">
-                <!-- USERS LIST -->
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Latest Members</h3>
-
-                    <div class="card-tools">
-                      <span class="badge badge-danger">8 New Members</span>
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body p-0">
-                    <ul class="users-list clearfix">
-                      <li>
-                        <img src="dist/img/user1-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Alexander Pierce</a>
-                        <span class="users-list-date">Today</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Norman</a>
-                        <span class="users-list-date">Yesterday</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Jane</a>
-                        <span class="users-list-date">12 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user6-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">John</a>
-                        <span class="users-list-date">12 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Alexander</a>
-                        <span class="users-list-date">13 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user5-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Sarah</a>
-                        <span class="users-list-date">14 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user4-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Nora</a>
-                        <span class="users-list-date">15 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user3-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Nadia</a>
-                        <span class="users-list-date">15 Jan</span>
-                      </li>
-                    </ul>
-                    <!-- /.users-list -->
-                  </div>
-                  <!-- /.card-body -->
-                  <div class="card-footer text-center">
-                    <a href="javascript::">View All Users</a>
-                  </div>
-                  <!-- /.card-footer -->
-                </div>
-                <!--/.card -->
-              </div>
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
-
-            <!-- TABLE: LATEST ORDERS -->
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Student Info</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table m-0">
-                    <thead>
-                   
-                    <tr>
-                      <th>Student Name</th>
-                      <th>Status</th>
-                      <th>Email ID</th>
-                      <th>Address</th>
-                      <th>Phone Number</th>
-                    
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach ($students as $student)
-                    <tr>
-                          <td>{{ $student->student_name}}</td>
-                      <td>{{ $student ->status}}</td>
-                      <td>{{ $student ->email_id}}</td>
-                      <td>{{ $student ->address}}</td>
-                      <td>{{ $student ->mobile_number}}</td>
-
-                      <td>
-                      <a href="#" class="btn btn-block btn-success btn-xs" tittle="call">
-                         <i class="ion ion-logo-whatsapp"></i>
-                        </a>
-                        </td>
-                        <td>
-                        <a href="#" class="btn btn-block bg-gradient-info btn-xs" tittle="call">
-                         <i class="fas fa-comments"></i>
-                        </a>
-                        </td>
-                      @endforeach
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.table-responsive -->
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                
-                <a href="{{route('student.index')}}" class="btn btn-sm btn-secondary float-right">View All Student</a>
-              </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-
-          <div class="col-md-4">
-            <!-- Info Boxes Style 2 -->
-            <div class="info-box mb-3 bg-warning">
-              <span class="info-box-icon"><i class="fas fa-tag"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Inventory</span>
-                <span class="info-box-number">5,200</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-success">
-              <span class="info-box-icon"><i class="far fa-heart"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Mentions</span>
-                <span class="info-box-number">92,050</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-danger">
-              <span class="info-box-icon"><i class="fas fa-cloud-download-alt"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Downloads</span>
-                <span class="info-box-number">114,381</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-info">
-              <span class="info-box-icon"><i class="far fa-comment"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Direct Messages</span>
-                <span class="info-box-number">163,921</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Browser Usage</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                      class="fas fa-minus"></i>
                   </button>
                   <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
                   </button>
@@ -854,251 +373,30 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <div class="row">
-                  <div class="col-md-8">
-                    <div class="chart-responsive">
-                      <canvas id="pieChart" height="150"></canvas>
-                    </div>
-                    <!-- ./chart-responsive -->
+
+                @foreach ($incos as $inco)
+                 
+                  <!-- ./col -->
+                  <div class="col-6 col-md-2 text-center">
+                    <input type="text" class="knob" value="{{$inco->count}}" data-skin="tron" data-thickness="0.2" data-width="120"
+                           data-height="120" data-fgColor="#3c8dbc" readonly>
+
+                    <div class="knob-label"><h4 ><strong>{{$inco->source}}</strong></h4></div>
                   </div>
-                  <!-- /.col -->
-                  <div class="col-md-4">
-                    <ul class="chart-legend clearfix">
-                      <li><i class="far fa-circle text-danger"></i> Chrome</li>
-                      <li><i class="far fa-circle text-success"></i> IE</li>
-                      <li><i class="far fa-circle text-warning"></i> FireFox</li>
-                      <li><i class="far fa-circle text-info"></i> Safari</li>
-                      <li><i class="far fa-circle text-primary"></i> Opera</li>
-                      <li><i class="far fa-circle text-secondary"></i> Navigator</li>
-                    </ul>
-                  </div>
-                  <!-- /.col -->
+                  @endforeach
+
                 </div>
                 <!-- /.row -->
               </div>
               <!-- /.card-body -->
-              <div class="card-footer bg-white p-0">
-                <ul class="nav nav-pills flex-column">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      United States of America
-                      <span class="float-right text-danger">
-                        <i class="fas fa-arrow-down text-sm"></i>
-                        12%</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      India
-                      <span class="float-right text-success">
-                        <i class="fas fa-arrow-up text-sm"></i> 4%
-                      </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      China
-                      <span class="float-right text-warning">
-                        <i class="fas fa-arrow-left text-sm"></i> 0%
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <!-- /.footer -->
-            </div>
-            <!-- /.card -->
-
-            <!-- PRODUCT LIST -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Recently Added Products</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <ul class="products-list product-list-in-card pl-2 pr-2">
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">Samsung TV
-                        <span class="badge badge-warning float-right">$1800</span></a>
-                      <span class="product-description">
-                        Samsung 32" 1080p 60Hz LED Smart HDTV.
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">Bicycle
-                        <span class="badge badge-info float-right">$700</span></a>
-                      <span class="product-description">
-                        26" Mongoose Dolomite Men's 7-speed, Navy Blue.
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">
-                        Xbox One <span class="badge badge-danger float-right">
-                        $350
-                      </span>
-                      </a>
-                      <span class="product-description">
-                        Xbox One Console Bundle with Halo Master Chief Collection.
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">PlayStation 4
-                        <span class="badge badge-success float-right">$399</span></a>
-                      <span class="product-description">
-                        PlayStation 4 500GB Console (PS4)
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                </ul>
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer text-center">
-                <a href="javascript:void(0)" class="uppercase">View All Products</a>
-              </div>
-              <!-- /.card-footer -->
             </div>
             <!-- /.card -->
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
-        <?php 
+      </div>
+    </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php
 foreach ($inquiries as $inquiry){ 
   array_push($arr,array( 
   
@@ -1109,7 +407,30 @@ foreach ($inquiries as $inquiry){
 
 } 
 
+
+foreach ($inquiries1 as $inquiry){ 
+  array_push($arr1,array( 
+  
+    "label" => $inquiry->inquiry_by, 
+    "data" => $inquiry->countc ,
+    "backgroundColor"=> " ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff']"
+    
+  ) ); 
+
+} 
+
+foreach ($inquiries1 as $inquiry){ 
+  array_push($arr2, $inquiry->inquiry_by);
+  
+}
+foreach ($inquiries as $inquiry){ 
+  array_push($arr3, $inquiry->count);  
+}
+foreach ($inquiries1 as $inquiry){ 
+  array_push($arr4, $inquiry->countc);  
+}
+
+
 ?>
-   
    @endsection   
  
