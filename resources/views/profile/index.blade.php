@@ -9,6 +9,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
+              <li class="breadcrumb-item active">Staff</li>
              
             </ol>
           </div>
@@ -28,7 +29,7 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
-                       src="{{asset('dist/img/user4-128x128.jpg')}}"
+                       src="{{asset('dist/img/avatar5.png')}}"
                        alt="User profile picture">
                 </div>
 

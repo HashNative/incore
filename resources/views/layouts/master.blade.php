@@ -183,7 +183,7 @@
             </li>
             <li class="nav-item has-treeview">
             <a href="{{route('batch.index')}}" class="nav-link {{Request::is('batch','batch/create','batch/*/edit') ? 'active' : null }}">
-              <i class="nav-icon fas fa-graduation-cap"></i>
+              <i class="nav-icon fas fa-layer-group "></i>
               <p>
                 Batch
               
@@ -202,7 +202,7 @@
        
 
             <li class="nav-item">
-            <a href="{{route('staff.index')}}" class="nav-link {{Request::is('staff','staff/create','staff/*/edit') ? 'active' : null }}">
+            <a href="{{route('staff.index')}}" class="nav-link {{Request::is('staff','register','staff/*/edit') ? 'active' : null }}">
               <i class="nav-icon fas fa-user-friends"></i>   
               <p>
               Staff
