@@ -129,14 +129,14 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-4 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('dist/img/avatar5.png')}}" class="img-circle elevation-2" alt="User Image">
+         <a href="{{route('profile.index')}}"> <img src="{{asset('dist/img/avatar5.png')}}" class="img-circle elevation-2" alt="User Image"></a>
         </div>
         @guest
                             
                            
        @else
         <div class="info">
-          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+          <a href="{{route('profile.index')}}" class="d-block"><h4>{{ Auth::user()->name }}</h4></a>
         </div>
       </div>
       @endguest
@@ -183,7 +183,7 @@
             </li>
             <li class="nav-item has-treeview">
             <a href="{{route('batch.index')}}" class="nav-link {{Request::is('batch','batch/create','batch/*/edit') ? 'active' : null }}">
-              <i class="nav-icon fas fa-graduation-cap"></i>
+              <i class="nav-icon fas fa-layer-group "></i>
               <p>
                 Batch
               
@@ -202,7 +202,7 @@
        
 
             <li class="nav-item">
-            <a href="{{route('staff.index')}}" class="nav-link {{Request::is('staff','staff/create','staff/*/edit') ? 'active' : null }}">
+            <a href="{{route('staff.index')}}" class="nav-link {{Request::is('staff','register','staff/*/edit') ? 'active' : null }}">
               <i class="nav-icon fas fa-user-friends"></i>   
               <p>
               Staff
