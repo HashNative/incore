@@ -99,7 +99,7 @@
                     
                     <div class="from-group">
                         <label for ="phone_number">Mobile Number</label> 
-                        <input type ="integer" name="phone_number" class="form-control"pattern="[077][0-9]{9}" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $student->phone_number}}" required>
+                        <input type ="integer" name="phone_number" class="form-control" pattern="[077][0-9]{9}" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $student->phone_number}}" required>
                         <div class="invalid-feedback">
                         Please Enter valid phone number.
                       </div>

@@ -9,6 +9,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
+               <li class="breadcrumb-item">Profile</a></li>
              
             </ol>
           </div>
@@ -71,59 +72,75 @@
               <div class="card-header p-2">
                 <ul class="nav nav-pills">
                   
-                  <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Settings</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab" >Settings</a></li>
+                <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab" >Password Change</a></li>
+
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">
                   <div class="tab-pane active" id="settings">
-                  @foreach($users as $user)
+                       @foreach($users as $user)
+                     <form class="form-horizontal"action = "{{route('profile.update',$user->id)}}" method = "POST"class="needs-validation" validate>
+                        <input type = "hidden" name = "_method" value="put">
+                        {{csrf_field()}}
+                          <div class="form-group row">
+                            <label for="name" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                              <input type="text" name ="name" id ="name"class="form-control"  value="{{Auth::user()->name}}"required>
+                              <div class="invalid-feedback">
+                                    Please Enter valid Staff Name .
+                                </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="email" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                              <input type="email" name ="email" id ="email"class="form-control"  value="{{$user->email}}"required>
+                              <div class="invalid-feedback">
+                                  Please Enter valid Email.
+                                </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="mobile_number" class="col-sm-2 col-form-label">Mobile No</label>
+                            <div class="col-sm-10">
+                              <input type="text"name="mobile_number" class="form-control" id="mobile_number"pattern="[077][0-9]{9}" maxlength="10" value="{{$user->mobile_number}}"required>
+                              <div class="invalid-feedback">
+                                    Please Enter valid phone number.
+                                </div>
+            
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                          <label for ="languages" class="col-sm-2 col-form-label">Language</label>
+                          <div class="col-sm-10">
+                                <select type ="text" name ="languages[]" id ="languages"class="form-control" multiple required>
+                            
+                                <option >English</option>
+                                <option>Tamil</option>
+                                <option  >Sinhala</option>
+                                </select>
+                            </div>
+                          </div>
+                          
+                          @endforeach
+                          <div class="form-group row">
+                            <div class="offset-sm-2 col-sm-10">
+                              <button type="submit" class="btn btn-danger">Submit</button>
+                            </div>
+                          </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane" id="activity">
+                    @foreach($users as $user)
                     <form class="form-horizontal"action = "{{route('profile.update',$user->id)}}" method = "POST"class="needs-validation" validate>
-                    <input type = "hidden" name = "_method" value="put">
-                    {{csrf_field()}}
-                      <div class="form-group row">
-                        <label for="name" class="col-sm-2 col-form-label">Name</label>
-                        <div class="col-sm-10">
-                          <input type="text" name ="name" id ="name"class="form-control"  value="{{Auth::user()->name}}"required>
-                          <div class="invalid-feedback">
-                                Please Enter valid Staff Name .
-                            </div>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="email" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                          <input type="email" name ="email" id ="email"class="form-control"  value="{{$user->email}}"required>
-                          <div class="invalid-feedback">
-        Please Enter valid Email.
-      </div>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="mobile_number" class="col-sm-2 col-form-label">Mobile No</label>
-                        <div class="col-sm-10">
-                          <input type="text"name="mobile_number" class="form-control" id="mobile_number"pattern="[077][0-9]{9}" maxlength="10" value="{{$user->mobile_number}}"required>
-                          <div class="invalid-feedback">
-                                Please Enter valid phone number.
-                            </div>
-        
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                      <label for ="languages" class="col-sm-2 col-form-label">Language</label>
-                      <div class="col-sm-10">
-                            <select type ="text" name ="languages[]" id ="languages"class="form-control" multiple required>
-                        
-                            <option >English</option>
-                            <option>Tamil</option>
-                            <option  >Sinhala</option>
-                            </select>
-                        </div>
-                      </div>
+                      <input type = "hidden" name = "_method" value="put">
+                      {{csrf_field()}}
                       <div class="form-group row">
                         <label for="password" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
-                          <input type="text" name="password" class="form-control" id="password" minlength="6" placeholder="enter password" required>
+                          <input type="text" name="password" class="form-control" id="password" minlength="6" placeholder="enter password" >
                           <div class="invalid-feedback">
                                 minimum password length should be six.
                             </div>

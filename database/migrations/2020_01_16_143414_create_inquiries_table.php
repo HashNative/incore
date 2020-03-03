@@ -21,7 +21,7 @@ class CreateInquiriesTable extends Migration
             $table->String('name');
             $table->String('course_name');
             $table->String('status');
-            $table->integer('phone_number');
+            $table->String('phone_number');
             $table->String('title');
             $table->String('nic');
             $table->String('gender');
