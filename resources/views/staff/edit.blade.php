@@ -22,7 +22,7 @@
   <input type = "hidden" name = "_method" value="put">
      {{csrf_field()}}
      <div class="d-flex justify-content-center">
-     <div class ="col-md-6"> 
+     <div class ="col-md-8"> 
      <div class="card card-warning">
               <div class="card-header">
                 <h3 class="card-title"><b>Edit Staff</b> </h3>
@@ -32,8 +32,22 @@
               <div class="card-body">
                 <form role="form">
                   <div class="row">
-    
-    <div  class ="col-md-8">
+
+
+    <div  class ="col-md-2">
+   <div class="from-group">
+        <label for ="title">Title</label>
+        <select type ="text" name ="title" id ="title"value = "{{$staff ->title}}"class="form-control "required >
+       
+        <option <?php if(($staff->title)=='Mr'){ echo 'selected'; } ?>>Mr</option>
+        <option <?php if(($staff->title)=='Miss'){ echo 'selected'; } ?>>Miss</option>
+       
+        </select>
+   </div>
+   </div> 
+
+  
+    <div  class ="col-md-4">
     <div class="from-group">
         <label for ="name">Staff Name</label>
         <input type ="text" name ="name" id ="name"value = "{{$staff -> name}}"class="form-control" required >
@@ -42,30 +56,54 @@
       </div>
    </div>
    </div> 
-
+  
    <div  class ="col-md-4">
    <div class="from-group">
-        <label for ="languages">Language</label>
-        <select type ="text" name ="languages[]" id ="languages"value = "{{$staff -> languages}}"class="form-control " multiple>
+        <label for ="gender">Gender</label>
+        <select type ="text" name ="gender" id ="gender"value = "{{$staff ->gender}}"class="form-control"required >
        
-        <option <?php if(($staff->languages)=='English'){ echo 'selected'; } ?>>English</option>
-        <option <?php if(($staff->languages)=='Tamil'){ echo 'selected'; } ?>>Tamil</option>
-        <option <?php if(($staff->languages)=='Sinhala'){ echo 'selected'; } ?>>Sinhala</option>
+        <option <?php if(($staff->gender)=='Mr'){ echo 'selected'; } ?>>Male</option>
+        <option <?php if(($staff->gender)=='Miss'){ echo 'selected'; } ?>>Female</option>
         </select>
-   </div>
-   </div> 
+        </div>
+        </div> 
 
-   <div  class ="col-md-8">
+        <div  class ="col-md-2">
+        <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" id="exampleInputdate1" class="form-control"value = "{{$staff ->dob}}"   required></span>
+
+                </div>
+            </div>
+
+
+  <div  class ="col-md-6">
+   <div class="from-group">
+   <label for ="nic">NIC Number</label> 
+        <input type ="integer" name="nic" class="form-control"maxlength="12" id ="nic" pattern="[0-9]{1}[0-9]{9}" value = "{{ $staff->nic}}" required>
+        <div class="invalid-feedback">
+       
+      </div>
+        
+        
+        </div>
+        </div> 
+
+   <div  class ="col-md-6">
    <div class="from-group">
         <label for ="email">Email</label>
-        <input type ="email" name ="email" id ="email"value = "{{$staff -> email}}"class="form-control" required >
+        <input type ="email" name ="email" id ="email"value = "{{$staff -> email}}"class="form-control" required ></input>
         <div class="invalid-feedback">
         Please Enter valid Email.
       </div>
    </div>
-   </div> 
+  
+  
+  </div>
 
-   <div  class ="col-md-4">
+        
+
+   <div  class ="col-md-6">
    <div class="from-group">
    <label for ="mobile_number">Mobile Number</label> 
         <input type ="integer" name="mobile_number" class="form-control"pattern="[077][0-9]{9}" maxlength="10" id ="mobile_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $staff->mobile_number}}" required>
@@ -77,8 +115,38 @@
         </div>
         </div> 
 
+  <div  class ="col-md-6">
+   <div class="from-group">
+        <label for ="languages">Language</label>
+        <select type ="text" name ="languages[]" id ="languages"value = "{{$staff -> languages}}"class="form-control " multiple>
+       
+        <option <?php if(($staff->languages)=='English'){ echo 'selected'; } ?>>English</option>
+        <option <?php if(($staff->languages)=='Tamil'){ echo 'selected'; } ?>>Tamil</option>
+        <option <?php if(($staff->languages)=='Sinhala'){ echo 'selected'; } ?>>Sinhala</option>
+        </select>
+   </div>
+   </div> 
+
+     
    
-       </div> 
+  <div  class ="col-md-6">
+   <div class="from-group">
+        <label for ="address">Address</label>
+        <input type ="address" name ="address" id ="address"value = "{{$staff -> address}}"class="form-control" required ></input>
+        <div class="invalid-feedback">
+        Please Enter valid Email.
+      </div>
+   </div>
+  
+  
+  </div>
+
+
+
+       
+
+  
+   
 
         
 </from>

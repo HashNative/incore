@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Course;
-
+use App\User;
+use Auth;
+use App\Inquiry;
+use DB;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
-class CourseController extends Controller
+
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,14 +16,26 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::All();
-        if(session('success_message')){
-            alert('Done !');
-        }
+        $users = DB::table('users')
+        ->select('*')
+        ->where('name',Auth::user()->name)
+        ->get();
 
-        return view('course.index',compact('courses'));
-          //
+        $users1 = DB::table('inquiries')
+        ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS count')))
+        ->where('inquiry_by',Auth::user()->name)
+        ->groupBy('inquiry_by')
+        ->get();
 
+        $users2 = DB::table('inquiries')
+        ->select(array('inquiry_by',DB::raw('COUNT(inquiry_by) AS count')))
+        ->where('inquiry_by',Auth::user()->name)
+        ->where('status','Registered')
+        ->groupBy('inquiry_by')
+        ->get();
+
+   return view('profile.index',compact('users','users1','users2'));
+        //
     }
 
     /**
@@ -30,10 +44,7 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    
     {
-        $courses = Course::All();
-        return view('course.create',compact('courses'));
         //
     }
 
@@ -45,13 +56,6 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $course = new Course;
-        $course->id =$request ->id;
-        $course->course_name =$request ->course_name;
-        $course->course_fees =$request ->course_fees;
-        $course->description =$request ->description;
-        $course->save();
-        return redirect('/course')->withSuccessMessage('Successfuly Added');
         //
     }
 
@@ -63,8 +67,6 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        $course= Course ::find ($id);
-        return view('course.show',compact('course'));
         //
     }
 
@@ -76,9 +78,7 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        $course= Course ::find ($id);
-        return view('course.edit',compact('course'));
-          //
+        //
     }
 
     /**
@@ -90,14 +90,16 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $course = Course ::find ($id);;
-        $course->course_name =$request ->course_name;
-        $course->course_fees =$request ->course_fees;
-        $course->description =$request ->description;
-        $course->update();
-        return redirect('/course')->withSuccessMessage('Successfuly Updated')
-        ;
-        //
+       $staff= User ::find ($id);
+        
+        $staff->name =$request->name;
+        $staff->languages =implode(',',$request->languages);
+       
+        $staff->email =$request ->email;
+        $staff->mobile_number =$request->mobile_number;
+        $staff->password =bcrypt($request->password);
+        $staff->update();
+        return redirect('/profile');
     }
 
     /**
@@ -108,10 +110,6 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        $course =  Course::find($id);
-        $course->delete();
-
-        return redirect('/course')->withSuccessMessage('Successfuly Deleted');
-         //
+        //
     }
 }

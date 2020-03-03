@@ -93,7 +93,7 @@
           <i class="fas fa-user"></i></a>
         
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">Account</span>
+          <span class="dropdown-item dropdown-header">    <a href="{{ route('profile.index') }}">Account</a></span>
           <div class="dropdown-divider"></div>
     
           <div class="dropdown-divider"></div>
@@ -182,6 +182,15 @@
             </a>
             </li>
             <li class="nav-item has-treeview">
+            <a href="{{route('batch.index')}}" class="nav-link {{Request::is('batch','batch/create','batch/1/edit') ? 'active' : null }}">
+              <i class="nav-icon fas fa-graduation-cap"></i>
+              <p>
+                Batch
+              
+              </p>
+            </a>
+            </li>
+            <li class="nav-item has-treeview">
             <a href="{{route('inquiry.index')}}" class="nav-link {{Request::is('inquiry','inquiry/1/edit','inquiry/create') ? 'active' : null }}">
               <i class="nav-icon fas fa-question-circle  "></i>
               <p>
@@ -255,7 +264,7 @@
 
 
 
-<script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script>
+<!-- <script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script> -->
 <!-- PAGE SCRIPTS -->
 <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
 <script src="{{asset('dist/js/pages/dashboard3.js')}}"></script>

@@ -100,6 +100,9 @@ class InquiryController extends Controller
         $inquiry->date_time =date('Y-m-d h:i:s');
 
         $inquiry->status =$request ->status;
+        $inquiry->nic ='';
+        $inquiry->batch_name ='';
+        $inquiry->gender ='';
         $inquiry->phone_number =$request ->phone_number;
         $inquiry->title =$request ->title;
         $inquiry->inquiry_by =Auth::user()->name;
@@ -179,7 +182,7 @@ class InquiryController extends Controller
      * @return \Illuminate\Http\Response
      */
     
- public function update($id,Request $request)
+ public function update(Request $request,$id)
  {
      $inquiry =Inquiry::find ($id);
    

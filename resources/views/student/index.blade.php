@@ -38,13 +38,16 @@
                     <thead>
      <tr>
     
-    
+     <th >Title</th>
     <th >Student Name</th>
+    <th >Gender</th>
     <th  >Email </th>
       
-    <th >Phone Number</th> 
+    <th >Phone Number</th>
+    <th >NIC No</th> 
      
     <th>Course Name</th>
+    
     <th>Inquiry By</th>   
     <th>Inquiry Source</th> 
     <th>Transfer</th>  
@@ -62,11 +65,15 @@
     @foreach ($students as $student)
     <tr>
       
-       
+    <td>{{ $student->title}}</td>
+
         <td>{{ $student->name}}</td>
+        <td>{{ $student->gender}}</td>
+
         <td >{{ $student->email}}</td>
         <td>{{ $student->phone_number}}</td>
-      
+        <td>{{ $student->nic}}</td>
+
         <td >{{ $student->course_name}}</td>
         <td>{{ $student->inquiry_by}}</td>
         <td >{{ $student->inquiry_source}}</td>

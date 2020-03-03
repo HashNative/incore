@@ -53,16 +53,16 @@
                                         <thead>
                                         <tr>
                                         
-                                        <th>Source </th>
-                                        <th>Description</th>
-                                        <th>Name</th>
-                                        <th>Course</th>
-                                        <th>Status</th>
+                                        <th>Title </th>
+                                        <th>Full Name</th>
                                         <th>Phone number</th>
-                                        <th>Title</th>
-                                        <th>Inquiry by</th>
                                         <th>Email</th>
-                                        <th>Followup</th>
+                                        <th>Source</th>
+                                        <th>Status</th>
+                                        <th>Cource</th>
+                                        <th>Description</th>
+                                        <th>Inquiry by</th>
+                                        <th>Follow Up</th>
                                         <th>Date Time</th>
                                         <th>Actions</th>  
 
@@ -73,16 +73,16 @@
                                           @if($id->follow_up == $inquiry->follow_up)         
                                         <tr>
                                             
-                                            <td>{{ $inquiry->source}}</td>
-                                            <td style="width:40em; word-break: break-all">{{ $inquiry->description}}</td>
-                                            <td>{{ $inquiry->name}}</td>
-                                            <td>{{ $inquiry->course_name}}</td>
-                                            <td>{{ $inquiry->status}}</td>
-                                            <td>{{ $inquiry->phone_number}}</td>
                                             <td>{{ $inquiry->title}}</td>
-                                            <td>{{ $inquiry->inquiry_by}}</td>
+                                            <td>{{ $inquiry->name}}</td>
+                                            <td>{{ $inquiry->phone_number}}</td>
                                             <td>{{ $inquiry->email}}</td>
-                                            <td data-toggle="modal" data-target="#modal-{{ $inquiry->id}}">{{ $inquiry->follow_up}}
+                                            <td>{{ $inquiry->source}}</td>
+                                            <td>{{ $inquiry->status}}</td>
+                                            <td>{{ $inquiry->course_name}}</td>
+                                            <td style="width:40em; word-break: break-all">{{ $inquiry->description}}</td>
+                                            <td>{{ $inquiry->inquiry_by}}</td>
+                                             <td data-toggle="modal" data-target="#modal-{{ $inquiry->id}}">{{ $inquiry->follow_up}}
                                                   
                                             </td>
                                             <td>{{ $inquiry->date_time}}</td>

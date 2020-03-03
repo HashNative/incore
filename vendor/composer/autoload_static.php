@@ -308,6 +308,7 @@ class ComposerStaticInit5d129a818f06a816b341f62794fc9ce6
 
     public static $classMap = array (
         'App\\Assign' => __DIR__ . '/../..' . '/app/Assign.php',
+        'App\\Batch' => __DIR__ . '/../..' . '/app/Batch.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Course' => __DIR__ . '/../..' . '/app/Course.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -323,9 +324,11 @@ class ComposerStaticInit5d129a818f06a816b341f62794fc9ce6
         'App\\Http\\Controllers\\FollowupController' => __DIR__ . '/../..' . '/app/Http/Controllers/FollowupController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\InquiryController' => __DIR__ . '/../..' . '/app/Http/Controllers/InquiryController.php',
+        'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\AuthenticateMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/AuthenticateMiddleware.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',

@@ -36,8 +36,8 @@
 
                   <div class="col-sm-2">
                                     <div class="form-group">
-                                    <label for ="inquiry_source">Title</label>
-                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                    <label for ="title">Title</label>
+                                        <select type="text" name ="title" id="title" class="form-control" class="form-control" class="required">
                                           
                                           <option selected>Mr</option>
                                           <option >Mrs</option>
@@ -47,7 +47,7 @@
                                     </div>
 
 
-                            <div class="col-sm-5">
+                            <div class="col-sm-10">
                               <!-- text input -->
                             <div class="form-group">
                             <label for ="student_name">Student Name</label> 
@@ -58,10 +58,10 @@
                           
                                     </div> 
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-8">
                     <div class="form-group">
                   <label for ="course_name">Course Name</label> 
-                  <select type ="text" class="form-control"  name ="course_name" id ="course_name" value = "{{$student ->course_name}}"required onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
+                  <select type ="text" class="form-control"  name ="course_name" id ="course_name" value = "{{$student ->course_name}}"required onmousedown="if(this.options.length>5){this.size=5;}"  onchange="showBatches(this.value);" onblur="this.size=0;">
                 
                   @foreach ($courses as $course)
                             <option <?php if(($student->course_name)=='{{$course->course_name}}'){ echo 'selected'; } ?>>{{ $course->course_name}}</option>
@@ -76,7 +76,21 @@
      
                       </div>
                     </div>
-                  </div>
+                  
+                  <div class="col-sm-4">
+                                    <div class="form-group">
+                                    <label for ="batch_name">Batch Name</label>
+                                        <select type="text" name ="batch_name" id="batch_name" class="form-control" class="form-control" class="required">
+                                          
+                                        @foreach ($batches as $batch)
+                            <option <?php if(($student->batch_name)=='{{$batch->batch_name}}'){ echo 'selected'; } ?>>{{ $batch->batch_name}}</option>
+                            
+                          @endforeach
+                                        </select>
+
+                                    </div>
+                                    </div>
+                              </div>
                   <div class="row">
                     <div class="col-sm-5">
                     
@@ -105,8 +119,8 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                    <label for ="inquiry_source">Gender</label>
-                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
+                                    <label for ="gender">Gender</label>
+                                        <select type="text" name ="gender" id="gender" class="form-control" class="form-control" class="required">
                                           
                                           <option selected>Male</option>
                                           <option >Female</option>
@@ -118,42 +132,11 @@
                                     <div class="col-sm-4">
                                       <div class="form-group">
                                       <label>NIC</label>
-                                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="off" placeholder="Enter the NIC number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                                      <input type="text" name="nic" maxlength="10" id="exampleInputsource1" class="form-control" id ="nic" value = "{{$student ->nic}}"  autocomplete="off" placeholder="Enter the NIC number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                                       </div>
                                     </div>
 
-                                    <div class="col-sm-4">
-                                    <div class="form-group">
-                                    <label for ="inquiry_source">Batch Name</label>
-                                        <select type="text" name ="inquiry_source" id="inquiry_source" class="form-control" class="form-control" class="required">
-                                          
-                                          <option selected></option>
-                                          <option ></option>
-                                        </select>
-
-                                    </div>
-                                    </div>
-                              </div>
-
-
-                              <div class="row">
-                          <div class="col-sm-3">
-                          <div class="form-group">
-                        <label for ="inquiry_by">Inquiry By</label> 
-                        <select type ="text" class="form-control"  name ="inquiry_by" id ="inquiry_by"  value = "{{ $student->inquiry_by}}"required>
-                      
-                        @foreach ($staffs as $staff)
-                                  <option <?php if(($student->inquiry_by)=='{{$staff->name}}'){ echo 'selected'; } ?>>{{ $staff->name}}</option>
-                                  @endforeach    
-                            </select>
-                              
-                              <div class="invalid-feedback">
-                              Please Enter valid detail.
-                              </div>
-                    </div>
-              </div>
-                    
-                    <div class="col-sm-3">
+                                    <div class="col-sm-3">
                     <div class="form-group">
                   <label for ="inquiry_source">Inquiry Source</label> 
                   <select type ="text" class="form-control" name ="inquiry_source" id ="inquiry_source" value = "{{$student ->inquiry_source}}"required>
@@ -171,6 +154,12 @@
                   </div>
 
                     </div>
+
+                                    
+
+
+                             
+                    
 
                     <div class="col-sm-3">
                         <div class="form-group">
@@ -206,6 +195,22 @@
                     </div>
 
                     </div>
+                          <div class="col-sm-3">
+                          <div class="form-group">
+                        <label for ="inquiry_by">Inquiry By</label> 
+                        <select type ="text" class="form-control"  name ="inquiry_by" id ="inquiry_by"  value = "{{ $student->inquiry_by}}"required>
+                      
+                        @foreach ($staffs as $staff)
+                                  <option <?php if(($student->inquiry_by)=='{{$staff->name}}'){ echo 'selected'; } ?>>{{ $staff->name}}</option>
+                                  @endforeach    
+                            </select>
+                              
+                              <div class="invalid-feedback">
+                              Please Enter valid detail.
+                              </div>
+                    </div>
+              </div>
+                    
                     
 
                     <div class="col-sm-3">
@@ -266,6 +271,34 @@ form.classList.add('was-validated');
 
 
 </script>
+<script type="text/javascript">
+  function showBatches(str) {
+
+
+    var select = document.getElementById("batch_name");
+    var length = select.options.length;
+    for (i = length - 1; i >= 0; i--) {
+      select.options[i] = null;
+    }
+
+    <?php
+    foreach ($batches as $batch) {
+
+
+    ?>
+      if (str == '<?php echo $batch->course_name; ?>') {
+
+        var select = document.getElementById("batch_name");
+        select.options[select.options.length] = new Option('<?php echo $batch->batch_name; ?>', '<?php echo $batch->batch_name; ?>');
+      }
+    <?php
+    }
+    ?>
+
+
+  }
+</script>
+
 
 
 </body>

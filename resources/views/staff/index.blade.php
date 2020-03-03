@@ -45,12 +45,17 @@
                     <thead>
 
                             <tr>
-
+                                <th>Title </th>
                                 <th>Staff Name </th>
+                                <th>DoB</th>
+                                <th>Gender </th>
+                                <th>NIC Number </th>
+                                <th>Mobile Number</th>
                                 <th>Email</th>
+                                <th>Address</th>
                                 <th>Languages</th>
                                 
-                                <th>Mobile Number</th>
+                               
                                 <th>Actions</th>
 
                             </tr>
@@ -58,13 +63,18 @@
                             <tbody>
                                 @foreach ($staffs as $staff)
                                 <tr>
-                                    
+                                   
+                                <td>{{ $staff->title}}</td>
                                     <td>{{ $staff->name}}</td>
+                                    <td>{{ $staff->dob}}</td>
+                                    <td>{{ $staff->gender}}</td>
+                                    <td>{{ $staff->nic}}</td>
+                                    <td>{{ $staff->mobile_number}}</td>
                                     <td>{{ $staff->email}}</td>
-                                    
+                                    <td>{{ $staff->address}}</td>
                                     <td>{{ $staff->languages}}</td>
                                     
-                                    <td>{{ $staff->mobile_number}}</td>
+                                 
 
 
                                     <td>
