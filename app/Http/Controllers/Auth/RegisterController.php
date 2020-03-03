@@ -54,7 +54,7 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'languages' => 'required',
-            'mobile_number'=>'required|regex:/[077][0-9]{9}/'
+            'mobile_number'=>'required|max:13|regex:/[077][0-9]{9}/'
         ]);
     }
 
