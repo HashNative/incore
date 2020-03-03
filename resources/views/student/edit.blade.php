@@ -40,7 +40,10 @@
                                         <select type="text" name ="title" id="title" class="form-control" class="form-control" class="required">
                                           
                                           <option selected>Mr</option>
+                                          <option>Miss</option>
                                           <option >Mrs</option>
+                                          <option>Dr</option>
+
                                         </select>
 
                                     </div>
@@ -132,7 +135,7 @@
                                     <div class="col-sm-4">
                                       <div class="form-group">
                                       <label>NIC</label>
-                                      <input type="text" name="nic" maxlength="10" id="exampleInputsource1" class="form-control" id ="nic" value = "{{$student ->nic}}"  autocomplete="off" placeholder="Enter the NIC number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                                      <input type="text" name="nic" maxlength="10" id="exampleInputsource1" pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$" class="form-control" id ="nic" value = "{{$student ->nic}}"  autocomplete="off" placeholder="Enter the NIC number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                                       </div>
                                     </div>
 
