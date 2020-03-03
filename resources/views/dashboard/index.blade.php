@@ -218,18 +218,6 @@
             <div class="card">
                 <div class="card-header">
                  <h3 class="card-title">Registrations</h3> <br>
-                 <div  class="float-right">
-                    <form action="{{route('admin.store')}}"method = "post">
-                        {{csrf_field()}}
-                            <label for="from">From :</label> &nbsp;
-                            <input id="from" name="from"class="form-control-sm" type="date" placeholder="From"> &nbsp;
-                            <label for="to">To :</label> &nbsp;
-                            <input id="to" name="to"class="form-control-sm" type="date" placeholder="To" >&nbsp;
-
-                            <button type="submit "class="btn-info form-control-sm" value="submit" >Search</button>
-                    </form>
-                </div>
-                </div>
                 
                 <div class="card-body p-0">
                   <table class="table table-lg">
