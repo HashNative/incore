@@ -70,7 +70,7 @@
             </div>
             <div class="col-md-6{{ $errors->has('mobile_number') ? ' has-error' : '' }} form-group">
                   <label for="nic">NIC Number</label>
-                  <input type="integer" name="nic" maxlength="15" autocomplete="nic" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1" id="nic" placeholder="Enter the NIC number  " class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                  <input type="text" name="nic" maxlength="15" autocomplete="nic" id="exampleInputsource1" id="nic" placeholder="Enter the NIC number  " class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
                 </div>
                 <div class="col-md-6{{ $errors->has('email') ? ' has-error' : '' }} form-group">
