@@ -39,6 +39,8 @@
                   <select type="text" name="title" id="title" class="form-control" required>
                     <option selected>Mr</option>
                     <option>Miss</option>
+                    <option>Mrs</option>
+                    <option>Dr</option>
                   </select>
                 </div>
 
@@ -68,9 +70,9 @@
 
               </div>
             </div>
-            <div class="col-md-6{{ $errors->has('mobile_number') ? ' has-error' : '' }} form-group">
+            <div class="col-md-6{{ $errors->has('nic') ? ' has-error' : '' }} form-group">
                   <label for="nic">NIC Number</label>
-                  <input type="integer" name="nic" maxlength="15" autocomplete="nic" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1" id="nic" placeholder="Enter the NIC number  " class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                  <input type="text" name="nic" maxlength="13" autocomplete="nic" pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$"  id="nic" placeholder="Enter the nic  " class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
                 </div>
                 <div class="col-md-6{{ $errors->has('email') ? ' has-error' : '' }} form-group">
@@ -105,7 +107,7 @@
 
                 <div class="col-md-6{{ $errors->has('mobile_number') ? ' has-error' : '' }} form-group">
                   <label for="mobile_number">Mobile Number</label>
-                  <input type="number" name="mobile_number" maxlength="10" autocomplete="mobile_number" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1" id="mobile_number" placeholder="Enter the mobile number  " class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                  <input type="text" name="mobile_number" maxlength="13" autocomplete="mobile_number" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1" id="mobile_number" placeholder="Enter the mobile number  " class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
                 </div>
                 @if ($errors->has('mobile_number'))

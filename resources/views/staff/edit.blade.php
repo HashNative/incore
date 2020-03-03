@@ -41,10 +41,16 @@
        
         <option <?php if(($staff->title)=='Mr'){ echo 'selected'; } ?>>Mr</option>
         <option <?php if(($staff->title)=='Miss'){ echo 'selected'; } ?>>Miss</option>
+        <option <?php if(($staff->title)=='Miss'){ echo 'selected'; } ?>>Mrs</option>
+        <option <?php if(($staff->title)=='Miss'){ echo 'selected'; } ?>>Dr</option>
+
+
+
        
         </select>
    </div>
    </div> 
+  
 
   
     <div  class ="col-md-4">
@@ -80,7 +86,7 @@
   <div  class ="col-md-6">
    <div class="from-group">
    <label for ="nic">NIC Number</label> 
-        <input type ="integer" name="nic" class="form-control"maxlength="12" id ="nic" pattern="[0-9]{1}[0-9]{9}" value = "{{ $staff->nic}}" required>
+        <input type ="text" name="nic" class="form-control"maxlength="13"pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$"  id ="nic"  value = "{{ $staff->nic}}" required>
         <div class="invalid-feedback">
        
       </div>
@@ -106,7 +112,7 @@
    <div  class ="col-md-6">
    <div class="from-group">
    <label for ="mobile_number">Mobile Number</label> 
-        <input type ="integer" name="mobile_number" class="form-control"pattern="[077][0-9]{9}" maxlength="10" id ="mobile_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $staff->mobile_number}}" required>
+        <input type ="text" name="mobile_number" class="form-control"pattern="[077][0-9]{9}" maxlength="13" id ="mobile_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $staff->mobile_number}}" required>
         <div class="invalid-feedback">
         Please Enter valid phone number.
       </div>
