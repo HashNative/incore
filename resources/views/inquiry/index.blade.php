@@ -54,17 +54,17 @@
                                         <tr>
                                         
                                         <th>Title </th>
-                                        <th>Full Name</th>
-                                        <th>Phone number</th>
+                                        <th>Full&nbsp;Name</th>
+                                        <th>Phone&nbsp;number</th>
                                         <th>Email</th>
                                         <th>Source</th>
                                         <th>Status</th>
                                         <th>Cource</th>
                                         <th>Description</th>
-                                        <th>Inquiry by</th>
-                                        <th>Follow Up</th>
-                                        <th>Date Time</th>
-                                        <th>Actions</th>  
+                                        <th>Inquiry&nbsp;by</th>
+                                        <th>Follow&nbsp;Up</th>
+                                        <th>Date&nbsp;Time  </th>
+                                        <th>Actions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>  
 
                                         </tr>
                                         </thead>

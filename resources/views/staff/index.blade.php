@@ -39,7 +39,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                <table id="example1"  class="table table-bordered table-striped table-fixed ">
+                <table id="example1"  class="table table-bordered table-striped table-responsive ">
                  
 
                     <thead>
@@ -47,7 +47,7 @@
                             <tr>
                                 <th>Title </th>
                                 <th>Staff Name </th>
-                                <th>DoB</th>
+                                <th>DoB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                 <th>Gender </th>
                                 <th>NIC Number </th>
                                 <th>Mobile Number</th>

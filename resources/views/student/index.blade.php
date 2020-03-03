@@ -53,10 +53,10 @@
     <th>Inquiry Source</th> 
     <th>Transfer</th>  
     <th>Source</th>  
-    <th> Date</th>  
+    <th> Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>  
     
     
-    <th width="100px">Actions</th> 
+    <th width="100px">Actions&nbsp;&nbsp;</th> 
     
      
 
