@@ -47,6 +47,7 @@
     <th >NIC No</th> 
      
     <th>Course Name</th>
+    <th>Batch Name</th>
     
     <th>Inquiry By</th>   
     <th>Inquiry Source</th> 
@@ -75,6 +76,7 @@
         <td>{{ $student->nic}}</td>
 
         <td >{{ $student->course_name}}</td>
+        <td >{{ $student->batch_name}}</td>
         <td>{{ $student->inquiry_by}}</td>
         <td >{{ $student->inquiry_source}}</td>
         <td >{{ $student->transfer}}</td>

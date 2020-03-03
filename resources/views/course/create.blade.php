@@ -48,7 +48,7 @@
                         <input type ="number" name ="course_fees" id ="course_fees"class="form-control" autocomplete="course_fees"autofocus placeholder="Enter the Course Fees"id="exampleInputCourse_fees1"aria-describedby="exampleInputcourse_fees-eror" airia-invalid="true" required>
                     </div>
                     </div>
-                  </div>:
+                  </div>
         
          <div class="row">
         <div class="col-sm-12">

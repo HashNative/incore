@@ -157,22 +157,6 @@
                    
                     </div>
 
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for ="inquiry_by">Inquiry by</label> 
-                          <select type ="text" name ="inquiry_by" class="form-control" id ="inquiry_by" required>
-                            @foreach ($staffs as $staff)
-                            <option <?php if(($inquiry->inquiry_by)==$staff->name){ echo 'selected'; } ?> value="{{$staff->name}}">
-                            {{ $staff->name}}</option>
-                            @endforeach
-                            
-                          </select>
-                          <div class="invalid-feedback">
-                            Please Enter valid Inquiry by.
-                          </div>
-      
-                        </div>
-                    </div>
                   
               </form>
               

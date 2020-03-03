@@ -159,7 +159,7 @@
           
 
             <li class="nav-item has-treeview">
-            <a href="{{route('student.index')}}" class="nav-link {{Request::is('student','student/create','student//edit','student/3') ? 'active' : null }}">
+            <a href="{{route('student.index')}}" class="nav-link {{Request::is('student','student/create','student/*/edit') ? 'active' : null }}">
               <i class="nav-icon fas fa-user-alt"></i>
               <p>
               Student
@@ -173,7 +173,7 @@
 
 
             <li class="nav-item has-treeview">
-            <a href="{{route('course.index')}}" class="nav-link {{Request::is('course','course/create','course/1/edit') ? 'active' : null }}">
+            <a href="{{route('course.index')}}" class="nav-link {{Request::is('course','course/create','course/*/edit') ? 'active' : null }}">
               <i class="nav-icon fas fa-graduation-cap"></i>
               <p>
                 Course
@@ -182,7 +182,7 @@
             </a>
             </li>
             <li class="nav-item has-treeview">
-            <a href="{{route('batch.index')}}" class="nav-link {{Request::is('batch','batch/create','batch/1/edit') ? 'active' : null }}">
+            <a href="{{route('batch.index')}}" class="nav-link {{Request::is('batch','batch/create','batch/*/edit') ? 'active' : null }}">
               <i class="nav-icon fas fa-graduation-cap"></i>
               <p>
                 Batch
@@ -191,7 +191,7 @@
             </a>
             </li>
             <li class="nav-item has-treeview">
-            <a href="{{route('inquiry.index')}}" class="nav-link {{Request::is('inquiry','inquiry/1/edit','inquiry/create') ? 'active' : null }}">
+            <a href="{{route('inquiry.index')}}" class="nav-link {{Request::is('inquiry','inquiry/*/edit','inquiry/create') ? 'active' : null }}">
               <i class="nav-icon fas fa-question-circle  "></i>
               <p>
                 Inquiry
@@ -202,7 +202,7 @@
        
 
             <li class="nav-item">
-            <a href="{{route('staff.index')}}" class="nav-link {{Request::is('staff','staff/create','staff/1/edit') ? 'active' : null }}">
+            <a href="{{route('staff.index')}}" class="nav-link {{Request::is('staff','staff/create','staff/*/edit') ? 'active' : null }}">
               <i class="nav-icon fas fa-user-friends"></i>   
               <p>
               Staff

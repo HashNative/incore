@@ -195,7 +195,7 @@ class InquiryController extends Controller
      $inquiry->status =$request ->status;
      $inquiry->phone_number =$request ->phone_number;
      $inquiry->title =$request ->title;
-     $inquiry->inquiry_by =$request ->inquiry_by;
+     $inquiry->inquiry_by =Auth::user()->name;
      $inquiry->email =$request ->email;
    
      $inquiry->update();

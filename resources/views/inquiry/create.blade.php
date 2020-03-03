@@ -48,20 +48,14 @@
                         </select>
                     </div>
                     </div>
-                    <div class="col-sm-3">
-                    <div class="form-group">
-                    <label>Followup</label>
-                        <input type="text" name="follow_up" id="exampleInputsource1" class="form-control" id ="follow_up"   placeholder="Enter the followup" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
-                  
-                    </div>
-                    </div>
+                    
 
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-9">
                       <!-- text input -->
                       <div class="form-group">
                       <label>Full Name</label>
-                        <input type="text" name ="name" id="exampleInputsource1" class="form-control" id ="name" placeholder="Enter the name" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                        <input type="text" name ="name" autocomplete="name" id="exampleInputsource1" class="form-control" id ="name" placeholder="Enter the name" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                     </div>
                    
                     </div>
@@ -69,7 +63,7 @@
                       <!-- text input -->
                       <div class="form-group">
                       <label>Phone number</label>
-                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="off" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                      <input type="text" name="phone_number" maxlength="10" id="exampleInputsource1" class="form-control" id ="phone_number" pattern="(0){1}[0-9]{9}" autocomplete="phone_number" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
                     </div>
                    
@@ -104,7 +98,6 @@
                       <select type="text" name ="status" id="exampleInputsource1" class="form-control" id ="status"placeholder="Enter the status" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
                        
                         <option>Pending</option>
-                        <option>Registered</option>
                         <option>Declined</option>
                       </select>
                     </div>
