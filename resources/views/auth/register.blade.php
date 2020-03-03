@@ -107,7 +107,7 @@
 
                 <div class="col-md-6{{ $errors->has('mobile_number') ? ' has-error' : '' }} form-group">
                   <label for="mobile_number">Mobile Number</label>
-                  <input type="text" name="mobile_number" maxlength="13" autocomplete="mobile_number" pattern="[0-9]{1}[0-9]{9}" id="exampleInputsource1" id="mobile_number" placeholder="Enter the mobile number  " class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                  <input type="text" name="mobile_number" maxlength="13" autocomplete="mobile_number"  id="exampleInputsource1" id="mobile_number" placeholder="Enter the mobile number  " class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
                 </div>
                 @if ($errors->has('mobile_number'))
