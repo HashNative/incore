@@ -125,18 +125,21 @@ class AdminController extends Controller
         ->get();
         $courses = DB::table('inquiries')
             ->select(array('course_name',DB::raw('COUNT(course_name) AS count')))
+            ->whereBetween('date_time', [$from, $to])
             ->groupBy('course_name')
             ->get();
 
        
         $courses1 = DB::table('inquiries')
         ->select(array('status','course_name',DB::raw('COUNT(status) AS countx')))
+        ->whereBetween('date_time', [$from, $to])
         ->where('status','registered')
         ->groupBy('status','course_name')
         ->get();
            
         $incos = DB::table('inquiries')
         ->select(array('source',DB::raw('COUNT(source) AS count')))
+        ->whereBetween('date_time', [$from, $to])
         ->groupBy('source')
         ->orderBy('source', 'asc')
         ->get();
