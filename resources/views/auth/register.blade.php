@@ -34,7 +34,7 @@
             <form role="form">
               <div class="row">
 
-                <div class="col-md-2{{ $errors->has('title') ? ' has-error' : '' }} form-group" >
+                <div class="col-md-2{{ $errors->has('title') ? ' has-error' : '' }} form-group">
                   <label for="title">Title</label>
                   <select type="text" name="title" id="title" class="form-control" required>
                     <option selected>Mr</option>
@@ -51,7 +51,7 @@
 
                 </div>
                 @if ($errors->has('name'))
-                <span class="help-block" style="color:red">
+                <span class="form-control is-invalid help-block" style="color:red">
                   <strong>{{ $errors->first('name') }}</strong>
                 </span>
                 @endif
@@ -59,20 +59,20 @@
                   <label for="gender">Gender</label>
                   <select type="text" name="gender" id="gender" class="form-control" class="required">
                     <option selected>Male</option>
-                    <option >Female</option>
+                    <option>Female</option>
                   </select>
                 </div>
                 <div class="col-sm-4">
 
-              <div class="form-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" name="dob" id="exampleInputdate1" class="form-control" placeholder="Enter date of bitrh" aria-describedby="exampleInputdate-error" aria-invalid="true" required></span>
+                  <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" name="dob" id="exampleInputdate1" class="form-control" placeholder="Enter date of bitrh" aria-describedby="exampleInputdate-error" aria-invalid="true" required></span>
 
-              </div>
-            </div>
-            <div class="col-md-6{{ $errors->has('nic') ? ' has-error' : '' }} form-group">
+                  </div>
+                </div>
+                <div class="col-md-6{{ $errors->has('nic') ? ' has-error' : '' }} form-group">
                   <label for="nic">NIC Number</label>
-                  <input type="text" name="nic" maxlength="13" autocomplete="nic" pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$"  id="nic" placeholder="Enter the nic  " class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                  <input type="text" name="nic" maxlength="13" autocomplete="nic" pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$" id="nic" placeholder="Enter the nic  " class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
                 </div>
                 <div class="col-md-6{{ $errors->has('email') ? ' has-error' : '' }} form-group">
@@ -81,7 +81,7 @@
 
                 </div>
                 @if ($errors->has('email'))
-                <span class="help-block" style="color:red">
+                <span class=" form-control is-invalid help-block" style="color:red">
                   <strong>{{ $errors->first('email') }}</strong>
                 </span>
                 @endif
@@ -100,18 +100,18 @@
                   </select>
                 </div>
                 @if ($errors->has('languages'))
-                <span class="help-block" style="color:red">
+                <span class=" form-control is-invalid help-block" style="color:red">
                   <strong>{{ $errors->first('languages') }}</strong>
                 </span>
                 @endif
 
                 <div class="col-md-6{{ $errors->has('mobile_number') ? ' has-error' : '' }} form-group">
                   <label for="mobile_number">Mobile Number</label>
-                  <input type="text" name="mobile_number" maxlength="13" autocomplete="mobile_number"  id="exampleInputsource1" id="mobile_number" placeholder="Enter the mobile number  " class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                  <input type="text" name="mobile_number" maxlength="13" autocomplete="mobile_number" id="exampleInputsource1" id="mobile_number" placeholder="Enter the mobile number  " class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
 
                 </div>
                 @if ($errors->has('mobile_number'))
-                <span class="help-block" style="color:red">
+                <span class="form-control is-invalid help-block" style="color:red">
                   <strong>{{ $errors->first('mobile_number') }}</strong>
                 </span>
                 @endif
@@ -121,7 +121,7 @@
 
                 </div>
                 @if ($errors->has('password'))
-                <span class="help-block" style="color:red">
+                <span class="need-validation help-block" style="color:red">
                   <strong>{{ $errors->first('password') }}</strong>
                 </span>
                 @endif
@@ -135,7 +135,7 @@
                 </div>
               </div>
               @if ($errors->has('password'))
-              <span class="help-block" style="color:red">
+              <span class="form-control is-invalid help-block" style="color:red">
                 <strong>{{ $errors->first('password') }}</strong>
               </span>
               @endif

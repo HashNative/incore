@@ -14,6 +14,7 @@ class CourseController extends Controller
      */
     public function index()
     {
+        
         $courses = Course::All();
         if(session('success_message')){
             alert('Done !');

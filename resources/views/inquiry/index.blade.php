@@ -1,369 +1,491 @@
 @extends('layouts.master')
 @section('content')
 <section class="content-header">
-      <div class="container-fluid">
-        <div class="row md-2">
-          <div class="col-md-6">
+  <div class="container-fluid">
+    <div class="row md-2">
+      <div class="col-md-6">
 
-          <a href="{{route('inquiry.create')}}"  class="btn  btn-primary" tittle="show details">
-    <i class="fas fa-plus"></i> New Inquiry
-     </a>
-          
-            
-          </div>
-          <div class="col-md-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
-              <li class="breadcrumb-item active">Inquiry</li>
-              
-            </ol>
-          </div>
-        </div><div class="0"></div>
-      </div><!-- /.container-fluid -->
+        <a href="#" class="btn  btn-primary" tittle="show details" data-toggle="modal" data-target="#modal-add">
+          <i class="fas fa-plus"></i> New Inquiry
+        </a>
+
+
+      </div>
+      <div class="col-md-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
+          <li class="breadcrumb-item active">Inquiry</li>
+
+        </ol>
+      </div>
+    </div>
+    <div class="0"></div>
+  </div><!-- /.container-fluid -->
 </section>
 
-     
- <!-- Main content -->
- <section class="content">
-      <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Inquiry Details  </h3>
-                </div>
-                <div>
-                  <div class="card">
-                        <div class="card-header p-2">
-                          <ul class="nav nav-pills">
-                          
-                            @foreach($ids as $id)
-                            <li class="nav-item"><a class="nav-link <?php if($id->follow_up == 1) echo("active")?>" href="#activity-{{$id->follow_up}}" data-toggle="tab">{{$id->follow_up}}</a></li>
-                            @endforeach
-                              
-                          </ul>
-                             
-                        </div>
-                        <div class="card-body">
-                              
-                          <div class="tab-content">
-                              
-                              @foreach($ids as $id)
-                                <div class="tab-pane <?php if($id->follow_up == 1) echo("active")?>" id="activity-{{$id->follow_up}}">
-                                  <table id="example1" class="table table-bordered table-striped table-responsive">
-                                        <thead>
-                                        <tr>
-                                        
-                                        <th>Title </th>
-                                        <th>Full&nbsp;Name</th>
-                                        <th>Phone&nbsp;number</th>
-                                        <th>Email</th>
-                                        <th>Source</th>
-                                        <th>Status</th>
-                                        <th>Cource</th>
-                                        <th>Description</th>
-                                        <th>Inquiry&nbsp;by</th>
-                                        <th>Follow&nbsp;Up</th>
-                                        <th>Date&nbsp;Time  </th>
-                                        <th>Actions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>  
 
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach ($inquiries as $inquiry)
-                                          @if($id->follow_up == $inquiry->follow_up)         
-                                        <tr>
-                                            
-                                            <td>{{ $inquiry->title}}</td>
-                                            <td>{{ $inquiry->name}}</td>
-                                            <td>{{ $inquiry->phone_number}}</td>
-                                            <td>{{ $inquiry->email}}</td>
-                                            <td>{{ $inquiry->source}}</td>
-                                            <td>{{ $inquiry->status}}</td>
-                                            <td>{{ $inquiry->course_name}}</td>
-                                            <td style="width:40em; word-break: break-all">{{ $inquiry->description}}</td>
-                                            <td>{{ $inquiry->inquiry_by}}</td>
-                                             <td data-toggle="modal" data-target="#modal-{{ $inquiry->id}}">{{ $inquiry->follow_up}}
-                                                  
-                                            </td>
-                                            <td>{{ $inquiry->date_time}}</td>
-                                            <td>
-                                              
-                                                <form action = "{{route('inquiry.destroy',$inquiry->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
-                                                    <input type = "hidden" name = "_method" value = "delete"> 
-                                                    
-                                                    {{csrf_field()}}
-                                                    <a data-toggle="modal" data-target="#modal-info-{{ $inquiry->id}}" class=" btn btn-sm fa fa-share-square"></a>
-                                                    <a href="{{route('inquiry.edit',$inquiry->id)}}" tittle="edit details"class=" btn btn-sm fas fa-edit"style="color:#ffc107">  </a>  
-                                                
-                                                    <button type="submit"class="btn btn-sm" ><i tittle="delete details"class= "fa fa-trash"style="color:#cc0000"></i></button>
-                                                  
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Inquiry Details </h3>
+        </div>
+        <div>
+          <div class="card">
+            <div class="card-header p-2">
+              <ul class="nav nav-pills">
+
+                @foreach($ids as $id)
+                <li class="nav-item"><a class="nav-link <?php if ($id->follow_up == 1) echo ("active") ?>" href="#activity-{{$id->follow_up}}" data-toggle="tab">{{$id->follow_up}}</a></li>
+                @endforeach
+
+              </ul>
+
+            </div>
+            <div class="card-body">
+
+              <div class="tab-content">
+
+                @foreach($ids as $id)
+                <div class="tab-pane <?php if ($id->follow_up == 1) echo ("active") ?>" id="activity-{{$id->follow_up}}">
+                  <table id="example1" class="table table-bordered table-striped table-responsive">
+                    <thead>
+                      <tr>
+
+                        <th>Title </th>
+                        <th>Full&nbsp;Name</th>
+                        <th>Phone&nbsp;number</th>
+                        <th>Email</th>
+                        <th>Source</th>
+                        <th>Status</th>
+                        <th>Cource</th>
+                        <th>Description</th>
+                        <th>Inquiry&nbsp;by</th>
+                        <th>Follow&nbsp;Up</th>
+                        <th>Date&nbsp;Time </th>
+                        <th>Actions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($inquiries as $inquiry)
+                      @if($id->follow_up == $inquiry->follow_up)
+                      <tr>
+
+                        <td>{{ $inquiry->title}}</td>
+                        <td>{{ $inquiry->name}}</td>
+                        <td>{{ $inquiry->phone_number}}</td>
+                        <td>{{ $inquiry->email}}</td>
+                        <td>{{ $inquiry->source}}</td>
+                        <td>{{ $inquiry->status}}</td>
+                        <td>{{ $inquiry->course_name}}</td>
+                        <td style="width:40em; word-break: break-all">{{ $inquiry->description}}</td>
+                        <td>{{ $inquiry->inquiry_by}}</td>
+                        <td data-toggle="modal" data-target="#modal-{{ $inquiry->id}}">{{ $inquiry->follow_up}}
+
+                        </td>
+                        <td>{{ $inquiry->date_time}}</td>
+                        <td>
+
+                          <form action="{{route('inquiry.destroy',$inquiry->id)}}" method="POST" onsubmit="if(!confirm('Are you sure')){return false;}">
+                            <input type="hidden" name="_method" value="delete">
+
+                            {{csrf_field()}}
+                            <a data-toggle="modal" data-target="#modal-info-{{ $inquiry->id}}" class=" btn btn-sm fa fa-share-square"></a>
+                            <a href="{{route('inquiry.edit',$inquiry->id)}}" tittle="edit details" class=" btn btn-sm fas fa-edit" style="color:#ffc107"> </a>
+
+                            <button type="submit" class="btn btn-sm"><i tittle="delete details" class="fa fa-trash" style="color:#cc0000"></i></button>
+
+                          </form>
+                        </td>
+                        <div class="modal fade" id="modal-{{ $inquiry->id}}" style="display: none;" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">{{ $inquiry->name}}</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="form-group">
+                                  <div class="card-body">
+                                    <div class="tab-content">
+                                      <div class="active tab-pane" id="activity">
+                                        @foreach ($followups as $followup)
+                                        @if($inquiry->id == $followup->inquiry_id)
+                                        <!-- Post -->
+                                        <div class="post clearfix">
+                                          <div class="user-block">
+                                            <img class="img-circle img-bordered-sm" src="{{asset('dist/img/user7-128x128.jpg')}}" alt="User Image">
+                                            <span class="username">
+                                              <a href="#">{{$followup->inquiry_by}}</a>
+                                              <div style="float:right">
+
+                                                <form action="{{route('follow_up.destroy',$followup->id)}}" method="POST" onsubmit="if(!confirm('Are you sure')){return false;}">
+                                                  <input type="hidden" name="_method" value="delete">
+
+                                                  {{csrf_field()}}
+
+                                                  <a data-toggle="modal" data-target="#modal-default-{{ $followup->id}}" tittle="edit details" class=" btn btn-sm fas fa-edit" style="color:#ffc107"> </a>
+
+                                                  <button type="submit" class="btn btn-sm"><i tittle="delete details" class="fa fa-trash" style="color:#cc0000"></i></button>
+
                                                 </form>
-                                            </td>
-                                                  <div class="modal fade" id="modal-{{ $inquiry->id}}" style="display: none;" aria-hidden="true">
-                                                      <div class="modal-dialog modal-lg">
-                                                          <div class="modal-content">
-                                                          <div class="modal-header">
-                                                            <h4 class="modal-title">{{ $inquiry->name}}</h4>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                              <span aria-hidden="true">×</span>
-                                                            </button>
-                                                          </div>
-                                                          <div class="modal-body">
-                                                            <div class="form-group">
-                                                              <div class="card-body">
-                                                                  <div class="tab-content">
-                                                                    <div class="active tab-pane" id="activity">
-                                                                      @foreach ($followups as $followup)
-                                                                        @if($inquiry->id == $followup->inquiry_id)
-                                                                      <!-- Post -->
-                                                                      <div class="post clearfix">
-                                                                        <div class="user-block">
-                                                                          <img class="img-circle img-bordered-sm" src="{{asset('dist/img/user7-128x128.jpg')}}" alt="User Image">
-                                                                          <span class="username">
-                                                                            <a href="#">{{$followup->inquiry_by}}</a>
-                                                                            <div style ="float:right">
-                                                                      
-                                                                            <form action = "{{route('follow_up.destroy',$followup->id)}}" method = "POST" onsubmit="if(!confirm('Are you sure')){return false;}">
-                                                                              <input type = "hidden" name = "_method" value = "delete"> 
-                                                                              
-                                                                              {{csrf_field()}}
-                                                                              
-                                                                              <a data-toggle="modal" data-target="#modal-default-{{ $followup->id}}" tittle="edit details"class=" btn btn-sm fas fa-edit"style="color:#ffc107">  </a>  
-                                                                          
-                                                                              <button type="submit"class="btn btn-sm" ><i tittle="delete details"class= "fa fa-trash"style="color:#cc0000"></i></button>
-                                                                            
-                                                                            </form>
-                                                                            </div>
-                                                                          </span>
-                                                                          <span class="description">follow up : {{ $followup->follow_up}}</span>
-                                                                          <br>
-                                                                          <p>
-                                                                        {{ $followup->description}}
-                                                                        </p>
-                                                                            <div class="modal fade" id="modal-default-{{ $followup->id}}">
-                                                                              <div class="modal-dialog">
-                                                                                <div class="modal-content bg-default">
-                                                                                  <div class="modal-header">
-                                                                                    <h4 class="modal-title">Edit Followup</h4>
-                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                                      <span aria-hidden="true">&times;</span></button>
-                                                                                  </div>
-                                                                                  <div class="modal-body">
-                                                                                    <form action = "{{route('follow_up.update',$followup->id)}}" method = "POST" class="needs-validation" >
-                                                                                      <input type = "hidden" name = "_method" value="put">
-                                                                                        {{csrf_field()}}
-                              
-                                                                                          <label for ="description"></label> 
-                                                                                          <input type ="text" name="description" class="form-control" id ="description" value = "{{ $followup->description}}" required>
-                                                                                          <div class="invalid-feedback">
-                                                                                            Please Enter Description.
-                                                                                          </div>
-                                                                                          <div class="modal-footer justify-content-between">
-                                                                                      
-                                                                                            <button type="submit" class="btn  btn-outline-success btn-sm">Save changes</button>
-                                                                                          </div>
-                                                                                      </form>
-                                                                                  </div>
-                                                                                  
-                                                                                  
-                                                                                </div>
-                                                                                <!-- /.modal-content -->
-                                                                              </div>
-                                                                              <!-- /.modal-dialog -->
-                                                                            </div>
-                                                                        </div>
-                                                                      
-                                                                        <!-- /.user-block -->
-                                                                      </div>
-                                                                        
-                                                                        @endif
-                                                                        @endforeach
-                                                                        <form class="form-horizontal"action = "{{route('follow_up.store',$inquiry->id)}}" method = "POST" class="needs-validation" >
-                                                                        {{csrf_field()}}         
-                                                                      
-                                                                                <div class="input-group input-group-sm mb-0">
-                                                                                                <div class="row">
-                                                                                                  <div class="col-sm-4">
-                                                                                                    <!-- text input -->
-                                                                                                    <div class="form-group">
-                                                                                                  
-                                                                                                    @foreach ($followups1 as $followup1)
-                                                                                                      @if($inquiry->id == $followup1->inquiry_id)
-                                                                                                      <?php  $followup1->count = $followup1->count + 1 ?>
-                                                                                                    
-                                                                                                        <label for ="follow_up"></label> 
-                                                                                                          <input type ="hidden" name="follow_up" class="form-control" id ="follow_up" value = "{{ $followup1->count}}" required>
-                                                                                                          @endif
-                                                                                                    @endforeach
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                  <div class="col-sm-4">
-                                                                                                    <!-- text input -->
-                                                                                                    <div class="form-group">
-                                                                                                      <label for ="inquiry_by"></label> 
-                                                                                                      <input type ="hidden" name="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
-                                                                                                    </div>
-                                                                                                  </div>
-                                                                                                  <div class="col-sm-4">
-                                                                                                    <!-- text input -->
-                                                                                                    <div class="form-group">
-                                                                                                      <label for ="inquiry_id"></label> 
-                                                                                                      <input type ="hidden" name="inquiry_id" class="form-control" id ="inquiry_id" value = "{{ $inquiry->id}}" required>
-                                                                                                    </div>
-                                                                                                  </div>
-                                                                                                      
-                                                                                </div>
-
-                                                                                <div class="input-group input-group-sm mb-0">
-                                                                                  <input name="description" class="form-control form-control-sm"  id ="description" required>
-                                                                                          <div class="invalid-feedback">
-                                                                                            Please Enter Description.
-                                                                                          </div>
-                                                                                  <div class="input-group-append">
-                                                                                    <button type="submit" class="btn btn-success">Save</button>
-                                                                                  </div>
-                                                                                </div>
-                                                                                
-                                                                        </form>
-                                                                    
-                                                                    </div>
-                                                                  </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                      </div>
+                                              </div>
+                                            </span>
+                                            <span class="description">follow up : {{ $followup->follow_up}}</span>
+                                            <br>
+                                            <p>
+                                              {{ $followup->description}}
+                                            </p>
+                                            <div class="modal fade" id="modal-default-{{ $followup->id}}">
+                                              <div class="modal-dialog">
+                                                <div class="modal-content bg-default">
+                                                  <div class="modal-header">
+                                                    <h4 class="modal-title">Edit Followup</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span></button>
                                                   </div>
-                                                            
-                                        </tr>
-                                                      <div class="modal fade" id="modal-info-{{ $inquiry->id}}" style="display: none;" aria-hidden="true">
-                                                        <div class="modal-dialog modal-lg">
-                                                          <div class="modal-content">
-                                                              <div class="modal-header">
-                                                                <h4 class="modal-title">Assign To</h4>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                  <span aria-hidden="true">×</span>
-                                                                </button>
-                                                              </div>
-                                                              <div class="modal-body">
-                                                                  <div class="form-group">
-                                                                    <form action = "{{route('assign.store')}}" method = "POST" class="needs-validation">
-                                                                            {{csrf_field()}} 
+                                                  <div class="modal-body">
+                                                    <form action="{{route('follow_up.update',$followup->id)}}" method="POST" class="needs-validation">
+                                                      <input type="hidden" name="_method" value="put">
+                                                      {{csrf_field()}}
 
-                                                                      
+                                                      <label for="description"></label>
+                                                      <input type="text" name="description" class="form-control" id="description" value="{{ $followup->description}}" required>
+                                                      <div class="invalid-feedback">
+                                                        Please Enter Description.
+                                                      </div>
+                                                      <div class="modal-footer justify-content-between">
 
-                                                                        <label for ="inquiry_by"></label> 
-                                                                        <input type ="hidden" name="inquiry_by" class="form-control" id ="inquiry_by" value = "{{ $inquiry->inquiry_by}}" required>
-                                                                      
-                                                                        <label for ="inquiry_id"></label> 
-                                                                        <input type ="hidden" name="inquiry_id" class="form-control" id ="inquiry_id" value = "{{ $inquiry->id}}"  required>
-                                                                          
-                                                                        
+                                                        <button type="submit" class="btn  btn-outline-success btn-sm">Save changes</button>
+                                                      </div>
+                                                    </form>
+                                                  </div>
 
-                                                                        <div class="row">
-                                                                        <div class="col-sm-4">
-                                                                          <div class="form-group">
-                                                                            <label for ="assignto">Assign To</label> 
-                                                                            <select type ="text" class="form-control"  name ="assignto" id ="assignto"  required>
-                                          
-                                                                                    @foreach ($users as $user)
-                                                                                    <option >{{ $user->name}}</option>
-                                                                                    @endforeach
-                                                                                  
-                                                                            </select>
-                                                                          </div>
-                                                                        </div>
-                                                                        <div class="col-md-4">
-                                                                            <label for ="language">Language</label>
-                                                                                <select type ="text" name ="language" id ="language" class="form-control" >
-                                                                                <option value="English" selected >English</option>
-                                                                                <option value="Tamil">Tamil</option>
-                                                                                <option value="Sinhala">Sinhala</option></select>
-                                                                        </div>  
-                                                                        <div class="col-sm-4">
-                                                                          <div class="form-group">
-                                                                            <label for="date"> Next Followup Date</label>
-                                                                            <input type ="date" name ="date" id="exampleInputdate1"  class="form-control"  placeholder="Enter the date"aria-describedby="exampleInputdate-error" aria-invalid="true" required></span>
-                                                                              
-                                                                          </div>
-                                                                          <button type="submit" value="Save" class="btn bg-gradient-success float-right ">Save</button>
-                                                                        </div>
-                                                                       
-                                                                      
-                                                                       
-                                                              
-                                                                    </form>
-                                                                  </div>
-                                                                 
 
-                                                              </div>
-                                                                      
-                                                              <div class="tab-pane" id="timeline">
-                                                                  <div class="timeline timeline-inverse">
-                                                                    <div class="time-label">
-                                                                      <span class="bg-danger">
-                                                                      next followups
-                                                                      </span>
-                                                                    </div>
-                                                                    <div>
-                                                                      @foreach ($assigns as $assign)
-                                                                            @if($inquiry->id == $assign->inquiry_id)
-                                                                          <i class="fas fa-envelope bg-primary"></i>
-                                                                          <div class="timeline-item">
-                                                                                  <span class="time"> <b>{{$assign->schedule_date}}</b></span>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                              </div>
+                                              <!-- /.modal-dialog -->
+                                            </div>
+                                          </div>
 
-                                                                                  <h3 class="timeline-header"><b>{{$assign->assign_to}}</b></h3>
-                                                                                
-                                                                                  <div class="timeline-body">
-                                                                                    
-                                                                                    {{ $assign->inquiry_by}} &nbsp;is assigned the next followup for &nbsp;&nbsp;{{$assign->assign_to}}
-                                                                                  </div>
-                                                                          </div>
-                                                                          <br>
-                                                                            @endif
-                                                                        @endforeach
-                                                                    </div>
-                                                                    
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                        </div> 
-                                                      </div> 
-                                                  
-                                        @endif  
+                                          <!-- /.user-block -->
+                                        </div>
+
+                                        @endif
                                         @endforeach
-                                      </tbody>
-                                
-                                  </table>
+                                        <form class="form-horizontal" action="{{route('follow_up.store',$inquiry->id)}}" method="POST" class="needs-validation">
+                                          {{csrf_field()}}
+
+                                          <div class="input-group input-group-sm mb-0">
+                                            <div class="row">
+                                              <div class="col-sm-4">
+                                                <!-- text input -->
+                                                <div class="form-group">
+
+                                                  @foreach ($followups1 as $followup1)
+                                                  @if($inquiry->id == $followup1->inquiry_id)
+                                                  <?php $followup1->count = $followup1->count + 1 ?>
+
+                                                  <label for="follow_up"></label>
+                                                  <input type="hidden" name="follow_up" class="form-control" id="follow_up" value="{{ $followup1->count}}" required>
+                                                  @endif
+                                                  @endforeach
+                                                </div>
+                                              </div>
+                                              <div class="col-sm-4">
+                                                <!-- text input -->
+                                                <div class="form-group">
+                                                  <label for="inquiry_by"></label>
+                                                  <input type="hidden" name="inquiry_by" class="form-control" id="inquiry_by" value="{{ $inquiry->inquiry_by}}" required>
+                                                </div>
+                                              </div>
+                                              <div class="col-sm-4">
+                                                <!-- text input -->
+                                                <div class="form-group">
+                                                  <label for="inquiry_id"></label>
+                                                  <input type="hidden" name="inquiry_id" class="form-control" id="inquiry_id" value="{{ $inquiry->id}}" required>
+                                                </div>
+                                              </div>
+
+                                            </div>
+
+                                            <div class="input-group input-group-sm mb-0">
+                                              <input name="description" class="form-control form-control-sm" id="description" required>
+                                              <div class="invalid-feedback">
+                                                Please Enter Description.
+                                              </div>
+                                              <div class="input-group-append">
+                                                <button type="submit" class="btn btn-success">Save</button>
+                                              </div>
+                                            </div>
+
+                                        </form>
+
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
-                                
-                              @endforeach
+                              </div>
+                            </div>
+                          </div>
+
+                      </tr>
+                      <div class="modal fade" id="modal-info-{{ $inquiry->id}}" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">Assign To</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="form-group">
+                                <form action="{{route('assign.store')}}" method="POST" class="needs-validation">
+                                  {{csrf_field()}}
+
+
+
+                                  <label for="inquiry_by"></label>
+                                  <input type="hidden" name="inquiry_by" class="form-control" id="inquiry_by" value="{{ $inquiry->inquiry_by}}" required>
+
+                                  <label for="inquiry_id"></label>
+                                  <input type="hidden" name="inquiry_id" class="form-control" id="inquiry_id" value="{{ $inquiry->id}}" required>
+
+
+
+                                  <div class="row">
+                                    <div class="col-sm-4">
+                                      <div class="form-group">
+                                        <label for="assignto">Assign To</label>
+                                        <select type="text" class="form-control" name="assignto" id="assignto" required>
+
+                                          @foreach ($users as $user)
+                                          <option>{{ $user->name}}</option>
+                                          @endforeach
+
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label for="language">Language</label>
+                                      <select type="text" name="language" id="language" class="form-control">
+                                        <option value="English" selected>English</option>
+                                        <option value="Tamil">Tamil</option>
+                                        <option value="Sinhala">Sinhala</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                      <div class="form-group">
+                                        <label for="date"> Next Followup Date</label>
+                                        <input type="date" name="date" id="exampleInputdate1" class="form-control" placeholder="Enter the date" aria-describedby="exampleInputdate-error" aria-invalid="true" required></span>
+
+                                      </div>
+                                      <button type="submit" value="Save" class="btn bg-gradient-success float-right ">Save</button>
+                                    </div>
+
+
+
+
+                                </form>
+                              </div>
+
+
+                            </div>
+
+                            <div class="tab-pane" id="timeline">
+                              <div class="timeline timeline-inverse">
+                                <div class="time-label">
+                                  <span class="bg-danger">
+                                    next followups
+                                  </span>
+                                </div>
+                                <div>
+                                  @foreach ($assigns as $assign)
+                                  @if($inquiry->id == $assign->inquiry_id)
+                                  <i class="fas fa-envelope bg-primary"></i>
+                                  <div class="timeline-item">
+                                    <span class="time"> <b>{{$assign->schedule_date}}</b></span>
+
+                                    <h3 class="timeline-header"><b>{{$assign->assign_to}}</b></h3>
+
+                                    <div class="timeline-body">
+
+                                      {{ $assign->inquiry_by}} &nbsp;is assigned the next followup for &nbsp;&nbsp;{{$assign->assign_to}}
+                                    </div>
+                                  </div>
+                                  <br>
+                                  @endif
+                                  @endforeach
+                                </div>
+
+                              </div>
+                            </div>
                           </div>
                         </div>
-                  </div>
+                      </div>
+
+                      @endif
+                      @endforeach
+                    </tbody>
+
+                  </table>
                 </div>
-                </div>
+
+                @endforeach
               </div>
             </div>
+          </div>
+        </div>
       </div>
-  </section>
-  <script>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="modal fade" id="modal-add">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Inquiry</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+        <form action="{{route('inquiry.store')}}" method="POST">
+          {{csrf_field()}}
+
+
+          <div class="row">
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label>Title</label>
+                <select type="text" name="title" id="exampleInputsource1" class="form-control" id="title" placeholder="Enter the title" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+
+                  <option>Mr</option>
+                  <option>Mrs</option>
+                  <option>Ms</option>
+                  <option>Dr</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="col-sm-9">
+              <!-- text input -->
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="name" autocomplete="name" id="exampleInputsource1" class="form-control" id="name" placeholder="Enter the name" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+              </div>
+
+            </div>
+            <div class="col-sm-4">
+              <!-- text input -->
+              <div class="form-group">
+                <label>Phone number</label>
+                <input type="text" name="phone_number" maxlength="13" id="exampleInputsource1" class="form-control" id="phone_number" autocomplete="phone_number" placeholder="Enter the Phone number" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+
+              </div>
+
+            </div>
+            <div class="col-sm-8">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="text" name="email" id="exampleInputsource1" class="form-control" id="email" placeholder="Enter the email" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+              </div>
+            </div>
+
+
+            <div class="col-sm-3">
+              <!-- text input -->
+              <div class="form-group">
+                <label>Source</label>
+                <select type="text" name="source" id="exampleInputsource1" class="form-control" id="source" placeholder="Enter the source" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+                  <option>Call</option>
+                  <option>Walk in</option>
+                  <option>Web</option>
+                  <option>From cordinator</option>
+                  <option>From student</option>
+                  <option>From branch</option>
+                  <option>Others</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <!-- text input -->
+              <div class="form-group">
+                <label>Status</label>
+                <select type="text" name="status" id="exampleInputsource1" class="form-control" id="status" placeholder="Enter the status" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+
+                  <option>Pending</option>
+                  <option>Declined</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Course </label>
+                <select type="text" name="course_name" id="exampleInputsource1" class="form-control" id="course_name" placeholder="Enter the course" aria-describedby="exampleInputsource-error" aria-invalid="true" required onmousedown="if(this.options.length>5){this.size=5;}" onchange='this.size=0;' onblur="this.size=0;">
+                  @foreach ($courses as $course)
+                  <option>{{ $course->course_name}}</option>
+                  @endforeach
+                </select>
+              </div>
+
+            </div>
+
+
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label>Description</label>
+                <textarea name="description" id="description" autocomplete="description" id="exampleInputsource1" class="form-control" autofocus placeholder="Enter the Description" aria-describedby="exampleInputsource-error" aria-invalid="true" required></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <input type="submit" class="btn btn-success float-right" value="Create">
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+<script>
   (function() {
-'use strict';
-window.addEventListener('load', function() {
-// Fetch all the forms we want to apply custom Bootstrap validation styles to
-var forms = document.getElementsByClassName('needs-validation');
-// Loop over them and prevent submission
-var validation = Array.prototype.filter.call(forms, function(form) {
-form.addEventListener('submit', function(event) {
-if (form.checkValidity() === false) {
-event.preventDefault();
-event.stopPropagation();
-}
-form.classList.add('was-validated');
-}, false);
-});
-}, false);
-})();
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
 </script>
-                
+
 @endsection
