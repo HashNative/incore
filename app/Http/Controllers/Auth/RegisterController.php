@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'languages' => 'required',
+            'type' =>'required',
             'mobile_number'=>'required|max:13|regex:/[077][0-9]{9}/'
         ]);
     }
@@ -76,7 +77,7 @@ class RegisterController extends Controller
             'dob' => $data['dob'],
             'nic' => $data['nic'],
             'address' => $data['address'],
-          
+            'type' => $data['type'],
             'password' => bcrypt($data['password']),
             'languages' =>implode(',',$data['languages']),
             'mobile_number'=>$data['mobile_number']

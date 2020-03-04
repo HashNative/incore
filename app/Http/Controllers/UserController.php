@@ -76,7 +76,7 @@ class UserController extends Controller
         $staff->nic =$request->nic;
         $staff->address =$request->address;
         $staff->dob =$request->dob;
-
+        $staff->type =$request->type;
         $staff->languages =$request->languages;
        
         $staff->email =$request ->email;
@@ -134,7 +134,8 @@ class UserController extends Controller
         $staff->address =$request->address;
         $staff->dob =$request->dob;
         $staff->languages =implode(',',$request->languages);
-       
+        $staff->type =$request->type;
+
         $staff->email =$request ->email;
         $staff->mobile_number =$request->mobile_number;
      

@@ -16,10 +16,11 @@ class BatchController extends Controller
     public function index()
     {
         $batches = Batch::All();
+        $courses = Course::All();
         if(session('success_message')){
             alert('Done !');
         }
-        return view('batch.index',compact('batches'));
+        return view('batch.index',compact('batches','courses'));
           //
 
     }

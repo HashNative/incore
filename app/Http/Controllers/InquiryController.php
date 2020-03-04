@@ -21,6 +21,9 @@ class InquiryController extends Controller
     public function index()
     {
 
+        $courses = Course::All();
+        $staffs = User::All();
+        
         $inquiries = DB::table('inquiries')
         ->select('*')
         ->where('status', '!=','Registered')
@@ -42,7 +45,7 @@ class InquiryController extends Controller
         if(session('success_message')){
             alert('Done !');
         }
-       return view('inquiry.index',compact('ids','inquiries','followups1','followups','assigns','users'));
+       return view('inquiry.index',compact('ids','inquiries','followups1','followups','assigns','users','courses', 'staffs'));
        
     }
 

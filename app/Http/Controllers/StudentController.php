@@ -23,6 +23,10 @@ class StudentController extends Controller
      */
     public function index()
     { 
+        $courses= Course::All();
+        $student= student::All();
+        $staffs= User::All();
+        $batches= Batch::All();
          $students = DB::table('inquiries')
         ->select('*')
         ->where('status','Registered')
@@ -31,7 +35,7 @@ class StudentController extends Controller
        if(session('success_message')){
         alert('Done !');
     }
-       return view('student.index',compact('students'));
+       return view('student.index',compact('students','student','courses','staffs','batches'));
         //
     }
 
