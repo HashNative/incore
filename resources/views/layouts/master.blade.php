@@ -305,12 +305,13 @@
         pie: {
           show       : true,
           radius     : 1,
-          innerRadius: 0.5,
+          innerRadius: 0.4,
           label      : {
             show     : true,
             radius   : 2 / 3,
             formatter: labelFormatter,
             threshold: 0.1
+           
           }
 
         }
@@ -407,7 +408,7 @@
         pie: {
           show       : true,
           radius     : 1,
-          innerRadius: 0.5,
+          innerRadius: 0.4,
           label      : {
             show     : true,
             radius   : 2 / 3,
