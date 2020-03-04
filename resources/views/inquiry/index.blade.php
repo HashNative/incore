@@ -118,7 +118,7 @@
                                                                       <!-- Post -->
                                                                       <div class="post clearfix">
                                                                         <div class="user-block">
-                                                                          <img class="img-circle img-bordered-sm" src="{{asset('dist/img/user7-128x128.jpg')}}" alt="User Image">
+                                                                        <img src="http://127.0.0.1:8000/dist/img/avatar5.png" alt="User Image">
                                                                           <span class="username">
                                                                             <a href="#">{{$followup->inquiry_by}}</a>
                                                                             <div style ="float:right">
