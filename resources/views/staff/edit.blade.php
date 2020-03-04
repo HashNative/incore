@@ -112,7 +112,7 @@
    <div  class ="col-md-6">
    <div class="from-group">
    <label for ="mobile_number">Mobile Number</label> 
-        <input type ="text" name="mobile_number" class="form-control"pattern="[077][0-9]{9}" maxlength="13" id ="mobile_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $staff->mobile_number}}" required>
+        <input type ="text" name="mobile_number" class="form-control" maxlength="13" id ="mobile_number"  value = "{{ $staff->mobile_number}}" required>
         <div class="invalid-feedback">
         Please Enter valid phone number.
       </div>
@@ -124,7 +124,7 @@
   <div  class ="col-md-6">
    <div class="from-group">
         <label for ="languages">Language</label>
-        <select type ="text" name ="languages[]" id ="languages"value = "{{$staff -> languages}}"class="form-control " multiple>
+        <select type ="text" name ="languages[]" id ="languages"class="form-control " required multiple>
        
         <option <?php if(($staff->languages)=='English'){ echo 'selected'; } ?>>English</option>
         <option <?php if(($staff->languages)=='Tamil'){ echo 'selected'; } ?>>Tamil</option>

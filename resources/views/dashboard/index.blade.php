@@ -106,9 +106,9 @@
                         <form action="{{route('admin.store')}}"method = "post">
                                 {{csrf_field()}}
                                 <label for="from">From :</label> &nbsp;
-                                <input id="from" name="from"class="form-control-sm" type="date" placeholder="From"> &nbsp;
+                                <input id="from" name="from"class="form-control-sm" type="date" value = "{{$from}}"placeholder="From"> &nbsp;
                                 <label for="to">To :</label> &nbsp;
-                                <input id="to" name="to"class="form-control-sm" type="date" placeholder="To" >&nbsp;
+                                <input id="to" name="to"class="form-control-sm" type="date"value = "{{$to}}" placeholder="To" >&nbsp;
 
                                 <button type="submit "class="btn-info form-control-sm" value="submit" >Search</button>
                         </form>

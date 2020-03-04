@@ -22,6 +22,8 @@ class AdminController extends Controller
 
     public function index()
     {
+        $from = '';
+        $to ='';
         $students = Student::All();
         //$inquiries = Inquiry::All();
         $staffs = User::All();
@@ -81,7 +83,7 @@ class AdminController extends Controller
 
         $cou = $courses->pluck('course_name')->all();
         $count3 = Course::whereIn('course_name', $cou)->count();
-        return view('dashboard.index',compact('courses1','incos','students','inquiries','inquiries1','staffs','count','courses','count1','count2','count3','sources','sources1'));
+        return view('dashboard.index',compact('courses1','incos','students','from','to','inquiries','inquiries1','staffs','count','courses','count1','count2','count3','sources','sources1'));
         //
     }
   
@@ -172,7 +174,7 @@ class AdminController extends Controller
 
         $cou = $courses->pluck('course_name')->all();
         $count3 = Course::whereIn('course_name', $cou)->count();
-        return view('dashboard.index',compact('courses1','incos','students','inquiries','inquiries1','staffs','count','courses','count1','count2','count3','sources','sources1'));
+        return view('dashboard.index',compact('courses1','incos','students','inquiries','inquiries1','staffs','count','courses','count1','count2','count3','sources','sources1','from','to'));
         //
     }
 

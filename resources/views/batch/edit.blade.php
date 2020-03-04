@@ -38,7 +38,7 @@
                   <select type ="text" class="form-control"  name ="course_name" id ="course_name" value = "{{$batch ->course_name}}"required onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
                 
                   @foreach ($courses as $course)
-                            <option <?php if(($batch->course_name)=='{{$course->course_name}}'){ echo 'selected'; } ?>>{{ $course->course_name}}</option>
+                            <option <?php if(($batch->course_name)==$course->course_name){ echo 'selected'; } ?>>{{ $course->course_name}}</option>
                             
                           @endforeach
                           

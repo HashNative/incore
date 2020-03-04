@@ -51,7 +51,7 @@
 
                 </div>
                 @if ($errors->has('name'))
-                <span class="help-block" style="color:red">
+                <span class="form-control is-invalid help-block" style="color:red">
                   <strong>{{ $errors->first('name') }}</strong>
                 </span>
                 @endif
@@ -81,7 +81,7 @@
 
                 </div>
                 @if ($errors->has('email'))
-                <span class="help-block" style="color:red">
+                <span class=" form-control is-invalid help-block" style="color:red">
                   <strong>{{ $errors->first('email') }}</strong>
                 </span>
                 @endif
@@ -100,7 +100,7 @@
                   </select>
                 </div>
                 @if ($errors->has('languages'))
-                <span class="help-block" style="color:red">
+                <span class=" form-control is-invalid help-block" style="color:red">
                   <strong>{{ $errors->first('languages') }}</strong>
                 </span>
                 @endif
@@ -111,7 +111,7 @@
 
                 </div>
                 @if ($errors->has('mobile_number'))
-                <span class="help-block" style="color:red">
+                <span class="form-control is-invalid help-block" style="color:red">
                   <strong>{{ $errors->first('mobile_number') }}</strong>
                 </span>
                 @endif
@@ -121,7 +121,7 @@
 
                 </div>
                 @if ($errors->has('password'))
-                <span class="help-block" style="color:red">
+                <span class="need-validation help-block" style="color:red">
                   <strong>{{ $errors->first('password') }}</strong>
                 </span>
                 @endif
@@ -135,7 +135,7 @@
                 </div>
               </div>
               @if ($errors->has('password'))
-              <span class="help-block" style="color:red">
+              <span class="form-control is-invalid help-block" style="color:red">
                 <strong>{{ $errors->first('password') }}</strong>
               </span>
               @endif

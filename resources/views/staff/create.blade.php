@@ -72,7 +72,7 @@
     <div class ="col-sm-4"> 
         <div class="from-group">
         <label for ="mobile_number">Mobile Number</label>
-        <input type ="integer" name ="mobile_number"pattern="[077][0-9]{9}"  maxlength="10"id="exampleInputsource1"  id ="mobile_number"   placeholder="Enter the mobile number  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
+        <input type ="integer" name ="mobile_number"  maxlength="13"id="exampleInputsource1"  id ="mobile_number"   placeholder="Enter the mobile number  "class="form-control" aria-describedby="exampleInputsource-error" aria-invalid="true" required>
         
         
     </div> 

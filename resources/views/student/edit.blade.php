@@ -67,7 +67,7 @@
                   <select type ="text" class="form-control"  name ="course_name" id ="course_name" value = "{{$student ->course_name}}"required onmousedown="if(this.options.length>5){this.size=5;}"  onchange="showBatches(this.value);" onblur="this.size=0;">
                 
                   @foreach ($courses as $course)
-                            <option <?php if(($student->course_name)=='{{$course->course_name}}'){ echo 'selected'; } ?>>{{ $course->course_name}}</option>
+                            <option <?php if(($student->course_name)==$course->course_name){ echo 'selected'; } ?>>{{ $course->course_name}}</option>
                             
                           @endforeach
                           
@@ -86,7 +86,7 @@
                                         <select type="text" name ="batch_name" id="batch_name" class="form-control" class="form-control" class="required">
                                           
                                         @foreach ($batches as $batch)
-                            <option <?php if(($student->batch_name)=='{{$batch->batch_name}}'){ echo 'selected'; } ?>>{{ $batch->batch_name}}</option>
+                            <option <?php if(($student->batch_name)==$batch->batch_name){ echo 'selected'; } ?>>{{ $batch->batch_name}}</option>
                             
                           @endforeach
                                         </select>
@@ -99,7 +99,7 @@
                     
                     <div class="from-group">
                         <label for ="phone_number">Mobile Number</label> 
-                        <input type ="integer" name="phone_number" class="form-control" pattern="[077][0-9]{9}" maxlength="10" id ="phone_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $student->phone_number}}" required>
+                        <input type ="integer" name="phone_number" class="form-control"  maxlength="13" id ="phone_number" value = "{{ $student->phone_number}}" required>
                         <div class="invalid-feedback">
                         Please Enter valid phone number.
                       </div>
@@ -204,7 +204,7 @@
                         <select type ="text" class="form-control"  name ="inquiry_by" id ="inquiry_by"  value = "{{ $student->inquiry_by}}"required>
                       
                         @foreach ($staffs as $staff)
-                                  <option <?php if(($student->inquiry_by)=='{{$staff->name}}'){ echo 'selected'; } ?>>{{ $staff->name}}</option>
+                                  <option <?php if(($student->inquiry_by)==$staff->name){ echo 'selected'; } ?>>{{ $staff->name}}</option>
                                   @endforeach    
                             </select>
                               
