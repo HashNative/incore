@@ -86,7 +86,7 @@
   <div  class ="col-md-6">
    <div class="from-group">
    <label for ="nic">NIC Number</label> 
-        <input type ="text" name="nic" class="form-control"maxlength="13"pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$"  id ="nic"  value = "{{ $staff->nic}}" required>
+        <input type ="integer" name="nic" class="form-control"maxlength="13"pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$"  id ="nic"  value = "{{ $staff->nic}}" required>
         <div class="invalid-feedback">
        
       </div>
@@ -112,7 +112,7 @@
    <div  class ="col-md-6">
    <div class="from-group">
    <label for ="mobile_number">Mobile Number</label> 
-        <input type ="text" name="mobile_number" class="form-control"pattern="[077][0-9]{9}" maxlength="13" id ="mobile_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $staff->mobile_number}}" required>
+        <input type ="text" name="mobile_number" class="form-control"pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}" maxlength="13" id ="mobile_number" pattern="[0-9]{1}[0-9]{9}" value = "{{ $staff->mobile_number}}" required>
         <div class="invalid-feedback">
         Please Enter valid phone number.
       </div>
