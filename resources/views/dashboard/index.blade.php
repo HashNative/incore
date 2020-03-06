@@ -180,8 +180,7 @@
                 </div>
               </div>
             </div>
-        </div>
-        
+        </div>  
             <div class="col-md-6">
               <div class="card card-primary card-outline">
                 <div class="card-header">
@@ -209,7 +208,6 @@
         </div>
      
     </section>
-
 
     <section class="content">
       <div class="container-fluid">
