@@ -201,7 +201,7 @@
            </li>
        
           <?php
-          // if(Auth::user()->type=='Admin'){
+          if(Auth::user()->type=='Admin'){
           ?>
             <li class="nav-item">
             <a href="{{route('staff.index')}}" class="nav-link {{Request::is('staff','register','staff/*/edit') ? 'active' : null }}">
@@ -213,7 +213,7 @@
             </a>
           </li>
           <?php
-          // }
+          }
       ?>
           
       <!-- /.sidebar-menu -->
