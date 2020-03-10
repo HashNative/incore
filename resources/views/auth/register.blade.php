@@ -139,6 +139,13 @@
                 <strong>{{ $errors->first('password') }}</strong>
               </span>
               @endif
+              <div class="col-md-6{{ $errors->has('type') ? ' has-error' : '' }} form-group">
+                            <label for="type">Type</label>
+                            <select type="text" name="type" id="type" class="form-control">
+                                <option value="Admin">Admin</option>
+                                <option value="Staff">Staff</option>
+                            </select>
+                        </div>
 
 
               <div class="card-footer">
