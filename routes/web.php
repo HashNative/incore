@@ -32,6 +32,9 @@ Route::resource('batch','BatchController')->middleware('AuthenticateMiddleware')
 
 Route::resource('course','CourseController')->middleware('AuthenticateMiddleware');
 Route::resource('student','StudentController')->middleware('AuthenticateMiddleware');
+Route::resource('role','RoleController')->middleware('AuthenticateMiddleware');
+Route::resource('examination','ExaminationController')->middleware('AuthenticateMiddleware');
+
 Route::resource('follow_up','FollowupController')->middleware('AuthenticateMiddleware');
 Route::resource('assign','AssignController')->middleware('AuthenticateMiddleware');
 

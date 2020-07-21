@@ -140,7 +140,7 @@
               </span>
               @endif
               <div class="col-md-6{{ $errors->has('type') ? ' has-error' : '' }} form-group">
-                            <label for="type">Type</label>
+                            <label for="type">Role</label>
                             <select type="text" name="type" id="type" class="form-control">
                                 <option value="Admin">Admin</option>
                                 <option value="Staff">Staff</option>

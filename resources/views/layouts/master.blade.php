@@ -215,6 +215,24 @@
           <?php
           }
       ?>
+      <li class="user-panel  pb-3 mb-3 d-flex nav nav-pills nav-sidebar flex-column nav-item has-treeview">
+            <a href="{{route('role.index')}}" class="nav-link {{Request::is('role') ? 'active' : null }}">
+              <i class="nav-icon fas fa-layer-group "></i>
+              <p>
+                Roles
+              
+              </p>
+            </a>
+            </li>
+            <li class="nav nav-pills nav-sidebar flex-column nav-item has-treeview">
+            <a href="{{route('examination.index')}}" class="nav-link {{Request::is('examination') ? 'active' : null }}">
+              <i class="nav-icon fas fa-layer-group "></i>
+              <p>
+                Examination
+              
+              </p>
+            </a>
+            </li>
           
       <!-- /.sidebar-menu -->
     </div>

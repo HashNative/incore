@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Course;
 
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
-class CourseController extends Controller
+
+class ExaminationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,17 +13,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        
-        $courses = Course::All();
-        if(session('success_message')){
-            alert('Done !');
-        }
-
-        return view('course.index',compact('courses'));
-          //
-
+        return view('examination.index');//
     }
-   
 
     /**
      * Show the form for creating a new resource.
@@ -32,10 +22,7 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    
     {
-        $courses = Course::All();
-        return view('course.create',compact('courses'));
         //
     }
 
@@ -47,13 +34,6 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $course = new Course;
-        $course->id =$request ->id;
-        $course->course_name =$request ->course_name;
-        $course->course_fees =$request ->course_fees;
-        $course->description =$request ->description;
-        $course->save();
-        return redirect('/course')->withSuccessMessage('Successfuly Added');
         //
     }
 
@@ -65,8 +45,6 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        $course= Course ::find ($id);
-        return view('course.show',compact('course'));
         //
     }
 
@@ -78,9 +56,7 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        $course= Course ::find ($id);
-        return view('course.edit',compact('course'));
-          //
+        //
     }
 
     /**
@@ -92,13 +68,6 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $course = Course ::find ($id);;
-        $course->course_name =$request ->course_name;
-        $course->course_fees =$request ->course_fees;
-        $course->description =$request ->description;
-        $course->update();
-        return redirect('/course')->withSuccessMessage('Successfuly Updated')
-        ;
         //
     }
 
@@ -110,10 +79,6 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        $course =  Course::find($id);
-        $course->delete();
-
-        return redirect('/course')->withSuccessMessage('Successfuly Deleted');
-         //
+        //
     }
 }
